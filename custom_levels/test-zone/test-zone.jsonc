@@ -14,7 +14,7 @@
 
   // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
   "automatic_wall_detection": true,
-  "automatic_wall_angle": 45.0,
+  "automatic_wall_angle": 60.0,
 
   // if your mesh has triangles with incorrect orientation, set this to make all collision mesh triangles double sided
   // this makes collision 2x slower and bigger, so only use if really needed
@@ -38,7 +38,7 @@
 
   "actors" : [
     {
-      "trans": [-21.6238, 20.0496, 17.1191], // translation
+      "trans": [1970.30, 380.7, 1906.79], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
