@@ -1989,10 +1989,14 @@
                            :continues '((new 'static 'continue-point
                                              :name "test-zone-start"
                                              :level 'test-zone
-                                             :trans (new 'static 'vector :x (meters 1927.6) :y (meters 70.2) :z (meters 1898.93) :w 1.0)
-                                             :quat (new 'static 'quaternion  :w 1.0)
-                                             :camera-trans (new 'static 'vector :x 0.0 :y 4096.0 :z 0.0 :w 1.0)
-                                             :camera-rot (new 'static 'array float 9 1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0)
+                                             :trans (new 'static 'vector :x (meters 1919.85) :y (meters 24.65) :z (meters 1966.66) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.9995 :w 0.0284)
+                                             :camera-trans (new 'static 'vector :x 7836904.0000 :y 118727.4687 :z 8079366.5000 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              -0.6858      0.0000     -0.7277
+                                               0.1121      0.9880     -0.1057
+                                               0.7190     -0.1541     -0.6776
+                                              )
                                              :load-commands '()
                                              :vis-nick 'none
                                              :lev0 'test-zone

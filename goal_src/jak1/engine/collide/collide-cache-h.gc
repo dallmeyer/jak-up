@@ -203,7 +203,8 @@
     )
   )
 
-
+;; oh we gon need it
+(activate-big-collide-cache!)
 
 
 (define-perm *collide-list* collide-list (new 'global 'collide-list))
