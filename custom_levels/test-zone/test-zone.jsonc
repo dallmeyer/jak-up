@@ -18,7 +18,7 @@
 
   // if your mesh has triangles with incorrect orientation, set this to make all collision mesh triangles double sided
   // this makes collision 2x slower and bigger, so only use if really needed
-  "double_sided_collide": true,
+  "double_sided_collide": false,
 
   // available res-lump tag data types:
   // int32, float, meters, vector, vector4m (meters)
@@ -37,39 +37,38 @@
   "ambients": [],
 
   "actors" : [
-    {
-      "trans": [1970.30, 380.7, 1906.79], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
-      "lump": {
-        "name":"test-fuel-cell"
-      }
-    },
+    // {
+    //   "trans": [1986.74, 387.43, 1887.90], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"test-fuel-cell"
+    //   }
+    // }
+    // {
+    //   "trans": [-15.2818, 15.2461, 17.1360], // translation
+    //   "etype": "crate",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [-15.2818, 15.2461, 17.1360, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"test-crate",
+    //     "crate-type":"'steel",
+    //     "eco-info": ["int32", 5, 10]
+    //   }
+    // },
 
-    {
-      "trans": [-15.2818, 15.2461, 17.1360], // translation
-      "etype": "crate",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-15.2818, 15.2461, 17.1360, 10], // bounding sphere
-      "lump": {
-        "name":"test-crate",
-        "crate-type":"'steel",
-        "eco-info": ["int32", 5, 10]
-      }
-    },
-
-    {
-      "trans": [-5.4630, 17.4553, 1.6169], // translation
-      "etype": "eco-yellow",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-5.4630, 17.4553, 1.6169, 10], // bounding sphere
-      "lump": {
-        "name":"test-eco"
-      }
-    }
+    // {
+    //   "trans": [-5.4630, 17.4553, 1.6169], // translation
+    //   "etype": "eco-yellow",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [-5.4630, 17.4553, 1.6169, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"test-eco"
+    //   }
+    // }
   ]
 }

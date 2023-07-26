@@ -1973,11 +1973,11 @@
 
 
 ;;;;;;;;; CUSTOM LEVELS
-(define test-zone (new 'static 'level-load-info
+(define training-up (new 'static 'level-load-info
                            :index 26
-                           :name 'test-zone
-                           :visname 'test-zone-vis ;; name + -vis
-                           :nickname 'tsz          ;; nickname
+                           :name 'training-up
+                           :visname 'training-up-vis ;; name + -vis
+                           :nickname 'up0          ;; nickname
                            :packages '()
                            :sound-banks '()
                            :music-bank #f
@@ -1987,8 +1987,8 @@
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
-                                             :name "test-zone-start"
-                                             :level 'test-zone
+                                             :name "jakup-training"
+                                             :level 'training-up
                                              :trans (new 'static 'vector :x (meters 1919.85) :y (meters 24.65) :z (meters 1966.66) :w 1.0)
                                              :quat (new 'static 'quaternion :y 0.9995 :w 0.0284)
                                              :camera-trans (new 'static 'vector :x 7836904.0000 :y 118727.4687 :z 8079366.5000 :w 1.0)
@@ -1999,10 +1999,53 @@
                                               )
                                              :load-commands '()
                                              :vis-nick 'none
-                                             :lev0 'test-zone
+                                             :lev0 'training-up
                                              :disp0 'display
-                                             :lev1 'citadel
-                                             :disp1 'display))
+                                             :lev1 'citadel;;'village1-up
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '()
+                           :wait-for-load #t))
+
+(define village1-up (new 'static 'level-load-info
+                           :index 26
+                           :name 'village1-up
+                           :visname 'village1-up-vis ;; name + -vis
+                           :nickname 'up1          ;; nickname
+                           :packages '()
+                           :sound-banks '()
+                           :music-bank #f
+                           :ambient-sounds '()
+                           :mood '*default-mood*
+                           :mood-func 'update-mood-default
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-village1"
+                                             :level 'village1-up
+                                             :trans (new 'static 'vector :x (meters 1974.29) :y (meters 387.66) :z (meters 1859.86) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.9696 :w 0.2444)
+                                             :camera-trans (new 'static 'vector :x 8047416.0000 :y 1608872.1250 :z 7650174.0000 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              -0.6334      0.0000     -0.7737
+                                               0.0936      0.9926     -0.0766
+                                               0.7681     -0.1210     -0.6287
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'none
+                                             :lev0 'village1-up
+                                             :disp0 'display
+                                             :lev1 'training-up
+                                             :disp1 'display)
+                                         )
                                              
                            :tasks '()
                            :priority 100
@@ -2015,5 +2058,6 @@
                            :wait-for-load #t))
                            
         
-
-(cons! *level-load-list* 'test-zone)
+;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'village1-up)
+(cons! *level-load-list* 'training-up)
