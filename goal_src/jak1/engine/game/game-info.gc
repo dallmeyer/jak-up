@@ -221,7 +221,7 @@
                            "demo-start"
                            )
                           (*debug-segment*
-                            "village1-hut"
+                            "jakup-training" ;; "village1-hut"
                             )
                           (else
                             "title-start"
