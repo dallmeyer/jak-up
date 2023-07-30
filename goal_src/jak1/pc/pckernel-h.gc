@@ -328,7 +328,7 @@
   (set! (-> obj aspect-custom-x) 4)
   (set! (-> obj aspect-custom-y) 3)
   (set! (-> obj discord-rpc?) #t)
-  (set! (-> obj speedrunner-mode?) #f)
+  (set! (-> obj speedrunner-mode?) #t)
 
   (reset-gfx obj call-handlers)
   (reset-audio obj call-handlers)

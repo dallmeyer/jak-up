@@ -423,19 +423,10 @@
   (none)
   )
 
-(defun speedrun-mode-update ()
-  "A per frame update for speedrunning related stuff"
-  (when (-> *pc-settings* speedrunner-mode?)
-    ;; Update auto-splitter
-    (update-autosplit-info-jak1)
-    ;; Draw info to the screen
-    (speedrun-draw-settings)
-    ;;Disable any active cheats
-    (set! (-> *pc-settings* cheats) (the-as pc-cheats #x0))
-    ;; Run after-blackout speedrun setup (if needed)
-    (setup-speedrun-post-blackout)
-    )
-  (none))
+(define *checkpoint-interval* (seconds 30))
+(define *practice-spawn-post-init* (the-as (function none) #f))
+(define *next-checkpoint-time* (the-as time-frame #f))
+(define *last-real-continue-point* (the-as continue-point #f))
 
 (defun speedrun-start-full-game-run ()
   ;; start a full game speedrun, save file is already selected so don't default to first slot
@@ -449,9 +440,252 @@
              (-> *speedrun-info* should-display?))
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))
-      (draw-string-xy (string-format "Speedrunner Mode ~%OpenGOAL Version: ~S ~%Category: ~S ~%Cutscene Skips ~A"
-                                     *pc-settings-built-sha*
-                                     (enum->string speedrun-category (-> *speedrun-info* category))
-                                     (-> *pc-settings* skip-movies?))
-                      buf 0 (- 220 (* 8 4)) (font-color flat-yellow) (font-flags shadow kerning))))
+      (cond
+        ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+          (draw-string-xy "Checkpoint available! Press L2 + Down to set!"
+                          buf 0 (- 220 (* 8 1)) (font-color flat-yellow) (font-flags shadow kerning))
+          )
+        (else
+          (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                          buf 0 (- 220 (* 8 1)) (font-color flat-yellow) (font-flags shadow kerning))
+          )
+        )
+      )
+    )
+  (none))
+
+(defun generic-post-init ()
+  (when *last-real-continue-point*
+    (set! (-> *game-info* current-continue) *last-real-continue-point*)
+    )
+  (none)
+  )
+
+(defun speedrun-reset-common-settings ()
+  ;; disable hints (this seems to be overriden by your slot 1 save though)
+  (set! (-> *setting-control* default play-hints) #f)
+  ;; ensure `force actors` is not enabled
+  (set! (-> *pc-settings* force-actors?) #f)
+  ;; force FPS to `60`
+  (set-frame-rate! *pc-settings* 60 #t)
+  ;; skip intro cutscene
+  (close-specific-task! (game-task intro) (task-status need-resolution))
+  (none)
+  )
+
+(define *tmp-continue-point* (new 'static 'continue-point
+                             :name "tmp"
+                             :level #f
+                             :trans (new 'static 'vector :w 1.0)
+                             :quat (new 'static 'quaternion :w 1.0)
+                             :camera-trans (new 'static 'vector :w 1.0)
+                             :camera-rot (new 'static 'array float 9)
+                             :load-commands '()
+                             :vis-nick #f
+                             :lev0 #f
+                             :disp0 #f
+                             :lev1 #f
+                             :disp1 #f
+                             )
+    )
+
+(defun custom-reset-multi-post-init ()
+  (generic-post-init)
+  ;; (when *full-hp?* (full-hp))
+  ;; (cond
+  ;;   (*tmp-flut?* (get-on-flutflut))
+  ;;   (*tmp-zoomer?* (get-on-zoomer))
+  ;;   )
+  (none)
+  )
+
+(defun speedrun-practice-temp-checkpoint ()
+  (when (-> *tmp-continue-point* lev0)
+    (set! *practice-spawn-post-init* custom-reset-multi-post-init)
+    ;; fully reset game if r2 held too
+    ;; (if (cpad-hold? 0 r2)  
+    ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
+    ;;   )
+    ;; store last real checkpoint to restore later
+    (when (not (string= (-> *game-info* current-continue name) "tmp"))
+      (set! *last-real-continue-point* (-> *game-info* current-continue))
+      )
+    (set! (-> *game-info* current-continue) *tmp-continue-point*)
+    (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
+    (speedrun-reset-common-settings)
+    )
+  (none)
+  )
+
+  
+(defun continue-point-copy! ((dst continue-point) (src continue-point))
+  (set! (-> dst level) (-> src level))
+  (set! (-> dst quat y) 0.0)
+  (set! (-> dst quat w) 1.0)
+  (set! (-> dst load-commands) (-> src load-commands))
+  (set! (-> dst vis-nick) (-> src vis-nick))
+  (when (-> *level* level0)
+    (set! (-> dst lev0) (-> *level* level0 name))
+    (set! (-> dst disp0) 'display)
+    )
+  (when (-> *level* level1)
+    (set! (-> dst lev1) (-> *level* level1 name))
+    (set! (-> dst disp1) 'display)
+    )
+  (none)
+  )
+
+  
+(defun camera-rot-copy! ((dst continue-point) (src matrix))
+  (set! (-> dst camera-rot 0) (-> src vector 0 x))
+  (set! (-> dst camera-rot 1) (-> src vector 0 y))
+  (set! (-> dst camera-rot 2) (-> src vector 0 z))
+  (set! (-> dst camera-rot 3) (-> src vector 1 x))
+  (set! (-> dst camera-rot 4) (-> src vector 1 y))
+  (set! (-> dst camera-rot 5) (-> src vector 1 z))
+  (set! (-> dst camera-rot 6) (-> src vector 2 x))
+  (set! (-> dst camera-rot 7) (-> src vector 2 y))
+  (set! (-> dst camera-rot 8) (-> src vector 2 z))
+  (none)
+  )
+
+(defun speedrun-practice-store-temp-checkpoint ()
+  ;; outside of bsp breaks shit
+  ;; (when (or (-> *level* level0 inside-boxes?) (-> *level* level1 inside-boxes?))
+    (case (-> *target* state)
+      ;; only store temp checkpoint if in one of these states
+      ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing)
+        (when (or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+          ;; (set! *last-speedrun-practice-option* (speedrun-practice-option none))
+          
+          ;; assume current continue is good enough for the current location
+          (continue-point-copy! *tmp-continue-point* (-> *game-info* current-continue))
+          (vector-copy! (-> *tmp-continue-point* trans) (-> *target* root trans))
+          (quaternion-copy! (-> *tmp-continue-point* quat) (-> *target* control unknown-quaternion00))
+          (vector-copy! (-> *tmp-continue-point* camera-trans) (-> *camera-combiner* trans))
+          (camera-rot-copy! *tmp-continue-point* (-> *camera-combiner* inv-camera-rot))
+
+          ;; (set! *full-hp?* (and (!= *target* #f)
+          ;;               (= (-> *target* fact-info-target health) 3.0)
+          ;;               (= (-> *target* fact-info-target eco-pill) 50.0)
+          ;;               ))
+          ;; (set! *tmp-flut?* #f)
+          ;; (set! *tmp-zoomer?* #f)
+          ;; (case (-> *target* state)
+          ;;   ((target-flut-stance)
+          ;;     (set! *tmp-flut?* #t)
+          ;;     )
+          ;;   ((target-racing)
+          ;;     (set! *tmp-zoomer?* #t)
+          ;;     )
+          ;;   )
+
+          ;; wait 5m til next checkpoint
+          (set! *next-checkpoint-time* (+ (current-time) *checkpoint-interval*))
+          (sound-play "select-menu")
+          )
+        )
+      )
+    ;; )
+  (none)
+  )
+
+(defun speedrun-practice-spawn ()
+  ;; enable speedrunner mode
+  (set! (-> *pc-settings* speedrunner-mode?) #t)
+  ;; randomize game id so the autosplitter knows to restart
+  (update-autosplit-jak1-new-game)
+
+  ;; reset any previous post-target-init callback
+  ;; (set! *practice-spawn-post-init* #f)
+
+  ;; (case *last-speedrun-practice-option*
+  ;;   (((speedrun-practice-option lts-old))
+  ;;     (speedrun-practice-LTS-old-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option lts-new))
+  ;;     (speedrun-practice-LTS-new-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option sfb))
+  ;;     (speedrun-practice-SFB-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option fcs))
+  ;;     (speedrun-practice-FCS-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option misty-boosted))
+  ;;     (speedrun-practice-misty-boosted-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option boulderskip))
+  ;;     (speedrun-practice-boulderskip-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option piggyback))
+  ;;     (speedrun-practice-piggyback-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option buttonskip))
+  ;;     (speedrun-practice-buttonskip-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option gondola-flut))
+  ;;     (speedrun-practice-gondola-flut-start-run)
+  ;;     )
+  ;;   (((speedrun-practice-option gondola-foot))
+  ;;     (speedrun-practice-gondola-foot-start-run)
+  ;;     )
+  ;;   (else
+      (speedrun-practice-temp-checkpoint)
+    ;;   )
+    ;; )
+  
+  (none)
+  )
+
+  
+(defun speedrun-mode-update ()
+  "A per frame update for speedrunning related stuff"
+  (when (-> *pc-settings* speedrunner-mode?)
+    ;; Update auto-splitter
+    (update-autosplit-info-jak1)
+    ;; Draw info to the screen
+    ;; (draw-deload-continue-info)
+    (speedrun-draw-settings)
+    ;;Disable any active cheats
+    (set! (-> *pc-settings* cheats) (the-as pc-cheats #x0))
+    ;; Run after-blackout speedrun setup (if needed)
+    (setup-speedrun-post-blackout)
+
+    ;; call post-init function
+    (when (and *practice-spawn-post-init*
+               *target*
+               (-> *setting-control* current allow-pause)
+               (>= (- (-> *display* base-frame-counter) (-> *game-info* blackout-time)) (seconds 0.1))
+               )
+      (*practice-spawn-post-init*)
+      (set! *practice-spawn-post-init* #f)
+      )
+
+    (when (cpad-hold? 0 l2)
+      ;; Check for fast reset combo
+      (when (cpad-pressed? 0 up)
+        (format #t "player triggered reset combo~%")
+        (speedrun-practice-spawn)
+        )
+      
+      ;; Check for temp checkpoint combo
+      (when (cpad-pressed? 0 down)
+        (format #t "player triggered temp checkpoint combo~%")
+        (speedrun-practice-store-temp-checkpoint)
+        )
+      
+      ;; ;; Check for flutflut
+      ;; (when (cpad-pressed? 0 left)
+      ;;   (format #t "player triggered flutflut combo~%")
+      ;;   (get-on-flutflut)
+      ;;   )
+      
+      ;; ;; Check for zoomer
+      ;; (when (cpad-pressed? 0 right)
+      ;;   (format #t "player triggered zoomer combo~%")
+      ;;   (get-on-zoomer)
+      ;;   )
+      )
+    )
   (none))
