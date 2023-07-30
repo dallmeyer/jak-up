@@ -1644,6 +1644,9 @@
 (build-custom-level "village1-up")
 (custom-level-cgo "UP1.DGO" "village1-up/village1-up.gd")
 
+(build-custom-level "jungle-up")
+(custom-level-cgo "UP2.DGO" "jungle-up/jungle-up.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

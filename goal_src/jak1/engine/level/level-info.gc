@@ -2001,7 +2001,7 @@
                                              :vis-nick 'none
                                              :lev0 'training-up
                                              :disp0 'display
-                                             :lev1 'citadel;;'village1-up
+                                             :lev1 'village1-up
                                              :disp1 'display)
                                          )
                                              
@@ -2043,7 +2043,7 @@
                                              :vis-nick 'none
                                              :lev0 'village1-up
                                              :disp0 'display
-                                             :lev1 'training-up
+                                             :lev1 'jungle-up
                                              :disp1 'display)
                                          )
                                              
@@ -2057,7 +2057,49 @@
                            :run-packages '()
                            :wait-for-load #t))
                            
+(define jungle-up (new 'static 'level-load-info
+                           :index 26
+                           :name 'jungle-up
+                           :visname 'jungle-up-vis ;; name + -vis
+                           :nickname 'up2          ;; nickname
+                           :packages '()
+                           :sound-banks '()
+                           :music-bank #f
+                           :ambient-sounds '()
+                           :mood '*default-mood*
+                           :mood-func 'update-mood-default
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-jungle"
+                                             :level 'jungle-up
+                                             :trans (new 'static 'vector :x 8650917.0000 :y 2933038.0000 :z 6876151.0000 :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.0454 :w -0.9989)
+                                             :camera-trans (new 'static 'vector :x 8647008.0000 :y 2954165.2500 :z 6825097.5000 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.9970  0.0000 -0.0766
+                                              0.0093  0.9925  0.1210
+                                              0.0760 -0.1214  0.9896
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'none
+                                             :lev0 'jungle-up
+                                             :disp0 'display
+                                             :lev1 'village1-up
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '()
+                           :wait-for-load #t))
         
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'jungle-up)
 (cons! *level-load-list* 'village1-up)
 (cons! *level-load-list* 'training-up)
