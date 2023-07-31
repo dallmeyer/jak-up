@@ -500,19 +500,27 @@
   )
 
 (defun speedrun-practice-temp-checkpoint ()
-  (when (-> *tmp-continue-point* lev0)
-    (set! *practice-spawn-post-init* custom-reset-multi-post-init)
-    ;; fully reset game if r2 held too
-    ;; (if (cpad-hold? 0 r2)  
-    ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
-    ;;   )
-    ;; store last real checkpoint to restore later
-    (when (not (string= (-> *game-info* current-continue name) "tmp"))
-      (set! *last-real-continue-point* (-> *game-info* current-continue))
+  (case (-> *target* state)
+    ;; only allow reset to checkpoint if in one of these states
+    ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing)
+      (when (-> *tmp-continue-point* lev0)
+        (set! *practice-spawn-post-init* custom-reset-multi-post-init)
+        ;; fully reset game if r2 held too
+        ;; (if (cpad-hold? 0 r2)  
+        ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
+        ;;   )
+        ;; store last real checkpoint to restore later
+        (when (not (string= (-> *game-info* current-continue name) "tmp"))
+          (set! *last-real-continue-point* (-> *game-info* current-continue))
+          )
+        (set! (-> *game-info* current-continue) *tmp-continue-point*)
+        (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
+        (speedrun-reset-common-settings)
+        )
       )
-    (set! (-> *game-info* current-continue) *tmp-continue-point*)
-    (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
-    (speedrun-reset-common-settings)
+    (else
+      (format 0 "get a standpoint first coward~%")
+      )
     )
   (none)
   )
