@@ -465,7 +465,7 @@
   ;; disable hints (this seems to be overriden by your slot 1 save though)
   (set! (-> *setting-control* default play-hints) #f)
   ;; ensure `force actors` is not enabled
-  (set! (-> *pc-settings* force-actors?) #f)
+  (set! (-> *pc-settings* ps2-actor-vis?) #f)
   ;; force FPS to `60`
   (set-frame-rate! *pc-settings* 60 #t)
   ;; skip intro cutscene
