@@ -1650,6 +1650,9 @@
 (build-custom-level "jungleb-up")
 (custom-level-cgo "UP3.DGO" "jungleb-up/jungleb-up.gd")
 
+(build-custom-level "misty-up")
+(custom-level-cgo "UP4.DGO" "misty-up/misty-up.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

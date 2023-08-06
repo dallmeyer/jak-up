@@ -2140,8 +2140,51 @@
                            :bottom-height (meters -20)
                            :run-packages '()
                            :wait-for-load #t))
+                           
+(define misty-up (new 'static 'level-load-info
+                           :index 26
+                           :name 'misty-up
+                           :visname 'misty-up-vis ;; name + -vis
+                           :nickname 'up4          ;; nickname
+                           :packages '()
+                           :sound-banks '()
+                           :music-bank #f
+                           :ambient-sounds '()
+                           :mood '*default-mood*
+                           :mood-func 'update-mood-default
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-misty"
+                                             :level 'misty-up
+                                             :trans (new 'static 'vector :x 11005656.0000 :y 3994610.5000 :z 6608462.5000 :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.1681 :w -0.9857)
+                                             :camera-trans (new 'static 'vector :x 10996096.0000 :y 4015700.0000 :z 6558166.5000 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.9821  0.0000 -0.1878
+                                              0.0228  0.9925  0.1194
+                                              0.1864 -0.1216  0.9749
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'none
+                                             :lev0 'misty-up
+                                             :disp0 'display
+                                             :lev1 'jungleb-up
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '()
+                           :wait-for-load #t))
         
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'misty-up)
 (cons! *level-load-list* 'jungleb-up)
 (cons! *level-load-list* 'jungle-up)
 (cons! *level-load-list* 'village1-up)
