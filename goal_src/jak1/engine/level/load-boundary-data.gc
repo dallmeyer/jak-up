@@ -1092,6 +1092,32 @@
   :bwd (checkpt "finalboss-start" #f)
   )
 
+;; GOOD CHECKPOINTS! As the player climbs successfully, they should hit these (no harm in making them bi-directional)
+
+(static-load-boundary :flags (player )
+  ;;     y top                y bottom
+  :top (meters 440.355)  :bot (meters 344.228)
+  ;;          point 0 x        point 0 z      point 1 x        point 1 z
+  :points (  (meters 1917.55) (meters 1883.97)  (meters 2041.89) (meters 1911.75) )
+  :fwd (checkpt "jakup-village1" #f)
+  :bwd (checkpt "jakup-village1" #f)
+  )
+
+;; BAD CHECKPOINTS! If player falls, they should 'lose' the checkpoint above them (important that this only works in one direction)
+
+(static-load-boundary :flags (closed player)
+  :top (meters 332.377)  :bot (meters 332.377)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (checkpt "jakup-training" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1" #f)
+  )
+
+
 ))
 
 (doarray (i *static-load-boundary-list*)
