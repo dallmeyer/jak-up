@@ -1653,6 +1653,9 @@
 (build-custom-level "misty-up")
 (custom-level-cgo "UP4.DGO" "misty-up/misty-up.gd")
 
+(build-custom-level "beach-up")
+(custom-level-cgo "UP5.DGO" "beach-up/beach-up.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

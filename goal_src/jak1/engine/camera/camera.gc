@@ -794,6 +794,7 @@
   )
 
 (defmethod tracking-spline-method-21 tracking-spline ((obj tracking-spline) (arg0 vector) (arg1 float) (arg2 float))
+  (set! arg2 6144.0)  ;; make camera fall fast with jak
   (let ((v1-0 (-> obj used-point))
         (f0-0 (-> obj partial-point))
         )

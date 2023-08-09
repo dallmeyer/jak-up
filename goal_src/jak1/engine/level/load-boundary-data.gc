@@ -1092,8 +1092,409 @@
   :bwd (checkpt "finalboss-start" #f)
   )
 
-;; GOOD CHECKPOINTS! As the player climbs successfully, they should hit these (no harm in making them bi-directional)
+;; only-up style level boundaries should follow this pattern (start from bottom):
+;; lev0     lev1      checkpt     action                    dir
+;; --------|---------|-----------|-------------------------|----
+;; etc
+;; ~~~ halfway through jungleb ~~~
+;; jungle   jungleb   jungleb     load jungle + jungleb     DOWN
+;; jungle   jungleb   jungleb     hide/show jungle          BOTH
+;; jungle   jungleb   jungleb     give jungleb checkpt      UP
+;; ~~~ between jungle + jungleb ~~~
+;; jungle   jungleb   jungle      give jungle checkpt       DOWN
+;; jungle   jungleb   jungle      hide/show jungleb         BOTH
+;; jungle   jungleb   jungle      load jungle + jungleb     UP
+;; ~~~ halfway through jungle ~~~
+;; village1 jungle    jungle      load village1 + jungle    DOWN
+;; village1 jungle    jungle      hide/show village1        BOTH
+;; village1 jungle    jungle      give jungle checkpt       UP
+;; ~~~ between village1 + jungle ~~~
+;; village1 jungle    village1    give village1 checkpt     DOWN
+;; village1 jungle    village1    hide/show jungle          BOTH
+;; village1 jungle    village1    load village1 + jungle    UP
+;; ~~~ halfway through village1 ~~~
+;; training village1  village1    load training + village1  DOWN
+;; training village1  village1    hide/show training        BOTH
+;; training village1  village1    give village1 checkpt     UP
+;; ~~~ between training + village1 ~~~
+;; training village1  training    give training checkpt     DOWN
+;; training village1  training    hide/show village1        BOTH
+;; training village1  training    load training + village1  UP
+;; ~~~ halfway through training ~~~
+;; training none      training    baseline                  n/a
 
+
+
+;; MISTY
+
+;; misty   beach    beach
+;; load misty + beach  DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 1751.86)  :bot (meters 1751.86)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (load misty-up beach-up) ;; fwd is down it seems?
+  ;; :bwd (load training-up village1-up)
+  )
+
+;; misty   beach    beach
+;; hide/show misty        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 1742.27)  :bot (meters 1742.27)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display misty-up display)  ;; fwd is down it seems?
+  :bwd (display misty-up #f)
+  )
+
+;; misty   beach    beach
+;; give beach checkpt       UP
+(static-load-boundary :flags (player )
+  ;;     y top                y bottom
+  :top (meters 1615.87)  :bot (meters 1557.68)
+  ;;          point 0 x        point 0 z      point 1 x        point 1 z
+  :points (
+    (meters 1788.63) (meters 2138.39)
+    (meters 1915.91) (meters 2132.87)
+    )
+  :fwd (checkpt "jakup-beach" #f)
+  :bwd (checkpt "jakup-beach" #f)
+  )
+
+;; misty   beach    misty
+;; give misty checkpt     DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 1556.58)  :bot (meters 1556.58)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (checkpt "jakup-misty" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1" #f)
+  )
+
+;; misty   beach    misty
+;; hide/show beach        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 1260.85)  :bot (meters 1260.85)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display beach-up #f)  ;; fwd is down it seems?
+  :bwd (display beach-up display)
+  )
+
+;; misty   beach    misty
+;; load misty + beach    UP
+(static-load-boundary :flags (closed player)
+  :top (meters 1250.52)  :bot (meters 1250.52)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
+  :bwd (load misty-up beach-up)
+  )
+
+;; JUNGLEB
+
+;; jungleb   misty    misty
+;; load jungleb + misty  DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 1242.27)  :bot (meters 1242.27)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (load jungleb-up misty-up) ;; fwd is down it seems?
+  ;; :bwd (load training-up village1-up)
+  )
+
+;; jungleb   misty    misty
+;; hide/show jungleb        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 1232.68)  :bot (meters 1232.68)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display jungleb-up display)  ;; fwd is down it seems?
+  :bwd (display jungleb-up #f)
+  )
+
+;; jungleb   misty    misty
+;; give misty checkpt       UP
+(static-load-boundary :flags (player )
+  ;;     y top                y bottom
+  :top (meters 1149.5)  :bot (meters 1091.3)
+  ;;          point 0 x        point 0 z      point 1 x        point 1 z
+  :points (
+    (meters 2155.79) (meters 1711.78)
+    (meters 2040.78) (meters 1656.94)
+    )
+  :fwd (checkpt "jakup-misty" #f)
+  :bwd (checkpt "jakup-misty" #f)
+  )
+
+;; jungleb   misty    jungleb
+;; give jungleb checkpt     DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 1090.75)  :bot (meters 1090.75)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (checkpt "jakup-jungleb" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1" #f)
+  )
+
+;; jungleb   misty    jungleb
+;; hide/show misty        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 1020.87)  :bot (meters 1020.87)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display misty-up #f)  ;; fwd is down it seems?
+  :bwd (display misty-up display)
+  )
+
+;; jungleb   misty    jungleb
+;; load jungleb + misty    UP
+(static-load-boundary :flags (closed player)
+  :top (meters 1010.53)  :bot (meters 1010.53)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
+  :bwd (load jungleb-up misty-up)
+  )
+
+;; JUNGLE
+
+;; jungle   jungleb    jungleb
+;; load jungle + jungleb  DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 1003.01)  :bot (meters 1003.01)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (load jungle-up jungleb-up) ;; fwd is down it seems?
+  ;; :bwd (load training-up village1-up)
+  )
+
+;; jungle   jungleb    jungleb
+;; hide/show jungle        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 993.421)  :bot (meters 993.421)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display jungle-up display)  ;; fwd is down it seems?
+  :bwd (display jungle-up #f)
+  )
+
+;; jungle   jungleb    jungleb
+;; give jungleb checkpt       UP
+(static-load-boundary :flags (player )
+  ;;     y top                y bottom
+  :top (meters 991.906)  :bot (meters 933.709)
+  ;;          point 0 x        point 0 z      point 1 x        point 1 z
+  :points (  (meters 2348.61) (meters 1582.12)  (meters 2432.02) (meters 1678.42) )
+  :fwd (checkpt "jakup-jungleb" #f)
+  :bwd (checkpt "jakup-jungleb" #f)
+  )
+
+;; jungle   jungleb    jungle
+;; give jungle checkpt     DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 933.228)  :bot (meters 933.228)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (checkpt "jakup-jungle" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1" #f)
+  )
+
+;; jungle   jungleb    jungle
+;; hide/show jungleb        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 859.395)  :bot (meters 859.395)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display jungleb-up #f)  ;; fwd is down it seems?
+  :bwd (display jungleb-up display)
+  )
+
+;; jungle   jungleb    jungle
+;; load jungle + jungleb    UP
+(static-load-boundary :flags (closed player)
+  :top (meters 849.056)  :bot (meters 849.056)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
+  :bwd (load jungle-up jungleb-up)
+  )
+
+;; VILLAGE1
+
+;; village1 jungle    jungle
+;; load village1 + jungle  DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 837.108)  :bot (meters 837.108)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (load village1-up jungle-up) ;; fwd is down it seems?
+  ;; :bwd (load training-up village1-up)
+  )
+
+;; village1 jungle    jungle
+;; hide/show village1        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 822.157)  :bot (meters 822.157)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display village1-up display)  ;; fwd is down it seems?
+  :bwd (display village1-up #f)
+  )
+
+;; village1 jungle    jungle
+;; give jungle checkpt       UP
+(static-load-boundary :flags (player )
+  ;;     y top                y bottom
+  :top (meters 793.624)  :bot (meters 697.497)
+  ;;          point 0 x        point 0 z      point 1 x        point 1 z
+  :points (  (meters 2132.49) (meters 1646.91)  (meters 2045.82) (meters 1740.3) )
+  :fwd (checkpt "jakup-jungle" #f)
+  :bwd (checkpt "jakup-jungle" #f)
+  )
+
+;; village1 jungle  village1
+;; give village1 checkpt     DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 696.095)  :bot (meters 696.095)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (checkpt "jakup-village1" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1" #f)
+  )
+
+;; village1 jungle  village1
+;; hide/show jungle        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 608.839)  :bot (meters 608.839)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display jungle-up #f)  ;; fwd is down it seems?
+  :bwd (display jungle-up display)
+  )
+
+;; village1 jungle  village1
+;; load village1 + jungle    UP
+(static-load-boundary :flags (closed player)
+  :top (meters 598.5)  :bot (meters 598.5)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
+  :bwd (load village1-up jungle-up)
+  )
+
+;; TRAINING
+
+;; training village1  village1
+;; load training + village1  DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 583.5)  :bot (meters 583.5)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (load training-up village1-up) ;; fwd is down it seems?
+  ;; :bwd (load training-up village1-up)
+  )
+
+;; training village1  village1
+;; hide/show training        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 568.549)  :bot (meters 568.549)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display training-up display)  ;; fwd is down it seems?
+  :bwd (display training-up #f)
+  )
+
+;; training village1  village1
+;; give village1 checkpt     UP
 (static-load-boundary :flags (player )
   ;;     y top                y bottom
   :top (meters 440.355)  :bot (meters 344.228)
@@ -1103,8 +1504,8 @@
   :bwd (checkpt "jakup-village1" #f)
   )
 
-;; BAD CHECKPOINTS! If player falls, they should 'lose' the checkpoint above them (important that this only works in one direction)
-
+;; training village1  training
+;; give training checkpt     DOWN
 (static-load-boundary :flags (closed player)
   :top (meters 332.377)  :bot (meters 332.377)
   :points (
@@ -1117,6 +1518,35 @@
   ;; :bwd (checkpt "jakup-village1" #f)
   )
 
+;; training village1  training
+;; hide/show village1        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 127.729)  :bot (meters 127.729)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display village1-up #f)  ;; fwd is down it seems?
+  :bwd (display village1-up display)
+  )
+
+;; training village1  training
+;; load training + village1  UP
+(static-load-boundary :flags (closed player)
+  :top (meters 112.435)  :bot (meters 112.435)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
+  :bwd (load training-up village1-up)
+  )
+
+;; END
 
 ))
 
