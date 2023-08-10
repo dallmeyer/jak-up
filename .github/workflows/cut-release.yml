@@ -1,0 +1,30 @@
+name: 🏭 Cut Mod Release
+
+on:
+  push:
+    branches:
+      - 'test-bundle/*'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Semver Bump Type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  cut_release:
+    name: "Cut Release"
+    uses: ./.github/workflows/mod-bundler.yml
+    with:
+      # TODO - generate metadata about mod
+      semverBump: ${{ inputs.bump }}
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
