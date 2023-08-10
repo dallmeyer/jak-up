@@ -4,7 +4,7 @@
 
 If you don't know what Only Up is, [watch this](https://www.youtube.com/watch?v=i6A0uuxxaxQ&start=994).
 
-Ping me on discord (barg034) or create an issue here if you find any issues
+This is still in alpha, only Hub 1 is completed so far. Ping me on discord (barg034) or create an issue here if you find any issues
 
 ## Known issues ##
 
