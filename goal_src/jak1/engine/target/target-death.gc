@@ -311,7 +311,7 @@
               )
             (set-continue! *game-info* "village1-hut")
             )
-           ((or (string= (-> arg0 name) "training-warp") (string= (-> arg0 name) "game-start"))
+           ((or (string= (-> arg0 name) "jakup-training-start") (string= (-> arg0 name) "training-warp") (string= (-> arg0 name) "game-start"))
             (if (logtest? (-> arg0 flags) (continue-flags game-start))
                 (close-specific-task! (game-task intro) (task-status need-resolution))
                 )

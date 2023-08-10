@@ -138,7 +138,8 @@
   (case (-> *speedrun-info* category)
     (((speedrun-category full-game))
       ;; spawn at the geyser warp gate checkpoint
-      (initialize! *game-info* 'game (the-as game-save #f) "game-start")
+      ;; (initialize! *game-info* 'game (the-as game-save #f) "game-start")
+      (initialize! *game-info* 'game (the-as game-save #f) "jakup-training-start")
       )
     (((speedrun-category il-training))
       ;; spawn at the geyser warp gate checkpoint
@@ -423,7 +424,25 @@
   (none)
   )
 
-(define *checkpoint-interval* (seconds 30))
+(define *best-height* (meters 0.0))
+(define *checkpoint-interval* (seconds 120))
+
+(define *tmp-continue-point* (new 'static 'continue-point
+                             :name "tmp"
+                             :level #f
+                             :trans (new 'static 'vector :w 1.0)
+                             :quat (new 'static 'quaternion :w 1.0)
+                             :camera-trans (new 'static 'vector :w 1.0)
+                             :camera-rot (new 'static 'array float 9)
+                             :load-commands '()
+                             :vis-nick #f
+                             :lev0 #f
+                             :disp0 #f
+                             :lev1 #f
+                             :disp1 #f
+                             )
+    )
+
 (define *practice-spawn-post-init* (the-as (function none) #f))
 (define *next-checkpoint-time* (the-as time-frame #f))
 (define *last-real-continue-point* (the-as continue-point #f))
@@ -433,21 +452,93 @@
   (start-speedrun (speedrun-category full-game))
   (none))
 
+(defun speedrun-target-state-toggle-continue? ()
+  (case (-> *target* state)
+    ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing target-hit-ground)
+      #t
+      )
+    (else
+      #f
+      )
+    )
+  )
+
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
   (when (and (-> *pc-settings* speedrunner-mode?)
              (not (paused?))
+             *target*
              (-> *speedrun-info* should-display?))
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))
+      ;; print checkpoint info
       (cond
-        ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
-          (draw-string-xy "Checkpoint available! Press L2 + Down to set!"
-                          buf 0 (- 220 (* 8 1)) (font-color flat-yellow) (font-flags shadow kerning))
+        ((-> *tmp-continue-point* lev0)
+          ;; player has set a checkpoint
+          (cond
+            ((speedrun-target-state-toggle-continue?)
+              (cond
+                ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+                  (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
+                                  buf 2 (- 222 (* 8 2)) 
+                                  (font-color default) 
+                                  (font-flags shadow kerning))
+                  )
+                (else
+                  (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                                  buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
+                  )
+                )
+              )
+            (else
+              (cond
+                ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+                  (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
+                                  buf 2 (- 222 (* 8 2)) 
+                                  (font-color default) 
+                                  (font-flags shadow kerning))
+                  )
+                (else
+                  (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                                  buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
+                  )
+                )
+              )
+            )
           )
         (else
-          (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
-                          buf 0 (- 220 (* 8 1)) (font-color flat-yellow) (font-flags shadow kerning))
+          ;; player hasn't set a checkpoint yet
+            (cond 
+              ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+                (cond
+                  ((speedrun-target-state-toggle-continue?)
+                    (draw-string-xy "~1LL2 + Down to set new checkpoint"
+                                    buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+                    )
+                  (else
+                    (draw-string-xy "~2LL2 + Down to set new checkpoint"
+                                    buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+                    )
+                  )
+                )
+              (else
+                (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                                buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+                )
+              )
+          )
+        )
+      ;; check/print height info
+      (cond
+        ((< (fabs (- *best-height* (-> *target* root trans y))) (meters 1))
+          (set! *best-height* (max *best-height* (-> *target* root trans y)))
+          (draw-string-xy (string-format "~3LBest height: ~5dm~%Current height: ~5dm" (the int (/ *best-height* METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
+                                buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
+          )
+        (else
+          (set! *best-height* (max *best-height* (-> *target* root trans y)))
+          (draw-string-xy (string-format "Best height: ~5dm~%Current height: ~5dm" (the int (/ *best-height* METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
+                                buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
           )
         )
       )
@@ -473,22 +564,6 @@
   (none)
   )
 
-(define *tmp-continue-point* (new 'static 'continue-point
-                             :name "tmp"
-                             :level #f
-                             :trans (new 'static 'vector :w 1.0)
-                             :quat (new 'static 'quaternion :w 1.0)
-                             :camera-trans (new 'static 'vector :w 1.0)
-                             :camera-rot (new 'static 'array float 9)
-                             :load-commands '()
-                             :vis-nick #f
-                             :lev0 #f
-                             :disp0 #f
-                             :lev1 #f
-                             :disp1 #f
-                             )
-    )
-
 (defun custom-reset-multi-post-init ()
   (generic-post-init)
   ;; (when *full-hp?* (full-hp))
@@ -500,9 +575,9 @@
   )
 
 (defun speedrun-practice-temp-checkpoint ()
-  (case (-> *target* state)
+  (cond
     ;; only allow reset to checkpoint if in one of these states
-    ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing)
+    ((speedrun-target-state-toggle-continue?)
       (when (-> *tmp-continue-point* lev0)
         (set! *practice-spawn-post-init* custom-reset-multi-post-init)
         ;; fully reset game if r2 held too
@@ -560,9 +635,8 @@
 (defun speedrun-practice-store-temp-checkpoint ()
   ;; outside of bsp breaks shit
   ;; (when (or (-> *level* level0 inside-boxes?) (-> *level* level1 inside-boxes?))
-    (case (-> *target* state)
-      ;; only store temp checkpoint if in one of these states
-      ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing)
+    (cond
+      ((speedrun-target-state-toggle-continue?)
         (when (or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
           ;; (set! *last-speedrun-practice-option* (speedrun-practice-option none))
           
@@ -655,6 +729,36 @@
     ;; Draw info to the screen
     ;; (draw-deload-continue-info)
     (speedrun-draw-settings)
+
+    (when (cpad-hold? 0 l2)
+      (cond 
+        ((cpad-pressed? 0 left)
+          (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
+          (set! *hud-collectable-view* 
+            (the hud-collectable-view
+              (mod 
+                (+ *hud-collectable-view* (- (hud-collectable-view max) 1))
+                (hud-collectable-view max)
+                )
+              )
+            )
+          (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
+          )
+        ((cpad-pressed? 0 right)
+          (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
+          (set! *hud-collectable-view* 
+            (the hud-collectable-view
+              (mod 
+                (+ *hud-collectable-view* 1)
+                (hud-collectable-view max)
+                )
+              )
+            )
+          (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
+          )
+        )
+      )
+
     ;;Disable any active cheats
     (set! (-> *pc-settings* cheats) (the-as pc-cheats #x0))
     ;; Run after-blackout speedrun setup (if needed)

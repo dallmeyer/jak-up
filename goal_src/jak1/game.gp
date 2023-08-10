@@ -1638,23 +1638,26 @@
 ;; Set up the build system to build the level geometry
 ;; this path is relative to the custom_levels/ folder
 ;; it should point to the .jsonc file that specifies the level.
-(build-custom-level "training-up")
-(custom-level-cgo "UP0.DGO" "training-up/training-up.gd")
+(build-custom-level "jakup-training")
+(custom-level-cgo "UP0.DGO" "jakup-training/jakup-training.gd")
 
-(build-custom-level "village1-up")
-(custom-level-cgo "UP1.DGO" "village1-up/village1-up.gd")
+(build-custom-level "jakup-village1")
+(custom-level-cgo "UP1.DGO" "jakup-village1/jakup-village1.gd")
 
-(build-custom-level "jungle-up")
-(custom-level-cgo "UP2.DGO" "jungle-up/jungle-up.gd")
+(build-custom-level "jakup-jungle")
+(custom-level-cgo "UP2.DGO" "jakup-jungle/jakup-jungle.gd")
 
-(build-custom-level "jungleb-up")
-(custom-level-cgo "UP3.DGO" "jungleb-up/jungleb-up.gd")
+(build-custom-level "jakup-jungleb")
+(custom-level-cgo "UP3.DGO" "jakup-jungleb/jakup-jungleb.gd")
 
-(build-custom-level "misty-up")
-(custom-level-cgo "UP4.DGO" "misty-up/misty-up.gd")
+(build-custom-level "jakup-misty")
+(custom-level-cgo "UP4.DGO" "jakup-misty/jakup-misty.gd")
 
-(build-custom-level "beach-up")
-(custom-level-cgo "UP5.DGO" "beach-up/beach-up.gd")
+(build-custom-level "jakup-beach")
+(custom-level-cgo "UP5.DGO" "jakup-beach/jakup-beach.gd")
+
+(build-custom-level "jakup-fire")
+(custom-level-cgo "UP6.DGO" "jakup-fire/jakup-fire.gd")
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code

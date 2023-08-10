@@ -1092,7 +1092,7 @@
   :bwd (checkpt "finalboss-start" #f)
   )
 
-;; only-up style level boundaries should follow this pattern (start from bottom):
+;; jakup-only style level boundaries should follow this pattern (start from bottom):
 ;; lev0     lev1      checkpt     action                    dir
 ;; --------|---------|-----------|-------------------------|----
 ;; etc
@@ -1124,6 +1124,91 @@
 ;; training none      training    baseline                  n/a
 
 
+;; BEACH
+
+;; beach   fire    fire
+;; load beach + fire  DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 2652.65)  :bot (meters 2652.65)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (load jakup-beach jakup-fire) ;; fwd is down it seems?
+  ;; :bwd (load jakup-training jakup-village1)
+  )
+
+;; beach   fire    fire
+;; hide/show beach        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 2643.06)  :bot (meters 2643.06)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display jakup-beach display)  ;; fwd is down it seems?
+  :bwd (display jakup-beach #f)
+  )
+
+;; beach   fire    fire
+;; give fire checkpt       UP
+(static-load-boundary :flags (player )
+  ;;     y top                y bottom
+  :top (meters 2048.19)  :bot (meters 1990.0)
+  ;;          point 0 x        point 0 z      point 1 x        point 1 z
+  :points (
+    (meters 1848.35) (meters 1780.2)
+    (meters 1734.43) (meters 1837.26)
+    )
+  :fwd (checkpt "jakup-fire-start" #f)
+  :bwd (checkpt "jakup-fire-start" #f)
+  )
+
+;; beach   fire    beach
+;; give beach checkpt     DOWN
+(static-load-boundary :flags (closed player)
+  :top (meters 1989.98)  :bot (meters 1989.98)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (checkpt "jakup-beach-start" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1-start" #f)
+  )
+
+;; beach   fire    beach
+;; hide/show fire        BOTH
+(static-load-boundary :flags (closed player)
+  :top (meters 1773.05)  :bot (meters 1773.05)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  :fwd (display jakup-fire #f)  ;; fwd is down it seems?
+  :bwd (display jakup-fire display)
+  )
+
+;; beach   fire    beach
+;; load beach + fire    UP
+(static-load-boundary :flags (closed player)
+  :top (meters 1762.71)  :bot (meters 1762.71)
+  :points (
+    (meters 272.536) (meters 2727.19)
+    (meters 1348.93) (meters -184.095)
+    (meters 4023.93) (meters 804.937)
+    (meters 2947.54) (meters 3716.22)
+    )
+  ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  :bwd (load jakup-beach jakup-fire)
+  )
 
 ;; MISTY
 
@@ -1137,8 +1222,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (load misty-up beach-up) ;; fwd is down it seems?
-  ;; :bwd (load training-up village1-up)
+  :fwd (load jakup-misty jakup-beach) ;; fwd is down it seems?
+  ;; :bwd (load jakup-training jakup-village1)
   )
 
 ;; misty   beach    beach
@@ -1151,8 +1236,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display misty-up display)  ;; fwd is down it seems?
-  :bwd (display misty-up #f)
+  :fwd (display jakup-misty display)  ;; fwd is down it seems?
+  :bwd (display jakup-misty #f)
   )
 
 ;; misty   beach    beach
@@ -1165,8 +1250,8 @@
     (meters 1788.63) (meters 2138.39)
     (meters 1915.91) (meters 2132.87)
     )
-  :fwd (checkpt "jakup-beach" #f)
-  :bwd (checkpt "jakup-beach" #f)
+  :fwd (checkpt "jakup-beach-start" #f)
+  :bwd (checkpt "jakup-beach-start" #f)
   )
 
 ;; misty   beach    misty
@@ -1179,8 +1264,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (checkpt "jakup-misty" #f)  ;; fwd is down it seems?
-  ;; :bwd (checkpt "jakup-village1" #f)
+  :fwd (checkpt "jakup-misty-start" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1-start" #f)
   )
 
 ;; misty   beach    misty
@@ -1193,8 +1278,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display beach-up #f)  ;; fwd is down it seems?
-  :bwd (display beach-up display)
+  :fwd (display jakup-beach #f)  ;; fwd is down it seems?
+  :bwd (display jakup-beach display)
   )
 
 ;; misty   beach    misty
@@ -1207,8 +1292,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
-  :bwd (load misty-up beach-up)
+  ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  :bwd (load jakup-misty jakup-beach)
   )
 
 ;; JUNGLEB
@@ -1223,8 +1308,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (load jungleb-up misty-up) ;; fwd is down it seems?
-  ;; :bwd (load training-up village1-up)
+  :fwd (load jakup-jungleb jakup-misty) ;; fwd is down it seems?
+  ;; :bwd (load jakup-training jakup-village1)
   )
 
 ;; jungleb   misty    misty
@@ -1237,8 +1322,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display jungleb-up display)  ;; fwd is down it seems?
-  :bwd (display jungleb-up #f)
+  :fwd (display jakup-jungleb display)  ;; fwd is down it seems?
+  :bwd (display jakup-jungleb #f)
   )
 
 ;; jungleb   misty    misty
@@ -1251,8 +1336,8 @@
     (meters 2155.79) (meters 1711.78)
     (meters 2040.78) (meters 1656.94)
     )
-  :fwd (checkpt "jakup-misty" #f)
-  :bwd (checkpt "jakup-misty" #f)
+  :fwd (checkpt "jakup-misty-start" #f)
+  :bwd (checkpt "jakup-misty-start" #f)
   )
 
 ;; jungleb   misty    jungleb
@@ -1265,8 +1350,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (checkpt "jakup-jungleb" #f)  ;; fwd is down it seems?
-  ;; :bwd (checkpt "jakup-village1" #f)
+  :fwd (checkpt "jakup-jungleb-start" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1-start" #f)
   )
 
 ;; jungleb   misty    jungleb
@@ -1279,8 +1364,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display misty-up #f)  ;; fwd is down it seems?
-  :bwd (display misty-up display)
+  :fwd (display jakup-misty #f)  ;; fwd is down it seems?
+  :bwd (display jakup-misty display)
   )
 
 ;; jungleb   misty    jungleb
@@ -1293,8 +1378,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
-  :bwd (load jungleb-up misty-up)
+  ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  :bwd (load jakup-jungleb jakup-misty)
   )
 
 ;; JUNGLE
@@ -1309,8 +1394,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (load jungle-up jungleb-up) ;; fwd is down it seems?
-  ;; :bwd (load training-up village1-up)
+  :fwd (load jakup-jungle jakup-jungleb) ;; fwd is down it seems?
+  ;; :bwd (load jakup-training jakup-village1)
   )
 
 ;; jungle   jungleb    jungleb
@@ -1323,8 +1408,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display jungle-up display)  ;; fwd is down it seems?
-  :bwd (display jungle-up #f)
+  :fwd (display jakup-jungle display)  ;; fwd is down it seems?
+  :bwd (display jakup-jungle #f)
   )
 
 ;; jungle   jungleb    jungleb
@@ -1334,8 +1419,8 @@
   :top (meters 991.906)  :bot (meters 933.709)
   ;;          point 0 x        point 0 z      point 1 x        point 1 z
   :points (  (meters 2348.61) (meters 1582.12)  (meters 2432.02) (meters 1678.42) )
-  :fwd (checkpt "jakup-jungleb" #f)
-  :bwd (checkpt "jakup-jungleb" #f)
+  :fwd (checkpt "jakup-jungleb-start" #f)
+  :bwd (checkpt "jakup-jungleb-start" #f)
   )
 
 ;; jungle   jungleb    jungle
@@ -1348,8 +1433,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (checkpt "jakup-jungle" #f)  ;; fwd is down it seems?
-  ;; :bwd (checkpt "jakup-village1" #f)
+  :fwd (checkpt "jakup-jungle-start" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1-start" #f)
   )
 
 ;; jungle   jungleb    jungle
@@ -1362,8 +1447,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display jungleb-up #f)  ;; fwd is down it seems?
-  :bwd (display jungleb-up display)
+  :fwd (display jakup-jungleb #f)  ;; fwd is down it seems?
+  :bwd (display jakup-jungleb display)
   )
 
 ;; jungle   jungleb    jungle
@@ -1376,8 +1461,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
-  :bwd (load jungle-up jungleb-up)
+  ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  :bwd (load jakup-jungle jakup-jungleb)
   )
 
 ;; VILLAGE1
@@ -1392,8 +1477,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (load village1-up jungle-up) ;; fwd is down it seems?
-  ;; :bwd (load training-up village1-up)
+  :fwd (load jakup-village1 jakup-jungle) ;; fwd is down it seems?
+  ;; :bwd (load jakup-training jakup-village1)
   )
 
 ;; village1 jungle    jungle
@@ -1406,8 +1491,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display village1-up display)  ;; fwd is down it seems?
-  :bwd (display village1-up #f)
+  :fwd (display jakup-village1 display)  ;; fwd is down it seems?
+  :bwd (display jakup-village1 #f)
   )
 
 ;; village1 jungle    jungle
@@ -1417,8 +1502,8 @@
   :top (meters 793.624)  :bot (meters 697.497)
   ;;          point 0 x        point 0 z      point 1 x        point 1 z
   :points (  (meters 2132.49) (meters 1646.91)  (meters 2045.82) (meters 1740.3) )
-  :fwd (checkpt "jakup-jungle" #f)
-  :bwd (checkpt "jakup-jungle" #f)
+  :fwd (checkpt "jakup-jungle-start" #f)
+  :bwd (checkpt "jakup-jungle-start" #f)
   )
 
 ;; village1 jungle  village1
@@ -1431,8 +1516,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (checkpt "jakup-village1" #f)  ;; fwd is down it seems?
-  ;; :bwd (checkpt "jakup-village1" #f)
+  :fwd (checkpt "jakup-village1-start" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1-start" #f)
   )
 
 ;; village1 jungle  village1
@@ -1445,8 +1530,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display jungle-up #f)  ;; fwd is down it seems?
-  :bwd (display jungle-up display)
+  :fwd (display jakup-jungle #f)  ;; fwd is down it seems?
+  :bwd (display jakup-jungle display)
   )
 
 ;; village1 jungle  village1
@@ -1459,8 +1544,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
-  :bwd (load village1-up jungle-up)
+  ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  :bwd (load jakup-village1 jakup-jungle)
   )
 
 ;; TRAINING
@@ -1475,8 +1560,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (load training-up village1-up) ;; fwd is down it seems?
-  ;; :bwd (load training-up village1-up)
+  :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  ;; :bwd (load jakup-training jakup-village1)
   )
 
 ;; training village1  village1
@@ -1489,8 +1574,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display training-up display)  ;; fwd is down it seems?
-  :bwd (display training-up #f)
+  :fwd (display jakup-training display)  ;; fwd is down it seems?
+  :bwd (display jakup-training #f)
   )
 
 ;; training village1  village1
@@ -1500,8 +1585,8 @@
   :top (meters 440.355)  :bot (meters 344.228)
   ;;          point 0 x        point 0 z      point 1 x        point 1 z
   :points (  (meters 1917.55) (meters 1883.97)  (meters 2041.89) (meters 1911.75) )
-  :fwd (checkpt "jakup-village1" #f)
-  :bwd (checkpt "jakup-village1" #f)
+  :fwd (checkpt "jakup-village1-start" #f)
+  :bwd (checkpt "jakup-village1-start" #f)
   )
 
 ;; training village1  training
@@ -1514,8 +1599,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (checkpt "jakup-training" #f)  ;; fwd is down it seems?
-  ;; :bwd (checkpt "jakup-village1" #f)
+  :fwd (checkpt "jakup-training-start" #f)  ;; fwd is down it seems?
+  ;; :bwd (checkpt "jakup-village1-start" #f)
   )
 
 ;; training village1  training
@@ -1528,8 +1613,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  :fwd (display village1-up #f)  ;; fwd is down it seems?
-  :bwd (display village1-up display)
+  :fwd (display jakup-village1 #f)  ;; fwd is down it seems?
+  :bwd (display jakup-village1 display)
   )
 
 ;; training village1  training
@@ -1542,8 +1627,8 @@
     (meters 4023.93) (meters 804.937)
     (meters 2947.54) (meters 3716.22)
     )
-  ;; :fwd (load training-up village1-up) ;; fwd is down it seems?
-  :bwd (load training-up village1-up)
+  ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
+  :bwd (load jakup-training jakup-village1)
   )
 
 ;; END

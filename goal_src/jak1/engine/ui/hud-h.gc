@@ -146,6 +146,7 @@
   (original)
   (game-totals)
   (level-totals)
+  (max)
   )
 
 (define *hud-collectable-view* (hud-collectable-view original))

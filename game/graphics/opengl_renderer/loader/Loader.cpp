@@ -177,6 +177,9 @@ void Loader::loader_thread() {
       // std::this_thread::sleep_for(std::chrono::milliseconds(1500));
 
       // load the fr3 file
+
+      fmt::print("Trying to load {}.fr3\n", uppercase_string(lev));
+
       prof().begin_event("read-file");
       Timer disk_timer;
       auto data =

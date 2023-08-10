@@ -841,7 +841,8 @@
 
   ;; if we're a new game, set our checkpoint.
   (when (nonzero? (-> save new-game))
-    (set-continue! obj "game-start")
+    ;; (set-continue! obj "game-start")
+    (set-continue! obj "jakup-training-start")
     (set! save save)
     (goto cfg-134)
     )

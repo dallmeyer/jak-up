@@ -163,6 +163,7 @@
   (-> obj task-perm-list data arg0)
   )
 
+(define-extern *best-height* float)
 (defmethod initialize! game-info ((obj game-info) (cause symbol) (save-to-load game-save) (continue-point-override string))
   "Initialize the game-info.
     The cause can be 'dead if you die, or 'game to reset everything.
@@ -221,13 +222,14 @@
                            "demo-start"
                            )
                           (*debug-segment*
-                            "jakup-training" ;; "village1-hut"
+                            "jakup-training-start" ;; "village1-hut"
                             )
                           (else
                             "title-start"
                             )
                           )
                     )
+     (set! *best-height* (meters 0.0))
      (set! (-> obj auto-save-count) 0)
      (set! (-> *setting-control* default auto-save) #f)
      (set! (-> obj money) 0.0)
