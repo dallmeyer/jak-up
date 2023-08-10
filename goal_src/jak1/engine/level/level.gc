@@ -1054,6 +1054,12 @@
 (defmethod is-object-visible? level ((obj level) (arg0 int))
   "Is arg0 visible? Note that this will return #f if the visibility data is not loaded."
 
+  (case (-> obj name)
+    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire)
+      (return #t)
+      )
+    )
+
   ;; note : pc port added option to show every actor regardless
   (with-pc (if (not (-> *pc-settings* ps2-actor-vis?)) (return #t)))
 
