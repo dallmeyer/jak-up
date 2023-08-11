@@ -548,7 +548,7 @@
             )
           )
         (cond 
-          ((< (fabs (- *worst-fall* fall-dist)) (meters 1))
+          ((and (> *worst-fall* (meters 1)) (< (fabs (- *worst-fall* fall-dist)) (meters 1)))
             (draw-string-xy (string-format "~7LWorst fall: ~5dm" (the int (/ *worst-fall* METER_LENGTH)))
                                 buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))
             )
