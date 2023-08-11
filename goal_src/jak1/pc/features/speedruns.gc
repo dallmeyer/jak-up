@@ -424,6 +424,8 @@
   (none)
   )
 
+(define *last-grounded-height* (the-as float #f))
+(define *worst-fall* (meters 0.0))
 (define *best-height* (meters 0.0))
 (define *checkpoint-interval* (seconds 120))
 
@@ -463,11 +465,16 @@
     )
   )
 
+(defun speedrun-target-grounded? ()
+  (logtest? (-> *target* control status) (cshape-moving-flags onsurf))
+  )
+
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
   (when (and (-> *pc-settings* speedrunner-mode?)
              (not (paused?))
              *target*
+             (!= (-> *target* current-level name) 'title)
              (-> *speedrun-info* should-display?))
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))
@@ -528,9 +535,33 @@
               )
           )
         )
+      ;; check/print fall info
+      (let ((fall-dist (- *last-grounded-height* (-> *target* root trans y))))
+        (cond 
+          ((speedrun-target-grounded?)
+            (set! *last-grounded-height* (-> *target* root trans y))
+            )
+          (else
+            (when (> fall-dist *worst-fall*)
+              (set! *worst-fall* fall-dist)
+              )
+            )
+          )
+        (cond 
+          ((< (fabs (- *worst-fall* fall-dist)) (meters 1))
+            (draw-string-xy (string-format "~7LWorst fall: ~5dm" (the int (/ *worst-fall* METER_LENGTH)))
+                                buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))
+            )
+          (else
+            (draw-string-xy (string-format "Worst fall: ~5dm" (the int (/ *worst-fall* METER_LENGTH)))
+                                buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))            
+            )
+          )
+        )
+      
       ;; check/print height info
       (cond
-        ((< (fabs (- *best-height* (-> *target* root trans y))) (meters 1))
+        ((< (fabs (- *best-height* (-> *target* root trans y))) (meters 5))
           (set! *best-height* (max *best-height* (-> *target* root trans y)))
           (draw-string-xy (string-format "~3LBest height: ~5dm~%Current height: ~5dm" (the int (/ *best-height* METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
                                 buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))

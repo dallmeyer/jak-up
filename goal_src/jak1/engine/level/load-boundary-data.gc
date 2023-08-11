@@ -1158,11 +1158,11 @@
 ;; give fire checkpt       UP
 (static-load-boundary :flags (player )
   ;;     y top                y bottom
-  :top (meters 2048.19)  :bot (meters 1990.0)
+  :top (meters 2036.45)  :bot (meters 1978.26)
   ;;          point 0 x        point 0 z      point 1 x        point 1 z
   :points (
-    (meters 1848.35) (meters 1780.2)
-    (meters 1734.43) (meters 1837.26)
+    (meters 1852.36) (meters 1786.06)
+    (meters 1738.44) (meters 1843.12)
     )
   :fwd (checkpt "jakup-fire-start" #f)
   :bwd (checkpt "jakup-fire-start" #f)
@@ -1171,7 +1171,7 @@
 ;; beach   fire    beach
 ;; give beach checkpt     DOWN
 (static-load-boundary :flags (closed player)
-  :top (meters 1989.98)  :bot (meters 1989.98)
+  :top (meters 1977.14)  :bot (meters 1977.14)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)

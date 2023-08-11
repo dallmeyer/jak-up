@@ -1979,12 +1979,12 @@
                            :name 'jakup-training
                            :visname 'jakup-training-vis ;; name + -vis
                            :nickname 'up0          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(training)
+                           :sound-banks '(training)
+                           :music-bank 'village1
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*training-mood*
+                           :mood-func 'update-mood-training
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
@@ -2022,12 +2022,12 @@
                            :name 'jakup-village1
                            :visname 'jakup-village1-vis ;; name + -vis
                            :nickname 'up1          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(village1)
+                           :sound-banks '(village1)
+                           :music-bank 'village1
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*village1-mood*
+                           :mood-func 'update-mood-village1
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
@@ -2064,12 +2064,12 @@
                            :name 'jakup-jungle
                            :visname 'jakup-jungle-vis ;; name + -vis
                            :nickname 'up2          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(jungle)
+                           :sound-banks '(jungle)
+                           :music-bank 'jungle
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*jungle-mood*
+                           :mood-func 'update-mood-jungle
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
@@ -2106,12 +2106,12 @@
                            :name 'jakup-jungleb
                            :visname 'jakup-jungleb-vis ;; name + -vis
                            :nickname 'up3          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(jungleb)
+                           :sound-banks '(jungleb)
+                           :music-bank 'jungleb
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*jungleb-mood*
+                           :mood-func 'update-mood-jungleb
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
@@ -2148,12 +2148,12 @@
                            :name 'jakup-misty
                            :visname 'jakup-misty-vis ;; name + -vis
                            :nickname 'up4          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(misty)
+                           :sound-banks '(misty)
+                           :music-bank 'misty
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*misty-mood*
+                           :mood-func 'update-mood-misty
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
@@ -2190,12 +2190,12 @@
                            :name 'jakup-beach
                            :visname 'jakup-beach-vis ;; name + -vis
                            :nickname 'up5          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(beach)
+                           :sound-banks '(beach)
+                           :music-bank 'beach
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*beach-mood*
+                           :mood-func 'update-mood-village1
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
@@ -2232,12 +2232,12 @@
                            :name 'jakup-fire
                            :visname 'jakup-fire-vis ;; name + -vis
                            :nickname 'up6          ;; nickname
-                           :packages '()
-                           :sound-banks '()
-                           :music-bank #f
+                           :packages '(firecanyon)
+                           :sound-banks '(firecanyon)
+                           :music-bank 'firecanyon
                            :ambient-sounds '()
-                           :mood '*default-mood*
-                           :mood-func 'update-mood-default
+                           :mood '*firecanyon-mood*
+                           :mood-func 'update-mood-firecanyon
                            :ocean #f
                            :sky #t
                            :continues '((new 'static 'continue-point
