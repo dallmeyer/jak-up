@@ -551,6 +551,7 @@
               )
           )
         )
+
       ;; check/print fall info
       (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
         (cond 
@@ -587,6 +588,50 @@
           (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
           (draw-string-xy (string-format "Best height: ~5dm~%Current height: ~5dm" (the int (/ (-> *jakup-info* best-height) METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
                                 buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
+          )
+        )
+
+      ;; check for camera toggle
+      (when (or (and (not *debug-segment*) (cpad-pressed? 0 r3))
+                (and *debug-segment* (cpad-pressed? 0 l3))
+                )
+        (set! (-> *jakup-info* cam)
+          (the jakup-cam
+            (mod 
+              (+ (-> *jakup-info* cam) 1)
+              (jakup-cam max)
+              )
+            )
+          )
+        (case (-> *jakup-info* cam)
+          (((jakup-cam wide-no-collide))
+            (send-event *camera* 'change-state cam-stick 0)
+            (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+            )
+          (((jakup-cam locked))
+            (send-event *camera* 'change-state cam-lookat 0)
+            ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+            )
+          (else ;; ((jakup-cam original))
+            (send-event *camera* 'change-state *camera-base-mode* 0)
+            (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
+            )
+          )
+        )
+      ;; print camera info if not original
+      (let ((cam-button (if *debug-segment* "L3" "R3")))
+        (case (-> *jakup-info* cam)
+          (((jakup-cam wide-no-collide))
+            (draw-string-xy (string-format "wide camera (~S to toggle)" cam-button)
+                                buf 255 5 (font-color default) (font-flags middle shadow kerning))
+            )
+          (((jakup-cam locked))
+            (draw-string-xy (string-format "locked camera (~S to toggle)" cam-button)
+                                buf 255 5 (font-color default) (font-flags middle shadow kerning))
+            )
+          (else ;; ((jakup-cam original))
+            ;; print nothing
+            )
           )
         )
       )

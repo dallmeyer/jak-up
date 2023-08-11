@@ -52,6 +52,8 @@
   :type int32
   (original 0)
   (wide-no-collide 1)
+  (locked 2)
+  (max 3)
   )
 
 (deftype jakup-info (structure)
