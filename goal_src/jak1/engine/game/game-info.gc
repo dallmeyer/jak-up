@@ -164,6 +164,7 @@
   )
 
 (define-extern *best-height* float)
+(define-extern *worst-fall* float)
 (defmethod initialize! game-info ((obj game-info) (cause symbol) (save-to-load game-save) (continue-point-override string))
   "Initialize the game-info.
     The cause can be 'dead if you die, or 'game to reset everything.
@@ -230,6 +231,7 @@
                           )
                     )
      (set! *best-height* (meters 0.0))
+     (set! *worst-fall* (meters 0.0))
      (set! (-> obj auto-save-count) 0)
      (set! (-> *setting-control* default auto-save) #f)
      (set! (-> obj money) 0.0)
