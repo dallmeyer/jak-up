@@ -26,7 +26,7 @@ jobs:
       metadataDescription: "Only Up meets Jak. Alpha Build"
       metadataSupportedGames: "jak1"
       metadataAuthors: "barg"
-      metadataTags: "beta,gameplay-mod,challenge,custom-level,speedrunning"
+      metadataTags: "beta,challenge,speedrunning"
       metadataWebsiteUrl: "https://github.com/dallmeyer/jak-up/blob/main/README.md"
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
