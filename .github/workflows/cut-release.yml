@@ -1,9 +1,6 @@
 name: 🏭 Cut Mod Release
 
 on:
-  push:
-    branches:
-      - 'test-bundle/*'
   workflow_dispatch:
     inputs:
       bump:
@@ -22,9 +19,14 @@ permissions:
 jobs:
   cut_release:
     name: "Cut Release"
-    uses: ./.github/workflows/mod-bundler.yml
+    uses: open-goal/mod-bundling-tools/.github/workflows/mod-bundler.yml@v1
     with:
-      # TODO - generate metadata about mod
       semverBump: ${{ inputs.bump }}
+      metadataName: "Test Mod Bundle"
+      metadataDescription: "This is a test mod bundle. 2"
+      metadataSupportedGames: "jak1"
+      metadataAuthors: "barg,vaser"
+      metadataTags: "rng,gameplay"
+      metadataWebsiteUrl: "https://www.example.com/this/is/optional"
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
