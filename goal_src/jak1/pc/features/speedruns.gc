@@ -424,10 +424,24 @@
   (none)
   )
 
-(define *last-grounded-height* (the-as float #f))
-(define *worst-fall* (meters 0.0))
-(define *best-height* (meters 0.0))
-(define *checkpoint-interval* (seconds 120))
+(define *jakup-info* 
+  (new 'static 'jakup-info
+    :last-grounded-height (meters 0.0)
+    :worst-fall (meters 0.0)
+    :best-height (meters 0.0)
+    ;; :next-checkpoint-time (the-as time-frame #f)
+    :cam (jakup-cam original)
+    )
+  )
+
+(defun reset-jakup-info ()
+  (set! (-> *jakup-info* last-grounded-height) (meters 0.0))
+  (set! (-> *jakup-info* worst-fall) (meters 0.0))
+  (set! (-> *jakup-info* best-height) (meters 0.0))
+  (set! (-> *jakup-info* next-checkpoint-time) (the-as time-frame #f))
+  (set! (-> *jakup-info* cam) (jakup-cam original))
+  (none)
+  )
 
 (define *tmp-continue-point* (new 'static 'continue-point
                              :name "tmp"
@@ -446,7 +460,6 @@
     )
 
 (define *practice-spawn-post-init* (the-as (function none) #f))
-(define *next-checkpoint-time* (the-as time-frame #f))
 (define *last-real-continue-point* (the-as continue-point #f))
 
 (defun speedrun-start-full-game-run ()
@@ -485,28 +498,30 @@
           (cond
             ((speedrun-target-state-toggle-continue?)
               (cond
-                ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+                ((or (= (-> *jakup-info* next-checkpoint-time) #f) 
+                     (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
                   (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
                                   buf 2 (- 222 (* 8 2)) 
                                   (font-color default) 
                                   (font-flags shadow kerning))
                   )
                 (else
-                  (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                  (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
                                   buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
                   )
                 )
               )
             (else
               (cond
-                ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+                ((or (= (-> *jakup-info* next-checkpoint-time) #f)
+                     (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
                   (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
                                   buf 2 (- 222 (* 8 2)) 
                                   (font-color default) 
                                   (font-flags shadow kerning))
                   )
                 (else
-                  (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                  (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
                                   buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
                   )
                 )
@@ -516,7 +531,8 @@
         (else
           ;; player hasn't set a checkpoint yet
             (cond 
-              ((or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+              ((or (= (-> *jakup-info* next-checkpoint-time) #f)
+                   (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
                 (cond
                   ((speedrun-target-state-toggle-continue?)
                     (draw-string-xy "~1LL2 + Down to set new checkpoint"
@@ -529,31 +545,33 @@
                   )
                 )
               (else
-                (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- *next-checkpoint-time* (current-time)) TICKS_PER_SECOND))
+                (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
                                 buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
                 )
               )
           )
         )
+
       ;; check/print fall info
-      (let ((fall-dist (- *last-grounded-height* (-> *target* root trans y))))
+      (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
         (cond 
           ((speedrun-target-grounded?)
-            (set! *last-grounded-height* (-> *target* root trans y))
+            (set! (-> *jakup-info* last-grounded-height) (-> *target* root trans y))
             )
           (else
-            (when (> fall-dist *worst-fall*)
-              (set! *worst-fall* fall-dist)
+            (when (> fall-dist (-> *jakup-info* worst-fall))
+              (set! (-> *jakup-info* worst-fall) fall-dist)
               )
             )
           )
         (cond 
-          ((and (> *worst-fall* (meters 1)) (< (fabs (- *worst-fall* fall-dist)) (meters 1)))
-            (draw-string-xy (string-format "~7LWorst fall: ~5dm" (the int (/ *worst-fall* METER_LENGTH)))
+          ((and (> (-> *jakup-info* worst-fall) (meters 1)) 
+                (< (fabs (- (-> *jakup-info* worst-fall) fall-dist)) (meters 1)))
+            (draw-string-xy (string-format "~7LWorst fall: ~5dm" (the int (/ (-> *jakup-info* worst-fall) METER_LENGTH)))
                                 buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))
             )
           (else
-            (draw-string-xy (string-format "Worst fall: ~5dm" (the int (/ *worst-fall* METER_LENGTH)))
+            (draw-string-xy (string-format "Worst fall: ~5dm" (the int (/ (-> *jakup-info* worst-fall) METER_LENGTH)))
                                 buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))            
             )
           )
@@ -561,15 +579,59 @@
       
       ;; check/print height info
       (cond
-        ((< (fabs (- *best-height* (-> *target* root trans y))) (meters 5))
-          (set! *best-height* (max *best-height* (-> *target* root trans y)))
-          (draw-string-xy (string-format "~3LBest height: ~5dm~%Current height: ~5dm" (the int (/ *best-height* METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
+        ((< (fabs (- (-> *jakup-info* best-height) (-> *target* root trans y))) (meters 5))
+          (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
+          (draw-string-xy (string-format "~3LBest height: ~5dm~%Current height: ~5dm" (the int (/ (-> *jakup-info* best-height) METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
                                 buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
           )
         (else
-          (set! *best-height* (max *best-height* (-> *target* root trans y)))
-          (draw-string-xy (string-format "Best height: ~5dm~%Current height: ~5dm" (the int (/ *best-height* METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
+          (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
+          (draw-string-xy (string-format "Best height: ~5dm~%Current height: ~5dm" (the int (/ (-> *jakup-info* best-height) METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
                                 buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
+          )
+        )
+
+      ;; check for camera toggle
+      (when (or (and (not *debug-segment*) (cpad-pressed? 0 r3))
+                (and *debug-segment* (cpad-pressed? 0 l3))
+                )
+        (set! (-> *jakup-info* cam)
+          (the jakup-cam
+            (mod 
+              (+ (-> *jakup-info* cam) 1)
+              (jakup-cam max)
+              )
+            )
+          )
+        (case (-> *jakup-info* cam)
+          (((jakup-cam wide-no-collide))
+            (send-event *camera* 'change-state cam-stick 0)
+            (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+            )
+          (((jakup-cam locked))
+            (send-event *camera* 'change-state cam-lookat 0)
+            ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+            )
+          (else ;; ((jakup-cam original))
+            (send-event *camera* 'change-state *camera-base-mode* 0)
+            (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
+            )
+          )
+        )
+      ;; print camera info if not original
+      (let ((cam-button (if *debug-segment* "L3" "R3")))
+        (case (-> *jakup-info* cam)
+          (((jakup-cam wide-no-collide))
+            (draw-string-xy (string-format "wide camera (~S to toggle)" cam-button)
+                                buf 255 5 (font-color default) (font-flags middle shadow kerning))
+            )
+          (((jakup-cam locked))
+            (draw-string-xy (string-format "locked camera (~S to toggle)" cam-button)
+                                buf 255 5 (font-color default) (font-flags middle shadow kerning))
+            )
+          (else ;; ((jakup-cam original))
+            ;; print nothing
+            )
           )
         )
       )
@@ -668,7 +730,7 @@
   ;; (when (or (-> *level* level0 inside-boxes?) (-> *level* level1 inside-boxes?))
     (cond
       ((speedrun-target-state-toggle-continue?)
-        (when (or (= *next-checkpoint-time* #f) (<= *next-checkpoint-time* (current-time)))
+        (when (or (= (-> *jakup-info* next-checkpoint-time) #f) (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
           ;; (set! *last-speedrun-practice-option* (speedrun-practice-option none))
           
           ;; assume current continue is good enough for the current location
@@ -694,7 +756,7 @@
           ;;   )
 
           ;; wait 5m til next checkpoint
-          (set! *next-checkpoint-time* (+ (current-time) *checkpoint-interval*))
+          (set! (-> *jakup-info* next-checkpoint-time) (+ (current-time) *checkpoint-interval*))
           (sound-play "select-menu")
           )
         )

@@ -46,6 +46,26 @@
    )
   )
 
+(define *checkpoint-interval* (seconds 120))
+
+(defenum jakup-cam
+  :type int32
+  (original 0)
+  (wide-no-collide 1)
+  (locked 2)
+  (max 3)
+  )
+
+(deftype jakup-info (structure)
+  (
+   (next-checkpoint-time time-frame)
+   (last-grounded-height float)
+   (best-height float)
+   (worst-fall float)
+   (cam jakup-cam)
+   )
+  )
+
 (define-extern start-speedrun (function speedrun-category none))
 (define-extern is-speedrun-category? (function symbol symbol))
 (define-extern hide-speedrun-display (function none))
