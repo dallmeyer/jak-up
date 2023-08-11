@@ -22,11 +22,11 @@ jobs:
     uses: open-goal/mod-bundling-tools/.github/workflows/mod-bundler.yml@v1
     with:
       semverBump: ${{ inputs.bump }}
-      metadataName: "Test Mod Bundle"
-      metadataDescription: "This is a test mod bundle. 2"
+      metadataName: "Jak Up"
+      metadataDescription: "Only Up meets Jak. Alpha Build"
       metadataSupportedGames: "jak1"
-      metadataAuthors: "barg,vaser"
-      metadataTags: "rng,gameplay"
-      metadataWebsiteUrl: "https://www.example.com/this/is/optional"
+      metadataAuthors: "barg"
+      metadataTags: "beta,gameplay-mod,challenge,custom-level,speedrunning"
+      metadataWebsiteUrl: "https://github.com/dallmeyer/jak-up/blob/main/README.md"
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
