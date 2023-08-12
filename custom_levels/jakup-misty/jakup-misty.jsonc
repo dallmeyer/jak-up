@@ -44,7 +44,8 @@
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-fuel-cell"
+        "name":"jakup-misty-fuel-cell",
+        "movie-pos": ["meters", 1819.65, 1563.5, 2171.01]
       }
     }
 

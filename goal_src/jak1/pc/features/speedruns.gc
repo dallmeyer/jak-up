@@ -654,6 +654,8 @@
   (set-frame-rate! *pc-settings* 60 #t)
   ;; skip intro cutscene
   (close-specific-task! (game-task intro) (task-status need-resolution))
+  ;; reset camera
+  (set! (-> *jakup-info* cam) (jakup-cam original))
   (none)
   )
 
