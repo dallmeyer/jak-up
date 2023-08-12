@@ -2000,7 +2000,7 @@
                                                0.7190     -0.1541     -0.6776
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up0
                                              :lev0 'jakup-training
                                              :disp0 'display
                                              :lev1 #f
@@ -2042,7 +2042,7 @@
                                                0.7681     -0.1210     -0.6287
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up1
                                              :lev0 'jakup-training
                                              :disp0 'display
                                              :lev1 'jakup-village1
@@ -2084,7 +2084,7 @@
                                               0.0760 -0.1214  0.9896
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up2
                                              :lev0 'jakup-village1
                                              :disp0 'display
                                              :lev1 'jakup-jungle
@@ -2126,7 +2126,7 @@
                                                0.7319 -0.1215 -0.6704
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up3
                                              :lev0 'jakup-jungle
                                              :disp0 'display
                                              :lev1 'jakup-jungleb
@@ -2168,7 +2168,7 @@
                                               -0.7234 -0.1209 0.6796
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up4
                                              :lev0 'jakup-jungleb
                                              :disp0 'display
                                              :lev1 'jakup-misty
@@ -2210,7 +2210,7 @@
                                               0.3912 -0.1212 -0.9122
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up5
                                              :lev0 'jakup-misty
                                              :disp0 'display
                                              :lev1 'jakup-beach
@@ -2252,7 +2252,7 @@
                                               0.7588 -0.1213 0.6398
                                               )
                                              :load-commands '()
-                                             :vis-nick 'none
+                                             :vis-nick 'up6
                                              :lev0 'jakup-beach
                                              :disp0 'display
                                              :lev1 'jakup-fire
