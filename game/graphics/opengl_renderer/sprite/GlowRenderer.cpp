@@ -241,7 +241,9 @@ void copy_to_vertex(GlowRenderer::Vertex* vtx, const Vector4f& xyzw) {
   vtx->x = xyzw.x();
   vtx->y = xyzw.y();
   vtx->z = xyzw.z();
-  vtx->w = xyzw.w();
+  // ignore the w computed by the game, and just use 1. The game's VU program ignores this value,
+  // and we need to set w = 1 to get the correct opengl clipping behavior
+  vtx->w = 1;
 }
 }  // namespace
 
@@ -537,6 +539,8 @@ void GlowRenderer::draw_probes(SharedRenderState* render_state,
   glBindVertexArray(m_ogl.vao);
   glEnable(GL_PRIMITIVE_RESTART);
   glPrimitiveRestartIndex(UINT32_MAX);
+  // don't want to write to the depth buffer we just copied, just test against it.
+  glDepthMask(GL_FALSE);
   GLint old_viewport[4];
   glGetIntegerv(GL_VIEWPORT, old_viewport);
   glViewport(0, 0, m_ogl.probe_fbo_w, m_ogl.probe_fbo_h);

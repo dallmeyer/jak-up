@@ -96,9 +96,22 @@ OpenGLTexturePool::~OpenGLTexturePool() {
  * Get a preallocated texture with the given size, or fatal error if we are out.
  */
 GLuint OpenGLTexturePool::allocate(u64 w, u64 h) {
-  const auto& it = textures.find((w << 32) | h);
+  const u64 key = (w << 32) | h;
+  const auto& it = textures.find(key);
   if (it == textures.end()) {
-    lg::die("OpenGLTexturePool needs entries for {} x {}", w, h);
+    // Note: this is a bit of an abuse to support both Japanese subtitles (variable size), and the
+    // "emulated" cloud textures (preallocated to avoid the performance issue described at the top
+    // of the file). For now, warn when this happens, just so we don't miss a case of this getting
+    // spammed during normal gameplay (bad for performance). Note that all of this can get massively
+    // simplified once clouds are moved to C++. This is just a hack to keep the current clouds
+    // working. (they are wrong and slow, but look better than nothing)
+    lg::warn("OpenGLTexturePool creating texture for {} x {}", w, h);
+    GLuint slot;
+    glGenTextures(1, &slot);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, slot);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8_REV, nullptr);
+    return slot;
   }
 
   if (it->second.empty()) {
@@ -573,7 +586,8 @@ struct TextureAnimPcUpload {
   // note that the data can be any format. They upload stuff in the wrong format sometimes, as
   // an optimization (ps2 is fastest at psmct32)
   u8 format;
-  u8 pad[3];
+  u8 force_to_gpu;
+  u8 pad[2];
 };
 static_assert(sizeof(TextureAnimPcUpload) == 16);
 
@@ -829,6 +843,16 @@ void TextureAnimator::force_to_gpu(int tbp) {
       break;
     case VramEntry::Kind::GPU:
       break;  // already on the gpu.
+    case VramEntry::Kind::GENERIC_PSM32: {
+      int tw = entry.tex_width;
+      int th = entry.tex_height;
+      setup_vram_entry_for_gpu_texture(tw, th, tbp);
+      glBindTexture(GL_TEXTURE_2D, entry.tex.value().texture());
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8_REV,
+                   entry.data.data());
+      glBindTexture(GL_TEXTURE_2D, 0);
+      entry.kind = VramEntry::Kind::GPU;
+    } break;
     case VramEntry::Kind::GENERIC_PSMT8: {
       // we have data that was uploaded in PSMT8 format. Assume that it will also be read in this
       // format. Convert to normal format.
@@ -851,6 +875,32 @@ void TextureAnimator::force_to_gpu(int tbp) {
       // will also set flags for updating the pool
       setup_vram_entry_for_gpu_texture(tw, th, tbp);
       // load the texture.
+      glBindTexture(GL_TEXTURE_2D, entry.tex.value().texture());
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8_REV,
+                   rgba_data.data());
+      glBindTexture(GL_TEXTURE_2D, 0);
+      entry.kind = VramEntry::Kind::GPU;
+    } break;
+    case VramEntry::Kind::GENERIC_PSMT4: {
+      int tw = entry.tex_width;
+      int th = entry.tex_height;
+      std::vector<u32> rgba_data(tw * th);
+      {
+        auto p = scoped_prof("convert");
+        // for psmt4, we don't use the special 16x16 case
+        const auto& clut_lookup = m_textures.find(entry.cbp);
+        ASSERT(clut_lookup != m_textures.end());
+        ASSERT(clut_lookup->second.kind == VramEntry::Kind::GENERIC_PSM32);
+        auto* clut = (const u32*)clut_lookup->second.data.data();
+
+        for (int px = 0; px < (int)rgba_data.size(); ++px) {
+          u8 val = entry.data[px / 2];
+          int idx = px & 1 ? val >> 4 : val & 0xf;
+          // no m_index_to_clut_addr mapping for the 4-bit index.
+          rgba_data[px] = clut[idx];
+        }
+      }
+      setup_vram_entry_for_gpu_texture(tw, th, tbp);
       glBindTexture(GL_TEXTURE_2D, entry.tex.value().texture());
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8_REV,
                    rgba_data.data());
@@ -1083,7 +1133,13 @@ void TextureAnimator::handle_generic_upload(const DmaTransfer& tf, const u8* ee_
       vram.tex_width = upload->width;
       vram.tex_height = upload->height;
       memcpy(vram.data.data(), ee_mem + upload->data, vram.data.size());
+      if (m_tex_looking_for_clut) {
+        m_tex_looking_for_clut->cbp = upload->dest;
+      }
       m_tex_looking_for_clut = nullptr;
+      if (upload->force_to_gpu) {
+        m_erased_on_this_frame.insert(upload->dest);
+      }
       break;
     case (int)GsTex0::PSM::PSMT8:
       vram.kind = VramEntry::Kind::GENERIC_PSMT8;
@@ -1092,6 +1148,20 @@ void TextureAnimator::handle_generic_upload(const DmaTransfer& tf, const u8* ee_
       vram.tex_height = upload->height;
       memcpy(vram.data.data(), ee_mem + upload->data, vram.data.size());
       m_tex_looking_for_clut = &vram;
+      if (upload->force_to_gpu) {
+        m_erased_on_this_frame.insert(upload->dest);
+      }
+      break;
+    case (int)GsTex0::PSM::PSMT4:
+      vram.kind = VramEntry::Kind::GENERIC_PSMT4;
+      vram.data.resize(upload->width * upload->height);
+      vram.tex_width = upload->width;
+      vram.tex_height = upload->height;
+      memcpy(vram.data.data(), ee_mem + upload->data, vram.data.size());
+      m_tex_looking_for_clut = &vram;
+      if (upload->force_to_gpu) {
+        m_erased_on_this_frame.insert(upload->dest);
+      }
       break;
     default:
       fmt::print("Unhandled format: {}\n", upload->format);
