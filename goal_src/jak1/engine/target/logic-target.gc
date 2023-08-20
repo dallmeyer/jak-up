@@ -274,7 +274,7 @@
     (sv-176 float)
     )
   (when (and (= *cheat-mode* 'debug) (cpad-pressed? 0 select))
-    (format 0 "~6,,2m ~6,,2m ~6,,2m  ~%" (-> arg0 control trans x) (-> arg0 control trans y) (-> arg0 control trans z))
+    (format 0 "~6,,2m, ~6,,2m, ~6,,2m  ~%" (-> arg0 control trans x) (-> arg0 control trans y) (-> arg0 control trans z))
     )
   (when (and *display-ground-stats* arg0)
     (let ((s4-0 format)

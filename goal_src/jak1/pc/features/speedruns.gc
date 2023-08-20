@@ -488,7 +488,8 @@
              (not (paused?))
              *target*
              (!= (-> *target* current-level name) 'title)
-             (-> *speedrun-info* should-display?))
+            ;;  (-> *speedrun-info* should-display?)
+             )
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))
       ;; print checkpoint info
