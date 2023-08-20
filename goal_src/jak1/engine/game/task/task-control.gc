@@ -4071,6 +4071,270 @@
             )
           )
         )
+      ;; the task controls for our custom level tasks.
+      ;; I'm not very sure how this array in general works,
+      ;; but adding a dummy task here is needed to make the rest of our custom tasks work
+      (new 'static 'task-control ;;DUMMY TASK
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task dummy)
+            :status (task-status need-hint)
+            :flags (task-flags closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task dummy)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task dummy)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task dummy)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-training
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-training)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-training)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-training)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-training)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-village1
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village1)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village1)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village1)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village1)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-jungle
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungle)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungle)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungle)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungle)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-jungleb
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungleb)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungleb)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungleb)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-jungleb)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control ;;jungleb-buzzer TASK
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jungleb-buzzer)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jungleb-buzzer)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jungleb-buzzer)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jungleb-buzzer)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-misty
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-misty)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-misty)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-misty)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-misty)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-beach
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-beach)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-beach)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-beach)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-beach)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
+      (new 'static 'task-control  ;; jakup-fire
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-fire)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-fire)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-fire)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-fire)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
       )
     )
   )
@@ -4090,7 +4354,7 @@
 (defun get-task-control ((arg0 game-task))
   "Get the task control for a given game-task"
   (cond
-    ((or (>= (the-as uint 1) (the-as uint arg0)) (>= (the-as uint arg0) (the-as uint 116)))
+    ((or (>= (the-as uint 1) (the-as uint arg0)) (>= (the-as uint arg0) (the-as uint (game-task max))))
      ;; invalid game task
      (format 0 "ERROR<GMJ>: get-task-control received invalid task ~D/~S~%" arg0 (game-task->string arg0))
      *null-task-control*

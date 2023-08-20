@@ -32,7 +32,7 @@
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
    // The base actor id for your custom level. If you have multiple levels this should be unique!
-   "base_id": 100,
+   "base_id": 4000,
 
   "ambients": [],
 
@@ -40,11 +40,12 @@
     {
       "trans": [2110.37, 1108.8, 1670.00], // translation
       "etype": "fuel-cell",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
+      "game_task": 120, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-fuel-cell"
+        "name":"jakup-jungleb-fuel-cell",
+        "eco-info":["int32", 6, 120]
       }
     }
 
