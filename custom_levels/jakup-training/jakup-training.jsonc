@@ -81,7 +81,7 @@
       "trans": [2022.37, 122.3, 1949.63  ], // underside of first geyser
       "etype": "crate",  // actor type
       "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [0.0000, 0.6414, 0.000, 0.7671], // quaternion
+      "quat" : [0.2500, 0.6414, -0.2500, 0.7671], // quaternion
       "bsphere": [2022.37, 122.3, 1949.63  , 10], // bounding sphere
       "lump": {
         "name":"jakup-training-buzzer-03",
@@ -117,7 +117,7 @@
       }
     },
     {
-      "trans": [1993.70, 355.46, 1985.83  ], // translation - highest rock of base
+      "trans": [1993.70, 355.46, 1985.83  ], // on edge of third geyser
       "etype": "crate",  // actor type
       "game_task": 95, // associated game task (for powercells, etc)
       "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
@@ -130,7 +130,7 @@
       }
     },
     {
-      "trans": [1999.32, 357.43, 1924.06  ], // translation - highest rock of base
+      "trans": [1999.32, 357.43, 1924.06  ], // down below on last precursor robot
       "etype": "crate",  // actor type
       "game_task": 95, // associated game task (for powercells, etc)
       "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion

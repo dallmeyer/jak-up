@@ -469,7 +469,7 @@
 
 (defun speedrun-target-state-toggle-continue? ()
   (case (-> *target* state)
-    ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing target-hit-ground target-edge-grab target-duck-stance)
+    ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing target-hit-ground target-edge-grab target-duck-stance target-stance-ambient)
       #t
       )
     (else
@@ -480,6 +480,24 @@
 
 (defun speedrun-target-grounded? ()
   (logtest? (-> *target* control status) (cshape-moving-flags onsurf))
+  )
+
+(defun refresh-jakup-cam ()
+  (case (-> *jakup-info* cam)
+    (((jakup-cam wide-no-collide))
+      (send-event *camera* 'change-state cam-stick 0)
+      (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+      )
+    (((jakup-cam locked))
+      (send-event *camera* 'change-state cam-lookat 0)
+      ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+      )
+    (else ;; ((jakup-cam original))
+      (send-event *camera* 'change-state *camera-base-mode* 0)
+      (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
+      )
+    )
+  (none)
   )
 
 (defun speedrun-draw-settings ()
@@ -592,6 +610,21 @@
           )
         )
 
+      ;; check for camera changes
+      (case (-> *jakup-info* cam)
+          (((jakup-cam wide-no-collide))
+            (if (not (send-event *camera* 'query-state cam-stick))
+              (set! (-> *jakup-info* cam) (jakup-cam original))
+              )
+            )
+          (((jakup-cam locked))
+            (if (not (send-event *camera* 'query-state cam-lookat))
+              (set! (-> *jakup-info* cam) (jakup-cam original))
+              )
+            )
+          (else ;; ((jakup-cam original))
+            )
+          )
       ;; check for camera toggle
       (when (or (and (not *debug-segment*) (cpad-pressed? 0 r3))
                 (and *debug-segment* (cpad-pressed? 0 l3))
@@ -604,20 +637,8 @@
               )
             )
           )
-        (case (-> *jakup-info* cam)
-          (((jakup-cam wide-no-collide))
-            (send-event *camera* 'change-state cam-stick 0)
-            (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
-            )
-          (((jakup-cam locked))
-            (send-event *camera* 'change-state cam-lookat 0)
-            ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
-            )
-          (else ;; ((jakup-cam original))
-            (send-event *camera* 'change-state *camera-base-mode* 0)
-            (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
-            )
-          )
+        ;; update camera to jakup-cam
+        (refresh-jakup-cam)
         )
       ;; print camera info if not original
       (let ((cam-button (if *debug-segment* "L3" "R3")))
