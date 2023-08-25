@@ -850,7 +850,7 @@
     (when (cpad-hold? 0 l2)
       (cond 
         ((cpad-pressed? 0 left)
-          (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
+          ;; (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
           (set! *hud-collectable-view* 
             (the hud-collectable-view
               (mod 
@@ -859,10 +859,10 @@
                 )
               )
             )
-          (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
+          ;; (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
           )
         ((cpad-pressed? 0 right)
-          (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
+          ;; (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
           (set! *hud-collectable-view* 
             (the hud-collectable-view
               (mod 
@@ -871,7 +871,7 @@
                 )
               )
             )
-          (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
+          ;; (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
           )
         )
       )

@@ -69,7 +69,7 @@
       "trans": [1939.73, 1131.89, 1891.17], // spine below middle path
       "etype": "crate",  // actor type
       "game_task": 28, // associated game task (for powercells, etc)
-      "quat" : [0.0, -0.0, 0.0, 0.0], // quaternion
+      "quat" : [-0.090, 0.353, -0.010, 0.934], // quaternion
       "bsphere": [1939.73, 1131.89, 1891.17, 10], // bounding sphere
       "lump": {
         "name":"jakup-misty-buzzer-02",
