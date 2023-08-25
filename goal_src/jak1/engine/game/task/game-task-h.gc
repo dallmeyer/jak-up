@@ -127,5 +127,16 @@
   (plunger-lurker-hit 113)
   (leaving-misty 114)
   (assistant-village3 115)
-  (max 116)
+  (dummy 116)
+
+  (jakup-training 117)
+  (jakup-village1 118)
+  (jakup-jungle 119)
+  (jakup-jungleb 120)
+  (jungleb-buzzer 121)
+  (jakup-misty 122)
+  (jakup-beach 123)
+  (jakup-fire 124)
+
+  (max 125)
   )

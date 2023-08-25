@@ -248,7 +248,7 @@
      (set! (-> obj continue-time) (-> *display* base-frame-counter))
      (set! (-> obj death-time) (-> *display* base-frame-counter))
      (set! (-> obj hit-time) (-> *display* base-frame-counter))
-     (dotimes (v1-50 116)
+     (dotimes (v1-50 (the int (game-task max)))
        (set! (-> obj fuel-cell-time 0) 0)
        (nop!)
        )
@@ -620,6 +620,9 @@
     (((pickup-type fuel-cell))
      ;; the amount is actually the index of the task.
      (let ((s4-2 (the int amount)))
+      (when (nonzero? s4-2)
+        (format 0 "pickup-collectable fuel-cell with task ~D~%" s4-2)
+        )
        (when (not (or (task-complete? (-> (the-as target (-> obj process)) game) (the-as game-task s4-2))
                     (>= (the-as uint 1) (the-as uint s4-2))
                     )
@@ -932,7 +935,7 @@
   (inspect obj)
   (when (or (not arg0) (= arg0 'game-task))
     (format #t "~Tgame-task:~%")
-    (dotimes (s4-0 116)
+    (dotimes (s4-0 (the int (game-task max)))
       (if (task-complete? obj (the-as game-task s4-0))
           (format #t "~T~T~S~%" (game-task->string (the-as game-task s4-0)))
           )
@@ -960,7 +963,7 @@
 
   ;; task perms
   (when (zero? (-> gp-0 task-perm-list))
-    (let ((v1-15 (new 'global 'entity-perm-array 116)))
+    (let ((v1-15 (new 'global 'entity-perm-array (the int (game-task max)))))
       (set! (-> gp-0 task-perm-list) v1-15)
       (dotimes (a0-24 (-> v1-15 length))
         (set! (-> v1-15 data a0-24 task) (the-as game-task a0-24))
