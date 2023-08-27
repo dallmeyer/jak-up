@@ -38,6 +38,50 @@
 
   "actors" : [
     {
+      "trans": [2348.35, 909.9, 1699.89], // translation
+      "etype": "junglesnake",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2348.35, 909.9, 1699.89, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-junglesnake-01"
+      }
+    },
+    {
+      "trans": [2215.62, 802.5, 1842.45], // translation
+      "etype": "springbox",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2215.62, 802.5, 1842.45, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-springbox-01",
+        "spring-height":["float", 70056.0]
+      }
+    },
+    {
+      "trans": [2124.25, 719.5, 1893.10], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2124.25, 719.5, 1893.10, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    // {
+    //   "trans":  [2140.05, 722.33, 1871.35], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2140.05, 722.33, 1871.35, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-jungle-launcher-01",
+    //     "alt-vector": ["vector", [2168.02, 864.04, 1815.10, 10.0]]
+    //   }
+    // },
+
+    {
       "trans": [2404.45, 950.7, 1608.88], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 119, // associated game task (for powercells, etc)

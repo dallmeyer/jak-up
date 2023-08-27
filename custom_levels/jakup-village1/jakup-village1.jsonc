@@ -38,11 +38,24 @@
 
   "actors" : [
     {
+      "trans": [1986.45, 663.07, 1592.87], // translation
+      "etype": "yakow",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1986.45, 663.07, 1592.87, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village1-yakow-01",
+        "alt-vector": ["meters", 1986.45, 663.07, 1592.87]
+      }
+    },
+
+
+    {
       "trans": [2107.04, 716.0, 1685.50], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 118, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+      "bsphere": [2107.04, 716.0, 1685.50, 10], // bounding sphere
       "lump": {
         "name":"jakup-village1-fuel-cell",
         "eco-info":["int32", 6, 118]
