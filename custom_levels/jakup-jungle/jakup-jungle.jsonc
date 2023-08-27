@@ -77,7 +77,9 @@
       "bsphere": [2140.05, 722.33, 1871.35, 10], // bounding sphere
       "lump": {
         "name":"jakup-jungle-launcher-01",
-        "alt-vector": ["vector4m", [2168.02, 864.04, 1815.10, 0.003]]
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 200.0],
+        "alt-vector": ["vector4m", [2168.19, 864.04, 1814.33, 0.0007]]
       }
     },
 
