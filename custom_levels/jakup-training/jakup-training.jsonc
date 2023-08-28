@@ -38,6 +38,18 @@
 
   "actors" : [
     {
+      "trans": [2092.60,  12.55, 1810.86], // translation
+      "etype": "crate",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.0, -0, 0.0], // quaternion
+      "bsphere": [2092.60,  12.55, 1810.86, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-training-crate-01",
+        "crate-type":"'wood",
+        "eco-info": ["int32", 4, 1] // green eco blob
+      }
+    },
+    {
       "trans": [1882.35, 297.87, 1983.09], // translation
       "etype": "ventblue",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)

@@ -55,7 +55,7 @@
       "bsphere": [2215.62, 802.5, 1842.45, 10], // bounding sphere
       "lump": {
         "name":"jakup-jungle-springbox-01",
-        "spring-height":["float", 70056.0]
+        "spring-height":["meters", 17.1]
       }
     },
     {

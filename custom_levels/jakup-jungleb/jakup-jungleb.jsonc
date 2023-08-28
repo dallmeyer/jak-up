@@ -37,6 +37,42 @@
   "ambients": [],
 
   "actors" : [
+    // eco
+    {
+      "trans": [2405.8, 1039.24, 1603.8], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2405.8, 1039.24, 1603.8, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans":  [2442.43, 1039.88, 1607.98], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2442.43, 1039.88, 1607.98, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-launcher-01",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 175.0],
+        "alt-vector": ["vector4m", [2257.63, 1063.58, 1671.12, 0.0015]]
+      }
+    },
+    {
+      "trans": [2118.31, 1088.0, 1663.40], // translation
+      "etype": "springbox",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2118.31, 1088.0, 1663.40, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-springbox-01",
+        "spring-height":["meters", 25.0]
+      }
+    },
     {
       "trans": [2110.37, 1108.8, 1670.00], // translation
       "etype": "fuel-cell",  // actor type
