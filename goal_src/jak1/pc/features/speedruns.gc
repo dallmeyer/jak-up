@@ -500,6 +500,8 @@
   (none)
   )
 
+(defconstant PITY_FALL_DIST (meters 400.0))
+
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
   (when (and (-> *pc-settings* speedrunner-mode?)
@@ -510,69 +512,71 @@
              )
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))
-      ;; print checkpoint info
-      (cond
-        ((-> *tmp-continue-point* lev0)
-          ;; player has set a checkpoint
-          (cond
-            ((speedrun-target-state-toggle-continue?)
-              (cond
-                ((or (= (-> *jakup-info* next-checkpoint-time) #f) 
-                     (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-                  (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
-                                  buf 2 (- 222 (* 8 2)) 
-                                  (font-color default) 
-                                  (font-flags shadow kerning))
-                  )
-                (else
-                  (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
-                                  buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
+      (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
+        ;; print checkpoint info
+        (cond
+          ((-> *tmp-continue-point* lev0)
+            ;; player has set a checkpoint
+            (cond
+              ((speedrun-target-state-toggle-continue?)
+                (cond
+                  ((or (= (-> *jakup-info* next-checkpoint-time) #f) 
+                      (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+                    (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
+                                    buf 2 (- 222 (* 8 2)) 
+                                    (font-color default) 
+                                    (font-flags shadow kerning))
+                    )
+                  (else
+                    (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
+                                    buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
+                    )
                   )
                 )
-              )
-            (else
-              (cond
-                ((or (= (-> *jakup-info* next-checkpoint-time) #f)
-                     (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-                  (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
-                                  buf 2 (- 222 (* 8 2)) 
-                                  (font-color default) 
-                                  (font-flags shadow kerning))
-                  )
-                (else
-                  (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
-                                  buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
-                  )
+              ((< PITY_FALL_DIST fall-dist)  ;; fell long enough
+                (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LL2 + Down to set new checkpoint")
+                                    buf 2 (- 222 (* 8 2)) 
+                                    (font-color default) 
+                                    (font-flags shadow kerning))
+                )
+              ((or (= (-> *jakup-info* next-checkpoint-time) #f)
+                    (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+                (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
+                                buf 2 (- 222 (* 8 2)) 
+                                (font-color default) 
+                                (font-flags shadow kerning))
+                )
+              (else
+                (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
+                                buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
                 )
               )
             )
-          )
-        (else
-          ;; player hasn't set a checkpoint yet
-            (cond 
-              ((or (= (-> *jakup-info* next-checkpoint-time) #f)
-                   (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-                (cond
-                  ((speedrun-target-state-toggle-continue?)
-                    (draw-string-xy "~1LL2 + Down to set new checkpoint"
-                                    buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
-                    )
-                  (else
-                    (draw-string-xy "~2LL2 + Down to set new checkpoint"
-                                    buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+          (else
+            ;; player hasn't set a checkpoint yet
+              (cond 
+                ((or (= (-> *jakup-info* next-checkpoint-time) #f)
+                    (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+                  (cond
+                    ((speedrun-target-state-toggle-continue?)
+                      (draw-string-xy "~1LL2 + Down to set new checkpoint"
+                                      buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+                      )
+                    (else
+                      (draw-string-xy "~2LL2 + Down to set new checkpoint"
+                                      buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+                      )
                     )
                   )
+                (else
+                  (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
+                                  buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
+                  )
                 )
-              (else
-                (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
-                                buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
-                )
-              )
+            )
           )
-        )
 
-      ;; check/print fall info
-      (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
+        ;; check/print fall info
         (cond 
           ((speedrun-target-grounded?)
             (set! (-> *jakup-info* last-grounded-height) (-> *target* root trans y))
@@ -692,26 +696,30 @@
   )
 
 (defun speedrun-practice-temp-checkpoint ()
-  (cond
-    ;; only allow reset to checkpoint if in one of these states
-    ((speedrun-target-state-toggle-continue?)
-      (when (-> *tmp-continue-point* lev0)
-        (set! *practice-spawn-post-init* custom-reset-multi-post-init)
-        ;; fully reset game if r2 held too
-        ;; (if (cpad-hold? 0 r2)  
-        ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
-        ;;   )
-        ;; store last real checkpoint to restore later
-        (when (not (string= (-> *game-info* current-continue name) "tmp"))
-          (set! *last-real-continue-point* (-> *game-info* current-continue))
+  (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
+    (cond
+      ;; only allow reset to checkpoint if in one of these states
+      ((or (speedrun-target-state-toggle-continue?)
+           (< PITY_FALL_DIST fall-dist)  ;; fell long enough
+           )
+        (when (-> *tmp-continue-point* lev0)
+          (set! *practice-spawn-post-init* custom-reset-multi-post-init)
+          ;; fully reset game if r2 held too
+          ;; (if (cpad-hold? 0 r2)  
+          ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
+          ;;   )
+          ;; store last real checkpoint to restore later
+          (when (not (string= (-> *game-info* current-continue name) "tmp"))
+            (set! *last-real-continue-point* (-> *game-info* current-continue))
+            )
+          (set! (-> *game-info* current-continue) *tmp-continue-point*)
+          (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
+          (speedrun-reset-common-settings)
           )
-        (set! (-> *game-info* current-continue) *tmp-continue-point*)
-        (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
-        (speedrun-reset-common-settings)
         )
-      )
-    (else
-      (format 0 "get a standpoint first coward~%")
+      (else
+        ;; (format 0 "get a standpoint first coward~%")
+        )
       )
     )
   (none)

@@ -31,8 +31,12 @@
   // adds a vector tag 'movie-pos':
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
-   // The base actor id for your custom level. If you have multiple levels this should be unique!
-   "base_id": 7000,
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 7000,
+  
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  "art_groups": [""],
 
   "ambients": [],
 
