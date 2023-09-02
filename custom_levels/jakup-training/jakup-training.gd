@@ -4,8 +4,5 @@
 ;; the actual file name still needs to be 8.3
 ("UP0.DGO"
  ("static-screen.o"
-  "training-obs.o"
-  "scarecrow-a-ag.go"
-  "scarecrow-b-ag.go"
   "jakup-training.go"
  ))

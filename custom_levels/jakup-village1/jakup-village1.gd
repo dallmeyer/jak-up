@@ -4,7 +4,5 @@
 ;; the actual file name still needs to be 8.3
 ("UP1.DGO"
  ("static-screen.o"
-  "yakow-ag.go"
-  "yakow.o"
   "jakup-village1.go"
  ))

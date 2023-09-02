@@ -348,4 +348,30 @@
   "ticky.o"
   "hud-classes-pc.o" ;; added
   "mod-custom-code.o"
+  ;; training
+  "training-obs.o"
+  "scarecrow-a-ag.go"
+  "scarecrow-b-ag.go"
+  ;; village1
+  "yakow-ag.go"
+  "yakow.o"
+  ;; jungle/jungleb
+  "junglesnake-ag.go"
+  "junglesnake.o"
+  "bounceytarp-ag.go"
+  "bouncer.o"
+  ;; misty
+  "keg-ag.go"
+  "keg-conveyor-ag.go"
+  "keg-conveyor-paddle-ag.go"
+  "misty-conveyor.o"
+  "quicksandlurker-ag.go"
+  "quicksandlurker.o"
+  "teetertotter-ag.go"
+  "misty-teetertotter.o"
+  "balloonlurker.o"
+  "balloonlurker-ag.go"
+  ;; beach
+
+  ;; fire
  ))
