@@ -103,6 +103,26 @@
       }
     },
     {
+      "trans": [1877.88, 1243.5, 1984.74], // translation
+      "etype": "mis-bone-bridge",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.65, 0.0, 0.5], // quaternion
+      "bsphere": [1877.88, 1243.5, 1984.74, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-misty-mis-bone-bridge-01"
+      }
+    },
+    {
+      "trans": [1864.51, 1248.51, 1982.70], // translation
+      "etype": "mis-bone-bridge",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.7, 0.0, 0.4], // quaternion
+      "bsphere": [1864.51, 1248.51, 1982.70, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-misty-mis-bone-bridge-02"
+      }
+    },
+    {
       "trans": [1878.84, 1334.9, 2293.41], // translation
       "etype": "eco",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)

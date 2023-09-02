@@ -371,7 +371,12 @@
   "misty-teetertotter.o"
   "balloonlurker.o"
   "balloonlurker-ag.go"
+  "mis-bone-bridge.o"
+  "mis-bone-bridge-ag.go"
+  "mis-bone-platform-ag.go"
   ;; beach
-
+  "twister.o"
+  "lurkerworm.o"
+  "lurkerworm-ag.go"
   ;; fire
  ))

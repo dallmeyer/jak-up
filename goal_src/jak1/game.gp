@@ -766,6 +766,7 @@
   :deps ("$OUT/obj/evilbro.o")
   "mistycannon.gc"
   "babak-with-cannon.gc"
+  "mis-bone-bridge.gc"
   "misty-obs.gc"
   "misty-warehouse.gc"
   "misty-conveyor.gc"
