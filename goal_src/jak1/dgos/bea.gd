@@ -6,6 +6,7 @@
   "wobbler.o"
   "twister.o"
   "flutflutegg.o"
+  "windmill-one.o"
   "beach-obs.o"
   "bird-lady.o"
   "bird-lady-beach.o"

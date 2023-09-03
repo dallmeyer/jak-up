@@ -379,12 +379,12 @@
   "lurkerworm.o"
   "lurkerworm-ag.go"
   "wobbler.o"
+  "windmill-one.o"
+  "windmill-one-ag.go"
   "flutflutegg.o"
   "flutflut-ag.go"
   "flutflutegg-ag.go"
-  ;; "bird-lady.o"
-  ;; "bird-lady-beach.o"
-  ;; "bird-lady-ag.go"
-  ;; "bird-lady-beach-ag.go"
+  ;; "pelican.o"
+  ;; "pelican-ag.go"
   ;; fire
  ))
