@@ -378,5 +378,13 @@
   "twister.o"
   "lurkerworm.o"
   "lurkerworm-ag.go"
+  "wobbler.o"
+  "flutflutegg.o"
+  "flutflut-ag.go"
+  "flutflutegg-ag.go"
+  ;; "bird-lady.o"
+  ;; "bird-lady-beach.o"
+  ;; "bird-lady-ag.go"
+  ;; "bird-lady-beach-ag.go"
   ;; fire
  ))

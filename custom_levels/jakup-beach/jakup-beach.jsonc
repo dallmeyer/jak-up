@@ -42,6 +42,17 @@
 
   "actors" : [
     {
+      "trans": [2077.62, 1811.19, 1841.23  ], // translation
+      "etype": "flutflutegg",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0.0, 1.0], // quaternion
+      "bsphere": [2077.62, 1811.19, 1841.23  , 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-flutflutegg-01"
+      }
+    },
+
+    {
       "trans": [1787.95, 1991.23, 1761.92], // translation
       "etype": "lurkerworm",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)

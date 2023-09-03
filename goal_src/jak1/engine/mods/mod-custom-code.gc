@@ -22,13 +22,19 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     (defun runs-every-frame ()
-      (let ((plat-training (the process-drawable (process-by-ename "jakup-training-plat-02"))))
+      (let ((plat-training (the process-drawable (process-by-ename "jakup-training-plat-02")))
+            ;; (flutflutegg-beach (the flutflutegg (process-by-ename "jakup-beach-flutflutegg-01")))
+            )
         (when (and plat-training (= (-> plat-training state name) 'plat-idle)
                   (task-complete? *game-info* (game-task jakup-training))
                   )
           (format 0 "jakup-training activate final plat~%")
           (send-event plat-training 'wake)
           )
+        ;; (when (and flutflutegg-beach (= (-> flutflutegg-beach state name) 'flutflutegg-idle))
+        ;;   (set-vector! (-> flutflutegg-beach dir) 0.0 0.0 -1.0 0.0)
+        ;;   (set-vector! (-> flutflutegg-beach root-override quat) 0.0 -1.0 0.0 0.0)
+        ;;   )
         )
 
       (none)

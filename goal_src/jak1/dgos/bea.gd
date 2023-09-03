@@ -5,6 +5,7 @@
   "air.o"
   "wobbler.o"
   "twister.o"
+  "flutflutegg.o"
   "beach-obs.o"
   "bird-lady.o"
   "bird-lady-beach.o"
