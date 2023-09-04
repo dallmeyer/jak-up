@@ -109,6 +109,36 @@
         "name":"jakup-beach-lurkerworm-01"
       }
     },
+    {
+      "trans": [1870.73, 1592.05, 1720.73], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1870.73, 1592.05, 1720.73, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-02"
+      }
+    },
+    {
+      "trans": [1955.15, 1758.02, 1788.54], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1955.15, 1758.02, 1788.54, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-03"
+      }
+    },
+    {
+      "trans": [2082.05, 1824.89, 1814.96], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2082.05, 1824.89, 1814.96, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-04"
+      }
+    },
 
     {
       "trans": [1788.49, 1995.8, 1794.31], // translation

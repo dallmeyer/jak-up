@@ -35,6 +35,12 @@
         ;;   (set-vector! (-> flutflutegg-beach dir) 0.0 0.0 -1.0 0.0)
         ;;   (set-vector! (-> flutflutegg-beach root-override quat) 0.0 -1.0 0.0 0.0)
         ;;   )
+        (when (and *target*
+                   (logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
+                   (= (-> *target* current-level name) 'jakup-beach)
+                   )
+          (send-event *target* 'end-mode) ;; exit racer
+          )
         )
 
       (none)

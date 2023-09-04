@@ -41,12 +41,23 @@
   "ambients": [],
 
   "actors" : [
+    {  // bruh
+      "trans": [1801.66, 1999.63, 1818.89], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1801.66, 1999.63, 1818.89, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-fire-racer-01",
+        "index": ["int32", 2]
+      }
+    },
     {
       "trans": [1949.79, 3381.5, 1913.05], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 124, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+      "bsphere": [1949.79, 3381.5, 1913.05, 10], // bounding sphere
       "lump": {
         "name":"jakup-fire-fuel-cell",
         "eco-info":["int32", 6, 124]

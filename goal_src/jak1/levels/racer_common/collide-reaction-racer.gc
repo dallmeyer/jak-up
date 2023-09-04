@@ -57,7 +57,7 @@
   (if (< (-> arg0 poly-angle) -0.2)
       (set! sv-96 (logior sv-96 16))
       )
-  (let ((s3-1 (< (fabs (-> arg0 surface-angle)) (-> *pat-mode-info* (-> arg0 cur-pat mode) wall-angle))))
+  (let ((s3-1 (< (fabs (-> arg0 surface-angle)) 0.2))) ;;(-> *pat-mode-info* (-> arg0 cur-pat mode) wall-angle))))
     (if s3-1
         (set! sv-104 (logior sv-104 2))
         )

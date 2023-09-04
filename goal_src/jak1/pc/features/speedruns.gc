@@ -500,7 +500,7 @@
   (none)
   )
 
-(defconstant PITY_FALL_DIST (meters 400.0))
+(defconstant PITY_FALL_DIST (meters 300.0))
 
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
