@@ -493,8 +493,18 @@
       ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
       )
     (else ;; ((jakup-cam original))
-      (send-event *camera* 'change-state *camera-base-mode* 0)
-      (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
+      (cond
+        ;; idk its fucked
+        ;; ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
+        ;;   ;; (send-event *camera* 'set-slave-option (cam-slave-options JUMP-PITCHES) #t)
+        ;;   (send-event *camera* 'set-slave-option #x6000)
+        ;;   (send-event *camera* 'set-fov (degrees 94.9999))
+        ;;   )
+        (else    
+          (send-event *camera* 'change-state *camera-base-mode* 0)
+          (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
+          )
+        )
       )
     )
   (none)

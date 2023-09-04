@@ -93,31 +93,31 @@
       }
     },
     {
-      "trans":  [1951.49, 1130.42, 1855.54], // translation
+      "trans":  [1946.63, 1135.60, 1868.79], // translation
       "etype": "quicksandlurker",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1951.49, 1130.42, 1855.54, 10], // bounding sphere
+      "bsphere": [1946.63, 1135.60, 1868.79, 10], // bounding sphere
       "lump": {
         "name":"jakup-misty-quicksandlurker-02"
       }
     },
     {
-      "trans":  [1765.17, 1231.78, 1982.51], // translation
+      "trans":  [1765.0, 1233.0, 1987.51], // translation
       "etype": "quicksandlurker",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1765.17, 1231.78, 1982.51, 10], // bounding sphere
+      "bsphere": [1765.0, 1233.0, 1987.51, 10], // bounding sphere
       "lump": {
         "name":"jakup-misty-quicksandlurker-03"
       }
     },
     {
-      "trans":  [1987.73, 1124.49, 1776.28], // translation
+      "trans":  [1987.73, 1126.49, 1776.28], // translation
       "etype": "quicksandlurker",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1987.73, 1124.49, 1776.28, 10], // bounding sphere
+      "bsphere": [1987.73, 1126.49, 1776.28, 10], // bounding sphere
       "lump": {
         "name":"jakup-misty-quicksandlurker-04"
       }
