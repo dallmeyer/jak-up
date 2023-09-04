@@ -1039,6 +1039,7 @@
 
  "firecanyon-part.gc"
  "assistant-firecanyon.gc"
+ "balloon.gc"
  "firecanyon-obs.gc"
 
  )

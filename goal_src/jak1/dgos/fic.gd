@@ -10,6 +10,7 @@
   "blocking-plane.o"
   "firecanyon-part.o"
   "assistant-firecanyon.o"
+  "balloon.o"
   "firecanyon-obs.o"
   "tpage-815.go"
   "tpage-822.go"

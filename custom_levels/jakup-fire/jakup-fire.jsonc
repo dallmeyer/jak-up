@@ -41,7 +41,7 @@
   "ambients": [],
 
   "actors" : [
-    {  // bruh
+    {
       "trans": [1801.66, 1999.63, 1818.89], // translation
       "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
@@ -49,7 +49,58 @@
       "bsphere": [1801.66, 1999.63, 1818.89, 10], // bounding sphere
       "lump": {
         "name": "jakup-fire-racer-01",
-        "index": ["int32", 2]
+        "index": ["int32", 2] // always spawn I think
+      }
+    },
+    {
+      "trans": [2311.18, 3101.37, 2050.84], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2311.18, 3101.37, 2050.84, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-fire-racer-02",
+        "index": ["int32", 7] // fuck it, made up my own condition
+      }
+    },
+    {
+      "trans": [2304.97, 2889.68, 1989.87], // translation
+      "etype": "balloon",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2304.97, 2889.68, 1989.87, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-fire-balloon-01"
+      }
+    },
+    {
+      "trans": [1950.80, 2544.77, 1963.16], // translation
+      "etype": "balloon",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1950.80, 2544.77, 1963.16, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-fire-balloon-02"
+      }
+    },
+    {
+      "trans": [1823.14, 2321.57, 1923.91], // translation
+      "etype": "balloon",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1823.14, 2321.57, 1923.91, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-fire-balloon-03"
+      }
+    },
+    {
+      "trans": [1871.19, 2255.46, 1893.33], // translation
+      "etype": "balloon",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1871.19, 2255.46, 1893.33, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-fire-balloon-04"
       }
     },
     {
