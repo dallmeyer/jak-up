@@ -27,9 +27,9 @@ jobs:
       metadataSupportedGames: "jak1"
       metadataAuthors: "barg"
       metadataTags: "beta,challenge,speedrunning"
-      metadataWebsiteUrl: "https://github.com/dallmeyer/jak-up/blob/main/README.md",
-      skipMacOS: true,
-      skipLinux: true,
+      metadataWebsiteUrl: "https://github.com/dallmeyer/jak-up/blob/main/README.md"
+      skipMacOS: true
+      skipLinux: true
       toolingBinaryDir: "out/build/Release/bin"
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
