@@ -31,12 +31,82 @@
   // adds a vector tag 'movie-pos':
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
-   // The base actor id for your custom level. If you have multiple levels this should be unique!
-   "base_id": 4000,
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 4000,
+  
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  // "art_groups": ["plat-eco-ag"],
 
   "ambients": [],
 
   "actors" : [
+    // eco
+    {
+      "trans": [2405.8, 1039.24, 1603.8], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2405.8, 1039.24, 1603.8, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans":  [2442.43, 1039.88, 1607.98], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2442.43, 1039.88, 1607.98, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-launcher-01",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 190.0],
+        "alt-vector": ["vector4m", [2257.63, 1068.58, 1671.12, 0.0015]]
+      }
+    },
+    {
+      "trans": [2394.07, 975.27, 1616.94], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2394.07, 975.27, 1616.94, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-darkvine-01"
+      }
+    },
+    {
+      "trans": [2447.51, 1020.68, 1625.97], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2447.51, 1020.68, 1625.97, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-darkvine-02"
+      }
+    },
+    {
+      "trans": [2364.31, 1034.97, 1632.75], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2364.31, 1034.97, 1632.75, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungleb-darkvine-03"
+      }
+    },
+    {
+      "trans": [2118.31, 1088.0, 1663.40], // translation
+      "etype": "springbox",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2118.31, 1088.0, 1663.40, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-springbox-01",
+        "spring-height":["meters", 25.0]
+      }
+    },
     {
       "trans": [2110.37, 1108.8, 1670.00], // translation
       "etype": "fuel-cell",  // actor type

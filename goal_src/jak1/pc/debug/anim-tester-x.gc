@@ -466,9 +466,9 @@
         (anim-tester-x-interface)
         (set! *camera-read-buttons* #f)
         )
-    (when (!= *master-mode* 'menu)
-      (add-debug-x #t (bucket-id debug-no-zbuf) (-> self root trans) *color-white*)
-      )
+    ;; (when (!= *master-mode* 'menu)
+    ;;   (add-debug-x #t (bucket-id debug-no-zbuf) (-> self root trans) *color-white*)
+    ;;   )
     (none))
 
   :code (behavior ()

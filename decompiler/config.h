@@ -134,6 +134,8 @@ struct Config {
 
   bool is_pal = false;
 
+  bool make_merc_models_common = false;
+
   bool write_patches = false;
   bool apply_patches = false;
 
@@ -165,6 +167,7 @@ struct Config {
 
   std::vector<std::string> levels_to_extract;
   bool levels_extract;
+  bool save_texture_pngs = false;
 
   DecompileHacks hacks;
 

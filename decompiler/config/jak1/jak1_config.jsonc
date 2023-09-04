@@ -39,7 +39,7 @@
   // unpack game count to assets folder
   "process_game_count": true,
   // write goal imports for art groups
-  "process_art_groups": true,
+  "process_art_groups": false,
   // write out a json file containing the art info mapping, run this with all objects allowed
   "dump_art_group_info": false,
 
@@ -73,6 +73,10 @@
   // set to true for PAL versions. this will forcefully skip files that have some data missing at the end.
   "is_pal": false,
 
+  // mainly to support actors in custom levels - when enabled, merc models from original levels will be 
+  // stuffed into GAME.fr3. You'll still need to add the -ag.go and deps to the appropriate .gd file(s)
+  "make_merc_models_common": true,
+
   ////////////////////////////
   // CONFIG FILES
   ////////////////////////////
@@ -104,6 +108,8 @@
   // should we extract collision meshes?
   // these can be displayed in game, but makes the .fr3 files slightly larger
   "extract_collision": true,
+  // save game textures as .png files.
+  "save_texture_pngs": true,
 
   ////////////////////////////
   // PATCHING OPTIONS

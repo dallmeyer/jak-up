@@ -31,12 +31,163 @@
   // adds a vector tag 'movie-pos':
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
-   // The base actor id for your custom level. If you have multiple levels this should be unique!
-   "base_id": 3000,
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 3000,
+
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  // "art_groups": ["plat-eco-ag", "junglesnake-ag", "bounceytarp-ag"],
 
   "ambients": [],
 
   "actors" : [
+    {
+      "trans": [2143.99, 753.57, 1724.47], // translation
+      "etype": "junglesnake",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2143.99, 753.57, 1724.47, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-junglesnake-01"
+      }
+    },
+    {
+      "trans": [2348.35, 909.9, 1699.89], // translation
+      "etype": "junglesnake",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2348.35, 909.9, 1699.89, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-junglesnake-02"
+      }
+    },
+    {
+      "trans": [2224.40, 815.40, 1775.68], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2224.40, 815.40, 1775.68, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-01"
+      }
+    },
+    {
+      "trans": [2205.51, 812.14, 1756.21], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2205.51, 812.14, 1756.21, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-02"
+      }
+    },
+    {
+      "trans": [2225.76, 815.14, 1736.75], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2225.76, 815.14, 1736.75, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-03"
+      }
+    },
+    {
+      "trans": [2245.88, 818.02, 1757.12], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2245.88, 818.02, 1757.12, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-04"
+      }
+    },
+    {
+      "trans": [2255.81, 848.63, 1812.70], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2255.81, 848.63, 1812.70, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-05"
+      }
+    },
+    {
+      "trans": [2266.74, 860.80, 1778.71], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2266.74, 860.80, 1778.71, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-06"
+      }
+    },
+    {
+      "trans": [2219.00, 887.40, 1739.24], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2219.00, 887.40, 1739.24, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-07"
+      }
+    },
+    {
+      "trans": [2211.01, 887.35, 1733.30], // translation
+      "etype": "darkvine",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2211.01, 887.35, 1733.30, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-darkvine-08"
+      }
+    },
+    {
+      "trans": [2215.62, 802.5, 1842.45], // translation
+      "etype": "springbox",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2215.62, 802.5, 1842.45, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-springbox-01",
+        "spring-height":["meters", 17.1]
+      }
+    },
+    {
+      "trans": [2272.31, 898.05, 1657.80], // translation
+      "etype": "springbox",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2272.31, 898.05, 1657.80, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-springbox-02",
+        "spring-height":["meters", 17.1]
+      }
+    },
+    {
+      "trans": [2124.25, 719.5, 1893.10], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2124.25, 719.5, 1893.10, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans":  [2140.05, 722.33, 1871.35], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2140.05, 722.33, 1871.35, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-jungle-launcher-01",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 200.0],
+        "alt-vector": ["vector4m", [2168.19, 864.04, 1814.33, 0.0007]]
+      }
+    },
+
     {
       "trans": [2404.45, 950.7, 1608.88], // translation
       "etype": "fuel-cell",  // actor type

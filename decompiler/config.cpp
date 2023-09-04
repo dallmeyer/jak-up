@@ -84,6 +84,9 @@ Config make_config_via_json(nlohmann::json& json) {
   config.is_pal = json.at("is_pal").get<bool>();
   config.rip_levels = json.at("rip_levels").get<bool>();
   config.extract_collision = json.at("extract_collision").get<bool>();
+  if (json.contains("make_merc_models_common")) {
+    config.make_merc_models_common = json.at("make_merc_models_common").get<bool>();
+  }
   config.generate_all_types = json.at("generate_all_types").get<bool>();
   if (json.contains("read_spools")) {
     config.read_spools = json.at("read_spools").get<bool>();
@@ -272,6 +275,9 @@ Config make_config_via_json(nlohmann::json& json) {
 
   config.levels_to_extract = inputs_json.at("levels_to_extract").get<std::vector<std::string>>();
   config.levels_extract = json.at("levels_extract").get<bool>();
+  if (json.contains("save_texture_pngs")) {
+    config.save_texture_pngs = json.at("save_texture_pngs").get<bool>();
+  }
 
   if (inputs_json.contains("animated_textures")) {
     config.animated_textures =

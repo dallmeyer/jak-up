@@ -31,18 +31,121 @@
   // adds a vector tag 'movie-pos':
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
-   // The base actor id for your custom level. If you have multiple levels this should be unique!
-   "base_id": 6000,
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 6000,
+  
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  "art_groups": [""],
 
   "ambients": [],
 
   "actors" : [
+    // {  // idk multiple paths too fucky
+    //   "trans": [2009.44, 1765.23, 1696.23], // translation
+    //   "etype": "pelican",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0.0, 1.0], // quaternion
+    //   "bsphere": [2009.44, 1765.23, 1696.23, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-beach-pelican-01",
+    //     "path": ["vector4m",
+    //         // path-circle
+    //         [1834.87, 1621.15,	1888.48, 1.0],  
+    //         [1814.785, 1669.625,	1832, 1.0],  
+    //         [1794.7, 1718.1,	1775.52, 1.0],  
+    //         [1891.08, 1675.43,	1706.26, 1.0],  
+    //         [1968.71, 1643.02,	1744.4, 1.0],  
+    //         [1965.77, 1640.83,	1802.255, 1.0],  
+    //         [1962.83, 1638.64,	1860.11, 1.0],  
+    //         [1898.85, 1629.895,	1874.295, 1.0]
+    //     ],
+    //     "path": 
+    //       // path-dive0
+    //       ["vector4m"],
+    //       // path-to-nest0
+    //       ["vector4m"],
+    //       // path-from-nest0
+    //       ["vector4m"],
+    //       // path-spit0
+    //       ["vector4m"],
+    //       // path-dive1
+    //       ["vector4m"],
+    //       // path-to-nest1
+    //       ["vector4m"],
+    //       // path-to-nest2
+    //       ["vector4m"]
+    //     ]
+    //   }
+    // },
+    {
+      "trans": [2009.44, 1765.23, 1696.23], // translation
+      "etype": "windmill-one",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0.0, 1.0], // quaternion
+      "bsphere": [2009.44, 1765.23, 1696.23, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-windmill-one-01"
+      }
+    },
+    {
+      "trans": [2077.62, 1811.19, 1841.23], // translation
+      "etype": "flutflutegg",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0.0, 1.0], // quaternion
+      "bsphere": [2077.62, 1811.19, 1841.23, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-flutflutegg-01"
+      }
+    },
+
+    {
+      "trans": [1787.95, 1991.23, 1761.92], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1787.95, 1991.23, 1761.92, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-01"
+      }
+    },
+    {
+      "trans": [1870.73, 1592.05, 1720.73], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1870.73, 1592.05, 1720.73, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-02"
+      }
+    },
+    {
+      "trans": [1955.15, 1758.02, 1788.54], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1955.15, 1758.02, 1788.54, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-03"
+      }
+    },
+    {
+      "trans": [2082.05, 1824.89, 1814.96], // translation
+      "etype": "lurkerworm",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2082.05, 1824.89, 1814.96, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-lurkerworm-04"
+      }
+    },
+
     {
       "trans": [1788.49, 1995.8, 1794.31], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 123, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+      "bsphere": [1788.49, 1995.8, 1794.31, 10], // bounding sphere
       "lump": {
         "name":"jakup-beach-fuel-cell",
         "eco-info":["int32", 6, 123]

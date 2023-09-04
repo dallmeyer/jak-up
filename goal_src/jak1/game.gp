@@ -512,6 +512,8 @@
   "wobbler.gc"
   "twister.gc"
   "beach-obs.gc"
+  "windmill-one.gc"
+  "flutflutegg.gc"
   "bird-lady.gc"
   "bird-lady-beach.gc"
   "mayor.gc"
@@ -766,6 +768,7 @@
   :deps ("$OUT/obj/evilbro.o")
   "mistycannon.gc"
   "babak-with-cannon.gc"
+  "mis-bone-bridge.gc"
   "misty-obs.gc"
   "misty-warehouse.gc"
   "misty-conveyor.gc"
@@ -2096,6 +2099,13 @@
 (goal-src "pc/debug/default-menu-pc.gc" "anim-tester-x" "part-tester" "entity-debug")
 (goal-src "pc/debug/pc-debug-common.gc" "pckernel-impl" "entity-h" "game-info-h" "level-h" "settings-h" "gsound-h" "target-util")
 (goal-src "pc/debug/pc-debug-methods.gc" "pc-debug-common")
+
+(goal-src-sequence
+ ;; prefix
+ "engine/"
+ :deps ("$OUT/obj/ticky.o")
+ "mods/mod-custom-code.gc"
+)
 
 (group-list "all-code"
   `(,@(reverse *all-gc*))

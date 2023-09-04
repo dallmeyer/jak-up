@@ -11,6 +11,7 @@
   "mistycannon.o"
   "babak-with-cannon.o"
   "blocking-plane.o"
+  "mis-bone-bridge.o"
   "misty-obs.o"
   "misty-warehouse.o"
   "misty-conveyor.o"
