@@ -309,5 +309,37 @@
   "entity-debug.o" ;; added
   "subtitle.o" ;; added
   "default-menu-pc.o" ;; added
+  
+  ;; training
+  "training-obs.o"
+  ;; village1
+  "yakow.o"
+  ;; jungle/jungleb
+  "darkvine.o"
+  "junglesnake.o"
+  "bouncer.o"
+  ;; misty
+  "battlecontroller.o"
+  "misty-conveyor.o"
+  "quicksandlurker.o"
+  "misty-teetertotter.o"
+  "balloonlurker.o"
+  "mis-bone-bridge.o"
+  ;; beach
+  "twister.o"
+  "lurkerworm.o"
+  "wobbler.o"
+  "windmill-one.o"
+  "flutflutegg.o"
+  ;; "pelican.o"
+  ;; fire
+  "target-racer-h.o"
+  "racer-part.o"
+  "racer.o"
+  "target-racer.o"
+  "racer-states.o"
+  "collide-reaction-racer.o"
+  "blocking-plane.o"
+  "balloon.o"
  ))
 

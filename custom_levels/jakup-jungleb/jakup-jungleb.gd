@@ -4,5 +4,7 @@
 ;; the actual file name still needs to be 8.3
 ("UP3.DGO"
  ("static-screen.o"
+  "bounceytarp-ag.go"
+  "darkvine-ag.go"
   "jakup-jungleb.go"
  ))

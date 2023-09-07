@@ -36,7 +36,7 @@
   
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [""],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "balloon-ag"],
 
   "ambients": [],
 
