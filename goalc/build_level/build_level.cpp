@@ -155,7 +155,7 @@ bool run_build_level(const std::string& input_file,
     }
 
     fs::path in_folder;
-    lg::info("Looking for ISO path...");
+    lg::info("Looking for ISO path starting from {}", file_util::get_jak_project_dir().string());
     for (const auto& entry :
          fs::directory_iterator(file_util::get_jak_project_dir() / "iso_data")) {
       lg::info("Checking in path: {}", entry.path().string());
