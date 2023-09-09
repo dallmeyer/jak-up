@@ -2015,7 +2015,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
 
 (define jakup-village1 (new 'static 'level-load-info
@@ -2058,7 +2058,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
                            
 (define jakup-jungle (new 'static 'level-load-info
@@ -2101,7 +2101,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
                            
 (define jakup-jungleb (new 'static 'level-load-info
@@ -2144,7 +2144,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
                            
 (define jakup-misty (new 'static 'level-load-info
@@ -2187,7 +2187,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
                            
 (define jakup-beach (new 'static 'level-load-info
@@ -2230,7 +2230,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
                            
 (define jakup-fire (new 'static 'level-load-info
@@ -2290,7 +2290,7 @@
                            :bsp-mask #xffffffffffffffff
                            :bsphere (new 'static 'sphere :w 167772160000.0)
                            :bottom-height (meters -20)
-                           :run-packages '()
+                           :run-packages '("common")
                            :wait-for-load #t))
         
 ;; cons! adds to the front of the list, so add in reverse order

@@ -37,49 +37,47 @@
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
   // bounceytarp for jungleb but we cheat
-  "art_groups": ["plat-eco-ag", "quicksandlurker-ag", "teetertotter-ag","keg-ag", "keg-conveyor-ag", "keg-conveyor-paddle-ag", "balloonlurker-ag", "mis-bone-bridge-ag", "mis-bone-platform-ag"],
+  "art_groups": ["plat-eco-ag", "quicksandlurker-ag", "mis-bone-bridge-ag"],
 
   "ambients": [],
 
   "actors" : [
+    
     {
-      "trans":  [2047.26, 1173.30, 1969.98], // translation
-      "etype": "keg-conveyor",  // actor type
+      "trans": [1878.84, 1334.9, 2293.41], // translation
+      "etype": "eco",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2047.26, 1173.30, 1969.98, 10], // bounding sphere
+      "bsphere": [1878.84, 1334.9, 2293.41, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-keg-conveyor-01",
+        "name":"jakup-misty-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [ 1960.49, 380.73, 1894.34], // translation
+      "etype": "plat-eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1960.49, 380.73, 1894.34, 10], // bounding sphere
+      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
+      "lump": {
+        "name":"jakup-misty-plat-01",        
+        "vis-dist":  ["meters", 400.0],
+        "notice-dist": ["meters", 0.0],
         "path": ["vector4m",
-          [2049.19, 1170.57, 1968.68, 1.0],  
-          [2050.75, 1169.82, 1966.52, 1.0],  
-          [2053.19, 1168.14, 1961.99, 1.0],
-          [2055.35, 1166.52, 1957.71, 1.0],  
-          [2057.93, 1164.48, 1952.14, 1.0],  
-          [2060.78, 1162.21, 1945.62, 1.0],
-          [2063.07, 1159.47, 1937.41, 1.0],  
-          [2065.08, 1157.24, 1930.45, 1.0],  
-          [2068.31, 1154.33, 1925.23, 1.0],
-          [2070.83, 1152.16, 1921.29, 1.0],  
-          [2072.47, 1147.68, 1915.88, 1.0]
+          [1851.22, 1343.36, 2280.63, 1.0],  
+          [1833.38, 1371.31, 2276.82, 1.0],  
+          [1823.01, 1393.14, 2279.56, 1.0],  
+          [1820.89, 1456.31, 2276.61, 1.0]
         ],
-        "path-k": ["float", // idk it needs to be (length 'path) + 4, and have 4 of the same values on each end??
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,  
-          2.0,  
-          3.0,
-          4.0,  
-          5.0,  
-          6.0,
-          7.0,  
-          8.0,  
-          8.0,  
-          8.0,  
-          8.0
-        ]
+        "path-k": ["float",
+          0.0, 0.0,
+          0.0, 0.0,
+          1.0, 1.0,
+          1.0, 1.0
+        ],
+        "sync": ["float", 40.0, 0.0]
       }
     },
     {
@@ -123,16 +121,6 @@
       }
     },
     {
-      "trans":  [1838.95, 1544.8, 2176.61], // translation
-      "etype": "teetertotter",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1838.95, 1544.8, 2176.61, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-misty-teetertotter-01"
-      }
-    },
-    {
       "trans": [1877.88, 1243.5, 1984.74], // translation
       "etype": "mis-bone-bridge",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
@@ -150,76 +138,6 @@
       "bsphere": [1864.51, 1248.51, 1982.70, 10], // bounding sphere
       "lump": {
         "name":"jakup-misty-mis-bone-bridge-02"
-      }
-    },
-    {
-      "trans": [1878.84, 1334.9, 2293.41], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1878.84, 1334.9, 2293.41, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-misty-blue-eco-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [ 1960.49, 380.73, 1894.34], // translation
-      "etype": "plat-eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1960.49, 380.73, 1894.34, 10], // bounding sphere
-      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
-      "lump": {
-        "name":"jakup-misty-plat-01",        
-        "vis-dist":  ["meters", 400.0],
-        "notice-dist": ["meters", 0.0],
-        "path": ["vector4m",
-          [1851.22, 1343.36, 2280.63, 1.0],  
-          [1833.38, 1371.31, 2276.82, 1.0],  
-          [1823.01, 1393.14, 2279.56, 1.0],  
-          [1820.89, 1456.31, 2276.61, 1.0]
-        ],
-        "path-k": ["float",
-          0.0, 0.0,
-          0.0, 0.0,
-          1.0, 1.0,
-          1.0, 1.0
-        ],
-        "sync": ["float", 40.0, 0.0]
-      }
-    },
-    {
-      "trans": [1799.89, 1278.66, 2070.93], // translation
-      "etype": "balloonlurker",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1799.89, 1278.66, 2070.93, 10], // bounding sphere
-      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
-      "lump": {
-        "name":"jakup-misty-balloonlurker-01",        
-        "vis-dist":  ["meters", 400.0],
-        "notice-dist": ["meters", 0.0],
-        "path": ["vector4m",
-          [1799.89, 1278.66, 2070.93, 1.0],  
-          [1715.02, 1278.66, 2065.77, 1.0],  
-          [1652.75, 1278.66, 1982.66, 1.0],  
-          [1762.06, 1258.66, 1889.11, 1.0],
-          [1873.44, 1238.40, 1861.61, 1.0],
-          [1873.53, 1258.66, 1987.92, 1.0],
-          [1799.89, 1278.66, 2070.93, 1.0] 
-        ],
-        "path-k": ["float",
-          0.0, 0.0,
-          0.0, 0.0,
-          1.0, 1.0,
-          2.0, 2.0,
-          3.0, 3.0,
-          4.0, 4.0,
-          4.0, 4.0
-        ],
-        "sync": ["float", 40.0, 0.0],
-        "options":["int32", 8]  // hopefully make path loop
       }
     },
     {

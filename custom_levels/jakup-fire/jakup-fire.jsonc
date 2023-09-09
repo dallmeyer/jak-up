@@ -48,8 +48,8 @@
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [1801.66, 1999.63, 1818.89, 10], // bounding sphere
       "lump": {
-        "name": "jakup-fire-racer-01",
-        "index": ["int32", 2] // always spawn I think
+        "name": "jakup-fire-racer-01"//,
+        // "index": ["int32", 2] // always spawn I think
       }
     },
     {

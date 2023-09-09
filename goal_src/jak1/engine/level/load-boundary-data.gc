@@ -1315,7 +1315,7 @@
 ;; misty   beach    misty
 ;; hide/show beach        BOTH
 (static-load-boundary :flags (closed player)
-  :top (meters 1260.85)  :bot (meters 1260.85)
+  :top (meters 1329.25)  :bot (meters 1329.25)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
@@ -1329,7 +1329,7 @@
 ;; misty   beach    misty
 ;; load misty + beach    UP
 (static-load-boundary :flags (closed player)
-  :top (meters 1250.52)  :bot (meters 1250.52)
+  :top (meters 1318.92)  :bot (meters 1318.92)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
@@ -1345,7 +1345,7 @@
 ;; jungleb   misty    misty
 ;; load jungleb + misty  DOWN
 (static-load-boundary :flags (closed player)
-  :top (meters 1242.27)  :bot (meters 1242.27)
+  :top (meters 1310.67)  :bot (meters 1310.67)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
@@ -1359,7 +1359,7 @@
 ;; jungleb   misty    misty
 ;; hide/show jungleb        BOTH
 (static-load-boundary :flags (closed player)
-  :top (meters 1232.68)  :bot (meters 1232.68)
+  :top (meters 1301.1)  :bot (meters 1301.1)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
