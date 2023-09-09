@@ -418,6 +418,7 @@
     (set! (-> v1-23 0 param2) (the-as basic (-> obj extra-trans)))
     )
   (set! (-> obj condition) (res-lump-value arg0 'index int))
+  (format 0 "RACER CONDITION = ~D~%" (-> obj condition))
   (set! (-> obj fact)
         (new 'process 'fact-info obj (pickup-type eco-pill-random) (-> *FACT-bank* default-pill-inc))
         )

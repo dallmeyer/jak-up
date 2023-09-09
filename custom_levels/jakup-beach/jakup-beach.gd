@@ -3,6 +3,17 @@
 
 ;; the actual file name still needs to be 8.3
 ("UP5.DGO"
- ("static-screen.o"
+ ("static-screen.o" 
+  "wobbler.o"
+  "twister.o"
+  "flutflutegg.o"
+  "windmill-one.o"
+  "lurkerworm.o"
+  "misty-teetertotter.o"
+  "teetertotter-ag.go"
+  "lurkerworm-ag.go"
+  "windmill-one-ag.go"
+  "flutflut-ag.go"
+  "flutflutegg-ag.go"
   "jakup-beach.go"
  ))

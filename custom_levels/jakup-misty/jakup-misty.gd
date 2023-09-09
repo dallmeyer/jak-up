@@ -4,5 +4,10 @@
 ;; the actual file name still needs to be 8.3
 ("UP4.DGO"
  ("static-screen.o"
+  "quicksandlurker.o"
+  "mis-bone-bridge.o"
+  "quicksandlurker-ag.go"
+  "plat-eco-ag.go"
+  "mis-bone-bridge-ag.go"
   "jakup-misty.go"
  ))
