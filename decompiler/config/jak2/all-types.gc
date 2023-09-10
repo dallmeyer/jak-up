@@ -6755,13 +6755,13 @@
   (progress-on #x10e)
   (progress-off #x10f)
   (progress-move-dpad #x110)
-  (text-x111 #x111)
-  (text-x112 #x112)
-  (text-x113 #x113)
-  (text-x114 #x114)
-  (text-x115 #x115)
-  (text-x116 #x116)
-  (text-x117 #x117)
+  (language-name-english #x111)
+  (language-name-french #x112)
+  (language-name-german #x113)
+  (language-name-spanish #x114)
+  (language-name-italian #x115)
+  (language-name-korean #x116)
+  (language-name-japanese #x117)
   (progress-aspect-ratio #x118)
   (progress-progressive-scan #x119)
   (progress-video-mode #x11a)
@@ -7234,7 +7234,7 @@
   (scene-nest-boss-intro #x306)
   (scene-intro #x307)
   (scene-outro #x308)
-  (text-x30b #x30b)
+  (language-name-english-uk #x30b)
   (scene-subtitles-hint #x30c)
   (scene-subtitles-enabled #x30d)
   (scene-subtitles-disabled #x30e)
@@ -7362,6 +7362,9 @@
   (progress-lod-low #x128b)
   (progress-lod-high #x128c)
   (progress-credits #x128d)
+  (progress-frame-rate #x128e)
+  (progress-misc-game-options #x128f)
+  (progress-speedrunner-mode  #x1290)
 )
 ;; ---text-id-h:text-id
 
@@ -8273,8 +8276,8 @@
   :size-assert         #x30c
   :flag-assert         #xb0000030c
   (:methods
-    (cam-setting-data-method-9 (_type_ engine engine-pers engine) cam-setting-data 9)
-    (cam-setting-data-method-10 (_type_ object (pointer process) float int) none 10)
+    (cam-setting-data-method-9 (_type_ engine engine-pers engine) _type_ 9)
+    (cam-setting-data-method-10 (_type_ object (pointer process) object int) _type_ 10)
     )
   )
 
@@ -9276,7 +9279,8 @@
   )
 
 (deftype region-face-array (inline-array-class)
-  ((data region-face-data :dynamic :offset 20) ;; not sure what's going on here.
+  ((data drawable-region-face :inline :dynamic :offset 16)
+   (pad0 uint8 4)
    )
   :method-count-assert 9
   :size-assert         #x14
@@ -9289,8 +9293,6 @@
   :method-count-assert 20
   :size-assert         #x20
   :flag-assert         #x1400000020
-  (:methods
-    )
   )
 
 (deftype region-prim-list (structure)
@@ -20367,23 +20369,23 @@
   )
 
 (deftype region-prim-area (structure)
-  ((region-prim-list        region-prim-list :inline :offset-assert 0)
-   (pos                     vector           :inline :offset-assert 1296)
-   (unknown-vector-uiyb1    vector           :inline :offset-assert 1312)
-   (ray                     vector           :inline :offset 1328)
-   (unknown-vector-t3edh    vector           :inline :offset-assert 1344)
-   (region-enter-count      int32                    :offset 1360)
-   (region-enter-list       region-prim-area          320     :offset-assert 1364)
-   (region-enter-prim-list  drawable-region-sphere          320     :offset-assert 2644)
-   (region-exit-count       int32                    :offset-assert 3924)
-   (region-exit-list        region-prim-area          320     :offset-assert 3928)
-   (region-exit-prim-list   drawable-region-sphere          320     :offset-assert 5208)
-   (region-inside-count     int32                    :offset-assert 6488)
-   (region-inside-list      region-prim-area          320     :offset-assert 6492)
-   (region-inside-prim-list drawable-region-sphere          320     :offset-assert 7772)
-   (region-start-count      int32                    :offset-assert 9052)
-   (region-start-list       region-prim-area          320     :offset-assert 9056)
-   (region-start-prim-list  drawable-region-sphere          320     :offset-assert 10336)
+  ((region-prim-list        region-prim-list    :inline :offset-assert 0)
+   (pos                     vector              :inline :offset-assert 1296)
+   (unknown-vector-uiyb1    vector              :inline :offset-assert 1312)
+   (ray                     vector              :inline :offset 1328)
+   (unknown-vector-t3edh    vector              :inline :offset-assert 1344)
+   (region-enter-count      int32                       :offset 1360)
+   (region-enter-list       region          320         :offset-assert 1364)
+   (region-enter-prim-list  drawable-region-sphere 320  :offset-assert 2644)
+   (region-exit-count       int32                       :offset-assert 3924)
+   (region-exit-list        region          320         :offset-assert 3928)
+   (region-exit-prim-list   drawable-region-sphere 320  :offset-assert 5208)
+   (region-inside-count     int32                       :offset-assert 6488)
+   (region-inside-list      region          320         :offset-assert 6492)
+   (region-inside-prim-list drawable-region-sphere 320  :offset-assert 7772)
+   (region-start-count      int32                       :offset-assert 9052)
+   (region-start-list       region          320         :offset-assert 9056)
+   (region-start-prim-list  drawable-region-sphere 320  :offset-assert 10336)
    )
   :method-count-assert 13
   :size-assert         #x2d60
@@ -28445,7 +28447,7 @@
 
 (define-extern region-tree-execute (function symbol vector vector none))
 (define-extern region-execute (function none))
-(define-extern region-prim-lookup-by-id (function int symbol symbol drawable-region-prim))
+(define-extern region-prim-lookup-by-id (function int symbol int drawable-region-prim))
 (define-extern region-lookup-by-id (function int region))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -31174,7 +31176,7 @@
    (stereo-mode-backup                   int32            :offset-assert 216)
    (secrets-unlocked                     symbol           :offset-assert 220)
    (missions-total-spacing               float            :offset-assert 224)
-   (clear-screen                         basic            :offset-assert 228)
+   (clear-screen                         symbol           :offset-assert 228)
    )
   :method-count-assert 9
   :size-assert         #xe8
@@ -31273,7 +31275,9 @@
 (define-extern draw-sound-options-decoration (function menu-slider-option font-context float text-id symbol pointer))
 (define-extern draw-decoration-secrets (function menu-option font-context float text-id pointer))
 (define-extern draw-decoration-load-save (function menu-option font-context float text-id pointer))
-(define-extern sort-task-node-result (function int none))
+(define-extern sort-task-node-result
+  "Sorts the [[*game-info*]]'s `mission-list` by if they are closed and their `closed-time`. Just bubble-sort and therefore O(n^2)"
+  (function int none))
 (define-extern find-mission-text-at-index (function int game-task-node-info))
 (define-extern draw-secret-list (function secret-item-option progress font-context int symbol float none))
 (define-extern draw-highscore-icon (function menu-highscores-option uint int int float pointer))
@@ -31853,7 +31857,7 @@
    (locked    symbol   :offset-assert 8)
    (id        uint64  :offset-assert 16)
    (filter    editable-filter  :offset-assert 24)
-   (tree      string   :offset-assert 28)
+   (tree      symbol   :offset-assert 28)
    (level     string   :offset-assert 32)
    (on-enter  string   :offset-assert 36)
    (on-inside string   :offset-assert 40)
@@ -31943,8 +31947,8 @@
     (selection (array editable) :offset-assert 32)
     (filter editable-filter 2 :offset-assert 36)
     (target editable :offset-assert 44)
-    (target-mode uint32 :offset-assert 48) ;; enum?
-    (target-command basic :offset-assert 52) ;; editable-command?
+    (target-mode editable-command :offset-assert 48)
+    (target-command editable-command :offset-assert 52)
     (target-message string :offset-assert 56)
     (edit-plane editable-plane :offset-assert 60)
     (edit-plane-center vector :inline :offset-assert 64)
@@ -31960,12 +31964,12 @@
   :flag-assert         #x120000007c
   (:methods
     (new (symbol type int) _type_ 0)
-    (editable-array-method-9 (_type_ editable-command editable-array) symbol :behavior editable-player 9)
+    (editable-array-method-9 (_type_ editable-command mouse-info) symbol :behavior editable-player 9)
     (editable-array-method-10 (_type_ vector int) editable 10)
     (editable-array-method-11 (_type_) int 11)
     (editable-array-method-12 (_type_ editable-array) none 12)
-    (editable-array-method-13 (_type_ uint basic string) none 13)
-    (editable-array-method-14 (_type_ (function symbol) symbol) none 14)
+    (editable-array-method-13 (_type_ editable-command editable-command string) none 13)
+    (editable-array-method-14 (_type_ (function editable editable-region symbol) editable-region) (array editable) 14)
     (editable-array-method-15 (_type_ editable) none 15)
     (editable-array-method-16 (_type_) none 16)
     (editable-array-method-17 (_type_ vector vector) vector 17)
@@ -32046,7 +32050,7 @@
   :flag-assert         #x2000000028
   (:methods
     (new (symbol type editable-region) _type_ 0)
-    (editable-plane-method-30 (_type_ matrix) int 30)
+    (editable-plane-method-30 (_type_ (inline-array vector)) int 30)
     (editable-plane-method-31 (_type_ vector) vector 31)
     )
   )
@@ -32059,7 +32063,7 @@
    (left-handed       basic     :offset-assert 216)
    (light-names       basic     :offset-assert 220)
    (external-cam-mode symbol     :offset-assert 224)
-   (command           function 6 :offset-assert 228)
+   (command           editable-command 6 :offset-assert 228)
    (close-menu-time   time-frame    :offset-assert 256)
    )
   :method-count-assert 22
@@ -32105,9 +32109,9 @@
 
 (define-extern cleanup-selection (function editable-array none))
 (define-extern insert-box (function editable-array vector none))
-(define-extern execute-select (function editable-array editable-command editable-array symbol))
-(define-extern execute-mouse-move (function editable-array editable-command editable-array symbol))
-(define-extern execute-move (function editable-array editable-command editable-array symbol))
+(define-extern execute-select (function editable-array editable-command mouse-info symbol))
+(define-extern execute-mouse-move (function editable-array editable-command mouse-info symbol))
+(define-extern execute-move (function editable-array editable-command mouse-info symbol))
 (define-extern editable-player-init (function symbol none :behavior editable-player)) ;; TODO - return type not confirmed
 (define-extern *editable-menu-context* debug-menu-context)
 (define-extern editable-menu-command (function int none))
