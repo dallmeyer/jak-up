@@ -790,12 +790,12 @@ void extract(const Input& in,
           face.bsphere.w() += 1e-1 * 5;
           for (int j = 0; j < 3; j++) {
             float output_dist = face.bsphere.w() - (face.bsphere.xyz() - face.v[j]).length();
-            if (output_dist < 0) {
-              lg::print("{}\n", output_dist);
-              lg::print("BAD:\n{}\n{}\n{}\n", face.v[0].to_string_aligned(),
-                        face.v[1].to_string_aligned(), face.v[2].to_string_aligned());
-              lg::print("bsphere: {}\n", face.bsphere.to_string_aligned());
-            }
+            // if (output_dist < 0) {
+            //   lg::print("{}\n", output_dist);
+            //   lg::print("BAD:\n{}\n{}\n{}\n", face.v[0].to_string_aligned(),
+            //             face.v[1].to_string_aligned(), face.v[2].to_string_aligned());
+            //   lg::print("bsphere: {}\n", face.bsphere.to_string_aligned());
+            // }
           }
           face.pat = pat.pat;
           out.faces.push_back(face);
