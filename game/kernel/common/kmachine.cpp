@@ -447,15 +447,16 @@ u64 pc_get_mips2c(u32 name) {
   return Mips2C::gLinkedFunctionTable.get(n);
 }
 
-u64 pc_get_display_name(u32 id) {
+u64 pc_get_display_name(u32 id, u32 str_dest_ptr) {
   std::string name = "";
   if (Display::GetMainDisplay()) {
     name = Display::GetMainDisplay()->get_display_manager()->get_connected_display_name(id);
   }
   if (name.empty()) {
-    return s7.offset;
+    return bool_to_symbol(false);
   }
-  return g_pc_port_funcs.make_string_from_c(str_util::to_upper(name).c_str());
+  strcpy(Ptr<String>(str_dest_ptr).c()->data(), str_util::to_upper(name).c_str());
+  return bool_to_symbol(true);
 }
 
 u32 pc_get_display_mode() {
@@ -591,21 +592,23 @@ void pc_get_resolution(u32 id, u32 w_ptr, u32 h_ptr) {
   }
 }
 
-u64 pc_get_controller_name(u32 id) {
+u64 pc_get_controller_name(u32 id, u32 str_dest_ptr) {
   std::string name = "";
   if (Display::GetMainDisplay()) {
     name = Display::GetMainDisplay()->get_input_manager()->get_controller_name(id);
   }
   if (name.empty()) {
-    return s7.offset;
+    return bool_to_symbol(false);
   }
-  return g_pc_port_funcs.make_string_from_c(str_util::to_upper(name).c_str());
+  strcpy(Ptr<String>(str_dest_ptr).c()->data(), str_util::to_upper(name).c_str());
+  return bool_to_symbol(true);
 }
 
-u64 pc_get_current_bind(s32 bind_assignment_info) {
+u64 pc_get_current_bind(s32 bind_assignment_info, u32 str_dest_ptr) {
   if (!Display::GetMainDisplay()) {
     // TODO - return something that lets the runtime use a translatable string if unknown
-    return g_pc_port_funcs.make_string_from_c(str_util::to_upper("unknown").c_str());
+    strcpy(Ptr<String>(str_dest_ptr).c()->data(), str_util::to_upper("unknown").c_str());
+    return bool_to_symbol(true);
   }
 
   auto info = bind_assignment_info ? Ptr<BindAssignmentInfo>(bind_assignment_info).c() : NULL;
@@ -619,12 +622,14 @@ u64 pc_get_current_bind(s32 bind_assignment_info) {
     auto name = Display::GetMainDisplay()->get_input_manager()->get_current_bind(
         port, (InputDeviceType)device_type, for_button, input_idx, analog_min_range);
     if (name.empty()) {
-      return s7.offset;
+      return bool_to_symbol(false);
     }
-    return g_pc_port_funcs.make_string_from_c(str_util::to_upper(name).c_str());
+    strcpy(Ptr<String>(str_dest_ptr).c()->data(), str_util::to_upper(name).c_str());
+    return bool_to_symbol(true);
   }
   // TODO - return something that lets the runtime use a translatable string if unknown
-  return g_pc_port_funcs.make_string_from_c(str_util::to_upper("unknown").c_str());
+  strcpy(Ptr<String>(str_dest_ptr).c()->data(), str_util::to_upper("unknown").c_str());
+  return bool_to_symbol(true);
 }
 
 u64 pc_get_controller_count() {
@@ -828,6 +833,14 @@ u32 pc_rand() {
   return (u32)extra_random_generator();
 }
 
+void pc_treat_pad0_as_pad1(u32 symptr) {
+  Gfx::g_debug_settings.treat_pad0_as_pad1 = symbol_to_bool(symptr);
+}
+
+u32 pc_is_imgui_visible() {
+  return bool_to_symbol(Gfx::g_debug_settings.show_imgui);
+}
+
 /// Initializes all functions that are common across all game versions
 /// These functions have the same implementation and do not use any game specific functions (other
 /// than the one to create a function in the first place)
@@ -909,6 +922,8 @@ void init_common_pc_port_functions(
   // Return the current OS as a symbol. Actually returns what it was compiled for!
   make_func_symbol_func("pc-get-os", (void*)pc_get_os);
   make_func_symbol_func("pc-get-unix-timestamp", (void*)pc_get_unix_timestamp);
+  make_func_symbol_func("pc-treat-pad0-as-pad1", (void*)pc_treat_pad0_as_pad1);
+  make_func_symbol_func("pc-is-imgui-visible?", (void*)pc_is_imgui_visible);
 
   // file related functions
   make_func_symbol_func("pc-filepath-exists?", (void*)pc_filepath_exists);
