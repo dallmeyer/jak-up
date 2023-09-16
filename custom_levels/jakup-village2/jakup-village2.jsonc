@@ -48,117 +48,117 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1986.45, 663.07, 1592.87, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-yakow-01",
+    //     "name":"jakup-village2-yakow-01",
     //     "alt-vector": ["meters", 1986.45, 663.07, 1592.87]
     //   }
     // },
 
 
-    // {
-    //   "trans": [2107.04, 716.0, 1685.50], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 118, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2107.04, 716.0, 1685.50, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-fuel-cell",
-    //     "eco-info":["int32", 6, 118]
-    //   }
-    // },
+    {
+      "trans": [2132.10, 3904.60, 1877.44], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 125, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2132.10, 3904.60, 1877.44, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fuel-cell",
+        "eco-info":["int32", 6, 125]
+      }
+    },
 
     // // FLIES
 
-    // {
-    //   "trans": [2204.74, 425.54, 1654.55], // top of tree where last mirror is
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-    //   "bsphere": [2204.74, 425.54, 1654.55, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-01",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2204.74, 425.54, 1654.55]
-    //   }
-    // },
-    // {
-    //   "trans": [2073.91, 472.59, 1488.67  ], // back of samos hut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, -0.7566, 0.0, 0.6538], // quaternion
-    //   "bsphere": [2073.91, 472.59, 1488.67, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-02",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2073.91, 472.59, 1488.67  ]
-    //   }
-    // },
-    // {
-    //   "trans": [2139.38, 570.51, 1571.71  ], // nets inside fishermans hut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [2139.38, 570.51, 1571.71, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-03",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2139.38, 570.51, 1571.71]
-    //   }
-    // },
-    // {
-    //   "trans": [2110.10, 588.69, 1490.24  ], // mayors hut, mirrored from normal location
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [2110.10, 588.69, 1490.24, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-04",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2110.10, 588.69, 1490.24  ]
-    //   }
-    // },
-    // {
-    //   "trans": [2025.57, 641.15, 1558.28    ], // sculptors hut, on his rock
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-    //   "bsphere": [2025.57, 641.15, 1558.28  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-05",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2025.57, 641.15, 1558.28  ]
-    //   }
-    // },
-    // {
-    //   "trans": [2027.16, 707.72, 1640.19 ], // top of bird lady hut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-    //   "bsphere": [2027.16, 707.72, 1640.19, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-06",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327755], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2027.16, 707.72, 1640.19 ]
-    //   }
-    // },
-    // { 
-    //   "trans": [2085.8, 589.0, 1651.9], // in fishermans broken wood boat
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-    //   "bsphere": [2085.8, 589.0, 1651.9, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village1-buzzer-07",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393291], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2085.8, 589.0, 1651.9]
-    //   }
-    // }//,
+    {
+      "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-01",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
+      }
+    },
+    {
+      "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
+      }
+    },
+    {
+      "trans": [2170.59, 3497.58, 1699.88], // ledge above "boggy" entrance
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2170.59, 3497.58, 1699.88, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-03",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2170.59, 3497.58, 1699.88]
+      }
+    },
+    {
+      "trans": [2226.44, 3578.08, 1911.60], // chandelier
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-04",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
+      }
+    },
+    {
+      "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
+      }
+    },
+    {
+      "trans": [2170.54, 3717.59, 1907.00], // walk the plank
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327755], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2170.54, 3717.59, 1907.00]
+      }
+    },
+    { 
+      "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393291], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2153.48, 3863.30, 1883.65]
+      }
+    }//,
 
     // ORBS
 
@@ -169,7 +169,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-01"
+    //     "name":"jakup-village2-money-01"
     //   }
     // },
     // {
@@ -179,7 +179,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-02"
+    //     "name":"jakup-village2-money-02"
     //   }
     // },
     // {
@@ -189,7 +189,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-03"
+    //     "name":"jakup-village2-money-03"
     //   }
     // },     
 
@@ -200,7 +200,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-04"
+    //     "name":"jakup-village2-money-04"
     //   }
     // },
     // {
@@ -210,7 +210,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-05"
+    //     "name":"jakup-village2-money-05"
     //   }
     // },
     // {
@@ -220,7 +220,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-06"
+    //     "name":"jakup-village2-money-06"
     //   }
     // },
     // {
@@ -230,7 +230,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-07"
+    //     "name":"jakup-village2-money-07"
     //   }
     // },
     // {
@@ -240,7 +240,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-08"
+    //     "name":"jakup-village2-money-08"
     //   }
     // },
     // {
@@ -250,7 +250,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-09"
+    //     "name":"jakup-village2-money-09"
     //   }
     // }
     // ,
@@ -261,7 +261,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-10"
+    //     "name":"jakup-village2-money-10"
     //   }
     // },
     // {
@@ -271,7 +271,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-11"
+    //     "name":"jakup-village2-money-11"
     //   }
     // },
     // {
@@ -281,7 +281,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-12"
+    //     "name":"jakup-village2-money-12"
     //   }
     // },
     // {
@@ -291,7 +291,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-13"
+    //     "name":"jakup-village2-money-13"
     //   }
     // },
     // {
@@ -301,7 +301,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-14"
+    //     "name":"jakup-village2-money-14"
     //   }
     // },
     // {
@@ -311,7 +311,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-15"
+    //     "name":"jakup-village2-money-15"
     //   }
     // },
     // {
@@ -321,7 +321,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-16"
+    //     "name":"jakup-village2-money-16"
     //   }
     // },
     // {
@@ -331,7 +331,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-17"
+    //     "name":"jakup-village2-money-17"
     //   }
     // },
     // {
@@ -341,7 +341,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-18"
+    //     "name":"jakup-village2-money-18"
     //   }
     // },
     // {
@@ -351,7 +351,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-19"
+    //     "name":"jakup-village2-money-19"
     //   }
     // },
     // {
@@ -361,7 +361,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-20"
+    //     "name":"jakup-village2-money-20"
     //   }
     // },
     // {
@@ -371,7 +371,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-21"
+    //     "name":"jakup-village2-money-21"
     //   }
     // },
     // {
@@ -381,7 +381,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-22"
+    //     "name":"jakup-village2-money-22"
     //   }
     // },
     // {
@@ -391,7 +391,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-23"
+    //     "name":"jakup-village2-money-23"
     //   }
     // },
     // {
@@ -401,7 +401,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-24"
+    //     "name":"jakup-village2-money-24"
     //   }
     // },
     // {
@@ -411,7 +411,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-25"
+    //     "name":"jakup-village2-money-25"
     //   }
     // },
     // {
@@ -421,7 +421,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-26"
+    //     "name":"jakup-village2-money-26"
     //   }
     // },
     // {
@@ -431,7 +431,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-27"
+    //     "name":"jakup-village2-money-27"
     //   }
     // },
     // {
@@ -441,7 +441,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-28"
+    //     "name":"jakup-village2-money-28"
     //   }
     // },
     // {
@@ -451,7 +451,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-29"
+    //     "name":"jakup-village2-money-29"
     //   }
     // },
     // {
@@ -461,7 +461,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-30"
+    //     "name":"jakup-village2-money-30"
     //   }
     // },
     // {
@@ -471,7 +471,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-31"
+    //     "name":"jakup-village2-money-31"
     //   }
     // },
     // {
@@ -481,7 +481,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-32"
+    //     "name":"jakup-village2-money-32"
     //   }
     // },
     // {
@@ -491,7 +491,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-33"
+    //     "name":"jakup-village2-money-33"
     //   }
     // },
     // {
@@ -501,7 +501,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-34"
+    //     "name":"jakup-village2-money-34"
     //   }
     // },
     // {
@@ -511,7 +511,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-35"
+    //     "name":"jakup-village2-money-35"
     //   }
     // },
     // {
@@ -521,7 +521,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-36"
+    //     "name":"jakup-village2-money-36"
     //   }
     // },
     // {
@@ -531,7 +531,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-37"
+    //     "name":"jakup-village2-money-37"
     //   }
     // },
     // {
@@ -541,7 +541,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-38"
+    //     "name":"jakup-village2-money-38"
     //   }
     // },
     // {
@@ -551,7 +551,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-39"
+    //     "name":"jakup-village2-money-39"
     //   }
     // },
     // {
@@ -561,7 +561,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-40"
+    //     "name":"jakup-village2-money-40"
     //   }
     // },
     // {
@@ -571,7 +571,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-41"
+    //     "name":"jakup-village2-money-41"
     //   }
     // },
     // {
@@ -581,7 +581,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-42"
+    //     "name":"jakup-village2-money-42"
     //   }
     // },
     // {
@@ -591,7 +591,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-43"
+    //     "name":"jakup-village2-money-43"
     //   }
     // },
     // {
@@ -601,7 +601,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-4"
+    //     "name":"jakup-village2-money-4"
     //   }
     // },
     // {
@@ -611,7 +611,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-45"
+    //     "name":"jakup-village2-money-45"
     //   }
     // },
     // {
@@ -621,7 +621,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-46"
+    //     "name":"jakup-village2-money-46"
     //   }
     // },
     // {
@@ -631,7 +631,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-47"
+    //     "name":"jakup-village2-money-47"
     //   }
     // },
     // {
@@ -641,7 +641,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-48"
+    //     "name":"jakup-village2-money-48"
     //   }
     // },
     // {
@@ -651,7 +651,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-49"
+    //     "name":"jakup-village2-money-49"
     //   }
     // },
     // {
@@ -661,7 +661,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-village1-money-50"
+    //     "name":"jakup-village2-money-50"
     //   }
     // }
   ]
