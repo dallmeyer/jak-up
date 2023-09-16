@@ -832,6 +832,7 @@
   (jakup-jungleb  #x2003)
   (jakup-misty    #x2004)
   (jakup-beach    #x2005)
+  (jakup-village2 #x2006)
 ;; GAME-TEXT-ID ENUM ENDS
   )
 

@@ -2263,22 +2263,48 @@
                                              :disp0 'display
                                              :lev1 'jakup-fire
                                              :disp1 'display)
-                                        (new 'static 'continue-point
-                                             :name "jakup-fire-end"
-                                             :level 'jakup-fire
-                                             :trans (new 'static 'vector :x (meters 1949.0943) :y (meters 3380.5729) :z (meters 1905.8552) :w 1.0)
-                                             :quat (new 'static 'quaternion :y 0.8764 :w -0.4815)
-                                             :camera-trans (new 'static 'vector :x (meters 1960.5473) :y (meters 3385.7224) :z (meters 1910.8594) :w 1.0)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+  
+(define jakup-village2(new 'static 'level-load-info
+                           :index 28
+                           :name 'jakup-village2
+                           :visname 'jakup-village2-vis ;; name + -vis
+                           :nickname 'up7          ;; nickname
+                           :packages '(village2)
+                           :sound-banks '(village2)
+                           :music-bank 'village2
+                           :ambient-sounds '()
+                           :mood '*village2-mood*
+                           :mood-func 'update-mood-village2
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-village2-start"
+                                             :level 'jakup-village2
+                                             :trans (new 'static 'vector :x (meters 1958.4868) :y (meters 3385.0971) :z (meters 1881.9865) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.9400 :w -0.3409)
+                                             :camera-trans (new 'static 'vector :x (meters 1951.1894) :y (meters 3390.2387) :z (meters 1892.1348) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
-                                              -0.4014 -0.0000 0.9158 
-                                              -0.1114 0.9925 -0.0488
-                                              -0.9090 -0.1216 -0.3984
+                                              -0.8112 -0.0000 -0.5846
+                                              0.0707 0.9926 -0.0982
+                                              0.5803 -0.1210 -0.8053
                                               )
                                              :load-commands '()
-                                             :vis-nick 'up6
-                                             :lev0 'jakup-beach
+                                             :vis-nick 'up7
+                                             :lev0 'jakup-fire
                                              :disp0 'display
-                                             :lev1 'jakup-fire
+                                             :lev1 'jakup-village2
                                              :disp1 'display)
                                          )
                                              
@@ -2292,8 +2318,9 @@
                            :bottom-height (meters -20)
                            :run-packages '("common")
                            :wait-for-load #t))
-        
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'jakup-village2)
 (cons! *level-load-list* 'jakup-fire)
 (cons! *level-load-list* 'jakup-beach)
 (cons! *level-load-list* 'jakup-misty)

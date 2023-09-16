@@ -4335,6 +4335,35 @@
             )
           )
         )
+      (new 'static 'task-control  ;; jakup-village2
+        :current-stage -1
+        :stage (new 'static 'boxed-array :type task-cstage
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village2)
+            :status (task-status need-hint)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village2)
+            :status (task-status need-introduction)
+            :flags (task-flags has-entity closed-by-default)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village2)
+            :status (task-status need-reminder)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          (new 'static 'task-cstage
+            :game-task (game-task jakup-village2)
+            :status (task-status need-resolution)
+            :flags (task-flags has-entity)
+            :condition (lambda :behavior process-taskable ((arg0 task-control)) #t)
+            )
+          )
+        )
       )
     )
   )

@@ -1663,6 +1663,9 @@
 (build-custom-level "jakup-fire")
 (custom-level-cgo "UP6.DGO" "jakup-fire/jakup-fire.gd")
 
+(build-custom-level "jakup-village2")
+(custom-level-cgo "UP7.DGO" "jakup-village2/jakup-village2.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;
