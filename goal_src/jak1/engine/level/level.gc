@@ -1060,7 +1060,7 @@
       )
     )
 
-  ;; note : pc port added option to show every actor regardless
+  ;; og:preserve-this pc port added option to show every actor regardless
   (with-pc (if (not (-> *pc-settings* ps2-actor-vis?)) (return #t)))
 
   ;; check the vis bits!

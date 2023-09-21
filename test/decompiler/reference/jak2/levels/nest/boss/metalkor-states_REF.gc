@@ -562,19 +562,8 @@
 ;; definition for function metalkor-handler
 ;; INFO: Used lq/sq
 ;; WARN: Return type mismatch none vs object.
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 72]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 107]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 143]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 173]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 254]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 266]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 291]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 489]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 571]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 580]
-;; WARN: rewrite_to_get_var got a none typed variable. Is there unreachable code? [OP: 666]
 (defbehavior metalkor-handler metalkor ((arg0 process) (arg1 int) (arg2 symbol) (arg3 event-message-block))
-  (local-vars (v0-2 none))
+  (local-vars (v0-2 object))
   (the-as
     object
     (case arg2
@@ -593,7 +582,7 @@
                )
            )
          )
-       (metalkor-go-next-stage)
+       (the-as object (metalkor-go-next-stage))
        )
       (('track)
        (-> self trackable)
@@ -644,11 +633,11 @@
        (let ((gp-3 (-> self entity extra)))
          (cond
            ((send-event (handle->process (-> self flitter-gem-tracker)) 'spawn-with-gem?)
-            (set! v0-2 (the-as none (logclear (-> gp-3 perm status) (entity-perm-status save))))
+            (set! v0-2 (logclear (-> gp-3 perm status) (entity-perm-status save)))
             (set! (-> gp-3 perm status) (the-as entity-perm-status v0-2))
             )
            (else
-             (set! v0-2 (the-as none (logior (-> gp-3 perm status) (entity-perm-status save))))
+             (set! v0-2 (logior (-> gp-3 perm status) (entity-perm-status save)))
              (set! (-> gp-3 perm status) (the-as entity-perm-status v0-2))
              )
            )
@@ -678,7 +667,7 @@
           (metalkor-all-spinners-on)
           )
          (else
-           (set! v0-2 (the-as none (+ (-> self countdown-to-roar) -1)))
+           (set! v0-2 (+ (-> self countdown-to-roar) -1))
            (set! (-> self countdown-to-roar) (the-as int v0-2))
            v0-2
            )
@@ -690,13 +679,13 @@
              (f30-0 (* 0.2 (the float (the int (* 4.99 (-> self stage-hit-points))))))
              )
          (when (!= (-> self stage-hit-points) 0.0)
-           (when (or (not (logtest? (-> (the-as attack-info s5-2) mask) (attack-info-mask id)))
+           (when (or (not (logtest? (-> (the-as attack-info s5-2) mask) (attack-mask id)))
                      (!= (-> self last-attack-id) (-> (the-as attack-info s5-2) id))
                      )
-             (if (logtest? (-> (the-as attack-info s5-2) mask) (attack-info-mask id))
+             (if (logtest? (-> (the-as attack-info s5-2) mask) (attack-mask id))
                  (set! (-> self last-attack-id) (-> (the-as attack-info s5-2) id))
                  )
-             (if (logtest? (attack-info-mask damage) (-> (the-as attack-info s5-2) mask))
+             (if (logtest? (attack-mask damage) (-> (the-as attack-info s5-2) mask))
                  (set! f28-0 (-> (the-as attack-info s5-2) damage))
                  )
              (let* ((s4-1 arg0)
@@ -732,7 +721,7 @@
                             )
                           )
                     )
-               (if (and (logtest? (attack-info-mask penetrate-using) (-> (the-as attack-info s5-2) mask))
+               (if (and (logtest? (attack-mask penetrate-using) (-> (the-as attack-info s5-2) mask))
                         (logtest? (penetrate dark-bomb) (-> (the-as attack-info s5-2) penetrate-using))
                         )
                    (set! f0-4 0.5)
@@ -755,16 +744,16 @@
                )
              (metalkor-update-hud)
              (cond
-               ((and (logtest? (attack-info-mask penetrate-using) (-> (the-as attack-info s5-2) mask))
+               ((and (logtest? (attack-mask penetrate-using) (-> (the-as attack-info s5-2) mask))
                      (logtest? (penetrate dark-bomb) (-> (the-as attack-info s5-2) penetrate-using))
                      (= (-> self stage-hit-points) 0.0)
                      )
-                (set! v0-2 (the-as none (+ (current-time) (seconds 1))))
+                (set! v0-2 (+ (current-time) (seconds 1)))
                 (set! (-> self next-stage-timer) (the-as time-frame v0-2))
                 v0-2
                 )
                ((= (-> self stage-hit-points) 0.0)
-                (metalkor-go-next-stage)
+                (the-as object (metalkor-go-next-stage))
                 )
                ((and (-> self next-state) (= (-> self next-state name) 'hang-shoot-n-launch))
                 (metalkor-setup-hit-anim
@@ -781,13 +770,14 @@
                        (or (not (and v1-139 (= v1-139 (-> self draw art-group data 7)))) (>= (ja-aframe-num 0) 10.0))
                        )
                      )
-                (metalkor-setup-hit-anim
-                  (the-as attack-info s5-2)
-                  (the-as process-drawable arg0)
-                  (-> self draw art-group data 25)
-                  (-> self draw art-group data 27)
-                  (the-as float (-> self draw art-group data 26))
-                  )
+                (the-as object (metalkor-setup-hit-anim
+                                 (the-as attack-info s5-2)
+                                 (the-as process-drawable arg0)
+                                 (-> self draw art-group data 25)
+                                 (-> self draw art-group data 27)
+                                 (the-as float (-> self draw art-group data 26))
+                                 )
+                        )
                 )
                ((and (-> self next-state) (let ((v1-153 (-> self next-state name)))
                                             (or (= v1-153 'chase-target)
@@ -832,30 +822,18 @@
                (set! (-> s4-4 y) 0.0)
                (vector-normalize! s4-4 32768.0)
                (set! (-> s4-4 y) 24576.0)
-               (let ((a1-43 (new 'stack-no-clear 'event-message-block)))
-                 (set! (-> a1-43 from) (process->ppointer self))
-                 (set! (-> a1-43 num-params) 2)
-                 (set! (-> a1-43 message) 'attack)
-                 (set! (-> a1-43 param 0) (-> arg3 param 0))
-                 (let ((v1-170 (new 'static 'attack-info :mask (attack-info-mask vector shove-up id))))
-                   (let* ((a0-116 *game-info*)
-                          (a2-15 (+ (-> a0-116 attack-id) 1))
-                          )
-                     (set! (-> a0-116 attack-id) a2-15)
-                     (set! (-> v1-170 id) a2-15)
-                     )
-                   (set! (-> v1-170 vector quad) (-> s4-4 quad))
-                   (set! (-> v1-170 shove-up) 24576.0)
-                   (set! (-> a1-43 param 1) (the-as uint v1-170))
+               (when (send-event
+                       gp-5
+                       'attack
+                       (-> arg3 param 0)
+                       (static-attack-info ((id (new-attack-id)) (vector s4-4) (shove-up (meters 6))))
+                       )
+                 (set! (-> self no-collision-timer) (current-time))
+                 (let ((v1-175 (-> self root root-prim)))
+                   (set! (-> v1-175 prim-core collide-as) (collide-spec))
+                   (set! (-> v1-175 prim-core collide-with) (collide-spec))
                    )
-                 (when (send-event-function gp-5 a1-43)
-                   (set! (-> self no-collision-timer) (current-time))
-                   (let ((v1-175 (-> self root root-prim)))
-                     (set! (-> v1-175 prim-core collide-as) (collide-spec))
-                     (set! (-> v1-175 prim-core collide-with) (collide-spec))
-                     )
-                   0
-                   )
+                 0
                  )
                )
              )

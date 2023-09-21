@@ -1592,7 +1592,7 @@ This commonly includes things such as:
               )
             )
           )
-        ;; pc port note : give skill directly
+        ;; og:preserve-this give skill directly
         (#when PC_PORT
           (send-event *target* 'get-pickup (pickup-type skill) (* (the float (-> self egg-count)) (-> *FACT-bank* super-skill-inc))))
         (go-virtual end-course)
@@ -1840,7 +1840,7 @@ This commonly includes things such as:
       (suspend)
       )
     (when (> (-> self egg-count) 0)
-      ;; pc port note : skill is given earlier
+      ;; og:preserve-this skill is given earlier
       (#unless PC_PORT
         (let* ((gp-0 (handle->process (-> self voicebox)))
               (v1-8 (if (type? gp-0 process-drawable)
@@ -2544,7 +2544,7 @@ This commonly includes things such as:
           (quaternion-identity! (-> s5-1 quat))
           (set! (-> s5-1 flags) (task-arrow-flags))
           (set! (-> s5-1 map-icon) (the-as uint 15))
-          (set! (-> self arrow) (process->handle (task-arrow-spawn s5-1 (the-as task-arrow gp-0))))
+          (set! (-> self arrow) (process->handle (task-arrow-spawn s5-1 gp-0)))
           )
         )
       )
@@ -2592,7 +2592,7 @@ This commonly includes things such as:
           (quaternion-identity! (-> s5-1 quat))
           (set! (-> s5-1 flags) (task-arrow-flags))
           (set! (-> s5-1 map-icon) (the-as uint 15))
-          (set! (-> self arrow) (process->handle (task-arrow-spawn s5-1 (the-as task-arrow gp-0))))
+          (set! (-> self arrow) (process->handle (task-arrow-spawn s5-1 gp-0)))
           )
         )
       )

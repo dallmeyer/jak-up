@@ -86,15 +86,22 @@
   arg0
   )
 
-(defun progress-intro-start ((arg0 symbol))
+(defun progress-intro-start ((hero-mode? symbol))
   (set! (-> *game-info* mode) 'play)
-  (if arg0
-      (initialize! *game-info* 'game (the-as game-save #f) "intro-start-hero")
-      (initialize! *game-info* 'game (the-as game-save #f) "intro-start")
-      )
+  (cond
+    ;; Start a new game differently if speedrunning mode is active
+    ((= (-> *pc-settings* speedrunner-mode?) #t)
+      (if hero-mode?
+        (set-category! *speedrun-info* (speedrun-category newgame-heromode))
+        (set-category! *speedrun-info* (speedrun-category newgame-normal)))
+      (start-run! *speedrun-info*))
+    ;; start the game normally
+    (else
+      (if hero-mode?
+        (initialize! *game-info* 'game (the-as game-save #f) "intro-start-hero")
+        (initialize! *game-info* 'game (the-as game-save #f) "intro-start"))))
   (set-master-mode 'game)
-  0
-  )
+  0)
 
 (defmethod init-defaults progress ((obj progress))
   "Initialize default menu settings."
@@ -1397,7 +1404,7 @@
                      0.2
                      )
                  )
-          ;; pc port note : added variable
+          ;; og:preserve-this added variable
           (speed-mod (if (-> *pc-settings* fast-progress?) (-> *pc-cheat-state* progress-speed) 1.0))
           )
       (when (hud-hidden?)
@@ -1509,7 +1516,7 @@
                 (symbol->string (-> self current))
                 )
               )
-            (case (-> self next) ;; patched to next instead of current because we save synchronously
+            (case (-> self next) ;; og:preserve-this patched to next instead of current because we save synchronously
               (('saving)
                (cond
                  ((= (-> self state-stack 0) 'title)
@@ -1614,10 +1621,10 @@
                (set-next-state self 'insufficient-space 0)
                )
               (else
-                (case (-> self next) ;; patched to next instead of current because we save synchronously
+                (case (-> self next) ;; og:preserve-this patched to next instead of current because we save synchronously
                   (('formatting 'format-card)
                    (set-next-state self 'error-formatting 0)
-                   )          ;; jp patch
+                   ) ;; og:preserve-this jp patch
                   (('creating 'create-game)
                    (set-next-state self 'error-creating 0)
                    )                                                                ;; jp patch
@@ -1668,7 +1675,7 @@
     (none)
     )
   :trans (behavior ()
-    ;; pc port note : added variable
+    ;; og:preserve-this added variable
     (let ((speed-mod (if (-> *pc-settings* fast-progress?) (-> *pc-cheat-state* progress-speed) 1.0)))
     (seek! (-> self anim-frame) 0.0 (* speed-mod 0.02 (-> self clock time-adjust-ratio)))
     (cond
