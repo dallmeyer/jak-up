@@ -4,5 +4,9 @@
 ;; the actual file name still needs to be 8.3
 ("UP7.DGO"
  ("static-screen.o"
+  "pontoon.o"
+  "allpontoons-ag.go"
+  "pontoonfive-ag.go"
+  "pontoonten-ag.go"
   "jakup-village2.go"
  ))

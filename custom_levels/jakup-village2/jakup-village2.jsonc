@@ -36,23 +36,44 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [],
+  "art_groups": ["allpontoons-ag", "pontoonfive-ag", "pontoonten-ag"],
 
   "ambients": [],
 
   "actors" : [
-    // {
-    //   "trans": [1986.45, 663.07, 1592.87], // translation
-    //   "etype": "yakow",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1986.45, 663.07, 1592.87, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-yakow-01",
-    //     "alt-vector": ["meters", 1986.45, 663.07, 1592.87]
-    //   }
-    // },
-
+    {
+      "trans": [2237.25, 3584.53, 1958.05], // translation
+      "etype": "pontoonfive",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2237.25, 3584.53, 1958.05, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-pontoonfive-01",
+        "alt-vector": ["meters", 2237.25, 3584.53, 1958.05]
+      }
+    },
+    {
+      "trans": [2226.12, 3588.95, 1956.89], // translation
+      "etype": "pontoonten",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2226.12, 3588.95, 1956.89, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-pontoonten-01",
+        "alt-vector": ["meters", 2226.12, 3588.95, 1956.89]
+      }
+    },
+    {
+      "trans": [2231.83, 3596.1, 1957.68], // translation
+      "etype": "pontoonfive",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2231.83, 3596.1, 1957.68, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-pontoonfive-02",
+        "alt-vector": ["meters", 2231.83, 3596.1, 1957.68]
+      }
+    },
 
     {
       "trans": [2132.10, 3904.60, 1877.44], // translation

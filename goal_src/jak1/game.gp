@@ -1111,6 +1111,7 @@
  "levels/village2/"
  :deps ("$OUT/obj/ticky.o")
  "village2-part.gc"
+ "pontoon.gc"
  "village2-obs.gc"
  "village2-part2.gc"
  "gambler.gc"
