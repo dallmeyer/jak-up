@@ -3,6 +3,7 @@
   "oracle.o"
   "village2-part.o"
   "pontoon.o"
+  "fireboulder.o"
   "village2-obs.o"
   "village2-part2.o"
   "gambler.o"

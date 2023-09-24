@@ -1055,7 +1055,7 @@
   "Is arg0 visible? Note that this will return #f if the visibility data is not loaded."
 
   (case (-> obj name)
-    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire 'jakup-village2)
+    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire 'jakup-village2 'jakup-sunken)
       (return #t)
       )
     )

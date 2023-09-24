@@ -36,11 +36,44 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["allpontoons-ag", "pontoonfive-ag", "pontoonten-ag"],
+  "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag"],
 
   "ambients": [],
 
   "actors" : [
+    {
+      "trans": [2111.34, 3467.22, 1624.24], // translation
+      "etype": "fireboulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2111.34, 3467.22, 1624.24, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fireboulder-01",
+        "alt-vector": ["meters", 2111.34, 3467.22, 1624.24]
+      }
+    },
+    {
+      "trans": [2119.12, 3470.99, 1630.38], // translation
+      "etype": "fireboulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2119.12, 3470.99, 1630.38, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fireboulder-02",
+        "alt-vector": ["meters", 2119.12, 3470.99, 1630.38]
+      }
+    },
+    {
+      "trans": [2125.42, 3472.83, 1635.57], // translation
+      "etype": "fireboulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2125.42, 3472.83, 1635.57, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fireboulder-03",
+        "alt-vector": ["meters", 2125.42, 3472.83, 1635.57]
+      }
+    },
     {
       "trans": [2237.25, 3584.53, 1958.05], // translation
       "etype": "pontoonfive",  // actor type

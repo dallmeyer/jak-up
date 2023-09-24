@@ -1112,6 +1112,7 @@
  :deps ("$OUT/obj/ticky.o")
  "village2-part.gc"
  "pontoon.gc"
+ "fireboulder.gc"
  "village2-obs.gc"
  "village2-part2.gc"
  "gambler.gc"
@@ -1666,6 +1667,9 @@
 
 (build-custom-level "jakup-village2")
 (custom-level-cgo "UP7.DGO" "jakup-village2/jakup-village2.gd")
+
+(build-custom-level "jakup-sunken")
+(custom-level-cgo "UP8.DGO" "jakup-sunken/jakup-sunken.gd")
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
