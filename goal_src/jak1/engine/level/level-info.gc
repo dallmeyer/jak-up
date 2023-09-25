@@ -2335,7 +2335,8 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-sunken-start"
                                              :level 'jakup-sunken
-                                             :trans (new 'static 'vector :x (meters 2126.2785) :y (meters 3900.8212) :z (meters 1888.2790) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1907.93) :y (meters 4103.96) :z (meters 2000.91) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 2126.2785) :y (meters 3900.8212) :z (meters 1888.2790) :w 1.0)
                                              :quat (new 'static 'quaternion :y -0.3246 :w 0.9458)
                                              :camera-trans (new 'static 'vector :x (meters 2134.2895) :y (meters 3905.8752) :z (meters 1879.1110) :w 1.0)
                                              :camera-rot (new 'static 'array float 9

@@ -4,5 +4,8 @@
 ;; the actual file name still needs to be 8.3
 ("UP8.DGO"
  ("static-screen.o"
+  "wall-plat.o"
+  "wall-plat-ag.go"
+  "plat-eco-ag.go"
   "jakup-sunken.go"
  ))
