@@ -885,6 +885,7 @@
   "sunken-part4.gc"
   "sunken-part5.gc"
   "target-tube.gc"
+  "side-to-side-plat.gc"
   "sunken-obs.gc"
   "shover.gc"
   "square-platform.gc"

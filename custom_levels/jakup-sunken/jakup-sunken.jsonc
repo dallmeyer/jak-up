@@ -36,11 +36,88 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["plat-eco-ag", "wall-plat-ag", "qbert-plat-ag", "qbert-plat-on-ag"],
+  "art_groups": ["plat-eco-ag", "wall-plat-ag", "qbert-plat-ag", "qbert-plat-on-ag", "side-to-side-plat-ag", "orbit-plat-ag", "orbit-plat-bottom-ag", "steam-cap-ag"],
 
   "ambients": [],
 
   "actors" : [
+    {
+      "trans": [2070.59, 4834.0, 1844.63], // translation
+      "etype": "steam-cap",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2070.59, 4834.0, 1844.63, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-steam-cap-01"
+      }
+    },
+    {
+      "trans": [1859.13, 4689.0, 2071.26], // translation
+      "etype": "side-to-side-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1859.13, 4689.0, 2071.26, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-side-to-side-01",
+        "path": ["vector4m",
+          [1859.13, 4689.0, 2071.26, 1.0],
+          [1860.13, 4689.0, 2071.26, 1.0],
+          [1862.13, 4689.0, 2071.26, 1.0],
+          [1866.13, 4689.0, 2071.26, 1.0],
+          [1870.13, 4689.0, 2071.26, 1.0],
+          [1872.13, 4689.0, 2071.26, 1.0],
+          [1873.13, 4689.0, 2071.26, 1.0]
+        ],
+        "path-k": ["float", 0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 0.75, 1.0, 1.0, 1.0, 1.0],
+        "sync": ["float", 3.0, 0.0]
+      }
+    },
+    {
+      "trans": [1867.13, 4696.21, 2071.26], // translation
+      "etype": "side-to-side-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1867.13, 4696.21, 2071.26, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-side-to-side-02",
+        "path": ["vector4m",
+          [1867.13, 4696.21, 2071.26, 1.0],
+          [1868.13, 4696.21, 2071.26, 1.0],
+          [1870.13, 4696.21, 2071.26, 1.0],
+          [1874.13, 4696.21, 2071.26, 1.0],
+          [1878.13, 4696.21, 2071.26, 1.0],
+          [1880.13, 4696.21, 2071.26, 1.0],
+          [1881.13, 4696.21, 2071.26, 1.0]
+        ],
+        "path-k": ["float", 0.0, 0.0, 0.0, 0.0, 0.25, 0.5, 0.75, 1.0, 1.0, 1.0, 1.0],
+        "sync": ["float", 3.0, 0.5]
+      }
+    },
+    {
+      "trans": [2062.16, 4807.42, 1872.34], // translation
+      "etype": "orbit-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2062.16, 4807.42, 1872.34, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-orbit-plat-01",
+        "timeout": ["float", 600.0],
+        "alt-actor": "jakup-sunken-orbit-plat-02",
+        "nav-mesh-actor": "jakup-sunken-orbit-plat-02"
+      }
+    },
+    {
+      "trans": [2056.39, 4813.57, 1857.59], // translation
+      "etype": "orbit-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2056.39, 4813.57, 1857.59, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-orbit-plat-02",
+        "timeout": ["float", 600.0],
+        "alt-actor": "jakup-sunken-orbit-plat-01"
+      }
+    },
     {
       "trans": [1819.72, 4664.25, 2028.40], // translation
       "etype": "qbert-plat",  // actor type
@@ -344,18 +421,18 @@
         "vis-dist":  ["meters", 400.0],
         "sync": ["float", 6.0, 0.6667, 0.375, 0.375]
       }
+    },
+    {
+      "trans": [2045.32, 4866.0, 1897.97], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 126, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2045.32, 4866.0, 1897.97, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-fuel-cell",
+        "eco-info":["int32", 6, 126]
+      }
     }//,
-    // {
-    //   "trans": [2132.10, 3904.60, 1877.44], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2132.10, 3904.60, 1877.44, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunken-fuel-cell",
-    //     "eco-info":["int32", 6, 125]
-    //   }
-    // },
 
     // // // FLIES
 
