@@ -173,9 +173,28 @@
                    )
                )
          )
-    (if v1-0
+    (cond
+      (v1-0
+        ;; vanilla
         (send-event v1-0 'trigger (-> obj plat-id))
         )
+      ;; no qbert-plat-master, just toggle back n forth
+      ((-> obj on?) ;; on -> off
+        (set! (-> obj on?) #f)
+        (let ((gp-2 (-> obj child)))
+          (while gp-2
+            (send-event (ppointer->process gp-2) 'die)
+            (set! gp-2 (-> gp-2 0 brother))
+            )
+          )
+        (sound-play "plat-light-off")
+        )
+      (else ;; off -> on
+        (set! (-> obj on?) #t)
+        (process-spawn qbert-plat-on (-> obj entity) obj :to obj)
+        (sound-play "plat-light-on")
+        )
+      )
     )
   )
 
@@ -225,6 +244,21 @@
         )
       (suspend)
       0
+      )
+    (none)
+    )
+  :trans (behavior ()
+    (logclear! (-> self draw status) (draw-status hidden))
+    ((-> (method-of-type rigid-body-platform rigid-body-platform-idle) trans))
+    (let* ((v1-5 (-> self root-overlay riders))
+           (gp-1 (nonzero? (-> v1-5 num-riders)))
+           )
+      (when gp-1
+        (if (not (-> self player-is-riding?))
+            (rigid-body-platform-method-33 self)
+            )
+        )
+      (set! (-> self player-is-riding?) gp-1)
       )
     (none)
     )

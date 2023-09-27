@@ -36,11 +36,31 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["plat-eco-ag", "wall-plat-ag"],
+  "art_groups": ["plat-eco-ag", "wall-plat-ag", "qbert-plat-ag", "qbert-plat-on-ag"],
 
   "ambients": [],
 
   "actors" : [
+    {
+      "trans": [1819.72, 4664.25, 2028.40], // translation
+      "etype": "qbert-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.1996, 0, 0.9798], // quaternion
+      "bsphere": [1819.72, 4664.25, 2028.40, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-qbert-plat-01"
+      }
+    },
+    {
+      "trans": [1813.35, 4670.70, 2032.56], // translation
+      "etype": "qbert-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.1996, 0, 0.9798], // quaternion
+      "bsphere": [1813.35, 4670.70, 2032.56, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-qbert-plat-02"
+      }
+    },
     {
       "trans": [1938.41, 3955.74, 1942.50], // translation
       "etype": "ventblue",  // actor type
