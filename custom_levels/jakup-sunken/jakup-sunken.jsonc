@@ -258,7 +258,7 @@
         "name":"jakup-sunken-launcher-01",
         "mode": "'#x1", // what does this do?
         "spring-height": ["meters", 300.0],
-        "alt-vector": ["vector4m", [1702.55, 4030.65, 1891.21, 0.0007]]
+        "alt-vector": ["vector4m", [1693.11, 4030.16, 1853.48, 0.0007]]
       }
     },
     {
@@ -423,11 +423,11 @@
       }
     },
     {
-      "trans": [2045.32, 4866.0, 1897.97], // translation
+      "trans": [2041.93, 4866.5, 1900.11], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 126, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2045.32, 4866.0, 1897.97, 10], // bounding sphere
+      "bsphere": [2041.93, 4866.5, 1900.11, 10], // bounding sphere
       "lump": {
         "name":"jakup-sunken-fuel-cell",
         "eco-info":["int32", 6, 126]
