@@ -10,7 +10,6 @@
 
 ;; DECOMP BEGINS
 
-
 (deftype water-vol-deadly (process-hidden)
   ()
   :method-count-assert 15
@@ -34,8 +33,8 @@
               :bounds (static-spherem 0 0 0 10)
               )
 
-(defmethod set-stack-size! sunkencam ((obj sunkencam))
-  (stack-size-set! (-> obj main-thread) 512)
+(defmethod set-stack-size! sunkencam ((this sunkencam))
+  (stack-size-set! (-> this main-thread) 512)
   (none)
   )
 
@@ -43,7 +42,6 @@
   :virtual #t
   :exit (behavior ()
     (set! (-> *screen-filter* draw?) #f)
-    (none)
     )
   :code (behavior ()
     (let ((v1-0 (-> self seq)))
@@ -116,8 +114,8 @@
            (send-event gp-2 'change-state cam-fixed 0)
            (send-event gp-2 'change-state *camera-base-mode* 0)
            )
-         (set! (-> self state-time) (-> *display* base-frame-counter))
-         (until (>= (- (-> *display* base-frame-counter) (-> self state-time)) (seconds 1))
+         (set-time! (-> self state-time))
+         (until (time-elapsed? (-> self state-time) (seconds 1))
            (suspend)
            )
          )
@@ -153,8 +151,8 @@
            (new 'static 'vector :x 2834432.0 :y -634880.0 :z -6811648.0)
            1.3
            )
-         (set! (-> self state-time) (-> *display* base-frame-counter))
-         (until (>= (- (-> *display* base-frame-counter) (-> self state-time)) (seconds 0.2))
+         (set-time! (-> self state-time))
+         (until (time-elapsed? (-> self state-time) (seconds 0.2))
            (suspend)
            )
          )
@@ -181,7 +179,6 @@
         )
       )
     (go-virtual pov-camera-done-playing)
-    (none)
     )
   )
 
@@ -217,25 +214,24 @@
         (ja :num! (seek! max (-> self anim-speed)))
         )
       )
-    (none)
     )
-  :post (the-as (function none :behavior seaweed) ja-post)
+  :post ja-post
   )
 
-(defmethod init-from-entity! seaweed ((obj seaweed) (arg0 entity-actor))
-  (set! (-> obj root) (new 'process 'trsqv))
-  (process-drawable-from-entity! obj arg0)
-  (initialize-skeleton obj *seaweed-sg* '())
+(defmethod init-from-entity! seaweed ((this seaweed) (arg0 entity-actor))
+  (set! (-> this root) (new 'process 'trsqv))
+  (process-drawable-from-entity! this arg0)
+  (initialize-skeleton this *seaweed-sg* '())
   (ja-channel-set! 1)
-  (let ((s5-1 (-> obj skel root-channel 0)))
+  (let ((s5-1 (-> this skel root-channel 0)))
     (joint-control-channel-group-eval!
       s5-1
-      (the-as art-joint-anim (-> obj draw art-group data 2))
+      (the-as art-joint-anim (-> this draw art-group data 2))
       num-func-identity
       )
     (set! (-> s5-1 frame-num)
-          (rand-vu-float-range 0.0 (the float (+ (-> (if (> (-> obj skel active-channels) 0)
-                                                         (-> obj skel root-channel 0 frame-group)
+          (rand-vu-float-range 0.0 (the float (+ (-> (if (> (-> this skel active-channels) 0)
+                                                         (-> this skel root-channel 0 frame-group)
                                                          )
                                                      data
                                                      0
@@ -247,8 +243,8 @@
                                )
           )
     )
-  (set! (-> obj anim-speed) (rand-vu-float-range 0.2 0.4))
-  (set! *seaweed* obj)
+  (set! (-> this anim-speed) (rand-vu-float-range 0.2 0.4))
+  (set! *seaweed* this)
   (go seaweed-idle)
   (none)
   )
