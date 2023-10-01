@@ -2277,7 +2277,7 @@
                            :wait-for-load #t))
   
 (define jakup-village2 (new 'static 'level-load-info
-                           :index 28
+                           :index 34
                            :name 'jakup-village2
                            :visname 'jakup-village2-vis ;; name + -vis
                            :nickname 'up7          ;; nickname
@@ -2318,9 +2318,9 @@
                            :bottom-height (meters -20)
                            :run-packages '("common")
                            :wait-for-load #t))
-  
+
 (define jakup-sunken (new 'static 'level-load-info
-                           :index 28
+                           :index 35
                            :name 'jakup-sunken
                            :visname 'jakup-sunken-vis ;; name + -vis
                            :nickname 'up8          ;; nickname
@@ -2335,8 +2335,7 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-sunken-start"
                                              :level 'jakup-sunken
-                                             :trans (new 'static 'vector :x (meters 2051.72) :y (meters 4801.35) :z (meters 1895.26) :w 1.0)
-                                            ;;  :trans (new 'static 'vector :x (meters 2126.2785) :y (meters 3900.8212) :z (meters 1888.2790) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2126.2785) :y (meters 3900.8212) :z (meters 1888.2790) :w 1.0)
                                              :quat (new 'static 'quaternion :y -0.3246 :w 0.9458)
                                              :camera-trans (new 'static 'vector :x (meters 2134.2895) :y (meters 3905.8752) :z (meters 1879.1110) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
@@ -2363,7 +2362,52 @@
                            :run-packages '("common")
                            :wait-for-load #t))
 
+(define jakup-sunkenb (new 'static 'level-load-info
+                           :index 36
+                           :name 'jakup-sunkenb
+                           :visname 'jakup-sunkenb-vis ;; name + -vis
+                           :nickname 'up9          ;; nickname
+                           :packages '(sunken)
+                           :sound-banks '(sunken)
+                           :music-bank 'sunken
+                           :ambient-sounds '()
+                           :mood '*sunkenb-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-sunkenb-start"
+                                             :level 'jakup-sunkenb
+                                             :trans (new 'static 'vector :x (meters 1957.56) :y (meters 5228.43) :z (meters 1886.43) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 2039.0715) :y (meters 4864.4208) :z (meters 1896.6206) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.2904 :w 0.9568)
+                                             :camera-trans (new 'static 'vector :x (meters 2032.6483) :y (meters 4869.5654) :z (meters 1885.8984) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.8582 0.0000 -0.5131
+                                              0.0625 0.9925 0.1045
+                                              0.5093 -0.1218 0.8519
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'up9
+                                             :lev0 'jakup-sunken
+                                             :disp0 'display
+                                             :lev1 'jakup-sunkenb
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'jakup-sunkenb)
 (cons! *level-load-list* 'jakup-sunken)
 (cons! *level-load-list* 'jakup-village2)
 (cons! *level-load-list* 'jakup-fire)

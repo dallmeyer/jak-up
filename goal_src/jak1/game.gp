@@ -1672,6 +1672,9 @@
 (build-custom-level "jakup-sunken")
 (custom-level-cgo "UP8.DGO" "jakup-sunken/jakup-sunken.gd")
 
+(build-custom-level "jakup-sunkenb")
+(custom-level-cgo "UP9.DGO" "jakup-sunkenb/jakup-sunkenb.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

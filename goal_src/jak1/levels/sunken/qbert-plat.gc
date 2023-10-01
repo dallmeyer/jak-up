@@ -176,9 +176,9 @@
         (send-event v1-0 'trigger (-> this plat-id))
         )
       ;; no qbert-plat-master, just toggle back n forth
-      ((-> obj on?) ;; on -> off
-        (set! (-> obj on?) #f)
-        (let ((gp-2 (-> obj child)))
+      ((-> this on?) ;; on -> off
+        (set! (-> this on?) #f)
+        (let ((gp-2 (-> this child)))
           (while gp-2
             (send-event (ppointer->process gp-2) 'die)
             (set! gp-2 (-> gp-2 0 brother))
@@ -187,8 +187,8 @@
         (sound-play "plat-light-off")
         )
       (else ;; off -> on
-        (set! (-> obj on?) #t)
-        (process-spawn qbert-plat-on (-> obj entity) obj :to obj)
+        (set! (-> this on?) #t)
+        (process-spawn qbert-plat-on (-> this entity) this :to this)
         (sound-play "plat-light-on")
         )
       )

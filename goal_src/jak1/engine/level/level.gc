@@ -1056,8 +1056,8 @@
 (defmethod is-object-visible? level ((this level) (arg0 int))
   "Is arg0 visible? Note that this will return #f if the visibility data is not loaded."
 
-  (case (-> obj name)
-    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire 'jakup-village2 'jakup-sunken)
+  (case (-> this name)
+    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire 'jakup-village2 'jakup-sunken 'jakup-sunkenb)
       (return #t)
       )
     )

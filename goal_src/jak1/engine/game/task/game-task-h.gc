@@ -139,6 +139,7 @@
   (jakup-fire 124)
   (jakup-village2 125)
   (jakup-sunken 126)
+  (jakup-sunkenb 127)
 
-  (max 127)
+  (max 128)
   )
