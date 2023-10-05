@@ -834,6 +834,7 @@
   (jakup-beach    #x2005)
   (jakup-village2 #x2006)
   (jakup-sunken   #x2007)
+  (jakup-rolling  #x2008)
 ;; GAME-TEXT-ID ENUM ENDS
   )
 

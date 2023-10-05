@@ -2378,8 +2378,7 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-sunkenb-start"
                                              :level 'jakup-sunkenb
-                                             :trans (new 'static 'vector :x (meters 1957.56) :y (meters 5228.43) :z (meters 1886.43) :w 1.0)
-                                            ;;  :trans (new 'static 'vector :x (meters 2039.0715) :y (meters 4864.4208) :z (meters 1896.6206) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2039.0715) :y (meters 4864.4208) :z (meters 1896.6206) :w 1.0)
                                              :quat (new 'static 'quaternion :y 0.2904 :w 0.9568)
                                              :camera-trans (new 'static 'vector :x (meters 2032.6483) :y (meters 4869.5654) :z (meters 1885.8984) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
@@ -2406,7 +2405,51 @@
                            :run-packages '("common")
                            :wait-for-load #t))
 
+(define jakup-rolling (new 'static 'level-load-info
+                           :index 37
+                           :name 'jakup-rolling
+                           :visname 'jakup-rolling-vis ;; name + -vis
+                           :nickname 'upa          ;; nickname
+                           :packages '(rolling)
+                           :sound-banks '(rolling)
+                           :music-bank 'rolling
+                           :ambient-sounds '()
+                           :mood '*rolling-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-rolling-start"
+                                             :level 'jakup-rolling
+                                             :trans (new 'static 'vector :x (meters 1957.56) :y (meters 5228.43) :z (meters 1886.43) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.2904 :w 0.9568)
+                                             :camera-trans (new 'static 'vector :x (meters 2032.6483) :y (meters 4869.5654) :z (meters 1885.8984) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.8582 0.0000 -0.5131
+                                              0.0625 0.9925 0.1045
+                                              0.5093 -0.1218 0.8519
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upa
+                                             :lev0 'jakup-sunkenb
+                                             :disp0 'display
+                                             :lev1 'jakup-rolling
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'jakup-rolling)
 (cons! *level-load-list* 'jakup-sunkenb)
 (cons! *level-load-list* 'jakup-sunken)
 (cons! *level-load-list* 'jakup-village2)

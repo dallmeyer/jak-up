@@ -85,30 +85,19 @@
         "spring-height": ["meters", 60.0], // actual launcher
         "alt-vector": ["vector4m", [1917.35, 5340.68, 1890.07, 0.0005]]
       }
+    },
+
+    {
+      "trans": [1941.03, 5327.0, 1888.12], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 126, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunkenb-fuel-cell",
+        "eco-info":["int32", 6, 126]
+      }
     }//,
-    // {
-    //   "trans":  [1962.16, 5229.12, 1893.20], // translation
-    //   "etype": "launcher",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1962.16, 5229.12, 1893.20, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunkenb-launcher-01",
-    //     "mode": "'#x1", // what does this do?
-    //   }
-    // }//,
-    
-    // {
-    //   "trans": [2041.93, 4866.5, 1900.11], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 126, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2041.93, 4866.5, 1900.11, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunken-fuel-cell",
-    //     "eco-info":["int32", 6, 126]
-    //   }
-    // }//,
 
     // // // FLIES
 

@@ -1675,6 +1675,9 @@
 (build-custom-level "jakup-sunkenb")
 (custom-level-cgo "UP9.DGO" "jakup-sunkenb/jakup-sunkenb.gd")
 
+(build-custom-level "jakup-rolling")
+(custom-level-cgo "UPA.DGO" "jakup-rolling/jakup-rolling.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

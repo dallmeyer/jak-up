@@ -421,18 +421,18 @@
         "vis-dist":  ["meters", 400.0],
         "sync": ["float", 6.0, 0.6667, 0.375, 0.375]
       }
-    },
-    {
-      "trans": [2041.93, 4866.5, 1900.11], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 126, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2041.93, 4866.5, 1900.11, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-sunken-fuel-cell",
-        "eco-info":["int32", 6, 126]
-      }
     }//,
+    // {  // 
+    //   "trans": [2041.93, 4866.5, 1900.11], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 126, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2041.93, 4866.5, 1900.11, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-fuel-cell",
+    //     "eco-info":["int32", 6, 126]
+    //   }
+    // }//,
 
     // // // FLIES
 
