@@ -640,7 +640,7 @@
     )
   :code (behavior ()
     (ja-channel-push! 1 (seconds 0.1))
-    (ja :group! (-> self draw art-group data 2))
+    (ja :group! mis-bone-platform-idle-ja)
     (ja :num-func num-func-identity :frame-num 0.0)
     (loop
       (suspend)
