@@ -42,14 +42,58 @@
 
   "actors" : [
     {
-      "trans": [1569.83, 5603.52, 1739.86], // translation
+      "trans": [1569.6, 5603.52, 1739.3], // translation
       "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1569.83, 5603.52, 1739.86, 10], // bounding sphere
+      "bsphere": [1569.6, 5603.52, 1739.3, 10], // bounding sphere
       "lump": {
         "name": "jakup-rolling-racer-01"//,
         // "index": ["int32", 2] // always spawn I think
+      }
+    }, 
+    {
+      "trans": [1496.44, 5623.66, 1735.83], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1496.44, 5623.66, 1735.83, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [1513.3875,	5632.97,	1715.72], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1513.3875,	5632.97,	1715.72, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-blue-eco-02",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [1530.335, 5642.28,	1695.61], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1530.335, 5642.28,	1695.61, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-blue-eco-03",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [1547.2825,	5651.59,	1675.5], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1547.2825,	5651.59,	1675.5, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-blue-eco-04",
+        "eco-info": ["int32", 3, 1]
       }
     },
     {
@@ -59,18 +103,7 @@
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [1564.23, 5660.9, 1655.39, 10], // bounding sphere
       "lump": {
-        "name":"jakup-rolling-blue-eco-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1511.83, 5615.1, 1752.85], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1511.83, 5615.1, 1752.85, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-blue-eco-02",
+        "name":"jakup-rolling-blue-eco-05",
         "eco-info": ["int32", 3, 1]
       }
     },
