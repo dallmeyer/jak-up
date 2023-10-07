@@ -4,5 +4,16 @@
 ;; the actual file name still needs to be 8.3
 ("UPA.DGO"
  ("static-screen.o"
+  ;; "target-racer-h.o"
+  ;; "racer-part.o"
+  ;; "racer.o"
+  ;; "target-racer.o"
+  ;; "racer-states.o"
+  ;; "collide-reaction-racer.o"
+  "eichar-racer+0-ag.go"
+  "tpage-1119.go"
+  "blocking-plane.o"
+  "ef-plane-ag.go"
+  "racer-ag.go"
   "jakup-rolling.go"
  ))

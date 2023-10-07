@@ -356,8 +356,8 @@
   "target-racer.o"
   "racer-states.o"
   "collide-reaction-racer.o"
-  ;; "racer-ag.go"
-  ;; "eichar-racer+0-ag.go"
-  ;; "tpage-1119.go"
+  "racer-ag.go"
+  "eichar-racer+0-ag.go"
+  "tpage-1119.go"
   ;; flutflut stuff
  ))

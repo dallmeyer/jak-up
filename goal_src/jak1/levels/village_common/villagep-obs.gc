@@ -200,9 +200,29 @@
               )
         )
     (+! (-> arg1 origin x) (the float s5-0))
-    (let ((f30-0 (- 1.0 (* 0.0033333334 (the float arg2)))))
+    (let ((f30-0 (- 1.0 (* 0.0033333334 (the float arg2))))
+          (warp-name 
+            (case arg0
+              ((0)
+                "GEYSER ROCK"
+                )
+              ((1)
+                "ROCK VILLAGE"
+                )
+              ((2)
+                "VOLCANIC CRATER"
+                )
+              ((3)
+                "GOL & MAIA'S CITADEL"
+                )
+              (else
+                "CRYSTAL CAVE?" ;; heh maybe
+                )
+              )
+            )
+          )
       (print-game-text-scaled
-        (lookup-text! *common-text* (the-as text-id (+ arg0 286)) #f)
+        warp-name
         f30-0
         arg1
         (the int (* 128.0 f30-0))
@@ -403,20 +423,17 @@
   (set! (-> self min-slot) 0)
   (let ((v1-11 (-> self level)))
     (set! (-> self level-slot) (cond
-                                 ((= v1-11 'training)
+                                 ((= v1-11 'jakup-training)
                                   0
                                   )
-                                 ((= v1-11 'village1)
+                                 ((= v1-11 'jakup-village2)
                                   1
                                   )
-                                 ((= v1-11 'village2)
+                                 ((= v1-11 'jakup-village3)
                                   2
                                   )
-                                 ((= v1-11 'village3)
+                                 ((or (= v1-11 'jakup-citadel))
                                   3
-                                  )
-                                 ((or (= v1-11 'citadel) (= v1-11 'lavatube))
-                                  4
                                   )
                                  (else
                                    -1

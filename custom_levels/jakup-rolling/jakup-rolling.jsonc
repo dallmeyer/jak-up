@@ -36,11 +36,55 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag"],
 
   "ambients": [],
 
   "actors" : [
+    {
+      "trans": [1569.83, 5603.52, 1739.86], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1569.83, 5603.52, 1739.86, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-rolling-racer-01"//,
+        // "index": ["int32", 2] // always spawn I think
+      }
+    },
+    {
+      "trans": [1564.23, 5660.9, 1655.39], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1564.23, 5660.9, 1655.39, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [1511.83, 5615.1, 1752.85], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1511.83, 5615.1, 1752.85, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-blue-eco-02",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [1617.28, 5987.69, 1771.33], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1617.28, 5987.69, 1771.33, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-rolling-racer-02",
+        "index": ["int32", 7] // fuck it, made up my own condition
+      }
+    }//,
     // {
     //   "trans": [1941.03, 5327.0, 1888.12], // translation
     //   "etype": "fuel-cell",  // actor type

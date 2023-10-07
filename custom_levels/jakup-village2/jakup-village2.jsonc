@@ -36,11 +36,47 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag"],
+  "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
 
   "ambients": [],
 
-  "actors" : [
+  "actors" : [    
+    {
+      "trans": [2178.0791, 3489.5, 1698.2213], // translation
+      "etype": "warpgate",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2178.0791, 3489.5, 1698.2213, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-warpgate-01" 
+      }
+    },
+    {
+      "trans": [2176.52, 3488.01, 1701.15], 
+      "etype": "warp-gate-switch",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [2176.52, 3488.01, 1701.15, 10],
+      "lump": {
+        "name": "jakup-village2-warp-gate-switch-01",
+        "alt-actor": "jakup-village2-part-01"
+      }
+    },
+    {
+      "trans": [2178.0791, 3490.5, 1698.2213], 
+      "etype": "training-part",
+      "game_task": 0,
+      "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
+      "bsphere": [2178.0791, 3490.5, 1698.2213, 10],
+      "lump": {
+        "name": "jakup-village2-part-01",
+        "effect-name": "'warpgate-loop",
+        "art-name":"group-training-warpgate",
+        "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
+        "cycle-speed": ["float", -1.0000, 0.0000],
+        "rot": ["float", -1.0000, -1.0000,-1.0]
+      }
+    },
     {
       "trans": [2111.34, 3467.22, 1624.24], // translation
       "etype": "fireboulder",  // actor type

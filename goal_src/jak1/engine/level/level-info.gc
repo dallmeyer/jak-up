@@ -47,55 +47,56 @@
                   :lev1 'village1
                   :disp1 'special)
         
-                 (new 'static 'continue-point
-                   :name "training-warp"
-                   :level 'training
-                   :flags (continue-flags warp)
-                   :trans (new 'static 'vector :x -5383524.0 :y 28019.098 :z 4360302.0 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.084 :w 0.9964)
-                   :camera-trans (new 'static 'vector :x -5366765.0 :y 45646.234 :z 4325889.0 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 0.9057 0.0 0.4238 -0.0666 0.9875 0.1424 -0.4186 -0.1572 0.8944)
-                   :load-commands '((special "med-res-level-1" #t)
-                                    (special "med-res-level-2" #t)
-                                    (special "med-res-level-4" #t)
-                                    (special "med-res-level-6" #t)
-                                    (special "med-res-level-7" #t)
-                                    (special "med-res-level-8" #t)
-                                    (special "med-res-level-9" #t)
-                                    (special "med-res-level-14" #t)
-                                    (special "med-res-level-22" #t)
-                                    (special "med-res-level-23" #t))
+                ;;  (new 'static 'continue-point
+                ;;    :name "training-warp"
+                ;;    :level 'training
+                ;;    :flags (continue-flags warp)
+                ;;    :trans (new 'static 'vector :x -5383524.0 :y 28019.098 :z 4360302.0 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.084 :w 0.9964)
+                ;;    :camera-trans (new 'static 'vector :x -5366765.0 :y 45646.234 :z 4325889.0 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 0.9057 0.0 0.4238 -0.0666 0.9875 0.1424 -0.4186 -0.1572 0.8944)
+                ;;    :load-commands '((special "med-res-level-1" #t)
+                ;;                     (special "med-res-level-2" #t)
+                ;;                     (special "med-res-level-4" #t)
+                ;;                     (special "med-res-level-6" #t)
+                ;;                     (special "med-res-level-7" #t)
+                ;;                     (special "med-res-level-8" #t)
+                ;;                     (special "med-res-level-9" #t)
+                ;;                     (special "med-res-level-14" #t)
+                ;;                     (special "med-res-level-22" #t)
+                ;;                     (special "med-res-level-23" #t))
           
-                   :vis-nick 'tra
-                   :lev0 'training
-                   :disp0 'display
-                   :lev1 'village1
-                   :disp1 'special)
+                ;;    :vis-nick 'tra
+                ;;    :lev0 'training
+                ;;    :disp0 'display
+                ;;    :lev1 'village1
+                ;;    :disp1 'special)
         
-                 (new 'static 'continue-point
-                   :name "game-start"
-                   :level 'training
-                   :flags (continue-flags warp)
-                   :trans (new 'static 'vector :x -5393740.5 :y 28259.533 :z 4360945.5 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.9993 :w 0.0359)
-                   :camera-trans (new 'static 'vector :x -5434444.5 :y 47050.344 :z 4372832.5 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 -0.3536 0.0 -0.9353 0.1315 0.99 -0.0497 0.926 -0.1406 -0.35)
-                   :load-commands '((special "med-res-level-1" #t)
-                                    (special "med-res-level-2" #t)
-                                    (special "med-res-level-4" #t)
-                                    (special "med-res-level-6" #t)
-                                    (special "med-res-level-7" #t)
-                                    (special "med-res-level-8" #t)
-                                    (special "med-res-level-9" #t)
-                                    (special "med-res-level-14" #t)
-                                    (special "med-res-level-22" #t)
-                                    (special "med-res-level-23" #t))
+                ;;  (new 'static 'continue-point
+                ;;    :name "game-start"
+                ;;    :level 'training
+                ;;    :flags (continue-flags warp)
+                ;;    :trans (new 'static 'vector :x -5393740.5 :y 28259.533 :z 4360945.5 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.9993 :w 0.0359)
+                ;;    :camera-trans (new 'static 'vector :x -5434444.5 :y 47050.344 :z 4372832.5 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 -0.3536 0.0 -0.9353 0.1315 0.99 -0.0497 0.926 -0.1406 -0.35)
+                ;;    :load-commands '((special "med-res-level-1" #t)
+                ;;                     (special "med-res-level-2" #t)
+                ;;                     (special "med-res-level-4" #t)
+                ;;                     (special "med-res-level-6" #t)
+                ;;                     (special "med-res-level-7" #t)
+                ;;                     (special "med-res-level-8" #t)
+                ;;                     (special "med-res-level-9" #t)
+                ;;                     (special "med-res-level-14" #t)
+                ;;                     (special "med-res-level-22" #t)
+                ;;                     (special "med-res-level-23" #t))
           
-                   :vis-nick 'tra
-                   :lev0 'training
-                   :disp0 'display
-                   :lev1 'village1
-                   :disp1 'special))
+                ;;    :vis-nick 'tra
+                ;;    :lev0 'training
+                ;;    :disp0 'display
+                ;;    :lev1 'village1
+                ;;    :disp1 'special)
+                )
         
       
     :tasks '(92 93 94 95)
@@ -140,35 +141,35 @@
                   :lev1 'beach
                   :disp1 #f)
         
-                 (new 'static 'continue-point
-                   :name "village1-intro"
-                   :level 'village1
-                   :flags (continue-flags warp sage-intro)
-                   :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
-                   :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
-                   :load-commands '()
-                   :vis-nick 'vi1
-                   :lev0 'village1
-                   :disp0 'display
-                   :lev1 #f
-                   :disp1 #f)
+                ;;  (new 'static 'continue-point
+                ;;    :name "village1-intro"
+                ;;    :level 'village1
+                ;;    :flags (continue-flags warp sage-intro)
+                ;;    :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
+                ;;    :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
+                ;;    :load-commands '()
+                ;;    :vis-nick 'vi1
+                ;;    :lev0 'village1
+                ;;    :disp0 'display
+                ;;    :lev1 #f
+                ;;    :disp1 #f)
         
-                 (new 'static 'continue-point
-                   :name "village1-warp"
-                   :level 'village1
-                   :flags (continue-flags warp sage-ecorocks)
-                   :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
-                   :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
-                   :load-commands '()
-                   :vis-nick 'vi1
-                   :lev0 'village1
-                   :disp0 'display
-                   :lev1 'beach
-                   :disp1 #f)
+                ;;  (new 'static 'continue-point
+                ;;    :name "village1-warp"
+                ;;    :level 'village1
+                ;;    :flags (continue-flags warp sage-ecorocks)
+                ;;    :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
+                ;;    :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
+                ;;    :load-commands '()
+                ;;    :vis-nick 'vi1
+                ;;    :lev0 'village1
+                ;;    :disp0 'display
+                ;;    :lev1 'beach
+                ;;    :disp1 #f)
         
                  (new 'static 'continue-point
                    :name "village1-demo-convo"
@@ -596,20 +597,20 @@
                   :lev1 'firecanyon
                   :disp1 #f)
         
-                 (new 'static 'continue-point
-                   :name "village2-warp"
-                   :level 'village2
-                   :flags (continue-flags warp)
-                   :trans (new 'static 'vector :x 1592492.9 :y 91648.0 :z -6328677.0 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.7469 :w 0.6648)
-                   :camera-trans (new 'static 'vector :x 1555766.1 :y 103759.46 :z -6318964.5 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 -0.2562 0.0 -0.9666 -0.0253 0.9996 0.0067 0.9662 0.0262 -0.2561)
-                   :load-commands '()
-                   :vis-nick 'vi2
-                   :lev0 'village2
-                   :disp0 'display
-                   :lev1 'firecanyon
-                   :disp1 #f)
+                ;;  (new 'static 'continue-point
+                ;;    :name "village2-warp"
+                ;;    :level 'village2
+                ;;    :flags (continue-flags warp)
+                ;;    :trans (new 'static 'vector :x 1592492.9 :y 91648.0 :z -6328677.0 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.7469 :w 0.6648)
+                ;;    :camera-trans (new 'static 'vector :x 1555766.1 :y 103759.46 :z -6318964.5 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 -0.2562 0.0 -0.9666 -0.0253 0.9996 0.0067 0.9662 0.0262 -0.2561)
+                ;;    :load-commands '()
+                ;;    :vis-nick 'vi2
+                ;;    :lev0 'village2
+                ;;    :disp0 'display
+                ;;    :lev1 'firecanyon
+                ;;    :disp1 #f)
         
                  (new 'static 'continue-point
                    :name "village2-dock"
@@ -2005,8 +2006,21 @@
                                              :disp0 'display
                                              :lev1 #f
                                              :disp1 #f)
+                                         (new 'static 'continue-point
+                                             :name "jakup-training-warp"
+                                             :level 'jakup-training
+                                             :flags (continue-flags warp)
+                                             :trans (new 'static 'vector :x (meters 1915.32) :y (meters 11.21) :z (meters 1986.38) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.084 :w 0.9964)
+                                             :camera-trans (new 'static 'vector :x -5366765.0 :y 45646.234 :z 4325889.0 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9 0.9057 0.0 0.4238 -0.0666 0.9875 0.1424 -0.4186 -0.1572 0.8944)
+                                             :load-commands '()  
+                                             :vis-nick 'up0
+                                             :lev0 'jakup-training
+                                             :disp0 'display
+                                             :lev1 #f
+                                             :disp1 #f)
                                          )
-                                             
                            :tasks '()
                            :custom-orb-count 50
                            :priority 100
@@ -2306,8 +2320,21 @@
                                              :disp0 'display
                                              :lev1 'jakup-village2
                                              :disp1 'display)
-                                         )
-                                             
+                                        (new 'static 'continue-point
+                                             :name "jakup-village2-warp"
+                                             :level 'village2
+                                             :flags (continue-flags warp)
+                                             :trans (new 'static 'vector :x (meters 2178.0791) :y (meters 3488.7980) :z (meters 1698.2213) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.9932 :w 0.1162)
+                                             :camera-trans (new 'static 'vector :x (meters 2165.8510) :y (meters 3493.8400) :z (meters 1697.7114) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9 0.0998 0.0000 -0.9950 0.1473 0.9889 0.0147 0.9840 -0.1481 0.0987)
+                                             :load-commands '()
+                                             :vis-nick 'up7
+                                             :lev0 'jakup-fire
+                                             :disp0 'display
+                                             :lev1 'jakup-village2
+                                             :disp1 'display)
+                                         ) 
                            :tasks '()
                            :custom-orb-count 50
                            :priority 100
@@ -2421,13 +2448,14 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-rolling-start"
                                              :level 'jakup-rolling
-                                             :trans (new 'static 'vector :x (meters 1957.56) :y (meters 5228.43) :z (meters 1886.43) :w 1.0)
-                                             :quat (new 'static 'quaternion :y 0.2904 :w 0.9568)
-                                             :camera-trans (new 'static 'vector :x (meters 2032.6483) :y (meters 4869.5654) :z (meters 1885.8984) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1580.80) :y (meters 5603.68) :z (meters 1733.41) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.9383 :w 0.3457)
+                                             :camera-trans (new 'static 'vector :x (meters 1912.2973) :y (meters 5316.7387) :z (meters 1866.3807) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
-                                              0.8582 0.0000 -0.5131
-                                              0.0625 0.9925 0.1045
-                                              0.5093 -0.1218 0.8519
+                                              -0.8688 0.0000 0.4950
+                                              -0.0588 0.9929 -0.1033
+                                              -0.4915 -0.1189 -0.8626
                                               )
                                              :load-commands '()
                                              :vis-nick 'upa

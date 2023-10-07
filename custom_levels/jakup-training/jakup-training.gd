@@ -4,7 +4,11 @@
 ;; the actual file name still needs to be 8.3
 ("UP0.DGO"
  ("static-screen.o"
+  "training-part.o"
   "training-obs.o"
+  "villagep-obs.o"
+  "warpgate-ag.go"
+  "warp-gate-switch-ag.go"
   "plat-eco-ag.go"
   "scarecrow-a-ag.go"
   "scarecrow-b-ag.go"
