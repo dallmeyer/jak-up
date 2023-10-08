@@ -1184,6 +1184,7 @@
  "levels/rolling/"
  :deps ("$OUT/obj/ticky.o")
  "rolling-obs.gc"
+ "peeper.gc"
  "rolling-lightning-mole.gc"
  "rolling-robber.gc"
  "rolling-race-ring.gc"

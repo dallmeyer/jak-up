@@ -4,6 +4,9 @@
 ;; the actual file name still needs to be 8.3
 ("UP9.DGO"
  ("static-screen.o"
+  ;; rolling hack
+  "peeper.o"
+  "lightning-mole-ag.go"
   "floating-launcher.o"
   "floating-launcher-ag.go"
   "jakup-sunkenb.go"

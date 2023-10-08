@@ -9,6 +9,7 @@
   "tpage-1119.go"
   "blocking-plane.o"
   "rolling-obs.o"
+  "peeper.o"
   "rolling-lightning-mole.o"
   "rolling-robber.o"
   "rolling-race-ring.o"

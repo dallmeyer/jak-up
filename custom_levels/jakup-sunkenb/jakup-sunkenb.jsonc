@@ -36,11 +36,25 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["floating-launcher-ag"],
+  "art_groups": ["floating-launcher-ag", "lightning-mole-ag"],
 
   "ambients": [],
 
   "actors" : [
+    // rolling hack
+    {
+      "trans": [1758.18, 5333.51, 1773.26], // translation
+      "etype": "peeper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1758.18, 5333.51, 1773.26, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-rolling-peeper-01",
+        "effect-name": "mole-dig",
+        "effect-param": ["float", 11.0, 50.0, 12.0, 100.0],
+        "cycle-speed": ["float", -1.0, 0.0]
+      }
+    },
     {
       "trans": [1967.56, 5233.82, 1880.22], // translation
       "etype": "ventblue",  // actor type
