@@ -128,18 +128,18 @@
         "name": "jakup-rolling-racer-03",
         "index": ["int32", 7] // fuck it, made up my own condition
       }
+    },
+    {
+      "trans": [1725.84, 6521.5, 1398.78], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 127, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1725.84, 6521.5, 1398.78, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-rolling-fuel-cell",
+        "eco-info":["int32", 6, 127]
+      }
     }//,
-    // {
-    //   "trans": [1941.03, 5327.0, 1888.12], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 126, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunkenb-fuel-cell",
-    //     "eco-info":["int32", 6, 126]
-    //   }
-    // }//,
 
     // // // FLIES
 

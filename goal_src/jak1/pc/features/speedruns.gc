@@ -483,6 +483,7 @@
   )
 
 (defun refresh-jakup-cam ()
+  (return #f)
   (case (-> *jakup-info* cam)
     (((jakup-cam wide-no-collide))
       (send-event *camera* 'change-state cam-stick 0)
@@ -492,21 +493,21 @@
       (send-event *camera* 'change-state cam-lookat 0)
       ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
       )
-    ;; (else ;; ((jakup-cam original))
-    ;;   (cond
-    ;;     ;; idk racer is fucked
-    ;;     ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
-    ;;       (set! (-> *target* alt-cam-pos quad) (-> (&-> (-> *target* control) unknown-qword00) 0))
-    ;;       (logclear! (-> *target* state-flags) (state-flags use-alt-cam-pos))
-    ;;       (send-event *camera* 'set-slave-option #x6000)
-    ;;       (send-event *camera* 'set-fov (degrees 94.9999))
-    ;;       )
-    ;;     (else    
-    ;;       (send-event *camera* 'change-state *camera-base-mode* 0)
-    ;;       (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
-    ;;       )
-    ;;     )
-    ;;   )
+    (else ;; ((jakup-cam original))
+      (cond
+        ;; idk racer is fucked
+        ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
+          (set! (-> *target* alt-cam-pos quad) (-> (&-> (-> *target* control) unknown-qword00) 0))
+          (logclear! (-> *target* state-flags) (state-flags use-alt-cam-pos))
+          (send-event *camera* 'clear-slave-option #x6000)
+          (send-event *camera* 'set-fov (degrees 94.9999))
+          )
+        (else    
+          (send-event *camera* 'change-state *camera-base-mode* 0)
+          (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
+          )
+        )
+      )
     )
   (none)
   )
