@@ -42,13 +42,24 @@
 
   "actors" : [
     {
+      "trans": [1900.88, 5313.52, 1857.38], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1900.88, 5313.52, 1857.38, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-rolling-racer-01",
+        "index": ["int32", 7] // fuck it, made up my own condition
+      }
+    },
+    {
       "trans": [1569.6, 5603.52, 1739.3], // translation
       "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [1569.6, 5603.52, 1739.3, 10], // bounding sphere
       "lump": {
-        "name": "jakup-rolling-racer-01"//,
+        "name": "jakup-rolling-racer-02"//,
         // "index": ["int32", 2] // always spawn I think
       }
     }, 
@@ -108,13 +119,13 @@
       }
     },
     {
-      "trans": [1617.28, 5987.69, 1771.33], // translation
+      "trans": [1605.0, 5984.8, 1787.9], // translation
       "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1617.28, 5987.69, 1771.33, 10], // bounding sphere
+      "bsphere": [1605.0, 5984.8, 1787.9, 10], // bounding sphere
       "lump": {
-        "name": "jakup-rolling-racer-02",
+        "name": "jakup-rolling-racer-03",
         "index": ["int32", 7] // fuck it, made up my own condition
       }
     }//,

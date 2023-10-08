@@ -2449,7 +2449,7 @@
                                              :name "jakup-rolling-start"
                                              :level 'jakup-rolling
                                             ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
-                                             :trans (new 'static 'vector :x (meters 1580.80) :y (meters 5603.68) :z (meters 1733.41) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1576.62) :y (meters 6145.15) :z (meters 1770.61) :w 1.0)
                                              :quat (new 'static 'quaternion :y -0.9383 :w 0.3457)
                                              :camera-trans (new 'static 'vector :x (meters 1912.2973) :y (meters 5316.7387) :z (meters 1866.3807) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
