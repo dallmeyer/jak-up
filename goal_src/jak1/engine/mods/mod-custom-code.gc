@@ -39,7 +39,8 @@
                    (logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
                    )
           (case (-> *target* current-level name)
-            (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-village2 'jakup-sunken 'jakup-sunkenb)
+            (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 
+              'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-swamp)
               (send-event *target* 'end-mode) ;; exit racer
               )
             (('jakup-fire 'jakup-rolling)

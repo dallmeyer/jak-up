@@ -141,6 +141,7 @@
   (jakup-sunken 126)
   ;; (jakup-sunkenb 127)  ;; jakup-sunken cell is really in sunkenb
   (jakup-rolling 127)
+  (jakup-swamp 128)
 
-  (max 128)
+  (max 129)
   )

@@ -1057,7 +1057,8 @@
   "Is arg0 visible? Note that this will return #f if the visibility data is not loaded."
 
   (case (-> this name)
-    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire 'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling)
+    (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire
+      'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling 'jakup-swamp)
       (return #t)
       )
     )

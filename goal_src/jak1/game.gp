@@ -1679,6 +1679,9 @@
 (build-custom-level "jakup-rolling")
 (custom-level-cgo "UPA.DGO" "jakup-rolling/jakup-rolling.gd")
 
+(build-custom-level "jakup-swamp")
+(custom-level-cgo "UPB.DGO" "jakup-swamp/jakup-swamp.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

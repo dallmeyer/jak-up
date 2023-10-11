@@ -2475,8 +2475,53 @@
                            :bottom-height (meters -20)
                            :run-packages '("common")
                            :wait-for-load #t))
+                           
+(define jakup-swamp (new 'static 'level-load-info
+                           :index 37
+                           :name 'jakup-swamp
+                           :visname 'jakup-swamp-vis ;; name + -vis
+                           :nickname 'upb          ;; nickname
+                           :packages '(swamp)
+                           :sound-banks '(swamp)
+                           :music-bank 'swamp
+                           :ambient-sounds '()
+                           :mood '*swamp-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-swamp-start"
+                                             :level 'jakup-swamp
+                                            ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1576.62) :y (meters 6145.15) :z (meters 1770.61) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.9383 :w 0.3457)
+                                             :camera-trans (new 'static 'vector :x (meters 1912.2973) :y (meters 5316.7387) :z (meters 1866.3807) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              -0.8688 0.0000 0.4950
+                                              -0.0588 0.9929 -0.1033
+                                              -0.4915 -0.1189 -0.8626
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upb
+                                             :lev0 'jakup-rolling
+                                             :disp0 'display
+                                             :lev1 'jakup-swamp
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
 
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'jakup-swamp)
 (cons! *level-load-list* 'jakup-rolling)
 (cons! *level-load-list* 'jakup-sunkenb)
 (cons! *level-load-list* 'jakup-sunken)
