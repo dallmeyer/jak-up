@@ -516,11 +516,9 @@
 
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
-  (when (and (-> *pc-settings* speedrunner-mode?)
-             (not (paused?))
+  (when (and (not (paused?))
              *target*
              (!= (-> *target* current-level name) 'title)
-            ;;  (-> *speedrun-info* should-display?)
              )
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))

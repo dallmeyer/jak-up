@@ -41,6 +41,80 @@
   "ambients": [],
 
   "actors" : [
+    {
+      "trans": [1970.86, 6504.32, 1097.06], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1970.86, 6504.32, 1097.06, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-ventblue-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },    
+    {
+      "trans":  [1992.29, 6505.54, 1205.18], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1992.29, 6505.54, 1205.18, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-launcher-01",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 100.0],
+        "alt-vector": ["vector4m", [1979.36, 6503.37, 1223.13, 0.0003]]
+      }
+    },
+    {
+      "trans": [2013.46, 6503.80, 1291.14], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2013.46, 6503.80, 1291.14, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-ventblue-02",
+        "eco-info": ["int32", 3, 1]
+      }
+    },    
+    {
+      "trans":  [1928.75, 6503.90, 1243.93], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1928.75, 6503.90, 1243.93, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-launcher-02",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 100.0],
+        "alt-vector": ["vector4m", [1892.94, 6564.20, 1228.80, 0.0005]]
+      }
+    },  
+    {
+      "trans":  [1892.94, 6564.20, 1228.80], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1892.94, 6564.20, 1228.80, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-launcher-03",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 100.0],
+        "alt-vector": ["vector4m", [1901.05, 6612.06, 1272.96, 0.0005]]
+      }
+    },
+    {
+      "trans":  [1901.05, 6612.06, 1272.96], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1901.05, 6612.06, 1272.96, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-launcher-04",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 100.0],
+        "alt-vector": ["vector4m", [1937.34, 6668.13, 1297.53, 0.0005]]
+      }
+    }//,
     // {
     //   "trans": [1900.88, 5313.52, 1857.38], // translation
     //   "etype": "racer",  // actor type
