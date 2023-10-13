@@ -4,5 +4,7 @@
 ;; the actual file name still needs to be 8.3
 ("UPB.DGO"
  ("static-screen.o"
+  "balance-plat.o"
+  "balance-plat-ag.go"
   "jakup-swamp.go"
  ))
