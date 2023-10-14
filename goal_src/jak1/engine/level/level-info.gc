@@ -2448,8 +2448,8 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-rolling-start"
                                              :level 'jakup-rolling
-                                            ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
-                                             :trans (new 'static 'vector :x (meters 1576.62) :y (meters 6145.15) :z (meters 1770.61) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1910.48) :y (meters 5311.81) :z (meters 1855.63) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 1576.62) :y (meters 6145.15) :z (meters 1770.61) :w 1.0)
                                              :quat (new 'static 'quaternion :y -0.9383 :w 0.3457)
                                              :camera-trans (new 'static 'vector :x (meters 1912.2973) :y (meters 5316.7387) :z (meters 1866.3807) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
@@ -2537,7 +2537,7 @@
                                              :name "jakup-swampb-start"
                                              :level 'jakup-swampb
                                             ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
-                                             :trans (new 'static 'vector :x (meters 2100.5920) :y (meters 7133.5190) :z (meters 1383.0850) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2104.43) :y (meters 7122.12) :z (meters 1376.82) :w 1.0)
                                              :quat (new 'static 'quaternion :y 0.9098 :w -0.4149)
                                              :camera-trans (new 'static 'vector :x (meters 2099.7561) :y (meters 7138.6806) :z (meters 1395.5568) :w 1.0)
                                              :camera-rot (new 'static 'array float 9

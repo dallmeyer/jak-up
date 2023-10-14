@@ -5,6 +5,10 @@
 ("UPB.DGO"
  ("static-screen.o"
   "balance-plat.o"
+  ;; "swamp-rat.o"
+  ;; "swamp-rat-nest.o"
+  ;; "swamp-rat-ag.go"
+  ;; "swamp-rat-nest-ag.go"
   "balance-plat-ag.go"
   "jakup-swamp.go"
  ))

@@ -41,6 +41,7 @@
   "ambients": [],
 
   "actors" : [
+    // 1914.79, 7197.52, 1456.17   // for flutstart 
     // {
     //   "trans": [1900.88, 5313.52, 1857.38], // translation
     //   "etype": "racer",  // actor type
