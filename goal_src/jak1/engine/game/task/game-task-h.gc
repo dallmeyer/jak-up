@@ -143,6 +143,7 @@
   (jakup-rolling 127)
   (jakup-swamp 128)
   ;; (jakup-swampb 128)  ;; jakup-swamp cell is really in swampb
-
-  (max 129)
+  (jakup-ogre 129)
+  
+  (max 130)
   )

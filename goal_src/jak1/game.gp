@@ -1686,6 +1686,9 @@
 (build-custom-level "jakup-swampb")
 (custom-level-cgo "UPC.DGO" "jakup-swampb/jakup-swampb.gd")
 
+(build-custom-level "jakup-ogre")
+(custom-level-cgo "UPD.DGO" "jakup-ogre/jakup-ogre.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;

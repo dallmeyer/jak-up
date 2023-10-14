@@ -1058,7 +1058,7 @@
 
   (case (-> this name)
     (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire
-      'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling 'jakup-swamp 'jakup-swampb)
+      'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling 'jakup-swamp 'jakup-swampb 'jakup-ogre)
       (return #t)
       )
     )
