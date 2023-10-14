@@ -360,4 +360,11 @@
   "eichar-racer+0-ag.go"
   "tpage-1119.go"
   ;; flutflut stuff
+  "blocking-plane.o"
+  "flut-part.o"
+  "flutflut.o"
+  "target-flut.o"
+  "eichar-flut+0-ag.go"
+  "ef-plane-ag.go"
+  "flut-saddle-ag.go"
  ))

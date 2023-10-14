@@ -2536,14 +2536,14 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-swampb-start"
                                              :level 'jakup-swampb
-                                            ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
-                                             :trans (new 'static 'vector :x (meters 2104.43) :y (meters 7122.12) :z (meters 1376.82) :w 1.0)
-                                             :quat (new 'static 'quaternion :y 0.9098 :w -0.4149)
-                                             :camera-trans (new 'static 'vector :x (meters 2099.7561) :y (meters 7138.6806) :z (meters 1395.5568) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2123.96) :y (meters 8028.97) :z (meters 1304.86) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.2046 :w 0.9788)
+                                             :camera-trans (new 'static 'vector :x (meters 1895.4652) :y (meters 7201.5317) :z (meters 1442.6622) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
-                                              -0.9993 0.0000 -0.0368
-                                               0.0043 0.9930 -0.1174
-                                               0.0366 -0.1175 -0.9923
+                                              0.6884 0.0000 -0.7252
+                                              0.0879 0.9926 0.0834
+                                              0.7199 -0.1212 0.6833
                                               )
                                              :load-commands '()
                                              :vis-nick 'upc

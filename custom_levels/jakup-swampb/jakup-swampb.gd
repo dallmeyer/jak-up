@@ -4,5 +4,12 @@
 ;; the actual file name still needs to be 8.3
 ("UPC.DGO"
  ("static-screen.o"
+  ;; "blocking-plane.o"
+  ;; "flut-part.o"
+  ;; "flutflut.o"
+  ;; "target-flut.o"
+  "eichar-flut+0-ag.go"
+  "ef-plane-ag.go"
+  "flut-saddle-ag.go"
   "jakup-swampb.go"
  ))
