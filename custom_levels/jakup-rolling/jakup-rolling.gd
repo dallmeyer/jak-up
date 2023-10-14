@@ -12,7 +12,6 @@
   ;; "collide-reaction-racer.o"
   "eichar-racer+0-ag.go"
   "tpage-1119.go"
-  "blocking-plane.o"
   "ef-plane-ag.go"
   "racer-ag.go"
   "jakup-rolling.go"
