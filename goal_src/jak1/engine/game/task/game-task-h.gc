@@ -144,6 +144,7 @@
   (jakup-swamp 128)
   ;; (jakup-swampb 128)  ;; jakup-swamp cell is really in swampb
   (jakup-ogre 129)
-  
+  ;; (jakup-ogreb 129)  ;; jakup-ogre cell is really in ogreb
+
   (max 130)
   )

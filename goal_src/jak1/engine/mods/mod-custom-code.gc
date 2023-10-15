@@ -45,7 +45,7 @@
               'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-swamp 'jakup-swampb)
               (send-event *target* 'end-mode) ;; exit racer
               )
-            (('jakup-fire 'jakup-rolling 'jakup-ogre)
+            (('jakup-fire 'jakup-rolling 'jakup-ogre 'jakup-ogreb)
               ;; nothing
               )
             )
@@ -57,7 +57,7 @@
                    )
           (case (-> *target* current-level name)
             (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire
-              'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling 'jakup-swamp 'jakup-ogre)
+              'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling 'jakup-swamp 'jakup-ogre 'jakup-ogreb)
               (send-event *target* 'end-mode) ;; exit flut
               )
             (('jakup-swampb)

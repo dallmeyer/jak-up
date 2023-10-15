@@ -36,11 +36,34 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag"],
 
   "ambients": [],
 
   "actors" : [
+    
+    {
+      "trans": [2161.44, 8487.04, 1693.57], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2161.44, 8487.04, 1693.57, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-racer-01"//,
+        // "index": ["int32", 2] 
+      }
+    },
+    {
+      "trans": [3427.16, 9319.43, 1838.79], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3427.16, 9319.43, 1838.79, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-rolling-racer-02",
+        "index": ["int32", 7] // fuck it, made up my own condition
+      }
+    }//, 
     // {
     //   "trans": [1914.79, 7197.52, 1456.17], // translation
     //   "etype": "flutflut",  // actor type

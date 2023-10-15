@@ -1689,6 +1689,9 @@
 (build-custom-level "jakup-ogre")
 (custom-level-cgo "UPD.DGO" "jakup-ogre/jakup-ogre.gd")
 
+(build-custom-level "jakup-ogreb")
+(custom-level-cgo "UPE.DGO" "jakup-ogreb/jakup-ogreb.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;
