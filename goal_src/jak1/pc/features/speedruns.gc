@@ -896,7 +896,7 @@
   
 (defun speedrun-mode-update ()
   "A per frame update for speedrunning related stuff"
-  (when (-> *pc-settings* speedrunner-mode?)
+  ;; (when (-> *pc-settings* speedrunner-mode?)
     ;; Update auto-splitter
     (update-autosplit-info-jak1)
     ;; Draw info to the screen
@@ -971,6 +971,6 @@
       ;;   (format #t "player triggered zoomer combo~%")
       ;;   (get-on-zoomer)
       ;;   )
-      )
+      ;; )
     )
   (none))

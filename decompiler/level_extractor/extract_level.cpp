@@ -287,7 +287,7 @@ void extract_common(const ObjectFileDB& db,
     // stuff merc models from all levels into GAME.fr3
     for (const std::string& lvl_dgo_name : dgo_names) {
       auto tex_remap = extract_tex_remap(db, lvl_dgo_name);
-      extract_art_groups_from_level(db, tex_db, tex_remap, lvl_dgo_name, tfrag_level);
+      extract_art_groups_from_level(db, tex_db, tex_remap, lvl_dgo_name, tfrag_level, art_group_data);
     }
   }
 
