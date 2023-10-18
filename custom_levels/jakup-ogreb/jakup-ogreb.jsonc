@@ -40,18 +40,106 @@
 
   "ambients": [],
 
-  "actors" : [
-    // {
-    //   "trans": [2152.69, 8368.1, 1429.33], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 128, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2152.69, 8368.1, 1429.33, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-swamp-fuel-cell",
-    //     "eco-info":["int32", 6, 128]
-    //   }
-    // }//,
+  "actors" : [    
+    {
+      "trans": [3564.93, 9396.90, 1656.14], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3564.93, 9396.90, 1656.14, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [3445.44, 9441.99, 1579.04], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3445.44, 9441.99, 1579.04, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-02",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [3358.27, 9484.48, 1643.85], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3358.27, 9484.48, 1643.85, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-03",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [3245.97, 9533.10, 1725.26], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3245.97, 9533.10, 1725.26, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-04",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [3196.08, 9605.99, 1865.99], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3196.08, 9605.99, 1865.99, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-05",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [3141.90, 9667.10, 1959.02], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [3141.90, 9667.10, 1959.02, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-06",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [2985.12, 9720.20, 2011.52], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2985.12, 9720.20, 2011.52, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-07",
+        "eco-info": ["int32", 3, 1]
+      }
+    }, 
+    {
+      "trans": [2841.58, 9849.54, 2085.13], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2841.58, 9849.54, 2085.13, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-ventblue-08",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [2619.80, 10135.72, 1882.27], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 129, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2619.80, 10135.72, 1882.27, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-fuel-cell",
+        "eco-info":["int32", 6, 129]
+      }
+    }//,
 
     // // // FLIES
 

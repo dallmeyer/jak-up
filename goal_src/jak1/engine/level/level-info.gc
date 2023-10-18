@@ -2625,13 +2625,13 @@
                                              :name "jakup-ogreb-start"
                                              :level 'jakup-ogreb
                                             ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
-                                             :trans (new 'static 'vector :x (meters 2152.2607) :y (meters 8375.8662) :z (meters 1442.7186) :w 1.0)
-                                             :quat (new 'static 'quaternion :y 0.0613 :w 0.9981)
-                                             :camera-trans (new 'static 'vector :x (meters 2149.8369) :y (meters 8381.0019) :z (meters 1430.4553) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 3440.8815) :y (meters 9321.4228) :z (meters 1828.4688) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.8861 :w 0.4633)
+                                             :camera-trans (new 'static 'vector :x (meters 3431.5505) :y (meters 9326.5615) :z (meters 1836.7889) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
-                                              0.9810 0.0000 -0.1938
-                                              0.0232 0.9927 0.1177
-                                              0.1924 -0.1200 0.9739
+                                              -0.6654 0.0000 -0.7464
+                                              0.0896 0.9927 -0.0799 
+                                              0.7410 -0.1200 -0.6606
                                               )
                                              :load-commands '()
                                              :vis-nick 'upe
