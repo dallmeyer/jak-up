@@ -418,9 +418,9 @@
                         :task-id (game-task jakup-fire)
                         :task-name
                         (new 'static 'array text-id 4
-                             (text-id firecanyon-end)
-                             (text-id firecanyon-end)
-                             (text-id firecanyon-end)
+                             (text-id jakup-fire)
+                             (text-id jakup-fire)
+                             (text-id jakup-fire)
                              (text-id zero)
                              )
                         )
@@ -565,9 +565,9 @@
                         :task-id (game-task jakup-ogre)
                         :task-name
                         (new 'static 'array text-id 4
-                             (text-id jakup-ogre)
-                             (text-id jakup-ogre)
-                             (text-id jakup-ogre)
+                             (text-id ogre-end)
+                             (text-id ogre-end)
+                             (text-id ogre-end)
                              (text-id zero)
                              )
                         )
