@@ -471,7 +471,9 @@
 
 (defmacro process->handle (proc)
   "convert a process to a handle. if proc is #f, returns a #f handle."
-  `(ppointer->handle (process->ppointer ,proc))
+  `(let ((ptr (process->ppointer ,proc)))
+    (if ptr (ppointer->handle ptr))
+    )
   )
 
 (defmethod print handle ((this handle))

@@ -164,17 +164,17 @@
   (misty 4)
   (beach 5)
   (firecanyon 6)
-  (village2 6)
-  (sunken 7)
-  ;; (swamp 8)
-  ;; (rolling 9)
-  ;; (ogre 10)
-  ;; (village3 11)
-  ;; (snow 12)
-  ;; (cave 13)
-  ;; (lavatube 14)
-  ;; (citadel 15)
-  (max 7)
+  (village2 7)
+  (sunken 8)
+  (rolling 9)
+  (swamp 10)
+  (ogre 11)
+  ;; (village3 12)
+  ;; (snow 13)
+  ;; (cave 14)
+  ;; (lavatube 15)
+  ;; (citadel 16)
+  (max 11)
   )
 
 ;; maps level-info indices to the appropriate offset in *level-task-data*
@@ -215,6 +215,12 @@
     (level-task-data-index firecanyon)
     (level-task-data-index village2)
     (level-task-data-index sunken)
+    (level-task-data-index sunken)  ;; sunkenb
+    (level-task-data-index rolling)
+    (level-task-data-index swamp)
+    (level-task-data-index swamp) ;; swampb
+    (level-task-data-index ogre)
+    (level-task-data-index ogre)  ;; ogreb
     )
   )
 
@@ -264,7 +270,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id village1-level-name)
-              :text-group-index 1
+              :text-group-index 2
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -293,7 +299,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id jungle-level-name)
-              :text-group-index 1
+              :text-group-index 3
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -322,7 +328,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id jungleb-level-name)
-              :text-group-index 1
+              :text-group-index 4
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -351,7 +357,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id misty-level-name)
-              :text-group-index 1
+              :text-group-index 5
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -380,7 +386,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id beach-level-name)
-              :text-group-index 1
+              :text-group-index 6
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -409,7 +415,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id firecanyon-level-name)
-              :text-group-index 5
+              :text-group-index 7
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -438,7 +444,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id village2-level-name)
-              :text-group-index 1
+              :text-group-index 8
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -467,7 +473,7 @@
               ) 
          (new 'static 'level-tasks-info
               :level-name-id (text-id sunken-level-name)
-              :text-group-index 1
+              :text-group-index 9
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -497,7 +503,7 @@
         ;; jakup-sunkenb fake level
          (new 'static 'level-tasks-info
               :level-name-id (text-id rolling-level-name)
-              :text-group-index 1
+              :text-group-index 10
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -526,7 +532,7 @@
               )
          (new 'static 'level-tasks-info
               :level-name-id (text-id swamp-level-name)
-              :text-group-index 1
+              :text-group-index 11
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info
@@ -556,7 +562,7 @@
         ;; jakup-swampb fake level
          (new 'static 'level-tasks-info
               :level-name-id (text-id ogre-level-name)
-              :text-group-index 1
+              :text-group-index 12
               :nb-of-tasks 2
               :buzzer-task-index 1
               :task-info

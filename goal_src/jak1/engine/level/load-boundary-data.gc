@@ -1639,7 +1639,7 @@
 ;; sunkenb   rolling    sunkenb
 ;; hide/show rolling        BOTH
 (static-load-boundary :flags (closed player)
-  :top (meters 4997.11)  :bot (meters 4997.11)
+  :top (meters 5091.64)  :bot (meters 5091.64)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
@@ -1653,7 +1653,7 @@
 ;; sunkenb   rolling    sunkenb
 ;; load sunkenb + rolling    UP
 (static-load-boundary :flags (closed player)
-  :top (meters 4986.77)  :bot (meters 4986.77)
+  :top (meters 5081.3)  :bot (meters 5081.3)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
@@ -1669,7 +1669,7 @@
 ;; sunken   sunkenb    sunkenb
 ;; load sunken + sunkenb  DOWN
 (static-load-boundary :flags (closed player)
-  :top (meters 4973.54)  :bot (meters 4973.54)
+  :top (meters 5068.07)  :bot (meters 5068.07)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)
@@ -1683,7 +1683,7 @@
 ;; sunken   sunkenb    sunkenb
 ;; hide/show sunken        BOTH
 (static-load-boundary :flags (closed player)
-  :top (meters 4963.95)  :bot (meters 4963.95)
+  :top (meters 5058.48)  :bot (meters 5058.48)
   :points (
     (meters 272.536) (meters 2727.19)
     (meters 1348.93) (meters -184.095)

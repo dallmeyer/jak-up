@@ -625,14 +625,19 @@
                 (empty)
                 arg1
                 )
-               (else
+               ((nonzero? arg0)
                  (the-as time-frame (-> arg0 duration))
                  )
+               (else 
+                (the-as time-frame 0)
+                )
                )
         )
   (set! (-> self duration) (the-as time-frame arg1))
-  (set! (-> self linger-duration) (the-as time-frame (-> arg0 linger-duration)))
-  (set! (-> self part) (create-launch-control arg0 self))
+  (when (nonzero? arg0)
+    (set! (-> self linger-duration) (the-as time-frame (-> arg0 linger-duration)))
+    (set! (-> self part) (create-launch-control arg0 self))
+    )
   (go part-tracker-process)
   (none)
   )

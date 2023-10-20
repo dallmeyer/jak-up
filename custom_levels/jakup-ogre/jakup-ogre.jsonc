@@ -54,11 +54,11 @@
       }
     },
     {
-      "trans": [3427.16, 9319.43, 1838.79], // translation
+      "trans": [2276.41, 9345.77, 1176.10], // translation
       "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [3427.16, 9319.43, 1838.79, 10], // bounding sphere
+      "bsphere": [2276.41, 9345.77, 1176.10, 10], // bounding sphere
       "lump": {
         "name": "jakup-rolling-racer-02",
         "index": ["int32", 7] // fuck it, made up my own condition
