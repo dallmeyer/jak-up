@@ -41,105 +41,105 @@
   "ambients": [],
 
   "actors" : [    
-    {
-      "trans": [2110.01, 9423.24, 1019.28], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2110.01, 9423.24, 1019.28, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2020.10, 9468.33, 1129.68], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2020.10, 9468.33, 1129.68, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-02",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2074.90, 9510.83, 1223.32], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2074.90, 9510.83, 1223.32, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-03",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2143.61, 9559.37, 1343.90], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2143.61, 9559.37, 1343.90, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-04",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2277.89, 9632.35, 1409.04], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2277.89, 9632.35, 1409.04, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-05",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2364.55, 9693.44, 1473.03], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2364.55, 9693.44, 1473.03, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-06",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2399.52, 9746.55, 1634.56], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2399.52, 9746.55, 1634.56, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventblue-07",
-        "eco-info": ["int32", 3, 1]
-      }
-    }, 
-    {
-      "trans": [2456.91, 9875.90, 1785.45], // translation
-      "etype": "ventyellow",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2456.91, 9875.90, 1785.45, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-ventyellow-01",
-        "eco-info": ["int32", 1, 1]
-      }
-    },
-    {
-      "trans": [2229.41, 10164.1, 1983.00], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 129, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2229.41, 10164.1, 1983.00, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-ogreb-fuel-cell",
-        "eco-info":["int32", 6, 129]
-      }
-    }//,
+    // {
+    //   "trans": [2110.01, 9423.24, 1019.28], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2110.01, 9423.24, 1019.28, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-01",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2020.10, 9468.33, 1129.68], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2020.10, 9468.33, 1129.68, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-02",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2074.90, 9510.83, 1223.32], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2074.90, 9510.83, 1223.32, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-03",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2143.61, 9559.37, 1343.90], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2143.61, 9559.37, 1343.90, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-04",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2277.89, 9632.35, 1409.04], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2277.89, 9632.35, 1409.04, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-05",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2364.55, 9693.44, 1473.03], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2364.55, 9693.44, 1473.03, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-06",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2399.52, 9746.55, 1634.56], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2399.52, 9746.55, 1634.56, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventblue-07",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // }, 
+    // {
+    //   "trans": [2456.91, 9875.90, 1785.45], // translation
+    //   "etype": "ventyellow",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2456.91, 9875.90, 1785.45, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-ventyellow-01",
+    //     "eco-info": ["int32", 1, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [2229.41, 10164.1, 1983.00], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 129, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2229.41, 10164.1, 1983.00, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogreb-fuel-cell",
+    //     "eco-info":["int32", 6, 129]
+    //   }
+    // }//,
 
     // // // FLIES
 

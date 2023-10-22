@@ -42,28 +42,28 @@
 
   "actors" : [
     
-    {
-      "trans": [2161.44, 8487.04, 1693.57], // translation
-      "etype": "racer",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2161.44, 8487.04, 1693.57, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-ogre-racer-01"//,
-        // "index": ["int32", 2] 
-      }
-    },
-    {
-      "trans": [2276.41, 9345.77, 1176.10], // translation
-      "etype": "racer",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2276.41, 9345.77, 1176.10, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-rolling-racer-02",
-        "index": ["int32", 7] // fuck it, made up my own condition
-      }
-    }//, 
+    // {
+    //   "trans": [2161.44, 8487.04, 1693.57], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2161.44, 8487.04, 1693.57, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-ogre-racer-01"//,
+    //     // "index": ["int32", 2] 
+    //   }
+    // },
+    // {
+    //   "trans": [2276.41, 9345.77, 1176.10], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2276.41, 9345.77, 1176.10, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-rolling-racer-02",
+    //     "index": ["int32", 7] // fuck it, made up my own condition
+    //   }
+    // }//, 
     // {
     //   "trans": [1914.79, 7197.52, 1456.17], // translation
     //   "etype": "flutflut",  // actor type

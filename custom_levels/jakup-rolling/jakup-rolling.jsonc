@@ -41,105 +41,105 @@
   "ambients": [],
 
   "actors" : [
-    {
-      "trans": [1900.88, 5313.52, 1857.38], // translation
-      "etype": "racer",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1900.88, 5313.52, 1857.38, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-rolling-racer-01",
-        "index": ["int32", 7] // fuck it, made up my own condition
-      }
-    },
-    {
-      "trans": [1569.6, 5603.52, 1739.3], // translation
-      "etype": "racer",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1569.6, 5603.52, 1739.3, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-rolling-racer-02"//,
-        // "index": ["int32", 2] // always spawn I think
-      }
-    }, 
-    {
-      "trans": [1496.44, 5623.66, 1735.83], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1496.44, 5623.66, 1735.83, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-blue-eco-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1513.3875,	5632.97,	1715.72], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1513.3875,	5632.97,	1715.72, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-blue-eco-02",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1530.335, 5642.28,	1695.61], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1530.335, 5642.28,	1695.61, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-blue-eco-03",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1547.2825,	5651.59,	1675.5], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1547.2825,	5651.59,	1675.5, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-blue-eco-04",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1564.23, 5660.9, 1655.39], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1564.23, 5660.9, 1655.39, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-blue-eco-05",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1605.0, 5984.8, 1787.9], // translation
-      "etype": "racer",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1605.0, 5984.8, 1787.9, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-rolling-racer-03",
-        "index": ["int32", 7] // fuck it, made up my own condition
-      }
-    },
-    {
-      "trans": [1791.66, 6509.5, 1375.73], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 127, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1791.66, 6509.5, 1375.73, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-rolling-fuel-cell",
-        "eco-info":["int32", 6, 127]
-      }
-    }//,
+    // {
+    //   "trans": [1900.88, 5313.52, 1857.38], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1900.88, 5313.52, 1857.38, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-rolling-racer-01",
+    //     "index": ["int32", 7] // fuck it, made up my own condition
+    //   }
+    // },
+    // {
+    //   "trans": [1569.6, 5603.52, 1739.3], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1569.6, 5603.52, 1739.3, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-rolling-racer-02"//,
+    //     // "index": ["int32", 2] // always spawn I think
+    //   }
+    // }, 
+    // {
+    //   "trans": [1496.44, 5623.66, 1735.83], // translation
+    //   "etype": "eco",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1496.44, 5623.66, 1735.83, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-rolling-blue-eco-01",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [1513.3875,	5632.97,	1715.72], // translation
+    //   "etype": "eco",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1513.3875,	5632.97,	1715.72, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-rolling-blue-eco-02",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [1530.335, 5642.28,	1695.61], // translation
+    //   "etype": "eco",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1530.335, 5642.28,	1695.61, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-rolling-blue-eco-03",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [1547.2825,	5651.59,	1675.5], // translation
+    //   "etype": "eco",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1547.2825,	5651.59,	1675.5, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-rolling-blue-eco-04",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [1564.23, 5660.9, 1655.39], // translation
+    //   "etype": "eco",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1564.23, 5660.9, 1655.39, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-rolling-blue-eco-05",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [1605.0, 5984.8, 1787.9], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1605.0, 5984.8, 1787.9, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-rolling-racer-03",
+    //     "index": ["int32", 7] // fuck it, made up my own condition
+    //   }
+    // },
+    // {
+    //   "trans": [1791.66, 6509.5, 1375.73], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 127, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1791.66, 6509.5, 1375.73, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-rolling-fuel-cell",
+    //     "eco-info":["int32", 6, 127]
+    //   }
+    // }//,
 
     // // // FLIES
 

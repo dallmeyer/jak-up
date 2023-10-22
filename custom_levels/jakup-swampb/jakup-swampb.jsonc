@@ -41,102 +41,102 @@
   "ambients": [],
 
   "actors" : [
-    {
-      "trans": [1914.79, 7197.52, 1456.17], // translation
-      "etype": "flutflut",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1914.79, 7197.52, 1456.17, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-swampb-flutflut-01",
-        "index": ["int32", 7] // fuck it, made up my own condition 
-      }
-    },
-    {
-      "trans": [2135.15, 8027.27, 1287.42], // translation
-      "etype": "flutflut",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2135.15, 8027.27, 1287.42, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-swampb-flutflut-02",
-        "index": ["int32", 4] // empty pad, return only
-      }
-    },    
-    {
-      "trans": [2131.10, 8029.39, 1304.92], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2131.10, 8029.39, 1304.92, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-swampb-ventblue-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    },    
-    {
-      "trans":  [2141.70, 8033.41, 1320.81], // translation
-      "etype": "launcher",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2141.70, 8033.41, 1320.81, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-swampb-launcher-01",
-        "mode": "'#x1", // what does this do?
-        "spring-height": ["meters", 120.0],
-        "alt-vector": ["vector4m", [2121.65, 8105.56, 1347.95, 0.0005]]
-      }
-    },  
-    {
-      "trans":  [2121.65, 8105.56, 1347.95], // translation
-      "etype": "launcher",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2121.65, 8105.56, 1347.95, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-swampb-launcher-02",
-        "mode": "'#x1", // what does this do?
-        "spring-height": ["meters", 120.0],
-        "alt-vector": ["vector4m", [2169.22, 8180.38, 1355.49, 0.0005]]
-      }
-    },
-    {
-      "trans":  [2169.22, 8180.38, 1355.49], // translation
-      "etype": "launcher",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2169.22, 8180.38, 1355.49, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-swampb-launcher-03",
-        "mode": "'#x1", // what does this do?
-        "spring-height": ["meters", 120.0],
-        "alt-vector": ["vector4m", [2147.66, 8255.73, 1377.08, 0.0005]]
-      }
-    },
-    {
-      "trans":  [2147.66, 8255.73, 1377.08], // translation
-      "etype": "launcher",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2147.66, 8255.73, 1377.08, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-swampb-launcher-04",
-        "mode": "'#x1", // what does this do?
-        "spring-height": ["meters", 130.0],
-        "alt-vector": ["vector4m", [2150.74, 8348.96, 1404.95, 0.0005]]
-      }
-    },
-    {
-      "trans": [2152.69, 8368.1, 1429.33], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 128, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2152.69, 8368.1, 1429.33, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-swamp-fuel-cell",
-        "eco-info":["int32", 6, 128]
-      }
-    }//,
+    // {
+    //   "trans": [1914.79, 7197.52, 1456.17], // translation
+    //   "etype": "flutflut",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1914.79, 7197.52, 1456.17, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-swampb-flutflut-01",
+    //     "index": ["int32", 7] // fuck it, made up my own condition 
+    //   }
+    // },
+    // {
+    //   "trans": [2135.15, 8027.27, 1287.42], // translation
+    //   "etype": "flutflut",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2135.15, 8027.27, 1287.42, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-swampb-flutflut-02",
+    //     "index": ["int32", 4] // empty pad, return only
+    //   }
+    // },    
+    // {
+    //   "trans": [2131.10, 8029.39, 1304.92], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2131.10, 8029.39, 1304.92, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swampb-ventblue-01",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },    
+    // {
+    //   "trans":  [2141.70, 8033.41, 1320.81], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2141.70, 8033.41, 1320.81, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swampb-launcher-01",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 120.0],
+    //     "alt-vector": ["vector4m", [2121.65, 8105.56, 1347.95, 0.0005]]
+    //   }
+    // },  
+    // {
+    //   "trans":  [2121.65, 8105.56, 1347.95], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2121.65, 8105.56, 1347.95, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swampb-launcher-02",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 120.0],
+    //     "alt-vector": ["vector4m", [2169.22, 8180.38, 1355.49, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans":  [2169.22, 8180.38, 1355.49], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2169.22, 8180.38, 1355.49, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swampb-launcher-03",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 120.0],
+    //     "alt-vector": ["vector4m", [2147.66, 8255.73, 1377.08, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans":  [2147.66, 8255.73, 1377.08], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2147.66, 8255.73, 1377.08, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swampb-launcher-04",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 130.0],
+    //     "alt-vector": ["vector4m", [2150.74, 8348.96, 1404.95, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans": [2152.69, 8368.1, 1429.33], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 128, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2152.69, 8368.1, 1429.33, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swamp-fuel-cell",
+    //     "eco-info":["int32", 6, 128]
+    //   }
+    // }//,
 
     // // // FLIES
 

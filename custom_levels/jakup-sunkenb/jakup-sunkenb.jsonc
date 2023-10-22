@@ -42,76 +42,76 @@
 
   "actors" : [
     // rolling hack
-    {
-      "trans": [1758.18, 5333.51, 1773.26], // translation
-      "etype": "peeper",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1758.18, 5333.51, 1773.26, 10], // bounding sphere
-      "lump": {
-        "name": "jakup-rolling-peeper-01",
-        "effect-name": "mole-dig",
-        "effect-param": ["float", 11.0, 50.0, 12.0, 100.0],
-        "cycle-speed": ["float", -1.0, 0.0]
-      }
-    },
-    {
-      "trans": [1967.56, 5233.82, 1880.22], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1967.56, 5233.82, 1880.22, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-sunkenb-ventblue-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1958.71, 5233.56, 1897.53], // translation
-      "etype": "floating-launcher",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1958.71, 5233.56, 1897.53, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-sunkenb-floating-launcher-01",
-        "path": ["vector4m",  // activation path
-          [1958.71, 5233.56, 1897.53, 1.0],
-          [1958.71, 5245.56, 1897.53, 1.0]
-        ],
-        "trigger-height": ["meters", 5230.0],
-        "spring-height": ["meters", 50.0], // actual launcher
-        "alt-vector": ["vector4m", [1961.83, 5276.13, 1889.81, 0.0005]]
-      }
-    },
-    {
-      "trans": [1923.09, 5300.28, 1893.89], // translation
-      "etype": "floating-launcher",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1923.09, 5300.28, 1893.89, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-sunkenb-floating-launcher-02",
-        "path": ["vector4m",  // activation path
-          [1923.09, 5300.28, 1893.89, 1.0],
-          [1921.92, 5320.40, 1891.35, 1.0]
-        ],
-        "trigger-height": ["meters", 5293.0],
-        "spring-height": ["meters", 60.0], // actual launcher
-        "alt-vector": ["vector4m", [1917.35, 5340.68, 1890.07, 0.0005]]
-      }
-    },
+    // {
+    //   "trans": [1758.18, 5333.51, 1773.26], // translation
+    //   "etype": "peeper",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1758.18, 5333.51, 1773.26, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-rolling-peeper-01",
+    //     "effect-name": "mole-dig",
+    //     "effect-param": ["float", 11.0, 50.0, 12.0, 100.0],
+    //     "cycle-speed": ["float", -1.0, 0.0]
+    //   }
+    // },
+    // {
+    //   "trans": [1967.56, 5233.82, 1880.22], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1967.56, 5233.82, 1880.22, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunkenb-ventblue-01",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },
+    // {
+    //   "trans": [1958.71, 5233.56, 1897.53], // translation
+    //   "etype": "floating-launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1958.71, 5233.56, 1897.53, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunkenb-floating-launcher-01",
+    //     "path": ["vector4m",  // activation path
+    //       [1958.71, 5233.56, 1897.53, 1.0],
+    //       [1958.71, 5245.56, 1897.53, 1.0]
+    //     ],
+    //     "trigger-height": ["meters", 5230.0],
+    //     "spring-height": ["meters", 50.0], // actual launcher
+    //     "alt-vector": ["vector4m", [1961.83, 5276.13, 1889.81, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans": [1923.09, 5300.28, 1893.89], // translation
+    //   "etype": "floating-launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1923.09, 5300.28, 1893.89, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunkenb-floating-launcher-02",
+    //     "path": ["vector4m",  // activation path
+    //       [1923.09, 5300.28, 1893.89, 1.0],
+    //       [1921.92, 5320.40, 1891.35, 1.0]
+    //     ],
+    //     "trigger-height": ["meters", 5293.0],
+    //     "spring-height": ["meters", 60.0], // actual launcher
+    //     "alt-vector": ["vector4m", [1917.35, 5340.68, 1890.07, 0.0005]]
+    //   }
+    // },
 
-    {
-      "trans": [1941.03, 5327.0, 1888.12], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 126, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-sunkenb-fuel-cell",
-        "eco-info":["int32", 6, 126]
-      }
-    }//,
+    // {
+    //   "trans": [1941.03, 5327.0, 1888.12], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 126, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunkenb-fuel-cell",
+    //     "eco-info":["int32", 6, 126]
+    //   }
+    // }//,
 
     // // // FLIES
 
