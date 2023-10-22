@@ -6,6 +6,7 @@
   "sunken-part5.o"
   "target-tube.o"
   "eichar-tube+0-ag.go"
+  "side-to-side-plat.o"
   "sunken-obs.o"
   "shover.o"
   "launcherdoor.o"

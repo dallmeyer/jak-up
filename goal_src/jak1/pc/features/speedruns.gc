@@ -158,7 +158,7 @@
       (initialize! *game-info* 'game (the-as game-save #f) "jungle-start")
       )
     (((speedrun-category il-misty))
-      ;; spawn at start of misty     
+      ;; spawn at start of misty
       (initialize! *game-info* 'game (the-as game-save #f) "misty-start")
       )
     (((speedrun-category il-firecanyon))
@@ -241,7 +241,7 @@
   (set! (-> *setting-control* default auto-save) #t)
   (none)
   )
-  
+
 (defun setup-speedrun-post-blackout ()
   (when (and (-> *speedrun-info* needs-post-blackout-setup?) (>= (-> *display* base-frame-counter) (-> *game-info* blackout-time)))
     (set! (-> *speedrun-info* needs-post-blackout-setup?) #f)
@@ -483,6 +483,7 @@
   )
 
 (defun refresh-jakup-cam ()
+  (return #f)
   (case (-> *jakup-info* cam)
     (((jakup-cam wide-no-collide))
       (send-event *camera* 'change-state cam-stick 0)
@@ -494,12 +495,13 @@
       )
     (else ;; ((jakup-cam original))
       (cond
-        ;; idk its fucked
-        ;; ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
-        ;;   ;; (send-event *camera* 'set-slave-option (cam-slave-options JUMP-PITCHES) #t)
-        ;;   (send-event *camera* 'set-slave-option #x6000)
-        ;;   (send-event *camera* 'set-fov (degrees 94.9999))
-        ;;   )
+        ;; idk racer is fucked
+        ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
+          (set! (-> *target* alt-cam-pos quad) (-> (&-> (-> *target* control) unknown-qword00) 0))
+          (logclear! (-> *target* state-flags) (state-flags use-alt-cam-pos))
+          (send-event *camera* 'clear-slave-option #x6000)
+          (send-event *camera* 'set-fov (degrees 94.9999))
+          )
         (else    
           (send-event *camera* 'change-state *camera-base-mode* 0)
           (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
@@ -514,11 +516,9 @@
 
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
-  (when (and (-> *pc-settings* speedrunner-mode?)
-             (not (paused?))
+  (when (and (not (paused?))
              *target*
              (!= (-> *target* current-level name) 'title)
-            ;;  (-> *speedrun-info* should-display?)
              )
     (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
                                       (bucket-id subtitle))
@@ -896,7 +896,7 @@
   
 (defun speedrun-mode-update ()
   "A per frame update for speedrunning related stuff"
-  (when (-> *pc-settings* speedrunner-mode?)
+  ;; (when (-> *pc-settings* speedrunner-mode?)
     ;; Update auto-splitter
     (update-autosplit-info-jak1)
     ;; Draw info to the screen
@@ -971,6 +971,6 @@
       ;;   (format #t "player triggered zoomer combo~%")
       ;;   (get-on-zoomer)
       ;;   )
-      )
+      ;; )
     )
   (none))

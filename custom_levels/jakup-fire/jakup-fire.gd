@@ -12,7 +12,7 @@
   ;; "collide-reaction-racer.o"
   "eichar-racer+0-ag.go"
   "tpage-1119.go"
-  "blocking-plane.o"
+  ;; "blocking-plane.o"
   "balloon.o"
   "balloon-ag.go"
   "ef-plane-ag.go"

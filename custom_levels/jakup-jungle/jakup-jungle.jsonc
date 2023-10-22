@@ -189,11 +189,11 @@
     },
 
     {
-      "trans": [2404.45, 950.7, 1608.88], // translation
+      "trans": [2404.45, 951.5, 1608.88], // translation
       "etype": "fuel-cell",  // actor type
       "game_task": 119, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+      "bsphere": [2404.45, 951.5, 1608.88, 10], // bounding sphere
       "lump": {
         "name":"jakup-jungle-fuel-cell",
         "eco-info":["int32", 6, 119]

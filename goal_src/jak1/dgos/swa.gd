@@ -5,6 +5,7 @@
   "flutflut.o"
   "target-flut.o"
   "eichar-flut+0-ag.go"
+  "balance-plat.o"
   "swamp-obs.o"
   "swamp-bat.o"
   "swamp-rat.o"

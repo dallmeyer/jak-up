@@ -137,6 +137,14 @@
   (jakup-misty 122)
   (jakup-beach 123)
   (jakup-fire 124)
+  (jakup-village2 125)
+  (jakup-sunken 126)
+  ;; (jakup-sunkenb 127)  ;; jakup-sunken cell is really in sunkenb
+  (jakup-rolling 127)
+  (jakup-swamp 128)
+  ;; (jakup-swampb 128)  ;; jakup-swamp cell is really in swampb
+  (jakup-ogre 129)
+  ;; (jakup-ogreb 129)  ;; jakup-ogre cell is really in ogreb
 
-  (max 125)
+  (max 130)
   )

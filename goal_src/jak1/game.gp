@@ -835,6 +835,7 @@
 (goal-src-sequence
  "levels/swamp/"
  :deps ("$OUT/obj/ticky.o")
+ "balance-plat.gc"
  "swamp-obs.gc"
  "swamp-bat.gc"
  "swamp-rat.gc"
@@ -885,6 +886,7 @@
   "sunken-part4.gc"
   "sunken-part5.gc"
   "target-tube.gc"
+  "side-to-side-plat.gc"
   "sunken-obs.gc"
   "shover.gc"
   "square-platform.gc"
@@ -1111,6 +1113,8 @@
  "levels/village2/"
  :deps ("$OUT/obj/ticky.o")
  "village2-part.gc"
+ "pontoon.gc"
+ "fireboulder.gc"
  "village2-obs.gc"
  "village2-part2.gc"
  "gambler.gc"
@@ -1181,6 +1185,7 @@
  "levels/rolling/"
  :deps ("$OUT/obj/ticky.o")
  "rolling-obs.gc"
+ "peeper.gc"
  "rolling-lightning-mole.gc"
  "rolling-robber.gc"
  "rolling-race-ring.gc"
@@ -1662,6 +1667,30 @@
 
 (build-custom-level "jakup-fire")
 (custom-level-cgo "UP6.DGO" "jakup-fire/jakup-fire.gd")
+
+(build-custom-level "jakup-village2")
+(custom-level-cgo "UP7.DGO" "jakup-village2/jakup-village2.gd")
+
+(build-custom-level "jakup-sunken")
+(custom-level-cgo "UP8.DGO" "jakup-sunken/jakup-sunken.gd")
+
+(build-custom-level "jakup-sunkenb")
+(custom-level-cgo "UP9.DGO" "jakup-sunkenb/jakup-sunkenb.gd")
+
+(build-custom-level "jakup-rolling")
+(custom-level-cgo "UPA.DGO" "jakup-rolling/jakup-rolling.gd")
+
+(build-custom-level "jakup-swamp")
+(custom-level-cgo "UPB.DGO" "jakup-swamp/jakup-swamp.gd")
+
+(build-custom-level "jakup-swampb")
+(custom-level-cgo "UPC.DGO" "jakup-swampb/jakup-swampb.gd")
+
+(build-custom-level "jakup-ogre")
+(custom-level-cgo "UPD.DGO" "jakup-ogre/jakup-ogre.gd")
+
+(build-custom-level "jakup-ogreb")
+(custom-level-cgo "UPE.DGO" "jakup-ogreb/jakup-ogreb.gd")
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code

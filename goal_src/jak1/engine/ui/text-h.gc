@@ -832,9 +832,16 @@
   (jakup-jungleb  #x2003)
   (jakup-misty    #x2004)
   (jakup-beach    #x2005)
+  (jakup-fire     #x2006)
+  (jakup-village2 #x2007)
+  (jakup-sunken   #x2008)
+  (jakup-rolling  #x2009)
+  (jakup-swamp    #x200a)
+  ;; (jakup-ogre     #x200b)
 ;; GAME-TEXT-ID ENUM ENDS
   )
 
+;; DECOMP BEGINS
 
 ;; an individual string.
 (deftype game-text (structure)
@@ -872,6 +879,7 @@
 ;; will store the COMMON text when it is loaded.
 (define *common-text* (the-as game-text-info #f))
 
+;; og:preserve-this
 ;; NOTE - PC PORT difference
 ;; Partial translations are a thing that we should support. Parts of translating the game are intentionally made
 ;; difficult for normal translators due to not wanting to make all the strings public (or in the case of subtitles,

@@ -47,55 +47,56 @@
                   :lev1 'village1
                   :disp1 'special)
         
-                 (new 'static 'continue-point
-                   :name "training-warp"
-                   :level 'training
-                   :flags (continue-flags warp)
-                   :trans (new 'static 'vector :x -5383524.0 :y 28019.098 :z 4360302.0 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.084 :w 0.9964)
-                   :camera-trans (new 'static 'vector :x -5366765.0 :y 45646.234 :z 4325889.0 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 0.9057 0.0 0.4238 -0.0666 0.9875 0.1424 -0.4186 -0.1572 0.8944)
-                   :load-commands '((special "med-res-level-1" #t)
-                                    (special "med-res-level-2" #t)
-                                    (special "med-res-level-4" #t)
-                                    (special "med-res-level-6" #t)
-                                    (special "med-res-level-7" #t)
-                                    (special "med-res-level-8" #t)
-                                    (special "med-res-level-9" #t)
-                                    (special "med-res-level-14" #t)
-                                    (special "med-res-level-22" #t)
-                                    (special "med-res-level-23" #t))
+                ;;  (new 'static 'continue-point
+                ;;    :name "training-warp"
+                ;;    :level 'training
+                ;;    :flags (continue-flags warp)
+                ;;    :trans (new 'static 'vector :x -5383524.0 :y 28019.098 :z 4360302.0 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.084 :w 0.9964)
+                ;;    :camera-trans (new 'static 'vector :x -5366765.0 :y 45646.234 :z 4325889.0 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 0.9057 0.0 0.4238 -0.0666 0.9875 0.1424 -0.4186 -0.1572 0.8944)
+                ;;    :load-commands '((special "med-res-level-1" #t)
+                ;;                     (special "med-res-level-2" #t)
+                ;;                     (special "med-res-level-4" #t)
+                ;;                     (special "med-res-level-6" #t)
+                ;;                     (special "med-res-level-7" #t)
+                ;;                     (special "med-res-level-8" #t)
+                ;;                     (special "med-res-level-9" #t)
+                ;;                     (special "med-res-level-14" #t)
+                ;;                     (special "med-res-level-22" #t)
+                ;;                     (special "med-res-level-23" #t))
           
-                   :vis-nick 'tra
-                   :lev0 'training
-                   :disp0 'display
-                   :lev1 'village1
-                   :disp1 'special)
+                ;;    :vis-nick 'tra
+                ;;    :lev0 'training
+                ;;    :disp0 'display
+                ;;    :lev1 'village1
+                ;;    :disp1 'special)
         
-                 (new 'static 'continue-point
-                   :name "game-start"
-                   :level 'training
-                   :flags (continue-flags warp)
-                   :trans (new 'static 'vector :x -5393740.5 :y 28259.533 :z 4360945.5 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.9993 :w 0.0359)
-                   :camera-trans (new 'static 'vector :x -5434444.5 :y 47050.344 :z 4372832.5 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 -0.3536 0.0 -0.9353 0.1315 0.99 -0.0497 0.926 -0.1406 -0.35)
-                   :load-commands '((special "med-res-level-1" #t)
-                                    (special "med-res-level-2" #t)
-                                    (special "med-res-level-4" #t)
-                                    (special "med-res-level-6" #t)
-                                    (special "med-res-level-7" #t)
-                                    (special "med-res-level-8" #t)
-                                    (special "med-res-level-9" #t)
-                                    (special "med-res-level-14" #t)
-                                    (special "med-res-level-22" #t)
-                                    (special "med-res-level-23" #t))
+                ;;  (new 'static 'continue-point
+                ;;    :name "game-start"
+                ;;    :level 'training
+                ;;    :flags (continue-flags warp)
+                ;;    :trans (new 'static 'vector :x -5393740.5 :y 28259.533 :z 4360945.5 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.9993 :w 0.0359)
+                ;;    :camera-trans (new 'static 'vector :x -5434444.5 :y 47050.344 :z 4372832.5 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 -0.3536 0.0 -0.9353 0.1315 0.99 -0.0497 0.926 -0.1406 -0.35)
+                ;;    :load-commands '((special "med-res-level-1" #t)
+                ;;                     (special "med-res-level-2" #t)
+                ;;                     (special "med-res-level-4" #t)
+                ;;                     (special "med-res-level-6" #t)
+                ;;                     (special "med-res-level-7" #t)
+                ;;                     (special "med-res-level-8" #t)
+                ;;                     (special "med-res-level-9" #t)
+                ;;                     (special "med-res-level-14" #t)
+                ;;                     (special "med-res-level-22" #t)
+                ;;                     (special "med-res-level-23" #t))
           
-                   :vis-nick 'tra
-                   :lev0 'training
-                   :disp0 'display
-                   :lev1 'village1
-                   :disp1 'special))
+                ;;    :vis-nick 'tra
+                ;;    :lev0 'training
+                ;;    :disp0 'display
+                ;;    :lev1 'village1
+                ;;    :disp1 'special)
+                )
         
       
     :tasks '(92 93 94 95)
@@ -140,35 +141,35 @@
                   :lev1 'beach
                   :disp1 #f)
         
-                 (new 'static 'continue-point
-                   :name "village1-intro"
-                   :level 'village1
-                   :flags (continue-flags warp sage-intro)
-                   :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
-                   :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
-                   :load-commands '()
-                   :vis-nick 'vi1
-                   :lev0 'village1
-                   :disp0 'display
-                   :lev1 #f
-                   :disp1 #f)
+                ;;  (new 'static 'continue-point
+                ;;    :name "village1-intro"
+                ;;    :level 'village1
+                ;;    :flags (continue-flags warp sage-intro)
+                ;;    :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
+                ;;    :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
+                ;;    :load-commands '()
+                ;;    :vis-nick 'vi1
+                ;;    :lev0 'village1
+                ;;    :disp0 'display
+                ;;    :lev1 #f
+                ;;    :disp1 #f)
         
-                 (new 'static 'continue-point
-                   :name "village1-warp"
-                   :level 'village1
-                   :flags (continue-flags warp sage-ecorocks)
-                   :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
-                   :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
-                   :load-commands '()
-                   :vis-nick 'vi1
-                   :lev0 'village1
-                   :disp0 'display
-                   :lev1 'beach
-                   :disp1 #f)
+                ;;  (new 'static 'continue-point
+                ;;    :name "village1-warp"
+                ;;    :level 'village1
+                ;;    :flags (continue-flags warp sage-ecorocks)
+                ;;    :trans (new 'static 'vector :x -518468.8 :y 189424.03 :z 868568.7 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.591 :w 0.8066)
+                ;;    :camera-trans (new 'static 'vector :x -559109.3 :y 200461.92 :z 826073.06 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 0.7221 0.0 -0.6917 -0.0517 0.9972 -0.054 0.6897 0.0747 0.7201)
+                ;;    :load-commands '()
+                ;;    :vis-nick 'vi1
+                ;;    :lev0 'village1
+                ;;    :disp0 'display
+                ;;    :lev1 'beach
+                ;;    :disp1 #f)
         
                  (new 'static 'continue-point
                    :name "village1-demo-convo"
@@ -596,20 +597,20 @@
                   :lev1 'firecanyon
                   :disp1 #f)
         
-                 (new 'static 'continue-point
-                   :name "village2-warp"
-                   :level 'village2
-                   :flags (continue-flags warp)
-                   :trans (new 'static 'vector :x 1592492.9 :y 91648.0 :z -6328677.0 :w 1.0)
-                   :quat (new 'static 'quaternion :y 0.7469 :w 0.6648)
-                   :camera-trans (new 'static 'vector :x 1555766.1 :y 103759.46 :z -6318964.5 :w 1.0)
-                   :camera-rot (new 'static 'array float 9 -0.2562 0.0 -0.9666 -0.0253 0.9996 0.0067 0.9662 0.0262 -0.2561)
-                   :load-commands '()
-                   :vis-nick 'vi2
-                   :lev0 'village2
-                   :disp0 'display
-                   :lev1 'firecanyon
-                   :disp1 #f)
+                ;;  (new 'static 'continue-point
+                ;;    :name "village2-warp"
+                ;;    :level 'village2
+                ;;    :flags (continue-flags warp)
+                ;;    :trans (new 'static 'vector :x 1592492.9 :y 91648.0 :z -6328677.0 :w 1.0)
+                ;;    :quat (new 'static 'quaternion :y 0.7469 :w 0.6648)
+                ;;    :camera-trans (new 'static 'vector :x 1555766.1 :y 103759.46 :z -6318964.5 :w 1.0)
+                ;;    :camera-rot (new 'static 'array float 9 -0.2562 0.0 -0.9666 -0.0253 0.9996 0.0067 0.9662 0.0262 -0.2561)
+                ;;    :load-commands '()
+                ;;    :vis-nick 'vi2
+                ;;    :lev0 'village2
+                ;;    :disp0 'display
+                ;;    :lev1 'firecanyon
+                ;;    :disp1 #f)
         
                  (new 'static 'continue-point
                    :name "village2-dock"
@@ -2005,8 +2006,21 @@
                                              :disp0 'display
                                              :lev1 #f
                                              :disp1 #f)
+                                         (new 'static 'continue-point
+                                             :name "jakup-training-warp"
+                                             :level 'jakup-training
+                                             :flags (continue-flags warp)
+                                             :trans (new 'static 'vector :x (meters 1915.32) :y (meters 11.21) :z (meters 1986.38) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.084 :w 0.9964)
+                                             :camera-trans (new 'static 'vector :x -5366765.0 :y 45646.234 :z 4325889.0 :w 1.0)
+                                             :camera-rot (new 'static 'array float 9 0.9057 0.0 0.4238 -0.0666 0.9875 0.1424 -0.4186 -0.1572 0.8944)
+                                             :load-commands '()  
+                                             :vis-nick 'up0
+                                             :lev0 'jakup-training
+                                             :disp0 'display
+                                             :lev1 #f
+                                             :disp1 #f)
                                          )
-                                             
                            :tasks '()
                            :custom-orb-count 50
                            :priority 100
@@ -2263,22 +2277,104 @@
                                              :disp0 'display
                                              :lev1 'jakup-fire
                                              :disp1 'display)
-                                        (new 'static 'continue-point
-                                             :name "jakup-fire-end"
-                                             :level 'jakup-fire
-                                             :trans (new 'static 'vector :x (meters 1949.0943) :y (meters 3380.5729) :z (meters 1905.8552) :w 1.0)
-                                             :quat (new 'static 'quaternion :y 0.8764 :w -0.4815)
-                                             :camera-trans (new 'static 'vector :x (meters 1960.5473) :y (meters 3385.7224) :z (meters 1910.8594) :w 1.0)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+  
+(define jakup-village2 (new 'static 'level-load-info
+                           :index 34
+                           :name 'jakup-village2
+                           :visname 'jakup-village2-vis ;; name + -vis
+                           :nickname 'up7          ;; nickname
+                           :packages '(village2)
+                           :sound-banks '(village2)
+                           :music-bank 'village2
+                           :ambient-sounds '()
+                           :mood '*village2-mood*
+                           :mood-func 'update-mood-village2
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-village2-start"
+                                             :level 'jakup-village2
+                                             :trans (new 'static 'vector :x (meters 1958.4868) :y (meters 3385.0971) :z (meters 1881.9865) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.9400 :w -0.3409)
+                                             :camera-trans (new 'static 'vector :x (meters 1951.1894) :y (meters 3390.2387) :z (meters 1892.1348) :w 1.0)
                                              :camera-rot (new 'static 'array float 9
-                                              -0.4014 -0.0000 0.9158 
-                                              -0.1114 0.9925 -0.0488
-                                              -0.9090 -0.1216 -0.3984
+                                              -0.8112 -0.0000 -0.5846
+                                              0.0707 0.9926 -0.0982
+                                              0.5803 -0.1210 -0.8053
                                               )
                                              :load-commands '()
-                                             :vis-nick 'up6
-                                             :lev0 'jakup-beach
+                                             :vis-nick 'up7
+                                             :lev0 'jakup-fire
                                              :disp0 'display
-                                             :lev1 'jakup-fire
+                                             :lev1 'jakup-village2
+                                             :disp1 'display)
+                                        (new 'static 'continue-point
+                                             :name "jakup-village2-warp"
+                                             :level 'village2
+                                             :flags (continue-flags warp)
+                                             :trans (new 'static 'vector :x (meters 2178.0791) :y (meters 3488.7980) :z (meters 1698.2213) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.9932 :w 0.1162)
+                                             :camera-trans (new 'static 'vector :x (meters 2165.8510) :y (meters 3493.8400) :z (meters 1697.7114) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9 0.0998 0.0000 -0.9950 0.1473 0.9889 0.0147 0.9840 -0.1481 0.0987)
+                                             :load-commands '()
+                                             :vis-nick 'up7
+                                             :lev0 'jakup-fire
+                                             :disp0 'display
+                                             :lev1 'jakup-village2
+                                             :disp1 'display)
+                                         ) 
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
+(define jakup-sunken (new 'static 'level-load-info
+                           :index 35
+                           :name 'jakup-sunken
+                           :visname 'jakup-sunken-vis ;; name + -vis
+                           :nickname 'up8          ;; nickname
+                           :packages '(sunken)
+                           :sound-banks '(sunken)
+                           :music-bank 'sunken
+                           :ambient-sounds '()
+                           :mood '*sunken-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-sunken-start"
+                                             :level 'jakup-sunken
+                                             :trans (new 'static 'vector :x (meters 2126.2785) :y (meters 3900.8212) :z (meters 1888.2790) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.3246 :w 0.9458)
+                                             :camera-trans (new 'static 'vector :x (meters 2134.2895) :y (meters 3905.8752) :z (meters 1879.1110) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.7529 0.0000 0.6581 
+                                              -0.0799 0.9925 0.0914 
+                                              -0.6532 -0.1215 0.7473
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'up8
+                                             :lev0 'jakup-village2
+                                             :disp0 'display
+                                             :lev1 'jakup-sunken
                                              :disp1 'display)
                                          )
                                              
@@ -2292,8 +2388,279 @@
                            :bottom-height (meters -20)
                            :run-packages '("common")
                            :wait-for-load #t))
-        
+
+(define jakup-sunkenb (new 'static 'level-load-info
+                           :index 36
+                           :name 'jakup-sunkenb
+                           :visname 'jakup-sunkenb-vis ;; name + -vis
+                           :nickname 'up9          ;; nickname
+                           :packages '(sunken)
+                           :sound-banks '(sunken)
+                           :music-bank 'sunken
+                           :ambient-sounds '()
+                           :mood '*sunkenb-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-sunkenb-start"
+                                             :level 'jakup-sunkenb
+                                             :trans (new 'static 'vector :x (meters 2039.0715) :y (meters 4864.4208) :z (meters 1896.6206) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.2904 :w 0.9568)
+                                             :camera-trans (new 'static 'vector :x (meters 2032.6483) :y (meters 4869.5654) :z (meters 1885.8984) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.8582 0.0000 -0.5131
+                                              0.0625 0.9925 0.1045
+                                              0.5093 -0.1218 0.8519
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'up9
+                                             :lev0 'jakup-sunken
+                                             :disp0 'display
+                                             :lev1 'jakup-sunkenb
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
+(define jakup-rolling (new 'static 'level-load-info
+                           :index 37
+                           :name 'jakup-rolling
+                           :visname 'jakup-rolling-vis ;; name + -vis
+                           :nickname 'upa          ;; nickname
+                           :packages '(rolling)
+                           :sound-banks '(rolling)
+                           :music-bank 'rolling
+                           :ambient-sounds '()
+                           :mood '*rolling-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-rolling-start"
+                                             :level 'jakup-rolling
+                                             :trans (new 'static 'vector :x (meters 1910.48) :y (meters 5311.81) :z (meters 1855.63) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 1576.62) :y (meters 6145.15) :z (meters 1770.61) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.9383 :w 0.3457)
+                                             :camera-trans (new 'static 'vector :x (meters 1912.2973) :y (meters 5316.7387) :z (meters 1866.3807) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              -0.8688 0.0000 0.4950
+                                              -0.0588 0.9929 -0.1033
+                                              -0.4915 -0.1189 -0.8626
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upa
+                                             :lev0 'jakup-sunkenb
+                                             :disp0 'display
+                                             :lev1 'jakup-rolling
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+                           
+(define jakup-swamp (new 'static 'level-load-info
+                           :index 38
+                           :name 'jakup-swamp
+                           :visname 'jakup-swamp-vis ;; name + -vis
+                           :nickname 'upb          ;; nickname
+                           :packages '(swamp)
+                           :sound-banks '(swamp)
+                           :music-bank 'swamp
+                           :ambient-sounds '()
+                           :mood '*swamp-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-swamp-start"
+                                             :level 'jakup-swamp
+                                            ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1807.99) :y (meters 6505.39) :z (meters 1361.27) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.9745 :w 0.2242)
+                                             :camera-trans (new 'static 'vector :x (meters 1803.7833) :y (meters 6510.1972) :z (meters 1371.6462) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              -0.9259 -0.0000 -0.3776
+                                               0.0474 0.9920 -0.1162
+                                               0.3746 -0.1255 -0.9186
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upb
+                                             :lev0 'jakup-rolling
+                                             :disp0 'display
+                                             :lev1 'jakup-swamp
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
+(define jakup-swampb (new 'static 'level-load-info
+                           :index 39
+                           :name 'jakup-swampb
+                           :visname 'jakup-swampb-vis ;; name + -vis
+                           :nickname 'upc          ;; nickname
+                           :packages '(swamp)
+                           :sound-banks '(swamp)
+                           :music-bank 'swamp
+                           :ambient-sounds '()
+                           :mood '*swamp-mood*
+                           :mood-func 'update-mood-sunken
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-swampb-start"
+                                             :level 'jakup-swampb
+                                            ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2123.96) :y (meters 8028.97) :z (meters 1304.86) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.2046 :w 0.9788)
+                                             :camera-trans (new 'static 'vector :x (meters 1895.4652) :y (meters 7201.5317) :z (meters 1442.6622) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.6884 0.0000 -0.7252
+                                              0.0879 0.9926 0.0834
+                                              0.7199 -0.1212 0.6833
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upc
+                                             :lev0 'jakup-swamp
+                                             :disp0 'display
+                                             :lev1 'jakup-swampb
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
+(define jakup-ogre (new 'static 'level-load-info
+                           :index 40
+                           :name 'jakup-ogre
+                           :visname 'jakup-ogre-vis ;; name + -vis
+                           :nickname 'upd          ;; nickname
+                           :packages '(ogre)
+                           :sound-banks '(ogre)
+                           :music-bank 'ogre
+                           :ambient-sounds '()
+                           :mood '*ogre-mood*
+                           :mood-func 'update-mood-ogre
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-ogre-start"
+                                             :level 'jakup-ogre
+                                            ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2152.2607) :y (meters 8375.8662) :z (meters 1442.7186) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.0613 :w 0.9981)
+                                             :camera-trans (new 'static 'vector :x (meters 2149.8369) :y (meters 8381.0019) :z (meters 1430.4553) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.9810 0.0000 -0.1938
+                                              0.0232 0.9927 0.1177
+                                              0.1924 -0.1200 0.9739
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upd
+                                             :lev0 'jakup-swampb
+                                             :disp0 'display
+                                             :lev1 'jakup-ogre
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
+(define jakup-ogreb (new 'static 'level-load-info
+                           :index 41
+                           :name 'jakup-ogreb
+                           :visname 'jakup-ogreb-vis ;; name + -vis
+                           :nickname 'upe          ;; nickname
+                           :packages '(ogre)
+                           :sound-banks '(ogre)
+                           :music-bank 'ogre
+                           :ambient-sounds '()
+                           :mood '*ogre-mood*
+                           :mood-func 'update-mood-ogre
+                           :ocean #f
+                           :sky #t
+                           :continues '((new 'static 'continue-point
+                                             :name "jakup-ogreb-start"
+                                             :level 'jakup-ogreb
+                                            ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 2267.4914) :y (meters 9347.2890) :z (meters 1167.3717) :w 1.0)
+                                             :quat (new 'static 'quaternion :y 0.9550 :w -0.2963)
+                                             :camera-trans (new 'static 'vector :x (meters 2273.7944) :y (meters 9352.4306) :z (meters 1178.1677) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              -0.8666 -0.0000 0.4988
+                                              -0.0602 0.9926 -0.1045
+                                              -0.4952 -0.1206 -0.8603
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upe
+                                             :lev0 'jakup-ogre
+                                             :disp0 'display
+                                             :lev1 'jakup-ogreb
+                                             :disp1 'display)
+                                         )
+                                             
+                           :tasks '()
+                           :custom-orb-count 50
+                           :priority 100
+                           :load-commands '()
+                           :alt-load-commands '()
+                           :bsp-mask #xffffffffffffffff
+                           :bsphere (new 'static 'sphere :w 167772160000.0)
+                           :bottom-height (meters -20)
+                           :run-packages '("common")
+                           :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'jakup-ogreb)
+(cons! *level-load-list* 'jakup-ogre)
+(cons! *level-load-list* 'jakup-swampb)
+(cons! *level-load-list* 'jakup-swamp)
+(cons! *level-load-list* 'jakup-rolling)
+(cons! *level-load-list* 'jakup-sunkenb)
+(cons! *level-load-list* 'jakup-sunken)
+(cons! *level-load-list* 'jakup-village2)
 (cons! *level-load-list* 'jakup-fire)
 (cons! *level-load-list* 'jakup-beach)
 (cons! *level-load-list* 'jakup-misty)
