@@ -1,16 +1,16 @@
 {
   // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
   // the name of this file, and the folder this file is in must have the same name.
-  "long_name": "jakup-misty",
+  "long_name": "jakup-fire",
   // The file name, should be upper case and 8 characters or less.
-  "iso_name": "UPMISTY",
+  "iso_name": "UPFIRE",
   // The nickname, should be exactly 3 characters
-  "nickname": "up4", // 3 char name, all lowercase
+  "nickname": "up6", // 3 char name, all lowercase
   // Background mesh file.
   // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
   // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
   // only have 1.
-  "gltf_file": "custom_levels/jakup-misty/jakup-misty.glb",
+  "gltf_file": "custom_levels/jak1/jakup-fire/jakup-fire.glb",
 
   // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
   "automatic_wall_detection": true,
@@ -32,218 +32,180 @@
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
   // The base actor id for your custom level. If you have multiple levels this should be unique!
-  "base_id": 5000,
+  "base_id": 7000,
   
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  // bounceytarp for jungleb but we cheat
-  "art_groups": ["plat-eco-ag", "quicksandlurker-ag", "mis-bone-bridge-ag"],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "balloon-ag"],
 
   "ambients": [],
 
   "actors" : [
-    
     {
-      "trans": [1878.84, 1334.9, 2293.41], // translation
-      "etype": "eco",  // actor type
+      "trans": [1801.66, 1999.63, 1818.89], // translation
+      "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1878.84, 1334.9, 2293.41, 10], // bounding sphere
+      "bsphere": [1801.66, 1999.63, 1818.89, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-blue-eco-01",
-        "eco-info": ["int32", 3, 1]
+        "name": "jakup-fire-racer-01"//,
+        // "index": ["int32", 2] // always spawn I think
       }
     },
     {
-      "trans": [ 1960.49, 380.73, 1894.34], // translation
-      "etype": "plat-eco",  // actor type
+      "trans": [2311.18, 3101.37, 2050.84], // translation
+      "etype": "racer",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1960.49, 380.73, 1894.34, 10], // bounding sphere
-      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
+      "bsphere": [2311.18, 3101.37, 2050.84, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-plat-01",        
-        "vis-dist":  ["meters", 400.0],
-        "notice-dist": ["meters", 0.0],
-        "path": ["vector4m",
-          [1851.22, 1343.36, 2280.63, 1.0],  
-          [1833.38, 1371.31, 2276.82, 1.0],  
-          [1823.01, 1393.14, 2279.56, 1.0],  
-          [1820.89, 1456.31, 2276.61, 1.0]
-        ],
-        "path-k": ["float",
-          0.0, 0.0,
-          0.0, 0.0,
-          1.0, 1.0,
-          1.0, 1.0
-        ],
-        "sync": ["float", 40.0, 0.0]
+        "name": "jakup-fire-racer-02",
+        "index": ["int32", 7] // fuck it, made up my own condition
       }
     },
     {
-      "trans":  [1830.78, 1436.81, 2202.97], // translation
-      "etype": "quicksandlurker",  // actor type
+      "trans": [2304.97, 2889.68, 1989.87], // translation
+      "etype": "balloon",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1830.78, 1436.81, 2202.97, 10], // bounding sphere
+      "bsphere": [2304.97, 2889.68, 1989.87, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-quicksandlurker-01"
+        "name": "jakup-fire-balloon-01"
       }
     },
     {
-      "trans":  [1946.63, 1135.60, 1868.79], // translation
-      "etype": "quicksandlurker",  // actor type
+      "trans": [1950.80, 2544.77, 1963.16], // translation
+      "etype": "balloon",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1946.63, 1135.60, 1868.79, 10], // bounding sphere
+      "bsphere": [1950.80, 2544.77, 1963.16, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-quicksandlurker-02"
+        "name": "jakup-fire-balloon-02"
       }
     },
     {
-      "trans":  [1765.0, 1233.0, 1987.51], // translation
-      "etype": "quicksandlurker",  // actor type
+      "trans": [1823.14, 2321.57, 1923.91], // translation
+      "etype": "balloon",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1765.0, 1233.0, 1987.51, 10], // bounding sphere
+      "bsphere": [1823.14, 2321.57, 1923.91, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-quicksandlurker-03"
+        "name": "jakup-fire-balloon-03"
       }
     },
     {
-      "trans":  [1987.73, 1126.49, 1776.28], // translation
-      "etype": "quicksandlurker",  // actor type
+      "trans": [1871.19, 2255.46, 1893.33], // translation
+      "etype": "balloon",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1987.73, 1126.49, 1776.28, 10], // bounding sphere
+      "bsphere": [1871.19, 2255.46, 1893.33, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-quicksandlurker-04"
+        "name": "jakup-fire-balloon-04"
       }
     },
     {
-      "trans": [1877.88, 1243.5, 1984.74], // translation
-      "etype": "mis-bone-bridge",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0.0, 0.65, 0.0, 0.5], // quaternion
-      "bsphere": [1877.88, 1243.5, 1984.74, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-misty-mis-bone-bridge-01"
-      }
-    },
-    {
-      "trans": [1864.51, 1248.51, 1982.70], // translation
-      "etype": "mis-bone-bridge",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0.0, 0.7, 0.0, 0.4], // quaternion
-      "bsphere": [1864.51, 1248.51, 1982.70, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-misty-mis-bone-bridge-02"
-      }
-    },
-    {
-      "trans": [1819.65, 1563.5, 2171.01], // translation
+      "trans": [1949.79, 3381.5, 1913.05], // translation
       "etype": "fuel-cell",  // actor type
-      "game_task": 122, // associated game task (for powercells, etc)
+      "game_task": 124, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+      "bsphere": [1949.79, 3381.5, 1913.05, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-fuel-cell",
-        "eco-info":["int32", 6, 122],
-        "movie-pos": ["meters", 1819.65, 1563.5, 2171.01]
+        "name":"jakup-fire-fuel-cell",
+        "eco-info":["int32", 6, 124]
       }
     },
 
     // FLIES
 
     {
-      "trans": [2023.01, 1143.45, 1744.39], // top of rocks near start
+      "trans": [1840.83, 2059.47, 1853.37], // behind first bridge
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
+      "game_task": 68, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [2023.01, 1143.45, 1744.39, 10], // bounding sphere
+      "bsphere": [1840.83, 2059.47, 1853.37, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-01",
+        "name":"jakup-fire-buzzer-01",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 28], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2023.01, 1143.45, 1744.39]
+        "eco-info": ["int32", 8, 68], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1840.83, 2059.47, 1853.37]
       }
     },
     {
-      "trans": [1939.73, 1131.89, 1891.17], // spine below middle path
+      "trans": [1820.33, 2328.14, 1943.37], // in gap on right side
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
-      "quat" : [-0.090, 0.353, -0.010, 0.934], // quaternion
-      "bsphere": [1939.73, 1131.89, 1891.17, 10], // bounding sphere
+      "game_task": 68, // associated game task (for powercells, etc)
+      "quat" : [0.0, -0.0, 0.0, 0.0], // quaternion
+      "bsphere": [1820.33, 2328.14, 1943.37, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-02",
+        "name":"jakup-fire-buzzer-02",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 65564], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1939.73, 1131.89, 1891.17]
+        "eco-info": ["int32", 8, 65604], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1820.33, 2328.14, 1943.37]
       }
     },
     {
-      "trans": [1940.72, 1259.29, 2152.95], // sketchy part of balloon lurker
+      "trans": [1761.84, 2497.02, 1980.56], // tree next to gap
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
+      "game_task": 68, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [1940.72, 1259.29, 2152.95, 10], // bounding sphere
+      "bsphere": [1761.84, 2497.02, 1980.56, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-03",
+        "name":"jakup-fire-buzzer-03",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 131100], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1940.72, 1259.29, 2152.95]
+        "eco-info": ["int32", 8, 131140], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1761.84, 2497.02, 1980.56]
       }
     },
     {
-      "trans": [1928.93, 1281.95, 2202.11], // under wooden dock / zoomer ramp 
+      "trans": [2195.21, 2735.6, 1980.40], // behind rock in pit towards end
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
+      "game_task": 68, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [1928.93, 1281.95, 2202.11, 10], // bounding sphere
+      "bsphere": [2195.21, 2735.6, 1980.40, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-04",
+        "name":"jakup-fire-buzzer-04",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 196636], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1928.93, 1281.95, 2202.11]
+        "eco-info": ["int32", 8, 196676], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2195.21, 2735.6, 1980.40]
       }
     },
     {
-      "trans": [1809.57, 1301.20, 2250.60], // backside of second base
+      "trans": [2055.13, 3343.89, 2020.62], // in precursor thing hole
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
+      "game_task": 68, // associated game task (for powercells, etc)
       "quat" : [-0.0, 0.0, -0.0, 0.0], // quaternion
-      "bsphere": [1809.57, 1301.20, 2250.60, 10], // bounding sphere
+      "bsphere": [2055.13, 3343.89, 2020.62, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-05",
+        "name":"jakup-fire-buzzer-05",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 262172], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1809.57, 1301.20, 2250.60]
+        "eco-info": ["int32", 8, 262212], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2055.13, 3343.89, 2020.62]
       }
     },
     {
-      "trans": [1914.00, 1465.58, 2264.53], // tricky rib bone
+      "trans": [2114.96, 3307.09, 2008.18], // on stone pillar in final section
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
+      "game_task": 68, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [1914.00, 1465.58, 2264.53, 10], // bounding sphere
+      "bsphere": [2114.96, 3307.09, 2008.18, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-06",
+        "name":"jakup-fire-buzzer-06",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 327708], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1914.00, 1465.58, 2264.53]
+        "eco-info": ["int32", 8, 327748], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2114.96, 3307.09, 2008.18]
       }
     },
     {
-      "trans": [1769.68, 1260.13, 2039.27], // source of log/barrels normally
+      "trans": [1928.09, 3364.43, 2006.71], // small stone island towards very end
       "etype": "crate",  // actor type
-      "game_task": 28, // associated game task (for powercells, etc)
+      "game_task": 68, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [1769.68, 1260.13, 2039.27, 10], // bounding sphere
+      "bsphere": [1928.09, 3364.43, 2006.71, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-buzzer-07",
+        "name":"jakup-fire-buzzer-07",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 393244], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1769.68, 1260.13, 2039.27]
+        "eco-info": ["int32", 8, 393284], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1928.09, 3364.43, 2006.71]
       }
     }//,
 
@@ -256,7 +218,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-01"
+    //     "name":"jakup-fire-money-01"
     //   }
     // },
     // {
@@ -266,7 +228,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-02"
+    //     "name":"jakup-fire-money-02"
     //   }
     // },
     // {
@@ -276,7 +238,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-03"
+    //     "name":"jakup-fire-money-03"
     //   }
     // },     
 
@@ -287,7 +249,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-04"
+    //     "name":"jakup-fire-money-04"
     //   }
     // },
     // {
@@ -297,7 +259,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-05"
+    //     "name":"jakup-fire-money-05"
     //   }
     // },
     // {
@@ -307,7 +269,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-06"
+    //     "name":"jakup-fire-money-06"
     //   }
     // },
     // {
@@ -317,7 +279,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-07"
+    //     "name":"jakup-fire-money-07"
     //   }
     // },
     // {
@@ -327,7 +289,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-08"
+    //     "name":"jakup-fire-money-08"
     //   }
     // },
     // {
@@ -337,7 +299,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-09"
+    //     "name":"jakup-fire-money-09"
     //   }
     // }
     // ,
@@ -348,7 +310,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-10"
+    //     "name":"jakup-fire-money-10"
     //   }
     // },
     // {
@@ -358,7 +320,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-11"
+    //     "name":"jakup-fire-money-11"
     //   }
     // },
     // {
@@ -368,7 +330,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-12"
+    //     "name":"jakup-fire-money-12"
     //   }
     // },
     // {
@@ -378,7 +340,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-13"
+    //     "name":"jakup-fire-money-13"
     //   }
     // },
     // {
@@ -388,7 +350,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-14"
+    //     "name":"jakup-fire-money-14"
     //   }
     // },
     // {
@@ -398,7 +360,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-15"
+    //     "name":"jakup-fire-money-15"
     //   }
     // },
     // {
@@ -408,7 +370,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-16"
+    //     "name":"jakup-fire-money-16"
     //   }
     // },
     // {
@@ -418,7 +380,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-17"
+    //     "name":"jakup-fire-money-17"
     //   }
     // },
     // {
@@ -428,7 +390,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-18"
+    //     "name":"jakup-fire-money-18"
     //   }
     // },
     // {
@@ -438,7 +400,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-19"
+    //     "name":"jakup-fire-money-19"
     //   }
     // },
     // {
@@ -448,7 +410,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-20"
+    //     "name":"jakup-fire-money-20"
     //   }
     // },
     // {
@@ -458,7 +420,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-21"
+    //     "name":"jakup-fire-money-21"
     //   }
     // },
     // {
@@ -468,7 +430,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-22"
+    //     "name":"jakup-fire-money-22"
     //   }
     // },
     // {
@@ -478,7 +440,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-23"
+    //     "name":"jakup-fire-money-23"
     //   }
     // },
     // {
@@ -488,7 +450,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-24"
+    //     "name":"jakup-fire-money-24"
     //   }
     // },
     // {
@@ -498,7 +460,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-25"
+    //     "name":"jakup-fire-money-25"
     //   }
     // },
     // {
@@ -508,7 +470,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-26"
+    //     "name":"jakup-fire-money-26"
     //   }
     // },
     // {
@@ -518,7 +480,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-27"
+    //     "name":"jakup-fire-money-27"
     //   }
     // },
     // {
@@ -528,7 +490,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-28"
+    //     "name":"jakup-fire-money-28"
     //   }
     // },
     // {
@@ -538,7 +500,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-29"
+    //     "name":"jakup-fire-money-29"
     //   }
     // },
     // {
@@ -548,7 +510,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-30"
+    //     "name":"jakup-fire-money-30"
     //   }
     // },
     // {
@@ -558,7 +520,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-31"
+    //     "name":"jakup-fire-money-31"
     //   }
     // },
     // {
@@ -568,7 +530,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-32"
+    //     "name":"jakup-fire-money-32"
     //   }
     // },
     // {
@@ -578,7 +540,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-33"
+    //     "name":"jakup-fire-money-33"
     //   }
     // },
     // {
@@ -588,7 +550,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-34"
+    //     "name":"jakup-fire-money-34"
     //   }
     // },
     // {
@@ -598,7 +560,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-35"
+    //     "name":"jakup-fire-money-35"
     //   }
     // },
     // {
@@ -608,7 +570,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-36"
+    //     "name":"jakup-fire-money-36"
     //   }
     // },
     // {
@@ -618,7 +580,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-37"
+    //     "name":"jakup-fire-money-37"
     //   }
     // },
     // {
@@ -628,7 +590,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-38"
+    //     "name":"jakup-fire-money-38"
     //   }
     // },
     // {
@@ -638,7 +600,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-39"
+    //     "name":"jakup-fire-money-39"
     //   }
     // },
     // {
@@ -648,7 +610,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-40"
+    //     "name":"jakup-fire-money-40"
     //   }
     // },
     // {
@@ -658,7 +620,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-41"
+    //     "name":"jakup-fire-money-41"
     //   }
     // },
     // {
@@ -668,7 +630,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-42"
+    //     "name":"jakup-fire-money-42"
     //   }
     // },
     // {
@@ -678,7 +640,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-43"
+    //     "name":"jakup-fire-money-43"
     //   }
     // },
     // {
@@ -688,7 +650,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-4"
+    //     "name":"jakup-fire-money-4"
     //   }
     // },
     // {
@@ -698,7 +660,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-45"
+    //     "name":"jakup-fire-money-45"
     //   }
     // },
     // {
@@ -708,7 +670,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-46"
+    //     "name":"jakup-fire-money-46"
     //   }
     // },
     // {
@@ -718,7 +680,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-47"
+    //     "name":"jakup-fire-money-47"
     //   }
     // },
     // {
@@ -728,7 +690,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-48"
+    //     "name":"jakup-fire-money-48"
     //   }
     // },
     // {
@@ -738,7 +700,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-49"
+    //     "name":"jakup-fire-money-49"
     //   }
     // },
     // {
@@ -748,7 +710,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-misty-money-50"
+    //     "name":"jakup-fire-money-50"
     //   }
     // }
   ]

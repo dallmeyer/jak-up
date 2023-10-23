@@ -1,16 +1,16 @@
 {
   // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
   // the name of this file, and the folder this file is in must have the same name.
-  "long_name": "jakup-ogre",
+  "long_name": "jakup-sunkenb",
   // The file name, should be upper case and 8 characters or less.
-  "iso_name": "UPOGRE",
+  "iso_name": "UPSUNKB",
   // The nickname, should be exactly 3 characters
-  "nickname": "upd", // 3 char name, all lowercase
+  "nickname": "up9", // 3 char name, all lowercase
   // Background mesh file.
   // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
   // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
   // only have 1.
-  "gltf_file": "custom_levels/jakup-ogre/jakup-ogre.glb",
+  "gltf_file": "custom_levels/jak1/jakup-sunkenb/jakup-sunkenb.glb",
 
   // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
   "automatic_wall_detection": true,
@@ -36,128 +36,80 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag"],
+  "art_groups": ["floating-launcher-ag", "lightning-mole-ag"],
 
   "ambients": [],
 
   "actors" : [
-    
+    // rolling hack
     // {
-    //   "trans": [2161.44, 8487.04, 1693.57], // translation
-    //   "etype": "racer",  // actor type
+    //   "trans": [1758.18, 5333.51, 1773.26], // translation
+    //   "etype": "peeper",  // actor type
     //   "game_task": 0, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2161.44, 8487.04, 1693.57, 10], // bounding sphere
+    //   "bsphere": [1758.18, 5333.51, 1773.26, 10], // bounding sphere
     //   "lump": {
-    //     "name": "jakup-ogre-racer-01"//,
-    //     // "index": ["int32", 2] 
+    //     "name": "jakup-rolling-peeper-01",
+    //     "effect-name": "mole-dig",
+    //     "effect-param": ["float", 11.0, 50.0, 12.0, 100.0],
+    //     "cycle-speed": ["float", -1.0, 0.0]
     //   }
     // },
     // {
-    //   "trans": [2276.41, 9345.77, 1176.10], // translation
-    //   "etype": "racer",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2276.41, 9345.77, 1176.10, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "jakup-rolling-racer-02",
-    //     "index": ["int32", 7] // fuck it, made up my own condition
-    //   }
-    // }//, 
-    // {
-    //   "trans": [1914.79, 7197.52, 1456.17], // translation
-    //   "etype": "flutflut",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1914.79, 7197.52, 1456.17, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "jakup-ogre-flutflut-01",
-    //     "index": ["int32", 7] // fuck it, made up my own condition 
-    //   }
-    // },
-    // {
-    //   "trans": [2135.15, 8027.27, 1287.42], // translation
-    //   "etype": "flutflut",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2135.15, 8027.27, 1287.42, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "jakup-ogre-flutflut-02",
-    //     "index": ["int32", 4] // empty pad, return only
-    //   }
-    // },    
-    // {
-    //   "trans": [2131.10, 8029.39, 1304.92], // translation
+    //   "trans": [1967.56, 5233.82, 1880.22], // translation
     //   "etype": "ventblue",  // actor type
     //   "game_task": 0, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2131.10, 8029.39, 1304.92, 10], // bounding sphere
+    //   "bsphere": [1967.56, 5233.82, 1880.22, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-ogre-ventblue-01",
+    //     "name":"jakup-sunkenb-ventblue-01",
     //     "eco-info": ["int32", 3, 1]
     //   }
-    // },    
+    // },
     // {
-    //   "trans":  [2141.70, 8033.41, 1320.81], // translation
-    //   "etype": "launcher",  // actor type
+    //   "trans": [1958.71, 5233.56, 1897.53], // translation
+    //   "etype": "floating-launcher",  // actor type
     //   "game_task": 0, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2141.70, 8033.41, 1320.81, 10], // bounding sphere
+    //   "bsphere": [1958.71, 5233.56, 1897.53, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-ogre-launcher-01",
-    //     "mode": "'#x1", // what does this do?
-    //     "spring-height": ["meters", 120.0],
-    //     "alt-vector": ["vector4m", [2121.65, 8105.56, 1347.95, 0.0005]]
-    //   }
-    // },  
-    // {
-    //   "trans":  [2121.65, 8105.56, 1347.95], // translation
-    //   "etype": "launcher",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2121.65, 8105.56, 1347.95, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-ogre-launcher-02",
-    //     "mode": "'#x1", // what does this do?
-    //     "spring-height": ["meters", 120.0],
-    //     "alt-vector": ["vector4m", [2169.22, 8180.38, 1355.49, 0.0005]]
+    //     "name":"jakup-sunkenb-floating-launcher-01",
+    //     "path": ["vector4m",  // activation path
+    //       [1958.71, 5233.56, 1897.53, 1.0],
+    //       [1958.71, 5245.56, 1897.53, 1.0]
+    //     ],
+    //     "trigger-height": ["meters", 5230.0],
+    //     "spring-height": ["meters", 50.0], // actual launcher
+    //     "alt-vector": ["vector4m", [1961.83, 5276.13, 1889.81, 0.0005]]
     //   }
     // },
     // {
-    //   "trans":  [2169.22, 8180.38, 1355.49], // translation
-    //   "etype": "launcher",  // actor type
+    //   "trans": [1923.09, 5300.28, 1893.89], // translation
+    //   "etype": "floating-launcher",  // actor type
     //   "game_task": 0, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2169.22, 8180.38, 1355.49, 10], // bounding sphere
+    //   "bsphere": [1923.09, 5300.28, 1893.89, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-ogre-launcher-03",
-    //     "mode": "'#x1", // what does this do?
-    //     "spring-height": ["meters", 120.0],
-    //     "alt-vector": ["vector4m", [2147.66, 8255.73, 1377.08, 0.0005]]
+    //     "name":"jakup-sunkenb-floating-launcher-02",
+    //     "path": ["vector4m",  // activation path
+    //       [1923.09, 5300.28, 1893.89, 1.0],
+    //       [1921.92, 5320.40, 1891.35, 1.0]
+    //     ],
+    //     "trigger-height": ["meters", 5293.0],
+    //     "spring-height": ["meters", 60.0], // actual launcher
+    //     "alt-vector": ["vector4m", [1917.35, 5340.68, 1890.07, 0.0005]]
     //   }
     // },
+
     // {
-    //   "trans":  [2147.66, 8255.73, 1377.08], // translation
-    //   "etype": "launcher",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2147.66, 8255.73, 1377.08, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-ogre-launcher-04",
-    //     "mode": "'#x1", // what does this do?
-    //     "spring-height": ["meters", 130.0],
-    //     "alt-vector": ["vector4m", [2150.74, 8348.96, 1404.95, 0.0005]]
-    //   }
-    // },
-    // {
-    //   "trans": [2152.69, 8368.1, 1429.33], // translation
+    //   "trans": [1941.03, 5327.0, 1888.12], // translation
     //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 128, // associated game task (for powercells, etc)
+    //   "game_task": 126, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2152.69, 8368.1, 1429.33, 10], // bounding sphere
+    //   "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-swamp-fuel-cell",
-    //     "eco-info":["int32", 6, 128]
+    //     "name":"jakup-sunkenb-fuel-cell",
+    //     "eco-info":["int32", 6, 126]
     //   }
     // }//,
 

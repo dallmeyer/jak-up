@@ -1,16 +1,16 @@
 {
   // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
   // the name of this file, and the folder this file is in must have the same name.
-  "long_name": "jakup-training",
+  "long_name": "jakup-ogre",
   // The file name, should be upper case and 8 characters or less.
-  "iso_name": "UPTRAIN",
+  "iso_name": "UPOGRE",
   // The nickname, should be exactly 3 characters
-  "nickname": "up0", // 3 char name, all lowercase
+  "nickname": "upd", // 3 char name, all lowercase
   // Background mesh file.
   // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
   // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
   // only have 1.
-  "gltf_file": "custom_levels/jakup-training/jakup-training.glb",
+  "gltf_file": "custom_levels/jak1/jakup-ogre/jakup-ogre.glb",
 
   // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
   "automatic_wall_detection": true,
@@ -32,282 +32,228 @@
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
   // The base actor id for your custom level. If you have multiple levels this should be unique!
-  "base_id": 1000,
+  "base_id": 2000,
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["plat-eco-ag", "scarecrow-a-ag", "scarecrow-b-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag"],
 
   "ambients": [],
 
   "actors" : [
+    
     // {
-    //   "trans": [1915.32,  12.9, 1986.38], // translation
-    //   "etype": "warpgate",  // actor type
+    //   "trans": [2161.44, 8487.04, 1693.57], // translation
+    //   "etype": "racer",  // actor type
     //   "game_task": 0, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1915.32,  12.9, 1986.38, 10], // bounding sphere
+    //   "bsphere": [2161.44, 8487.04, 1693.57, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-warpgate-01" 
-    //   }
-    // },	
-    // {
-    //   "trans": [1921.99,  11.23, 1983.46], 
-    //   "etype": "warp-gate-switch",
-    //   "game_task": 0,
-    //   "quat" : [0, 0, 0, 1],
-    //   "bsphere": [1921.99,  11.23, 1983.46, 10],
-    //   "lump": {
-    //     "name": "jakup-training-warp-gate-switch-01",
-    //     "alt-actor": "jakup-training-part-01"
+    //     "name": "jakup-ogre-racer-01"//,
+    //     // "index": ["int32", 2] 
     //   }
     // },
     // {
-    //   "trans": [1915.32,  16.0, 1986.38], 
-    //   "etype": "training-part",
-    //   "game_task": 0,
-    //   "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
-    //   "bsphere": [1915.32,  16.0, 1986.38, 10],
+    //   "trans": [2276.41, 9345.77, 1176.10], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2276.41, 9345.77, 1176.10, 10], // bounding sphere
     //   "lump": {
-    //     "name": "jakup-training-part-01",
-    //     "effect-name": "'warpgate-loop",
-    //     "art-name":"group-training-warpgate",
-    //     "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
-    //     "cycle-speed": ["float", -1.0000, 0.0000],
-    //     "rot": ["float", -1.0000, -1.0000,-1.0]
+    //     "name": "jakup-rolling-racer-02",
+    //     "index": ["int32", 7] // fuck it, made up my own condition
     //   }
-    // },
-    {
-      "trans": [2092.60,  12.55, 1810.86], // translation
-      "etype": "crate",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0.0, -0, 0.0], // quaternion
-      "bsphere": [2092.60,  12.55, 1810.86, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-crate-01",
-        "crate-type":"'wood",
-        "eco-info": ["int32", 4, 1] // green eco blob
-      }
-    },
-    {
-      "trans": [1882.35, 297.87, 1983.09], // translation
-      "etype": "ventblue",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1882.35, 297.87, 1983.09, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-ventblue-01",
-        "eco-info":["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [1863.39, 256.26, 1958.10  ], // translation
-      "etype": "plat-eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1863.39, 256.26, 1958.10, 10], // bounding sphere
-      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
-      "lump": {
-        "name":"jakup-training-plat-01",        
-        "vis-dist":  ["meters", 400.0],
-        "notice-dist": ["meters", 0.0],
-        "path": ["vector4m",
-          [1863.39, 256.26, 1958.10, 1.0],  
-          [1863.36, 282.70, 1958.29, 1.0],  
-          [1927.89, 328.53, 1920.70, 1.0]
-        ],
-        // "path-k": ["float",
-        //   0.0, 0.0,
-        //   0.0, 0.0,
-        //   1.0, 1.0,
-        //   1.0, 1.0
-        // ],
-        "sync": ["float", 30.0, 0.0]
-      }
-    },
-    {
-      "trans": [2009.04, 166.13, 1850.76], // translation
-      "etype": "scarecrow-b",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2009.04, 166.13, 1850.76, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-scarecrow-b-01"
-      }
-    },
-    {
-      "trans": [1984.29, 347.40, 1985.31], // translation
-      "etype": "scarecrow-a",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1984.29, 347.40, 1985.31, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-scarecrow-a-01"
-      }
-    },
-    // eco + plat from top to bottom
-    {
-      "trans": [ 1970.29, 380.9, 1906.87], // translation
-      "etype": "eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1970.29, 380.9, 1906.87, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-blue-eco-01",
-        "eco-info": ["int32", 3, 1]
-      }
-    },
-    {
-      "trans": [ 1960.49, 380.73, 1894.34], // translation
-      "etype": "plat-eco",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1960.49, 380.73, 1894.34, 10], // bounding sphere
-      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
-      "lump": {
-        "name":"jakup-training-plat-02",        
-        "vis-dist":  ["meters", 400.0],
-        "notice-dist": ["meters", 0.0],
-        "path": ["vector4m",
-          [1960.49, 380.73, 1894.34, 1.0],  
-          [1912.25, 313.37, 1893.89, 1.0],  
-          [1953.42, 211.28, 1961.86, 1.0],  
-          [2030.05,  85.83, 1868.42, 1.0]
-        ],
-        "path-k": ["float",
-          0.0, 0.0,
-          0.0, 0.0,
-          1.0, 1.0,
-          1.0, 1.0
-        ],
-        "sync": ["float", 40.0, 0.0]
-      }
-    },
-    // for multi-level common model testing
+    // }//, 
     // {
-    //   "trans": [ 1960.49, 385.73, 1894.34],
-    //   "etype": "mother-spider",
-    //   "game_task": 0,
-    //   "quat" : [0, 0, 0, 1],
-    //   "bsphere": [1960.49, 385.73, 1894.34, 10],
+    //   "trans": [1914.79, 7197.52, 1456.17], // translation
+    //   "etype": "flutflut",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1914.79, 7197.52, 1456.17, 10], // bounding sphere
     //   "lump": {
-    //     "name": "lltest2-mother-spider-1",
-    //     "vis-dist": ["meters", 200.0],
-    //     "path": ["vector4m",
-    //       [1960.49, 380.73, 1894.34, 1.0],  
-    //       [1912.25, 313.37, 1893.89, 1.0],  
-    //       [1953.42, 211.28, 1961.86, 1.0],  
-    //       [2030.05,  85.83, 1868.42, 1.0]
-    //       ]
+    //     "name": "jakup-ogre-flutflut-01",
+    //     "index": ["int32", 7] // fuck it, made up my own condition 
     //   }
     // },
+    // {
+    //   "trans": [2135.15, 8027.27, 1287.42], // translation
+    //   "etype": "flutflut",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2135.15, 8027.27, 1287.42, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "jakup-ogre-flutflut-02",
+    //     "index": ["int32", 4] // empty pad, return only
+    //   }
+    // },    
+    // {
+    //   "trans": [2131.10, 8029.39, 1304.92], // translation
+    //   "etype": "ventblue",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2131.10, 8029.39, 1304.92, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogre-ventblue-01",
+    //     "eco-info": ["int32", 3, 1]
+    //   }
+    // },    
+    // {
+    //   "trans":  [2141.70, 8033.41, 1320.81], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2141.70, 8033.41, 1320.81, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogre-launcher-01",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 120.0],
+    //     "alt-vector": ["vector4m", [2121.65, 8105.56, 1347.95, 0.0005]]
+    //   }
+    // },  
+    // {
+    //   "trans":  [2121.65, 8105.56, 1347.95], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2121.65, 8105.56, 1347.95, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogre-launcher-02",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 120.0],
+    //     "alt-vector": ["vector4m", [2169.22, 8180.38, 1355.49, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans":  [2169.22, 8180.38, 1355.49], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2169.22, 8180.38, 1355.49, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogre-launcher-03",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 120.0],
+    //     "alt-vector": ["vector4m", [2147.66, 8255.73, 1377.08, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans":  [2147.66, 8255.73, 1377.08], // translation
+    //   "etype": "launcher",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2147.66, 8255.73, 1377.08, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-ogre-launcher-04",
+    //     "mode": "'#x1", // what does this do?
+    //     "spring-height": ["meters", 130.0],
+    //     "alt-vector": ["vector4m", [2150.74, 8348.96, 1404.95, 0.0005]]
+    //   }
+    // },
+    // {
+    //   "trans": [2152.69, 8368.1, 1429.33], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 128, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2152.69, 8368.1, 1429.33, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-swamp-fuel-cell",
+    //     "eco-info":["int32", 6, 128]
+    //   }
+    // }//,
 
+    // // // FLIES
 
-    {
-      "trans": [1986.74, 388.5, 1887.90], // translation
-      "etype": "fuel-cell",  // actor type
-      "game_task": 117, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-fuel-cell",
-        "eco-info":["int32", 6, 117]
-      }
-    },
-
-    // FLIES
-
-    {
-      "trans": [1941.72, 97.06, 1886.19], // highest rock of base
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-      "bsphere": [1941.72, 97.06, 1886.19, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-01",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 95], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1941.72, 97.06, 1886.19]
-      }
-    },
-    {
-      "trans": [1969.86, 119.06, 1974.31  ], // top of tree towards end of first section
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [0.0, -0.7566, 0.0, 0.6538], // quaternion
-      "bsphere": [1969.86, 119.06, 1974.31, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-02",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 65631], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1969.86, 119.06, 1974.31  ]
-      }
-    },
-    {
-      "trans": [2022.37, 122.3, 1949.63  ], // underside of first geyser
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [0.2500, 0.6414, -0.2500, 0.7671], // quaternion
-      "bsphere": [2022.37, 122.3, 1949.63  , 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-03",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 131167], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2022.37, 122.3, 1949.63  ]
-      }
-    },
-    {
-      "trans": [1876.90, 255.29, 1899.17  ], // in hole of second geyser
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [1876.90, 255.29, 1899.17  , 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-04",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 196703], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1876.90, 255.29, 1899.17  ]
-      }
-    },
-    {
-      "trans": [1887.24, 277.17, 1992.19  ], // backside of pillar with eco vent
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-      "bsphere": [1887.24, 277.17, 1992.19  , 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-05",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 262239], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1887.24, 277.17, 1992.19  ]
-      }
-    },
-    {
-      "trans": [1993.70, 355.46, 1985.83  ], // on edge of third geyser
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-      "bsphere": [1993.70, 355.46, 1985.83  , 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-06",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 327775], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1993.70, 355.46, 1985.83  ]
-      }
-    },
-    {
-      "trans": [1999.32, 357.43, 1924.06  ], // down below on last precursor robot
-      "etype": "crate",  // actor type
-      "game_task": 95, // associated game task (for powercells, etc)
-      "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-      "bsphere": [1999.32, 357.43, 1924.06  , 10], // bounding sphere
-      "lump": {
-        "name":"jakup-training-buzzer-07",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 393311], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 1999.32, 357.43, 1924.06  ]
-      }
-    }//,
+    // {
+    //   "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-01",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
+    //   }
+    // },
+    // {
+    //   "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-02",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
+    //   }
+    // },
+    // {
+    //   "trans": [2170.59, 3497.58, 1699.88], // ledge above "boggy" entrance
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2170.59, 3497.58, 1699.88, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-03",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2170.59, 3497.58, 1699.88]
+    //   }
+    // },
+    // {
+    //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-04",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
+    //   }
+    // },
+    // {
+    //   "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-05",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
+    //   }
+    // },
+    // {
+    //   "trans": [2170.54, 3717.59, 1907.00], // walk the plank
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-06",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 327755], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2170.54, 3717.59, 1907.00]
+    //   }
+    // },
+    // { 
+    //   "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
+    //   "etype": "crate",  // actor type
+    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-sunken-buzzer-07",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 393291], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2153.48, 3863.30, 1883.65]
+    //   }
+    // }//,
 
     // ORBS
 
@@ -318,7 +264,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-01"
+    //     "name":"jakup-sunken-money-01"
     //   }
     // },
     // {
@@ -328,7 +274,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-02"
+    //     "name":"jakup-sunken-money-02"
     //   }
     // },
     // {
@@ -338,7 +284,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-03"
+    //     "name":"jakup-sunken-money-03"
     //   }
     // },     
 
@@ -349,7 +295,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-04"
+    //     "name":"jakup-sunken-money-04"
     //   }
     // },
     // {
@@ -359,7 +305,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-05"
+    //     "name":"jakup-sunken-money-05"
     //   }
     // },
     // {
@@ -369,7 +315,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-06"
+    //     "name":"jakup-sunken-money-06"
     //   }
     // },
     // {
@@ -379,7 +325,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-07"
+    //     "name":"jakup-sunken-money-07"
     //   }
     // },
     // {
@@ -389,7 +335,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-08"
+    //     "name":"jakup-sunken-money-08"
     //   }
     // },
     // {
@@ -399,7 +345,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-09"
+    //     "name":"jakup-sunken-money-09"
     //   }
     // }
     // ,
@@ -410,7 +356,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-10"
+    //     "name":"jakup-sunken-money-10"
     //   }
     // },
     // {
@@ -420,7 +366,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-11"
+    //     "name":"jakup-sunken-money-11"
     //   }
     // },
     // {
@@ -430,7 +376,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-12"
+    //     "name":"jakup-sunken-money-12"
     //   }
     // },
     // {
@@ -440,7 +386,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-13"
+    //     "name":"jakup-sunken-money-13"
     //   }
     // },
     // {
@@ -450,7 +396,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-14"
+    //     "name":"jakup-sunken-money-14"
     //   }
     // },
     // {
@@ -460,7 +406,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-15"
+    //     "name":"jakup-sunken-money-15"
     //   }
     // },
     // {
@@ -470,7 +416,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-16"
+    //     "name":"jakup-sunken-money-16"
     //   }
     // },
     // {
@@ -480,7 +426,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-17"
+    //     "name":"jakup-sunken-money-17"
     //   }
     // },
     // {
@@ -490,7 +436,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-18"
+    //     "name":"jakup-sunken-money-18"
     //   }
     // },
     // {
@@ -500,7 +446,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-19"
+    //     "name":"jakup-sunken-money-19"
     //   }
     // },
     // {
@@ -510,7 +456,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-20"
+    //     "name":"jakup-sunken-money-20"
     //   }
     // },
     // {
@@ -520,7 +466,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-21"
+    //     "name":"jakup-sunken-money-21"
     //   }
     // },
     // {
@@ -530,7 +476,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-22"
+    //     "name":"jakup-sunken-money-22"
     //   }
     // },
     // {
@@ -540,7 +486,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-23"
+    //     "name":"jakup-sunken-money-23"
     //   }
     // },
     // {
@@ -550,7 +496,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-24"
+    //     "name":"jakup-sunken-money-24"
     //   }
     // },
     // {
@@ -560,7 +506,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-25"
+    //     "name":"jakup-sunken-money-25"
     //   }
     // },
     // {
@@ -570,7 +516,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-26"
+    //     "name":"jakup-sunken-money-26"
     //   }
     // },
     // {
@@ -580,7 +526,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-27"
+    //     "name":"jakup-sunken-money-27"
     //   }
     // },
     // {
@@ -590,7 +536,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-28"
+    //     "name":"jakup-sunken-money-28"
     //   }
     // },
     // {
@@ -600,7 +546,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-29"
+    //     "name":"jakup-sunken-money-29"
     //   }
     // },
     // {
@@ -610,7 +556,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-30"
+    //     "name":"jakup-sunken-money-30"
     //   }
     // },
     // {
@@ -620,7 +566,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-31"
+    //     "name":"jakup-sunken-money-31"
     //   }
     // },
     // {
@@ -630,7 +576,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-32"
+    //     "name":"jakup-sunken-money-32"
     //   }
     // },
     // {
@@ -640,7 +586,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-33"
+    //     "name":"jakup-sunken-money-33"
     //   }
     // },
     // {
@@ -650,7 +596,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-34"
+    //     "name":"jakup-sunken-money-34"
     //   }
     // },
     // {
@@ -660,7 +606,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-35"
+    //     "name":"jakup-sunken-money-35"
     //   }
     // },
     // {
@@ -670,7 +616,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-36"
+    //     "name":"jakup-sunken-money-36"
     //   }
     // },
     // {
@@ -680,7 +626,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-37"
+    //     "name":"jakup-sunken-money-37"
     //   }
     // },
     // {
@@ -690,7 +636,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-38"
+    //     "name":"jakup-sunken-money-38"
     //   }
     // },
     // {
@@ -700,7 +646,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-39"
+    //     "name":"jakup-sunken-money-39"
     //   }
     // },
     // {
@@ -710,7 +656,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-40"
+    //     "name":"jakup-sunken-money-40"
     //   }
     // },
     // {
@@ -720,7 +666,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-41"
+    //     "name":"jakup-sunken-money-41"
     //   }
     // },
     // {
@@ -730,7 +676,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-42"
+    //     "name":"jakup-sunken-money-42"
     //   }
     // },
     // {
@@ -740,7 +686,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-43"
+    //     "name":"jakup-sunken-money-43"
     //   }
     // },
     // {
@@ -750,7 +696,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-4"
+    //     "name":"jakup-sunken-money-4"
     //   }
     // },
     // {
@@ -760,7 +706,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-45"
+    //     "name":"jakup-sunken-money-45"
     //   }
     // },
     // {
@@ -770,7 +716,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-46"
+    //     "name":"jakup-sunken-money-46"
     //   }
     // },
     // {
@@ -780,7 +726,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-47"
+    //     "name":"jakup-sunken-money-47"
     //   }
     // },
     // {
@@ -790,7 +736,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-48"
+    //     "name":"jakup-sunken-money-48"
     //   }
     // },
     // {
@@ -800,7 +746,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-49"
+    //     "name":"jakup-sunken-money-49"
     //   }
     // },
     // {
@@ -810,7 +756,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-training-money-50"
+    //     "name":"jakup-sunken-money-50"
     //   }
     // }
   ]
