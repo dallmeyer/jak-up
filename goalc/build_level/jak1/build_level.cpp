@@ -102,8 +102,9 @@ bool run_build_level(const std::string& input_file,
     fs::path iso_folder = "";
     for (const auto& entry : fs::recursive_directory_iterator(root_dir, ghc::filesystem::directory_options::follow_directory_symlink)) {
       // TODO - hard-coded to jak 1
+    lg::info("  Considering {} ?", entry.path().string());
       if (entry.is_directory() &&
-          entry.path().filename().string().find("iso_data") != std::string::npos &&
+          entry.path().string().find("iso_data") != std::string::npos &&
           entry.path().filename().string().find("jak1") != std::string::npos) {
         lg::info("Found ISO path: {}", entry.path().string());
         iso_folder = entry.path();
