@@ -380,6 +380,8 @@ int main(int argc, char** argv) {
         }
 
         // std::filesystem doesn't have a rename for dirs...
+        lg::info("Moving from '{}' to '{}'", temp_iso_extract_location.string(),
+                 iso_data_path.string());
         fs::copy(temp_iso_extract_location, iso_data_path, fs::copy_options::recursive);
         fs::remove_all(temp_iso_extract_location);
       }
