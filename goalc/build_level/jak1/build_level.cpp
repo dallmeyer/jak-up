@@ -96,13 +96,14 @@ bool run_build_level(const std::string& input_file,
   // TODO remove hardcoded config settings
   if ((level_json.contains("art_groups") && !level_json.at("art_groups").empty()) ||
       (level_json.contains("textures") && !level_json.at("textures").empty())) {
-    const fs::path root_dir = file_util::get_jak_project_dir().string() + "/iso_data";
+    const fs::path root_dir = file_util::get_jak_project_dir();
     lg::info("Looking for ISO path starting from {}", root_dir.string());
     // TODO - add to file_util
     fs::path iso_folder = "";
     for (const auto& entry : fs::recursive_directory_iterator(root_dir, ghc::filesystem::directory_options::follow_directory_symlink)) {
       // TODO - hard-coded to jak 1
       if (entry.is_directory() &&
+          entry.path().filename().string().find("iso_data") != std::string::npos &&
           entry.path().filename().string().find("jak1") != std::string::npos) {
         lg::info("Found ISO path: {}", entry.path().string());
         iso_folder = entry.path();
