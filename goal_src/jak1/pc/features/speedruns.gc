@@ -483,7 +483,6 @@
   )
 
 (defun refresh-jakup-cam ()
-  (return #f)
   (case (-> *jakup-info* cam)
     (((jakup-cam wide-no-collide))
       (send-event *camera* 'change-state cam-stick 0)
