@@ -104,7 +104,7 @@ bool run_build_level(const std::string& input_file,
       // TODO - hard-coded to jak 1
     lg::info("  Considering {} ?", entry.path().string());
       if (entry.is_directory() &&
-          entry.path().filename().string().find("jak1") != std::string::npos) {
+          (entry.path().filename().string().find("jak1") != std::string::npos || entry.path().filename().string().find("_temp") != std::string::npos)) {
         lg::info("Found ISO path: {}", entry.path().string());
         iso_folder = entry.path();
       }
