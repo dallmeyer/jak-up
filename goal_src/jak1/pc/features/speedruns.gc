@@ -498,6 +498,7 @@
         ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
           (set! (-> *target* alt-cam-pos quad) (-> (&-> (-> *target* control) unknown-qword00) 0))
           (logclear! (-> *target* state-flags) (state-flags use-alt-cam-pos))
+          (send-event *camera* 'change-state *camera-base-mode* 0)
           (send-event *camera* 'clear-slave-option #x6000)
           (send-event *camera* 'set-fov (degrees 94.9999))
           )
