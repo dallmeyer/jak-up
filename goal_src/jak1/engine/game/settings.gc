@@ -425,7 +425,7 @@
   (let ((gp-0 (-> *setting-control* default))
         (s5-0 (-> *setting-control* current))
         )
-    (let ((f0-2 (* 0.003 (the float (scf-get-volume)))))  ;; TODO BARG set back to normal
+    (let ((f0-2 (* 0.01 (the float (scf-get-volume)))))
       (set! (-> gp-0 ocean-off) #f)
       (set! (-> gp-0 allow-look-around) #t)
       (set! (-> gp-0 border-mode) #f)
