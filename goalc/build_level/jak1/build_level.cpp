@@ -135,7 +135,7 @@ bool run_build_level(const std::string& input_file,
          fs::directory_iterator(file_util::get_jak_project_dir() / "iso_data")) {
       lg::info("Checking in path: {}", entry.path().string());
       if (entry.is_directory() &&
-          entry.path().filename().string().find("jak1") != std::string::npos) {
+          (entry.path().filename().string().find("jak1") != std::string::npos || entry.path().filename().string().find("_temp") != std::string::npos)) {
         lg::info("Found ISO path: {}", entry.path().string());
         in_folder = entry.path();
       }
