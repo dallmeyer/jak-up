@@ -1,16 +1,16 @@
 {
   // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
   // the name of this file, and the folder this file is in must have the same name.
-  "long_name": "jakup-jungleb",
+  "long_name": "jakup-beach",
   // The file name, should be upper case and 8 characters or less.
-  "iso_name": "UPJUNGB",
+  "iso_name": "UPBEACH",
   // The nickname, should be exactly 3 characters
-  "nickname": "up3", // 3 char name, all lowercase
+  "nickname": "up5", // 3 char name, all lowercase
   // Background mesh file.
   // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
   // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
   // only have 1.
-  "gltf_file": "custom_levels/jakup-jungleb/jakup-jungleb.glb",
+  "gltf_file": "custom_levels/jak1/jakup-beach/jakup-beach.glb",
 
   // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
   "automatic_wall_detection": true,
@@ -32,258 +32,228 @@
   // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
 
   // The base actor id for your custom level. If you have multiple levels this should be unique!
-  "base_id": 4000,
+  "base_id": 6000,
   
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["keg-ag", "keg-conveyor-ag", "keg-conveyor-paddle-ag", "bounceytarp-ag", "darkvine-ag", "balloonlurker-ag"],
+  "art_groups": ["teetertotter-ag", "lurkerworm-ag", "windmill-one-ag", "flutflut-ag", "flutflutegg-ag"],
 
   "ambients": [],
 
   "actors" : [
     // lol nice hack
     {
-      "trans":  [2047.26, 1173.30, 1969.98], // translation
-      "etype": "keg-conveyor",  // actor type
+      "trans":  [1838.95, 1544.8, 2176.61], // translation
+      "etype": "teetertotter",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2047.26, 1173.30, 1969.98, 10], // bounding sphere
+      "bsphere": [1838.95, 1544.8, 2176.61, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-keg-conveyor-01",
-        "path": ["vector4m",
-          [2049.19, 1170.57, 1968.68, 1.0],  
-          [2050.75, 1169.82, 1966.52, 1.0],  
-          [2053.19, 1168.14, 1961.99, 1.0],
-          [2055.35, 1166.52, 1957.71, 1.0],  
-          [2057.93, 1164.48, 1952.14, 1.0],  
-          [2060.78, 1162.21, 1945.62, 1.0],
-          [2063.07, 1159.47, 1937.41, 1.0],  
-          [2065.08, 1157.24, 1930.45, 1.0],  
-          [2068.31, 1154.33, 1925.23, 1.0],
-          [2070.83, 1152.16, 1921.29, 1.0],  
-          [2072.47, 1147.68, 1915.88, 1.0]
-        ],
-        "path-k": ["float", // idk it needs to be (length 'path) + 4, and have 4 of the same values on each end??
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          1.0,  
-          2.0,  
-          3.0,
-          4.0,  
-          5.0,  
-          6.0,
-          7.0,  
-          8.0,  
-          8.0,  
-          8.0,  
-          8.0
-        ]
+        "name":"jakup-misty-teetertotter-01"
+      }
+    },
+    // {  // idk multiple paths too fucky
+    //   "trans": [2009.44, 1765.23, 1696.23], // translation
+    //   "etype": "pelican",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0.0, 1.0], // quaternion
+    //   "bsphere": [2009.44, 1765.23, 1696.23, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"jakup-beach-pelican-01",
+    //     "path": ["vector4m",
+    //         // path-circle
+    //         [1834.87, 1621.15,	1888.48, 1.0],  
+    //         [1814.785, 1669.625,	1832, 1.0],  
+    //         [1794.7, 1718.1,	1775.52, 1.0],  
+    //         [1891.08, 1675.43,	1706.26, 1.0],  
+    //         [1968.71, 1643.02,	1744.4, 1.0],  
+    //         [1965.77, 1640.83,	1802.255, 1.0],  
+    //         [1962.83, 1638.64,	1860.11, 1.0],  
+    //         [1898.85, 1629.895,	1874.295, 1.0]
+    //     ],
+    //     "path": 
+    //       // path-dive0
+    //       ["vector4m"],
+    //       // path-to-nest0
+    //       ["vector4m"],
+    //       // path-from-nest0
+    //       ["vector4m"],
+    //       // path-spit0
+    //       ["vector4m"],
+    //       // path-dive1
+    //       ["vector4m"],
+    //       // path-to-nest1
+    //       ["vector4m"],
+    //       // path-to-nest2
+    //       ["vector4m"]
+    //     ]
+    //   }
+    // },
+    {
+      "trans": [2009.44, 1765.23, 1696.23], // translation
+      "etype": "windmill-one",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0.0, 1.0], // quaternion
+      "bsphere": [2009.44, 1765.23, 1696.23, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-windmill-one-01"
       }
     },
     {
-      "trans": [1799.89, 1278.66, 2070.93], // translation
-      "etype": "balloonlurker",  // actor type
+      "trans": [2077.62, 1811.19, 1841.23], // translation
+      "etype": "flutflutegg",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [1799.89, 1278.66, 2070.93, 10], // bounding sphere
-      // "scale" : ["vector",[2.0, 2.0, 2.0, 1.0]],
+      "quat" : [0, 0, 0.0, 1.0], // quaternion
+      "bsphere": [2077.62, 1811.19, 1841.23, 10], // bounding sphere
       "lump": {
-        "name":"jakup-misty-balloonlurker-01",        
-        "vis-dist":  ["meters", 400.0],
-        "notice-dist": ["meters", 0.0],
-        "path": ["vector4m",
-          [1799.89, 1278.66, 2070.93, 1.0],  
-          [1715.02, 1278.66, 2065.77, 1.0],  
-          [1652.75, 1278.66, 1982.66, 1.0],  
-          [1762.06, 1258.66, 1889.11, 1.0],
-          [1873.44, 1238.40, 1861.61, 1.0],
-          [1873.53, 1258.66, 1987.92, 1.0],
-          [1799.89, 1278.66, 2070.93, 1.0] 
-        ],
-        "path-k": ["float",
-          0.0, 0.0,
-          0.0, 0.0,
-          1.0, 1.0,
-          2.0, 2.0,
-          3.0, 3.0,
-          4.0, 4.0,
-          4.0, 4.0
-        ],
-        "sync": ["float", 40.0, 0.0],
-        "options":["int32", 8]  // hopefully make path loop
+        "name":"jakup-beach-flutflutegg-01"
       }
     },
-    // eco
+
     {
-      "trans": [2405.8, 1039.24, 1603.8], // translation
-      "etype": "eco",  // actor type
+      "trans": [1787.95, 1991.23, 1761.92], // translation
+      "etype": "lurkerworm",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2405.8, 1039.24, 1603.8, 10], // bounding sphere
+      "bsphere": [1787.95, 1991.23, 1761.92, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-blue-eco-01",
-        "eco-info": ["int32", 3, 1]
+        "name":"jakup-beach-lurkerworm-01"
       }
     },
     {
-      "trans":  [2442.43, 1039.88, 1607.98], // translation
-      "etype": "launcher",  // actor type
+      "trans": [1870.73, 1592.05, 1720.73], // translation
+      "etype": "lurkerworm",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2442.43, 1039.88, 1607.98, 10], // bounding sphere
+      "bsphere": [1870.73, 1592.05, 1720.73, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-launcher-01",
-        "mode": "'#x1", // what does this do?
-        "spring-height": ["meters", 190.0],
-        "alt-vector": ["vector4m", [2257.63, 1068.58, 1671.12, 0.0015]]
+        "name":"jakup-beach-lurkerworm-02"
       }
     },
     {
-      "trans": [2394.07, 975.27, 1616.94], // translation
-      "etype": "darkvine",  // actor type
+      "trans": [1955.15, 1758.02, 1788.54], // translation
+      "etype": "lurkerworm",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2394.07, 975.27, 1616.94, 10], // bounding sphere
+      "bsphere": [1955.15, 1758.02, 1788.54, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-darkvine-01"
+        "name":"jakup-beach-lurkerworm-03"
       }
     },
     {
-      "trans": [2447.51, 1020.68, 1625.97], // translation
-      "etype": "darkvine",  // actor type
+      "trans": [2082.05, 1824.89, 1814.96], // translation
+      "etype": "lurkerworm",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2447.51, 1020.68, 1625.97, 10], // bounding sphere
+      "bsphere": [2082.05, 1824.89, 1814.96, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-darkvine-02"
+        "name":"jakup-beach-lurkerworm-04"
       }
     },
+
     {
-      "trans": [2364.31, 1034.97, 1632.75], // translation
-      "etype": "darkvine",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2364.31, 1034.97, 1632.75, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-jungleb-darkvine-03"
-      }
-    },
-    {
-      "trans": [2118.31, 1088.0, 1663.40], // translation
-      "etype": "springbox",  // actor type
-      "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [2118.31, 1088.0, 1663.40, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-jungle-springbox-01",
-        "spring-height":["meters", 25.0]
-      }
-    },
-    {
-      "trans": [2110.37, 1108.8, 1670.00], // translation
+      "trans": [1788.49, 1995.8, 1794.31], // translation
       "etype": "fuel-cell",  // actor type
-      "game_task": 120, // associated game task (for powercells, etc)
+      "game_task": 123, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
-      "bsphere": [-21.6238, 19.3496, 17.1191, 10], // bounding sphere
+      "bsphere": [1788.49, 1995.8, 1794.31, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-fuel-cell",
-        "eco-info":["int32", 6, 120]
+        "name":"jakup-beach-fuel-cell",
+        "eco-info":["int32", 6, 123]
       }
     },
 
     // FLIES
 
     {
-      "trans": [2423.84, 977.33, 1561.42], // where blue eco door cell normally is
+      "trans": [2219.11, 1572.35, 1734.29], // far end of beach (original sandover side)
       "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
-      "quat" : [0.0, 0.353, 0.1, 0.934], // quaternion
-      "bsphere": [2423.84, 977.33, 1561.42, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-jungleb-buzzer-01",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 121], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2423.84, 977.33, 1561.42]
-      }
-    },
-    {
-      "trans": [2425.33, 970.78, 1630.99], // normal position on outside of tower
-      "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
-      "quat" : [0.0, -0.7566, 0.0, 0.6538], // quaternion
-      "bsphere": [2425.33, 970.78, 1630.99, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-jungleb-buzzer-02",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 65657], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2425.33, 970.78, 1630.99]
-      }
-    },
-    {
-      "trans": [2285.58, 1050.74, 1805.84], // inner part between two boosteds
-      "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
+      "game_task": 20, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [2285.58, 1050.74, 1805.84, 10], // bounding sphere
+      "bsphere": [2219.11, 1572.35, 1734.29, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-buzzer-03",
+        "name":"jakup-beach-buzzer-01",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 131193], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2285.58, 1050.74, 1805.84]
+        "eco-info": ["int32", 8, 20], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2219.11, 1572.35, 1734.29]
       }
     },
     {
-      "trans": [2332.22, 1083.69, 1725.75], // on top of blue switch room
+      "trans": [1869.40, 1706.58, 1820.90], // under first sentinel
       "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
+      "game_task": 20, // associated game task (for powercells, etc)
+      "quat" : [-0.090, 0.353, 0.020, 0.934], // quaternion
+      "bsphere": [1869.40, 1706.58, 1820.90, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65556], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1869.40, 1706.58, 1820.90]
+      }
+    },
+    {
+      "trans": [1922.49, 1722.93, 1822.22], // inside first windmill house
+      "etype": "crate",  // actor type
+      "game_task": 20, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [2332.22, 1083.69, 1725.75, 10], // bounding sphere
+      "bsphere": [1922.49, 1722.93, 1822.22, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-buzzer-04",
+        "name":"jakup-beach-buzzer-03",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 196729], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2332.22, 1083.69, 1725.75]
+        "eco-info": ["int32", 8, 131092], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1922.49, 1722.93, 1822.22]
       }
     },
     {
-      "trans": [2152.88, 1059.87, 1723.38], // plant boss tentacle
+      "trans": [2075.56, 1830.21, 1799.82], // mid section of cannon tower
       "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
-      "quat" : [-0.010, 0.353, -0.060, 0.934], // quaternion
-      "bsphere": [2152.88, 1059.87, 1723.38, 10], // bounding sphere
-      "lump": {
-        "name":"jakup-jungleb-buzzer-05",
-        "crate-type":"'iron",
-        "eco-info": ["int32", 8, 262265], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2152.88, 1059.87, 1723.38]
-      }
-    },
-    {
-      "trans": [2364.11, 1046.4, 1633.44], // above right path from "top" of temple
-      "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
+      "game_task": 20, // associated game task (for powercells, etc)
       "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [2364.11, 1046.4, 1633.44, 10], // bounding sphere
+      "bsphere": [2075.56, 1830.21, 1799.82, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-buzzer-06",
+        "name":"jakup-beach-buzzer-04",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 327801], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2364.11, 1046.4, 1633.44]
+        "eco-info": ["int32", 8, 196628], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2075.56, 1830.21, 1799.82]
       }
     },
     {
-      "trans": [2414.24, 1030.23, 1567.19], // shortest of the 4 temple towers
+      "trans": [1977.88, 1864.06, 1855.29], // sort of underneath 3rd sentinel
       "etype": "crate",  // actor type
-      "game_task": 121, // associated game task (for powercells, etc)
-      "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-      "bsphere": [2414.24, 1030.23, 1567.19, 10], // bounding sphere
+      "game_task": 20, // associated game task (for powercells, etc)
+      "quat" : [-0.020, 0.353, 0.40, 0.934], // quaternion
+      "bsphere": [1977.88, 1864.06, 1855.29, 10], // bounding sphere
       "lump": {
-        "name":"jakup-jungleb-buzzer-07",
+        "name":"jakup-beach-buzzer-05",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 393337], // to get SF task = game-task + (2^16 * buzzer-idx)
-        "movie-pos": ["meters", 2414.24, 1030.23, 1567.19]
+        "eco-info": ["int32", 8, 262164], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1977.88, 1864.06, 1855.29]
+      }
+    },
+    {
+      "trans": [1875.60, 1921.56, 1794.94], // waterwheel on left
+      "etype": "crate",  // actor type
+      "game_task": 20, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+      "bsphere": [1875.60, 1921.56, 1794.94, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327700], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1875.60, 1921.56, 1794.94]
+      }
+    },
+    {
+      "trans": [1911.63, 1896.42, 1745.73], // behind last windmill house
+      "etype": "crate",  // actor type
+      "game_task": 20, // associated game task (for powercells, etc)
+      "quat" : [-0.090, 0.353, 0.020, 0.934], // quaternion
+      "bsphere": [1911.63, 1896.42, 1745.73, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-beach-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393236], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1911.63, 1896.42, 1745.73]
       }
     }//,
 
@@ -296,7 +266,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-01"
+    //     "name":"jakup-beach-money-01"
     //   }
     // },
     // {
@@ -306,7 +276,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-02"
+    //     "name":"jakup-beach-money-02"
     //   }
     // },
     // {
@@ -316,7 +286,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-03"
+    //     "name":"jakup-beach-money-03"
     //   }
     // },     
 
@@ -327,7 +297,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-04"
+    //     "name":"jakup-beach-money-04"
     //   }
     // },
     // {
@@ -337,7 +307,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-05"
+    //     "name":"jakup-beach-money-05"
     //   }
     // },
     // {
@@ -347,7 +317,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-06"
+    //     "name":"jakup-beach-money-06"
     //   }
     // },
     // {
@@ -357,7 +327,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-07"
+    //     "name":"jakup-beach-money-07"
     //   }
     // },
     // {
@@ -367,7 +337,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-08"
+    //     "name":"jakup-beach-money-08"
     //   }
     // },
     // {
@@ -377,7 +347,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-09"
+    //     "name":"jakup-beach-money-09"
     //   }
     // }
     // ,
@@ -388,7 +358,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-10"
+    //     "name":"jakup-beach-money-10"
     //   }
     // },
     // {
@@ -398,7 +368,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-11"
+    //     "name":"jakup-beach-money-11"
     //   }
     // },
     // {
@@ -408,7 +378,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-12"
+    //     "name":"jakup-beach-money-12"
     //   }
     // },
     // {
@@ -418,7 +388,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-13"
+    //     "name":"jakup-beach-money-13"
     //   }
     // },
     // {
@@ -428,7 +398,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-14"
+    //     "name":"jakup-beach-money-14"
     //   }
     // },
     // {
@@ -438,7 +408,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-15"
+    //     "name":"jakup-beach-money-15"
     //   }
     // },
     // {
@@ -448,7 +418,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-16"
+    //     "name":"jakup-beach-money-16"
     //   }
     // },
     // {
@@ -458,7 +428,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-17"
+    //     "name":"jakup-beach-money-17"
     //   }
     // },
     // {
@@ -468,7 +438,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-18"
+    //     "name":"jakup-beach-money-18"
     //   }
     // },
     // {
@@ -478,7 +448,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-19"
+    //     "name":"jakup-beach-money-19"
     //   }
     // },
     // {
@@ -488,7 +458,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-20"
+    //     "name":"jakup-beach-money-20"
     //   }
     // },
     // {
@@ -498,7 +468,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-21"
+    //     "name":"jakup-beach-money-21"
     //   }
     // },
     // {
@@ -508,7 +478,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-22"
+    //     "name":"jakup-beach-money-22"
     //   }
     // },
     // {
@@ -518,7 +488,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-23"
+    //     "name":"jakup-beach-money-23"
     //   }
     // },
     // {
@@ -528,7 +498,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-24"
+    //     "name":"jakup-beach-money-24"
     //   }
     // },
     // {
@@ -538,7 +508,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-25"
+    //     "name":"jakup-beach-money-25"
     //   }
     // },
     // {
@@ -548,7 +518,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-26"
+    //     "name":"jakup-beach-money-26"
     //   }
     // },
     // {
@@ -558,7 +528,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-27"
+    //     "name":"jakup-beach-money-27"
     //   }
     // },
     // {
@@ -568,7 +538,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-28"
+    //     "name":"jakup-beach-money-28"
     //   }
     // },
     // {
@@ -578,7 +548,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-29"
+    //     "name":"jakup-beach-money-29"
     //   }
     // },
     // {
@@ -588,7 +558,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-30"
+    //     "name":"jakup-beach-money-30"
     //   }
     // },
     // {
@@ -598,7 +568,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-31"
+    //     "name":"jakup-beach-money-31"
     //   }
     // },
     // {
@@ -608,7 +578,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-32"
+    //     "name":"jakup-beach-money-32"
     //   }
     // },
     // {
@@ -618,7 +588,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-33"
+    //     "name":"jakup-beach-money-33"
     //   }
     // },
     // {
@@ -628,7 +598,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-34"
+    //     "name":"jakup-beach-money-34"
     //   }
     // },
     // {
@@ -638,7 +608,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-35"
+    //     "name":"jakup-beach-money-35"
     //   }
     // },
     // {
@@ -648,7 +618,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-36"
+    //     "name":"jakup-beach-money-36"
     //   }
     // },
     // {
@@ -658,7 +628,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-37"
+    //     "name":"jakup-beach-money-37"
     //   }
     // },
     // {
@@ -668,7 +638,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-38"
+    //     "name":"jakup-beach-money-38"
     //   }
     // },
     // {
@@ -678,7 +648,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-39"
+    //     "name":"jakup-beach-money-39"
     //   }
     // },
     // {
@@ -688,7 +658,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-40"
+    //     "name":"jakup-beach-money-40"
     //   }
     // },
     // {
@@ -698,7 +668,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-41"
+    //     "name":"jakup-beach-money-41"
     //   }
     // },
     // {
@@ -708,7 +678,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-42"
+    //     "name":"jakup-beach-money-42"
     //   }
     // },
     // {
@@ -718,7 +688,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-43"
+    //     "name":"jakup-beach-money-43"
     //   }
     // },
     // {
@@ -728,7 +698,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-4"
+    //     "name":"jakup-beach-money-4"
     //   }
     // },
     // {
@@ -738,7 +708,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-45"
+    //     "name":"jakup-beach-money-45"
     //   }
     // },
     // {
@@ -748,7 +718,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-46"
+    //     "name":"jakup-beach-money-46"
     //   }
     // },
     // {
@@ -758,7 +728,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-47"
+    //     "name":"jakup-beach-money-47"
     //   }
     // },
     // {
@@ -768,7 +738,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-48"
+    //     "name":"jakup-beach-money-48"
     //   }
     // },
     // {
@@ -778,7 +748,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-49"
+    //     "name":"jakup-beach-money-49"
     //   }
     // },
     // {
@@ -788,7 +758,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-jungleb-money-50"
+    //     "name":"jakup-beach-money-50"
     //   }
     // }
   ]
