@@ -111,12 +111,12 @@
         "name":"jakup-sunkenb-fuel-cell",
         "eco-info":["int32", 6, 126]
       }
-    }//,
+    },
 
     // // // FLIES
 
     // {
-    //   "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
+    //   "trans": [2079.10, 3367.73, 1868.91], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
@@ -129,7 +129,7 @@
     //   }
     // },
     // {
-    //   "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
+    //   "trans": [1972.42, 3537.45, 1515.43], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
@@ -142,7 +142,7 @@
     //   }
     // },
     // {
-    //   "trans": [2170.59, 3497.58, 1699.88], // ledge above "boggy" entrance
+    //   "trans": [2170.59, 3497.58, 1699.88], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
@@ -155,7 +155,7 @@
     //   }
     // },
     // {
-    //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
+    //   "trans": [2226.44, 3578.08, 1911.60], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
@@ -167,21 +167,21 @@
     //     "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
     //   }
     // },
+    {
+      "trans": [2080.45, 4778.04, 1904.29], // 
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2080.45, 4778.04, 1904.29, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunken-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2080.45, 4778.04, 1904.29]
+      }
+    }//,
     // {
-    //   "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunken-buzzer-05",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.54, 3717.59, 1907.00], // walk the plank
+    //   "trans": [2170.54, 3717.59, 1907.00], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
@@ -194,7 +194,7 @@
     //   }
     // },
     // { 
-    //   "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
+    //   "trans": [2153.48, 3863.30, 1883.65], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
