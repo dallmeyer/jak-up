@@ -403,7 +403,7 @@
     (set! (-> v1-23 0 param2) (the-as basic (-> this extra-trans)))
     )
   (set! (-> this condition) (res-lump-value arg0 'index int))
-  (format 0 "RACER CONDITION = ~D~%" (-> this condition))
+  ;; (format 0 "RACER CONDITION = ~D~%" (-> this condition))
   (set! (-> this fact)
         (new 'process 'fact-info this (pickup-type eco-pill-random) (-> *FACT-bank* default-pill-inc))
         )

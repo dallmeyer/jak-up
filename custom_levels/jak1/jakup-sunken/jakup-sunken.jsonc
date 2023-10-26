@@ -439,59 +439,59 @@
     {
       "trans": [1730.93, 4082.04, 1974.15], // 
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 49, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [1730.93, 4082.04, 1974.15, 10], // bounding sphere
       "lump": {
         "name":"jakup-sunken-buzzer-01",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "eco-info": ["int32", 8, 49], // to get SF task = game-task + (2^16 * buzzer-idx)
         "movie-pos": ["meters", 1730.93, 4082.04, 1974.15]
       }
     },
     {
       "trans": [1650.99, 4307.33, 1663.76], // 
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 49, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [1650.99, 4307.33, 1663.76, 10], // bounding sphere
       "lump": {
         "name":"jakup-sunken-buzzer-02",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "eco-info": ["int32", 8, 65585], // to get SF task = game-task + (2^16 * buzzer-idx)
         "movie-pos": ["meters", 1650.99, 4307.33, 1663.76]
       }
     },
     {
       "trans": [1755.59, 4699.16, 2138.75], // 
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 49, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [1755.59, 4699.16, 2138.75, 10], // bounding sphere
       "lump": {
         "name":"jakup-sunken-buzzer-03",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "eco-info": ["int32", 8, 131121], // to get SF task = game-task + (2^16 * buzzer-idx)
         "movie-pos": ["meters", 1755.59, 4699.16, 2138.75]
       }
     },
     {
       "trans": [2080.45, 4778.04, 1904.29], // 
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 49, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2080.45, 4778.04, 1904.29, 10], // bounding sphere
       "lump": {
         "name":"jakup-sunken-buzzer-04",
         "crate-type":"'iron",
-        "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "eco-info": ["int32", 8, 196657], // to get SF task = game-task + (2^16 * buzzer-idx)
         "movie-pos": ["meters", 2080.45, 4778.04, 1904.29]
       }
     }//,
     // {
     //   "trans": [2178.17, 3581.41, 1887.41], // 
     //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "game_task": 49, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
     //   "lump": {
@@ -504,7 +504,7 @@
     // {
     //   "trans": [2170.54, 3717.59, 1907.00], // 
     //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "game_task": 49, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
     //   "lump": {
@@ -517,7 +517,7 @@
     // { 
     //   "trans": [2153.48, 3863.30, 1883.65], // 
     //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
+    //   "game_task": 49, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
     //   "lump": {
