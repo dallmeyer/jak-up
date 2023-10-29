@@ -140,11 +140,11 @@
       }
     },
     {
-      "trans": [2127.43, 7161.97, 1332.04], // translation
+      "trans": [2127.31, 7161.97, 1332.1], // translation
       "etype": "swingpole",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [-0.6844, -0.1773, 0.1773, -0.6844], // quaternion - Along Z axis in Blender
-      "bsphere": [2127.43, 7161.97, 1332.04, 10], // bounding sphere
+      "quat" : [0.1267, -0.6956, 0.6956, 0.1267], // quaternion - Along Z axis in Blender
+      "bsphere": [2127.31, 7161.97, 1332.04, 10], // bounding sphere
       "lump": {
         "name": "jakup-swamp-swingpole-01",
         "scale": ["float", 1.0, 1.0, 1.0, 1.0]
