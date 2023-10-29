@@ -36,7 +36,7 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["balance-plat-ag"], //, "swamp-rat-ag", "swamp-rat-nest-ag"],
+  "art_groups": ["balance-plat-ag", "eichar-pole+0-ag"], //, "swamp-rat-ag", "swamp-rat-nest-ag"],
 
   "ambients": [],
 
@@ -138,7 +138,18 @@
         "distance": ["meters", 16.0]
         // "next-actor": "jakup-swamp-balance-plat-02"
       }
-    }//,
+    },
+    {
+      "trans": [2123.29, 7162.50, 1332.87], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [-0.688, 0.165, -0.165, -0.688], // quaternion - Along Z axis in Blender
+      "bsphere": [2123.29, 7162.50, 1332.87, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-swamp-swingpole-01",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
     // {
     //   "trans": [1993.48, 6843.19, 1223.30], // translation
     //   "etype": "swamp-rat-nest",  // actor type
@@ -240,45 +251,45 @@
 
     // // // FLIES
 
-    // {
-    //   "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-swamp-buzzer-01",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
-    //   }
-    // },
-    // {
-    //   "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-swamp-buzzer-02",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.59, 3497.58, 1699.88], // ledge above "boggy" entrance
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2170.59, 3497.58, 1699.88, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-swamp-buzzer-03",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2170.59, 3497.58, 1699.88]
-    //   }
-    // },
+    {
+      "trans": [2012.04, 6531.84, 1121.11], // water under og sagehut
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2012.04, 6531.84, 1121.11, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-buzzer-01",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2012.04, 6531.84, 1121.11]
+      }
+    },
+    {
+      "trans": [1874.57, 6514.55, 983.23], // 2nd floor of sage hut
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1874.57, 6514.55, 983.23, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1874.57, 6514.55, 983.23]
+      }
+    },
+    {
+      "trans": [2036.34, 6719.74, 1293.51], // ledge above "boggy" entrance
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2036.34, 6719.74, 1293.51, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-buzzer-03",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2036.34, 6719.74, 1293.51]
+      }
+    }//,
     // {
     //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
     //   "etype": "crate",  // actor type

@@ -2536,8 +2536,8 @@
                            :continues '((new 'static 'continue-point
                                              :name "jakup-swampb-start"
                                              :level 'jakup-swampb
-                                            ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
-                                             :trans (new 'static 'vector :x (meters 2123.96) :y (meters 8028.97) :z (meters 1304.86) :w 1.0)
+                                             :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
+                                            ;;  :trans (new 'static 'vector :x (meters 2123.96) :y (meters 8028.97) :z (meters 1304.86) :w 1.0)
                                              :quat (new 'static 'quaternion :y 0.2046 :w 0.9788)
                                              :camera-trans (new 'static 'vector :x (meters 1895.4652) :y (meters 7201.5317) :z (meters 1442.6622) :w 1.0)
                                              :camera-rot (new 'static 'array float 9

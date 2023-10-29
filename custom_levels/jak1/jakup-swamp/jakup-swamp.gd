@@ -9,6 +9,7 @@
   ;; "swamp-rat-nest.o"
   ;; "swamp-rat-ag.go"
   ;; "swamp-rat-nest-ag.go"
+  "eichar-pole+0-ag.go"
   "balance-plat-ag.go"
   "jakup-swamp.go"
  ))
