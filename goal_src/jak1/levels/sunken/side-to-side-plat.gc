@@ -8,12 +8,8 @@
 ;; DECOMP BEGINS
 
 (deftype side-to-side-plat (plat)
-  ((part-ry float  :offset-assert 264)
+  ((part-ry  float)
    )
-  :heap-base #xa0
-  :method-count-assert 33
-  :size-assert         #x10c
-  :flag-assert         #x2100a0010c
   )
 
 
@@ -74,12 +70,12 @@
     )
   )
 
-(defmethod get-unlit-skel side-to-side-plat ((obj side-to-side-plat))
+(defmethod get-unlit-skel ((this side-to-side-plat))
   *side-to-side-plat-sg*
   )
 
-(defmethod baseplat-method-24 side-to-side-plat ((obj side-to-side-plat))
-  (let ((s5-0 (new 'process 'collide-shape-moving obj (collide-list-enum hit-by-player))))
+(defmethod baseplat-method-24 ((this side-to-side-plat))
+  (let ((s5-0 (new 'process 'collide-shape-moving this (collide-list-enum hit-by-player))))
     (set! (-> s5-0 dynam) (copy *standard-dynamics* 'process))
     (set! (-> s5-0 reaction) default-collision-reaction)
     (set! (-> s5-0 no-reaction)
@@ -97,29 +93,29 @@
       )
     (set! (-> s5-0 nav-radius) (* 0.75 (-> s5-0 root-prim local-sphere w)))
     (backup-collide-with-as s5-0)
-    (set! (-> obj root-override) s5-0)
+    (set! (-> this root) s5-0)
     )
   0
   (none)
   )
 
-(defmethod baseplat-method-26 side-to-side-plat ((obj side-to-side-plat))
-  (set! (-> obj part-ry) (+ 16384.0 (quaternion-y-angle (-> obj root-override quat))))
+(defmethod baseplat-method-26 ((this side-to-side-plat))
+  (set! (-> this part-ry) (+ 16384.0 (quaternion-y-angle (-> this root quat))))
   (none)
   )
 
-(defmethod baseplat-method-25 side-to-side-plat ((obj side-to-side-plat))
-  (let ((v0-0 (create-launch-control (-> *part-group-id-table* 436) obj)))
-    (set! (-> obj part) v0-0)
+(defmethod baseplat-method-25 ((this side-to-side-plat))
+  (let ((v0-0 (create-launch-control (-> *part-group-id-table* 436) this)))
+    (set! (-> this part) v0-0)
     (the-as sparticle-launch-group v0-0)
     )
   )
 
-(defmethod baseplat-method-20 side-to-side-plat ((obj side-to-side-plat))
-  (when (nonzero? (-> obj part))
-    (set! (-> *part-id-table* 1713 init-specs 14 initial-valuef) (-> obj part-ry))
-    (set! (-> *part-id-table* 1714 init-specs 19 initial-valuef) (-> obj part-ry))
-    (spawn (-> obj part) (-> obj root-override trans))
+(defmethod baseplat-method-20 ((this side-to-side-plat))
+  (when (nonzero? (-> this part))
+    (set! (-> *part-id-table* 1713 init-specs 14 initial-valuef) (-> this part-ry))
+    (set! (-> *part-id-table* 1714 init-specs 19 initial-valuef) (-> this part-ry))
+    (spawn (-> this part) (-> this root trans))
     )
   (none)
   )

@@ -35,33 +35,55 @@
         ;;   (set-vector! (-> flutflutegg-beach dir) 0.0 0.0 -1.0 0.0)
         ;;   (set-vector! (-> flutflutegg-beach root-override quat) 0.0 -1.0 0.0 0.0)
         ;;   )
-
-        ;; kick off zoomer in other levels
+        
+        ;; check for zoomer kick off if deloading
         (when (and *target*
                    (logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
                    )
-          (case (-> *target* current-level name)
-            (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 
-              'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-swamp 'jakup-swampb)
-              (send-event *target* 'end-mode) ;; exit racer
+          (let ((kickoff #t))
+            (case (-> *load-state* want 0 name)
+              (('jakup-fire 'jakup-rolling 'jakup-ogre 'jakup-ogreb)
+                (if (-> *load-state* want 0 display?)
+                  (set! kickoff #f)
+                  )
+                )
               )
-            (('jakup-fire 'jakup-rolling 'jakup-ogre 'jakup-ogreb)
-              ;; nothing
+            (case (-> *load-state* want 1 name)
+              (('jakup-fire 'jakup-rolling 'jakup-ogre 'jakup-ogreb)
+                (if (-> *load-state* want 1 display?)
+                  (set! kickoff #f)
+                  )
+                )
+              )
+            (when kickoff 
+              (format 0 "kicking off zoomer~%")
+              (send-event *target* 'end-mode) ;; exit racer
               )
             )
           )
 
-        ;; kick off flut in other levels
+        ;; check for flutflut kickoff if deloading
         (when (and *target*
                    (logtest? (-> *target* control root-prim prim-core action) (collide-action flut))
                    )
-          (case (-> *target* current-level name)
-            (('jakup-training 'jakup-village1 'jakup-jungle 'jakup-jungleb 'jakup-misty 'jakup-beach 'jakup-fire
-              'jakup-village2 'jakup-sunken 'jakup-sunkenb 'jakup-rolling 'jakup-swamp 'jakup-ogre 'jakup-ogreb)
-              (send-event *target* 'end-mode) ;; exit flut
+          (let ((kickoff #t))
+            (case (-> *load-state* want 0 name)
+              (('jakup-swampb)
+                (if (-> *load-state* want 0 display?)
+                  (set! kickoff #f)
+                  )
+                )
               )
-            (('jakup-swampb)
-              ;; nothing
+            (case (-> *load-state* want 1 name)
+              (('jakup-swampb)
+                (if (-> *load-state* want 1 display?)
+                  (set! kickoff #f)
+                  )
+                )
+              )
+            (when kickoff 
+              (format 0 "kicking off flutflut~%")
+              (send-event *target* 'end-mode) ;; exit flut
               )
             )
           )

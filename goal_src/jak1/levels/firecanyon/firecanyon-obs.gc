@@ -9,13 +9,9 @@
 ;; DECOMP BEGINS
 
 (deftype spike (process-drawable)
-  ((root-override collide-shape  :offset        112)
-   (num-alts      int32          :offset-assert 176)
+  ((root      collide-shape :override)
+   (num-alts  int32)
    )
-  :heap-base #x50
-  :method-count-assert 20
-  :size-assert         #xb4
-  :flag-assert         #x14005000b4
   (:states
     spike-down
     spike-idle
@@ -126,7 +122,7 @@
   :trans (behavior ()
     (when (and *target*
                (= (send-event *target* 'query 'mode) 'racer)
-               (< (vector-vector-distance (-> self root-override trans) (target-pos 0)) 225280.0)
+               (< (vector-vector-distance (-> self root trans) (target-pos 0)) 225280.0)
                )
       (sound-play "magma-rock")
       (let ((v1-8 (entity-actor-count (-> self entity) 'alt-actor)))
@@ -153,7 +149,7 @@
     )
   )
 
-(defmethod init-from-entity! spike ((this spike) (arg0 entity-actor))
+(defmethod init-from-entity! ((this spike) (arg0 entity-actor))
   (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum hit-by-player))))
     (let ((s3-0 (new 'process 'collide-shape-prim-group s4-0 (the-as uint 4) 0)))
       (set! (-> s3-0 prim-core collide-as) (collide-kind enemy))
@@ -202,7 +198,7 @@
       )
     (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
     (backup-collide-with-as s4-0)
-    (set! (-> this root-override) s4-0)
+    (set! (-> this root) s4-0)
     )
   (process-drawable-from-entity! this arg0)
   (initialize-skeleton this *spike-sg* '())
@@ -221,15 +217,11 @@
               )
 
 (deftype crate-darkeco-cluster (process-drawable)
-  ((root-override collide-shape  :offset 112)
+  ((root  collide-shape :override)
    )
-  :heap-base #x40
-  :method-count-assert 22
-  :size-assert         #xb0
-  :flag-assert         #x16004000b0
-  (:methods
-    (idle () _type_ :state 20)
-    (die () _type_ :state 21)
+  (:state-methods
+    idle
+    die
     )
   )
 
@@ -423,7 +415,7 @@
   :virtual #t
   :code (behavior ()
     (ja-channel-set! 0)
-    (clear-collide-with-as (-> self root-override))
+    (clear-collide-with-as (-> self root))
     (ja-post)
     (sound-play "dcrate-break")
     (process-spawn
@@ -434,7 +426,7 @@
       #f
       #f
       #f
-      (-> self root-override trans)
+      (-> self root trans)
       :to *entity-pool*
       )
     (suspend)
@@ -461,7 +453,7 @@
     )
   )
 
-(defmethod init-from-entity! crate-darkeco-cluster ((this crate-darkeco-cluster) (arg0 entity-actor))
+(defmethod init-from-entity! ((this crate-darkeco-cluster) (arg0 entity-actor))
   (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum usually-hit-by-player))))
     (let ((s3-0 (new 'process 'collide-shape-prim-mesh s4-0 (the-as uint 0) (the-as uint 0))))
       (set! (-> s3-0 prim-core collide-as) (collide-kind crate))
@@ -474,7 +466,7 @@
       )
     (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
     (backup-collide-with-as s4-0)
-    (set! (-> this root-override) s4-0)
+    (set! (-> this root) s4-0)
     )
   (process-drawable-from-entity! this arg0)
   (initialize-skeleton this *crate-darkeco-cluster-sg* '())

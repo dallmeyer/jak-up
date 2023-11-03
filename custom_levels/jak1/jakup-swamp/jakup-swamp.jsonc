@@ -289,20 +289,20 @@
         "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
         "movie-pos": ["meters", 2036.34, 6719.74, 1293.51]
       }
+    },
+    {
+      "trans": [1981.48, 6836.63, 1217.96], // chandelier
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1981.48, 6836.63, 1217.96, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swamp-buzzer-04",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1981.48, 6836.63, 1217.96]
+      }
     }//,
-    // {
-    //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-swamp-buzzer-04",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
-    //   }
-    // },
     // {
     //   "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
     //   "etype": "crate",  // actor type

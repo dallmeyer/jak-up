@@ -174,10 +174,6 @@
 
 (deftype peeper (process-drawable)
   ()
-  :heap-base #x40
-  :method-count-assert 20
-  :size-assert         #xb0
-  :flag-assert         #x14004000b0
   (:states
     peeper-down
     peeper-hide
@@ -314,7 +310,7 @@
   :post ja-post
   )
 
-(defmethod init-from-entity! peeper ((this peeper) (arg0 entity-actor))
+(defmethod init-from-entity! ((this peeper) (arg0 entity-actor))
   (set! (-> this root) (new 'process 'trsqv))
   (process-drawable-from-entity! this arg0)
   (initialize-skeleton this *lightning-mole-sg* '())

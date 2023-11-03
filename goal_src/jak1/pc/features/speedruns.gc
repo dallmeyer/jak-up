@@ -214,12 +214,12 @@
       (initialize! *game-info* 'game (the-as game-save #f) "game-start")
       )
     (((speedrun-category hub2-100))
-      ;; spawn at rock village start
-      (initialize! *game-info* 'game (the-as game-save #f) "village2-start")
+      ;; spawn at end of fire canyon
+      (initialize! *game-info* 'game (the-as game-save #f) "firecanyon-end")
       )
     (((speedrun-category hub3-100))
-      ;; spawn at start of volcanic crater
-      (initialize! *game-info* 'game (the-as game-save #f) "village3-start")
+      ;; spawn at end of mountain pass
+      (initialize! *game-info* 'game (the-as game-save #f) "ogre-end")
       )
     (((speedrun-category all-cutscenes))
       ;; turn play hints back on
@@ -700,10 +700,10 @@
 (define *full-hp?* #f)
 
 (defun full-hp ()
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
   (none)
   )
   
@@ -821,8 +821,8 @@
           (camera-rot-copy! *tmp-continue-point* (-> *camera-combiner* inv-camera-rot))
 
           (set! *full-hp?* (and (!= *target* #f)
-                        (= (-> *target* fact-info-target health) 3.0)
-                        (= (-> *target* fact-info-target eco-pill) 50.0)
+                        (= (-> *target* fact health) 3.0)
+                        (= (-> *target* fact eco-pill) 50.0)
                         ))
           (set! *tmp-flut?* #f)
           (set! *tmp-zoomer?* #f)

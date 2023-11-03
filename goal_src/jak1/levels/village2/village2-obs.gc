@@ -9,12 +9,8 @@
 ;; DECOMP BEGINS
 
 (deftype village2cam (pov-camera)
-  ((seq uint64  :offset-assert 224)
+  ((seq  uint64)
    )
-  :heap-base #x80
-  :method-count-assert 30
-  :size-assert         #xe8
-  :flag-assert         #x1e008000e8
   )
 
 
@@ -23,7 +19,7 @@
               :bounds (static-spherem 0 0 0 10)
               )
 
-(defmethod set-stack-size! village2cam ((this village2cam))
+(defmethod set-stack-size! ((this village2cam))
   (stack-size-set! (-> this main-thread) 512)
   (none)
   )
@@ -84,10 +80,6 @@
 
 (deftype ceilingflag (process-drawable)
   ()
-  :heap-base #x40
-  :method-count-assert 20
-  :size-assert         #xb0
-  :flag-assert         #x14004000b0
   (:states
     ceilingflag-idle
     )
@@ -112,7 +104,7 @@
   :post ja-post
   )
 
-(defmethod init-from-entity! ceilingflag ((this ceilingflag) (arg0 entity-actor))
+(defmethod init-from-entity! ((this ceilingflag) (arg0 entity-actor))
   (set! (-> this root) (new 'process 'trsqv))
   (process-drawable-from-entity! this arg0)
   (initialize-skeleton this *ceilingflag-sg* '())
@@ -121,15 +113,11 @@
   )
 
 (deftype exit-chamber-dummy (process-drawable)
-  ((orig-trans   vector :inline :offset-assert 176)
-   (fcell-handle handle         :offset-assert 192)
+  ((orig-trans    vector  :inline)
+   (fcell-handle  handle)
    )
-  :heap-base #x60
-  :method-count-assert 21
-  :size-assert         #xc8
-  :flag-assert         #x15006000c8
   (:methods
-    (skip-reminder? (_type_) symbol 20)
+    (skip-reminder? (_type_) symbol)
     )
   (:states
     exit-chamber-dummy-idle
@@ -143,7 +131,7 @@
               :bounds (static-spherem 0 5 0 15)
               )
 
-(defmethod skip-reminder? exit-chamber-dummy ((this exit-chamber-dummy))
+(defmethod skip-reminder? ((this exit-chamber-dummy))
   (case (get-reminder (get-task-control (game-task sunken-room)) 0)
     ((2)
      (let ((v1-4 (level-get *level* 'sunken)))
@@ -210,7 +198,7 @@
   :post ja-post
   )
 
-(defmethod init-from-entity! exit-chamber-dummy ((this exit-chamber-dummy) (arg0 entity-actor))
+(defmethod init-from-entity! ((this exit-chamber-dummy) (arg0 entity-actor))
   (set! (-> this fcell-handle) (the-as handle #f))
   (set! (-> this root) (new 'process 'trsqv))
   (process-drawable-from-entity! this arg0)
@@ -233,12 +221,8 @@
   )
 
 (deftype ogreboss-village2 (process-drawable)
-  ((boulder handle  :offset-assert 176)
+  ((boulder  handle)
    )
-  :heap-base #x50
-  :method-count-assert 20
-  :size-assert         #xb8
-  :flag-assert         #x14005000b8
   (:states
     ogreboss-village2-idle
     ogreboss-village2-throw
@@ -570,7 +554,7 @@
   :post ja-post
   )
 
-(defmethod init-from-entity! ogreboss-village2 ((this ogreboss-village2) (arg0 entity-actor))
+(defmethod init-from-entity! ((this ogreboss-village2) (arg0 entity-actor))
   (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum hit-by-player))))
     (let ((s3-0 (new 'process 'collide-shape-prim-group s4-0 (the-as uint 1) 0)))
       (set! (-> s3-0 prim-core collide-as) (collide-kind enemy))
@@ -604,19 +588,11 @@
 
 (deftype villageb-ogreboss (ogreboss-village2)
   ()
-  :heap-base #x50
-  :method-count-assert 20
-  :size-assert         #xb8
-  :flag-assert         #x14005000b8
   )
 
 
 (deftype villageb-water (water-anim)
   ()
-  :heap-base #x70
-  :method-count-assert 30
-  :size-assert         #xdc
-  :flag-assert         #x1e007000dc
   )
 
 
@@ -633,7 +609,7 @@
                                     )
         )
 
-(defmethod water-vol-method-22 villageb-water ((this villageb-water))
+(defmethod water-vol-method-22 ((this villageb-water))
   (let ((t9-0 (method-of-type water-anim water-vol-method-22)))
     (t9-0 this)
     )
