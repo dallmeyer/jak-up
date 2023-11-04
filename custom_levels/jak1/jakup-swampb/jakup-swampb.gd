@@ -8,6 +8,8 @@
   ;; "flut-part.o"
   ;; "flutflut.o"
   ;; "target-flut.o"
+  "tar-plat.o"
+  "tar-plat-ag.go"
   "eichar-flut+0-ag.go"
   "ef-plane-ag.go"
   "flut-saddle-ag.go"

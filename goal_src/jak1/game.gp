@@ -836,6 +836,8 @@
  "levels/swamp/"
  :deps ("$OUT/obj/ticky.o")
  "balance-plat.gc"
+ "swamp-spike.gc"
+ "tar-plat.gc"
  "swamp-obs.gc"
  "swamp-bat.gc"
  "swamp-rat.gc"

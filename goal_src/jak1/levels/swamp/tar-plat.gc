@@ -1,0 +1,157 @@
+;;-*-Lisp-*-
+(in-package goal)
+
+;; name: originally in swamp-obs.gc
+;; name in dgo: swamp-obs
+;; dgos: L1, SWA
+;; note: changed for high fps
+
+(defskelgroup *tar-plat-sg* tar-plat tar-plat-lod0-jg tar-plat-idle-ja
+              ((tar-plat-lod0-mg (meters 20)) (tar-plat-lod1-mg (meters 999999)))
+              :bounds (static-spherem 0 0 0 3)
+              )
+
+(define *tar-plat-constants* (new 'static 'rigid-body-platform-constants
+                               :drag-factor 2.0
+                               :buoyancy-factor 1.5
+                               :max-buoyancy-depth (meters 2)
+                               :gravity-factor 1.0
+                               :gravity (meters 80)
+                               :player-weight (meters 60)
+                               :player-bonk-factor 0.5
+                               :player-dive-factor 1.0
+                               :player-force-distance (meters 2)
+                               :player-force-clamp (meters 1000000)
+                               :player-force-timeout (seconds 0.1)
+                               :explosion-force (meters 1000)
+                               :linear-damping 0.9
+                               :angular-damping 0.9
+                               :control-point-count 4
+                               :mass 1.0
+                               :inertial-tensor-x (meters 6)
+                               :inertial-tensor-y (meters 2)
+                               :inertial-tensor-z (meters 6)
+                               :cm-joint-y (meters -2)
+                               :idle-distance (meters 200)
+                               :platform #t
+                               :sound-name "tar-plat"
+                               )
+        )
+
+(deftype tar-plat (rigid-body-platform)
+  ((anchor-point  vector  :inline)
+   (float-height  float)
+   )
+  )
+
+
+(defmethod rigid-body-platform-method-22 ((this tar-plat) (arg0 vector) (arg1 float))
+  (+ (-> this float-height)
+     (-> this float-height-offset)
+     (* 512.0 (cos (* 109.22667 (+ (* 60.0 arg1) (* 0.03 (-> arg0 x)) (* 0.03 (-> arg0 z))))))
+     )
+  )
+
+(defmethod rigid-body-platform-method-23 ((this tar-plat) (arg0 float))
+  (call-parent-method this arg0)
+  (rigid-body-platform-method-27 this (-> this anchor-point))
+  0
+  (none)
+  )
+
+(defstate rigid-body-platform-idle (tar-plat)
+  :virtual #t
+  :enter (behavior ()
+    (ja-channel-set! 0)
+    )
+  :code (behavior ()
+    (loop
+      (suspend)
+      )
+    )
+  :post ja-post
+  )
+
+(defstate rigid-body-platform-float (tar-plat)
+  :virtual #t
+  :event rigid-body-platform-event-handler
+  :trans (behavior ()
+    (cond
+      ((or (not *target*) (< (-> self info idle-distance)
+                             (vector-vector-distance (-> self root-overlay trans) (-> *target* control trans))
+                             )
+           )
+       (let ((f30-1 -2048.0))
+         (seek! (-> self float-height-offset) f30-1 (* 2048.0 (seconds-per-frame)))
+         (if (= (-> self float-height-offset) f30-1)
+             (go-virtual rigid-body-platform-idle)
+             )
+         )
+       )
+      (else
+        (seek! (-> self float-height-offset) 4096.0 (* 2048.0 (seconds-per-frame)))
+        )
+      )
+    )
+  :code (behavior ()
+    (ja-channel-push! 1 (seconds 0.1))
+    (ja :group! tar-plat-idle-ja)
+    (ja :num-func num-func-identity :frame-num 0.0)
+    (loop
+      (suspend)
+      )
+    )
+  :post rigid-body-platform-post
+  )
+
+(defmethod rigid-body-platform-method-30 ((this tar-plat))
+  (let ((s5-0 (new 'process 'collide-shape-moving this (collide-list-enum hit-by-player))))
+    (set! (-> s5-0 dynam) (copy *standard-dynamics* 'process))
+    (set! (-> s5-0 reaction) default-collision-reaction)
+    (set! (-> s5-0 no-reaction)
+          (the-as (function collide-shape-moving collide-shape-intersect vector vector none) nothing)
+          )
+    (alloc-riders s5-0 1)
+    (let ((s4-0 (new 'process 'collide-shape-prim-mesh s5-0 (the-as uint 0) (the-as uint 0))))
+      (set! (-> s4-0 prim-core collide-as) (collide-kind ground-object))
+      (set! (-> s4-0 collide-with) (collide-kind target))
+      (set! (-> s4-0 prim-core action) (collide-action solid rider-plat-sticky rider-plat))
+      (set! (-> s4-0 prim-core offense) (collide-offense indestructible))
+      (set! (-> s4-0 transform-index) 3)
+      (set-vector! (-> s4-0 local-sphere) 0.0 0.0 0.0 20480.0)
+      (set-root-prim! s5-0 s4-0)
+      )
+    (set! (-> s5-0 nav-radius) (* 0.75 (-> s5-0 root-prim local-sphere w)))
+    (backup-collide-with-as s5-0)
+    (set! (-> this root-overlay) s5-0)
+    )
+  0
+  (none)
+  )
+
+(defmethod rigid-body-platform-method-31 ((this tar-plat))
+  (initialize-skeleton this *tar-plat-sg* '())
+  (rigid-body-platform-method-29 this *tar-plat-constants*)
+  (set! (-> this float-height) (-> this entity extra trans y))
+  (set! (-> this float-height-offset) -2048.0)
+  (let ((s5-0 (-> this info control-point-count)))
+    (dotimes (s4-0 s5-0)
+      (let ((s3-0 (-> this control-point-array data s4-0)))
+        (let ((f26-0 (+ 8192.0 (* 65536.0 (/ (the float s4-0) (the float s5-0)))))
+              (f28-0 20480.0)
+              (f30-0 12288.0)
+              )
+          (set! (-> s3-0 local-pos x) (fmax (fmin (* f28-0 (sin f26-0)) f30-0) (- f30-0)))
+          (set! (-> s3-0 local-pos y) 0.0)
+          (set! (-> s3-0 local-pos z) (fmax (fmin (* f28-0 (cos f26-0)) f30-0) (- f30-0)))
+          )
+        (set! (-> s3-0 local-pos w) 1.0)
+        )
+      )
+    )
+  (nav-mesh-connect this (-> this root-overlay) (the-as nav-control #f))
+  (set! (-> this anchor-point quad) (-> this root-overlay trans quad))
+  0
+  (none)
+  )
+  

@@ -36,7 +36,7 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["eichar-flut+0-ag", "ef-plane-ag", "flut-saddle-ag"],
+  "art_groups": ["eichar-flut+0-ag", "ef-plane-ag", "flut-saddle-ag", "tar-plat-ag"],
 
   "ambients": [],
 
@@ -124,6 +124,83 @@
         "mode": "'#x1", // what does this do?
         "spring-height": ["meters", 130.0],
         "alt-vector": ["vector4m", [2150.74, 8348.96, 1404.95, 0.0005]]
+      }
+    },
+    {
+      "trans":  [1985.05, 7555.0, 1455.69], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1985.05, 7555.0, 1455.69, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-01",
+        "vis-dist":  ["meters", 400.0]
+      }
+    },
+    {
+      "trans":  [2006.0, 7560.52, 1440.4], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2006.0, 7560.52, 1440.4, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-02",
+        "vis-dist":  ["meters", 400.0]
+      }
+    },
+    {
+      "trans":  [2026.5, 7567.2, 1435.0], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2026.5, 7567.2, 1435.0, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-03",
+        "vis-dist":  ["meters", 400.0]
+      }
+    },
+    {
+      "trans":  [2045.74, 7573.5, 1423.90], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2045.74, 7573.5, 1423.90, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-04",
+        "vis-dist":  ["meters", 400.0]
+      }
+    },
+    {
+      "trans":  [2054.12, 7579.8, 1404.84], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2054.12, 7579.8, 1404.84, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-05",
+        "vis-dist":  ["meters", 400.0]
+      }
+    },
+    {
+      "trans":  [2047.44, 7585.6, 1383.61], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2047.44, 7585.6, 1383.61, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-06",
+        "vis-dist":  ["meters", 400.0]
+      }
+    },
+    {
+      "trans":  [2064.29, 7592.0, 1381.76], // translation
+      "etype": "tar-plat",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2064.29, 7592.0, 1381.76, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-swampb-tar-plat-07",
+        "vis-dist":  ["meters", 400.0]
       }
     },
     {

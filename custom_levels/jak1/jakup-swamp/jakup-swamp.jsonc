@@ -36,7 +36,7 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["balance-plat-ag", "eichar-pole+0-ag"], //, "swamp-rat-ag", "swamp-rat-nest-ag"],
+  "art_groups": ["balance-plat-ag", "eichar-pole+0-ag", "swamp-spike-ag"], //, "swamp-rat-ag", "swamp-rat-nest-ag"],
 
   "ambients": [],
 
@@ -148,6 +148,51 @@
       "lump": {
         "name": "jakup-swamp-swingpole-01",
         "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2025.28, 6713.81, 1275.12], // translation
+      "etype": "swamp-spike",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.7071, 0, 0.7071], // quaternion
+      "bsphere": [2025.28, 6713.81, 1275.12, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-swamp-spike-01",        
+        "sync": ["float", 5.0, 0.75]
+      }
+    },
+    {
+      "trans": [2025.28, 6713.81, 1281.51], // translation
+      "etype": "swamp-spike",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.7071, 0, 0.7071], // quaternion
+      "bsphere": [2025.28, 6713.81, 1281.51, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-swamp-spike-02",        
+        "sync": ["float", 5.0, 0.25]
+      }
+    },
+    // these next two are in swampb, but low enough that swamp should be loaded
+    {
+      "trans": [1705.68, 7334.69, 1719.40], // translation
+      "etype": "swamp-spike",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.9813, 0, -0.1920], // quaternion
+      "bsphere": [1705.68, 7334.69, 1719.40, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-swamp-spike-03",        
+        "sync": ["float", 5.0, 0.75]
+      }
+    },
+    {
+      "trans": [1700.71, 7334.69, 1722.0], // translation
+      "etype": "swamp-spike",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0.9813, 0, -0.1920], // quaternion
+      "bsphere": [1700.71, 7334.69, 1722.0, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-swamp-spike-04",        
+        "sync": ["float", 5.0, 0.25]
       }
     },
     // {
