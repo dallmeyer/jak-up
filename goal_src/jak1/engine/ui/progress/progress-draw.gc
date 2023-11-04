@@ -811,10 +811,10 @@
                   (set! sv-80 format)
                   (let ((a0-56 (clear *temp-string*))
                         (a1-21 "/~D")
-                        (a2-17 (if (< 100 (the int (-> s3-3 file s1-0 fuel-cell-count)))
+                        (a2-17 ;; (if (< 100 (the int (-> s3-3 file s1-0 fuel-cell-count)))
                                    (-> this total-nb-of-power-cells)
-                                   100
-                                   )
+                                  ;;  100
+                                  ;;  )
                                )
                         )
                     (sv-80 a0-56 a1-21 a2-17)

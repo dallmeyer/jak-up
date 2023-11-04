@@ -732,7 +732,7 @@
             (string-format 
               "~D~%/~D"
               (the int (-> *game-info* money-total))
-              2000  ;;(-> (the progress (-> *progress-process* 0)) total-nb-of-orbs)
+              0 ;; 2000  ;;(-> (the progress (-> *progress-process* 0)) total-nb-of-orbs)
               )
             buf
             string-x
@@ -1128,7 +1128,7 @@
             (string-format 
               "~D~%/~D"
               (the int (-> *game-info* fuel))
-              101  ;;(-> (the progress (-> *progress-process* 0)) total-nb-of-power-cells)
+              24  ;;(-> (the progress (-> *progress-process* 0)) total-nb-of-power-cells)
               )
             buf
             string-x
@@ -1422,7 +1422,7 @@
             (string-format 
               " ~D~% /~D"
               (the int (-> *game-info* buzzer-total))
-              112 ;; (-> (the progress (-> *progress-process* 0)) total-nb-of-buzzers)
+              84 ;; (-> (the progress (-> *progress-process* 0)) total-nb-of-buzzers)
               )
             buf
             string-x
