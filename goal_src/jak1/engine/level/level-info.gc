@@ -2639,6 +2639,23 @@
                                              :disp0 'display
                                              :lev1 'jakup-ogreb
                                              :disp1 'display)
+                                        (new 'static 'continue-point
+                                             :name "jakup-ogreb-end"
+                                             :level 'jakup-ogreb
+                                             :trans (new 'static 'vector :x (meters 2232.9528) :y (meters 10159.4306) :z (meters 1982.6517) :w 1.0)
+                                             :quat (new 'static 'quaternion :y -0.6820 :w 0.7312)
+                                             :camera-trans (new 'static 'vector :x (meters 2245.2971) :y (meters 10164.5683) :z (meters 1980.6873) :w 1.0)
+                                             :camera-rot (new 'static 'array float 9
+                                              0.1570 -0.0000 0.9875
+                                              -0.1186 0.9927 0.0188
+                                              -0.9804 -0.1201 0.1559
+                                              )
+                                             :load-commands '()
+                                             :vis-nick 'upe
+                                             :lev0 'jakup-ogreb
+                                             :disp0 'display
+                                             :lev1 #f
+                                             :disp1 #f)
                                          )
                                              
                            :tasks '()
