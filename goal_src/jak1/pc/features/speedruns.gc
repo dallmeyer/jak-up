@@ -214,12 +214,12 @@
       (initialize! *game-info* 'game (the-as game-save #f) "game-start")
       )
     (((speedrun-category hub2-100))
-      ;; spawn at rock village start
-      (initialize! *game-info* 'game (the-as game-save #f) "village2-start")
+      ;; spawn at end of fire canyon
+      (initialize! *game-info* 'game (the-as game-save #f) "firecanyon-end")
       )
     (((speedrun-category hub3-100))
-      ;; spawn at start of volcanic crater
-      (initialize! *game-info* 'game (the-as game-save #f) "village3-start")
+      ;; spawn at end of mountain pass
+      (initialize! *game-info* 'game (the-as game-save #f) "ogre-end")
       )
     (((speedrun-category all-cutscenes))
       ;; turn play hints back on
@@ -430,6 +430,8 @@
     :worst-fall (meters 0.0)
     :best-height (meters 0.0)
     ;; :next-checkpoint-time (the-as time-frame #f)
+    :checkpoint-saves 0
+    :checkpoint-loads 0
     :cam (jakup-cam original)
     )
   )
@@ -439,6 +441,8 @@
   (set! (-> *jakup-info* worst-fall) (meters 0.0))
   (set! (-> *jakup-info* best-height) (meters 0.0))
   (set! (-> *jakup-info* next-checkpoint-time) (the-as time-frame #f))
+  (set! (-> *jakup-info* checkpoint-saves) 0)
+  (set! (-> *jakup-info* checkpoint-loads) 0)
   (set! (-> *jakup-info* cam) (jakup-cam original))
   (none)
   )
@@ -490,7 +494,7 @@
       )
     (((jakup-cam locked))
       (send-event *camera* 'change-state cam-lookat 0)
-      ;; (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
+      (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
       )
     (else ;; ((jakup-cam original))
       (cond
@@ -561,6 +565,12 @@
                                 buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
                 )
               )
+
+            ;; print number of checkpoints saved/loaded
+            (draw-string-xy (string-format "~1L~D saves / ~D loads" (-> *jakup-info* checkpoint-saves) (-> *jakup-info* checkpoint-loads))
+                                    buf 2 (- 222 (* 8 3)) 
+                                    (font-color default) 
+                                    (font-flags shadow kerning))
             )
           (else
             ;; player hasn't set a checkpoint yet
@@ -700,10 +710,10 @@
 (define *full-hp?* #f)
 
 (defun full-hp ()
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
-  (pickup-collectable! (-> *target* fact-info-target) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact-info-target process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
+  (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
   (none)
   )
   
@@ -752,6 +762,7 @@
            )
         (when (-> *tmp-continue-point* lev0)
           (set! *practice-spawn-post-init* custom-reset-multi-post-init)
+          (+! (-> *jakup-info* checkpoint-loads) 1)
           ;; fully reset game if r2 held too
           ;; (if (cpad-hold? 0 r2)  
           ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
@@ -821,8 +832,8 @@
           (camera-rot-copy! *tmp-continue-point* (-> *camera-combiner* inv-camera-rot))
 
           (set! *full-hp?* (and (!= *target* #f)
-                        (= (-> *target* fact-info-target health) 3.0)
-                        (= (-> *target* fact-info-target eco-pill) 50.0)
+                        (= (-> *target* fact health) 3.0)
+                        (= (-> *target* fact eco-pill) 50.0)
                         ))
           (set! *tmp-flut?* #f)
           (set! *tmp-zoomer?* #f)
@@ -835,8 +846,9 @@
               )
             )
 
-          ;; wait 5m til next checkpoint
+          ;; wait X min til next checkpoint
           (set! (-> *jakup-info* next-checkpoint-time) (+ (current-time) *checkpoint-interval*))
+          (+! (-> *jakup-info* checkpoint-saves) 1)
           (sound-play "select-menu")
           )
         )

@@ -5,10 +5,13 @@
 ("UPB.DGO"
  ("static-screen.o"
   "balance-plat.o"
+  "swamp-spike.o"
   ;; "swamp-rat.o"
   ;; "swamp-rat-nest.o"
   ;; "swamp-rat-ag.go"
   ;; "swamp-rat-nest-ag.go"
+  "swamp-spike-ag.go"
+  "eichar-pole+0-ag.go"
   "balance-plat-ag.go"
   "jakup-swamp.go"
  ))

@@ -78,11 +78,11 @@
     //   }
     // },
     {
-      "trans": [2092.60,  12.55, 1810.86], // translation
+      "trans": [2093.74,  11.56, 1810.99], // translation
       "etype": "crate",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
       "quat" : [0, 0.0, -0, 0.0], // quaternion
-      "bsphere": [2092.60,  12.55, 1810.86, 10], // bounding sphere
+      "bsphere": [2093.74,  11.56, 1810.99, 10], // bounding sphere
       "lump": {
         "name":"jakup-training-crate-01",
         "crate-type":"'wood",

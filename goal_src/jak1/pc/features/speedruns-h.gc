@@ -62,6 +62,8 @@
    (last-grounded-height float)
    (best-height float)
    (worst-fall float)
+   (checkpoint-saves int)
+   (checkpoint-loads int)
    (cam jakup-cam)
    )
   )

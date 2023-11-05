@@ -41,108 +41,109 @@
   "ambients": [],
 
   "actors" : [    
-    // {
-    //   "trans": [2178.0791, 3489.5, 1698.2213], // translation
-    //   "etype": "warpgate",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2178.0791, 3489.5, 1698.2213, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-warpgate-01" 
-    //   }
-    // },
-    // {
-    //   "trans": [2176.52, 3488.01, 1701.15], 
-    //   "etype": "warp-gate-switch",
-    //   "game_task": 0,
-    //   "quat" : [0, 0, 0, 1],
-    //   "bsphere": [2176.52, 3488.01, 1701.15, 10],
-    //   "lump": {
-    //     "name": "jakup-village2-warp-gate-switch-01",
-    //     "alt-actor": "jakup-village2-part-01"
-    //   }
-    // },
-    // {
-    //   "trans": [2178.0791, 3490.5, 1698.2213], 
-    //   "etype": "training-part",
-    //   "game_task": 0,
-    //   "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
-    //   "bsphere": [2178.0791, 3490.5, 1698.2213, 10],
-    //   "lump": {
-    //     "name": "jakup-village2-part-01",
-    //     "effect-name": "'warpgate-loop",
-    //     "art-name":"group-training-warpgate",
-    //     "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
-    //     "cycle-speed": ["float", -1.0000, 0.0000],
-    //     "rot": ["float", -1.0000, -1.0000,-1.0]
-    //   }
-    // },
-    // {
-    //   "trans": [2111.34, 3467.22, 1624.24], // translation
-    //   "etype": "fireboulder",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2111.34, 3467.22, 1624.24, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-fireboulder-01",
-    //     "alt-vector": ["meters", 2111.34, 3467.22, 1624.24]
-    //   }
-    // },
-    // {
-    //   "trans": [2119.12, 3470.99, 1630.38], // translation
-    //   "etype": "fireboulder",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2119.12, 3470.99, 1630.38, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-fireboulder-02",
-    //     "alt-vector": ["meters", 2119.12, 3470.99, 1630.38]
-    //   }
-    // },
-    // {
-    //   "trans": [2125.42, 3472.83, 1635.57], // translation
-    //   "etype": "fireboulder",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2125.42, 3472.83, 1635.57, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-fireboulder-03",
-    //     "alt-vector": ["meters", 2125.42, 3472.83, 1635.57]
-    //   }
-    // },
-    // {
-    //   "trans": [2237.25, 3584.53, 1958.05], // translation
-    //   "etype": "pontoonfive",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2237.25, 3584.53, 1958.05, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-pontoonfive-01",
-    //     "alt-vector": ["meters", 2237.25, 3584.53, 1958.05]
-    //   }
-    // },
-    // {
-    //   "trans": [2226.12, 3588.95, 1956.89], // translation
-    //   "etype": "pontoonten",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2226.12, 3588.95, 1956.89, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-pontoonten-01",
-    //     "alt-vector": ["meters", 2226.12, 3588.95, 1956.89]
-    //   }
-    // },
-    // {
-    //   "trans": [2231.83, 3596.1, 1957.68], // translation
-    //   "etype": "pontoonfive",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2231.83, 3596.1, 1957.68, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-pontoonfive-02",
-    //     "alt-vector": ["meters", 2231.83, 3596.1, 1957.68]
-    //   }
-    // },
+    {
+      "trans": [2178.0791, 3489.5, 1698.2213], // translation
+      "etype": "warpgate",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2178.0791, 3489.5, 1698.2213, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-warpgate-01" 
+      }
+    },
+    {
+      "trans": [2176.52, 3488.01, 1701.15], 
+      "etype": "warp-gate-switch",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [2176.52, 3488.01, 1701.15, 10],
+      "lump": {
+        "name": "jakup-village2-warp-gate-switch-01",
+        "alt-actor": "jakup-village2-part-01"
+      }
+    },
+    {
+      "trans": [2178.0791, 3490.5, 1698.2213], 
+      "etype": "training-part",
+      "game_task": 0,
+      "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
+      "bsphere": [2178.0791, 3490.5, 1698.2213, 10],
+      "lump": {
+        "name": "jakup-village2-part-01",
+        "effect-name": "'warpgate-loop",
+        "art-name":"group-training-warpgate",
+        "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
+        "cycle-speed": ["float", -1.0000, 0.0000],
+        "rot": ["float", -1.0000, -1.0000,-1.0]
+      }
+    },
+    {
+      "trans": [2111.34, 3467.22, 1624.24], // translation
+      "etype": "fireboulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2111.34, 3467.22, 1624.24, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fireboulder-01",
+        "alt-vector": ["meters", 2111.34, 3467.22, 1624.24]
+      }
+    },
+    {
+      "trans": [2119.12, 3470.99, 1630.38], // translation
+      "etype": "fireboulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2119.12, 3470.99, 1630.38, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fireboulder-02",
+        "alt-vector": ["meters", 2119.12, 3470.99, 1630.38]
+      }
+    },
+    {
+      "trans": [2125.42, 3472.83, 1635.57], // translation
+      "etype": "fireboulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2125.42, 3472.83, 1635.57, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fireboulder-03",
+        "alt-vector": ["meters", 2125.42, 3472.83, 1635.57]
+      }
+    },
+    {
+      "trans": [2237.25, 3584.53, 1958.05], // translation
+      "etype": "pontoonfive",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2237.25, 3584.53, 1958.05, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-pontoonfive-01",
+        "task": 0,
+        "alt-vector": ["meters", 2237.25, 3584.53, 1958.05]
+      }
+    },
+    {
+      "trans": [2226.12, 3588.95, 1956.89], // translation
+      "etype": "pontoonten",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2226.12, 3588.95, 1956.89, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-pontoonten-01",
+        "alt-vector": ["meters", 2226.12, 3588.95, 1956.89]
+      }
+    },
+    {
+      "trans": [2231.83, 3596.1, 1957.68], // translation
+      "etype": "pontoonfive",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2231.83, 3596.1, 1957.68, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-pontoonfive-02",
+        "alt-vector": ["meters", 2231.83, 3596.1, 1957.68]
+      }
+    },
 
     // {
     //   "trans": [2132.10, 3904.60, 1877.44], // translation
@@ -158,97 +159,97 @@
 
     // // // FLIES
 
-    // {
-    //   "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-01",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
-    //   }
-    // },
-    // {
-    //   "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-02",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.59, 3497.58, 1699.88], // ledge above "boggy" entrance
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2170.59, 3497.58, 1699.88, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-03",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2170.59, 3497.58, 1699.88]
-    //   }
-    // },
-    // {
-    //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-04",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
-    //   }
-    // },
-    // {
-    //   "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-05",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.54, 3717.59, 1907.00], // walk the plank
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-06",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327755], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2170.54, 3717.59, 1907.00]
-    //   }
-    // },
-    // { 
-    //   "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-buzzer-07",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393291], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2153.48, 3863.30, 1883.65]
-    //   }
-    // }//,
+    {
+      "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-01",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 76], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
+      }
+    },
+    {
+      "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65612], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
+      }
+    },
+    {
+      "trans": [2170.59, 3497.8, 1699.88], // ledge above "boggy" entrance
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2170.59, 3497.8, 1699.88, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-03",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 131148], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2170.59, 3497.8, 1699.88]
+      }
+    },
+    {
+      "trans": [2226.44, 3578.08, 1911.60], // chandelier
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-04",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 196684], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
+      }
+    },
+    {
+      "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262220], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
+      }
+    },
+    {
+      "trans": [2170.54, 3717.59, 1907.00], // walk the plank
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327756], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2170.54, 3717.59, 1907.00]
+      }
+    },
+    { 
+      "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393292], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2153.48, 3863.30, 1883.65]
+      }
+    }//,
 
     // ORBS
 

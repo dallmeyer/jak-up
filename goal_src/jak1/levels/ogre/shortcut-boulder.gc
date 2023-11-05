@@ -1,0 +1,175 @@
+;;-*-Lisp-*-
+(in-package goal)
+
+;; name: ogre-obs.gc
+;; name in dgo: ogre-obs
+;; dgos: L1, OGR
+
+
+;; DECOMP BEGINS
+
+(deftype shortcut-boulder (process-drawable)
+  ((root         collide-shape :override)
+   (broken-look  lod-set        :inline)
+   )
+  (:states
+    shortcut-boulder-break
+    shortcut-boulder-idle
+    )
+  )
+
+
+(defskelgroup *shortcut-boulder-whole-sg* shortcut-boulder shortcut-boulder-whole-lod0-jg shortcut-boulder-idle-ja
+              ((shortcut-boulder-whole-lod0-mg (meters 999999)))
+              :bounds (static-spherem 0 5.5 0 7.5)
+              )
+
+(defskelgroup *shortcut-boulder-broken-sg* shortcut-boulder shortcut-boulder-broken-lod0-jg shortcut-boulder-idle-ja
+              ((shortcut-boulder-broken-lod0-mg (meters 999999)))
+              :bounds (static-spherem 0 5.5 0 20)
+              )
+
+(defpartgroup group-shortcut-boulder-explosion
+  :id 475
+  :duration (seconds 1)
+  :flags (use-local-clock)
+  :bounds (static-bspherem 0 0 0 8)
+  :parts ((sp-item 2149 :period (seconds 5) :length (seconds 0.017))
+    (sp-item 2150 :period (seconds 5) :length (seconds 0.017))
+    (sp-item 2151 :period (seconds 5) :length (seconds 0.05))
+    )
+  )
+
+(defpart 2150
+  :init-specs ((:texture (new 'static 'texture-id :index #x12 :page #x2))
+    (:num 1.0)
+    (:scale-x (meters 15))
+    (:scale-y :copy scale-x)
+    (:r 130.0)
+    (:g 64.0)
+    (:b 54.0)
+    (:a 128.0)
+    (:fade-a -2.1333334)
+    (:timer (seconds 0.2))
+    (:flags (bit2 bit3))
+    )
+  )
+
+(defpart 2149
+  :init-specs ((:texture (new 'static 'texture-id :index #x1d :page #x2))
+    (:num 16.0 16.0)
+    (:scale-x (meters 0.1) (meters 0.3))
+    (:rot-z (degrees 0) (degrees 360))
+    (:scale-y :copy scale-x)
+    (:r 70.0 16.0)
+    (:g 70.0 16.0)
+    (:b 70.0)
+    (:a 128.0)
+    (:vel-y (meters 0.04) (meters 0.04))
+    (:rotvel-z (degrees -1.2) (degrees 2.4))
+    (:accel-y (meters -0.0026666666))
+    (:friction 0.99)
+    (:timer (seconds 1))
+    (:flags (bit2))
+    (:userdata 0.0)
+    (:func 'check-water-level-drop)
+    (:conerot-x (degrees 20) (degrees 50.000004))
+    (:conerot-y (degrees 0) (degrees 360))
+    )
+  )
+
+(defpart 2151
+  :init-specs ((:texture (new 'static 'texture-id :page #x2))
+    (:num 16.0)
+    (:y (meters 0.5) (meters 1))
+    (:scale-x (meters 2.5) (meters 1.5))
+    (:scale-y :copy scale-x)
+    (:r 96.0 64.0)
+    (:g 64.0 48.0)
+    (:b 64.0 16.0)
+    (:a 16.0 32.0)
+    (:vel-y (meters 0.016666668) (meters 0.016666668))
+    (:scalevel-x (meters 0.013333334))
+    (:scalevel-y (meters 0.0033333334))
+    (:accel-y (meters -0.00026666667))
+    (:friction 0.95)
+    (:timer (seconds 2))
+    (:flags (bit2))
+    (:next-time (seconds 0.1) (seconds 0.997))
+    (:next-launcher 2152)
+    (:conerot-x (degrees 70) (degrees 20))
+    (:conerot-y (degrees 0) (degrees 360))
+    )
+  )
+
+(defpart 2152
+  :init-specs ((:fade-a -0.2))
+  )
+
+(defstate shortcut-boulder-break (shortcut-boulder)
+  :code (behavior ()
+    (process-entity-status! self (entity-perm-status complete) #t)
+    (lods-assign! (-> self draw) (-> self broken-look))
+    (process-spawn
+      part-tracker
+      :init part-tracker-init
+      (-> *part-group-id-table* 475)
+      -1
+      #f
+      #f
+      #f
+      (-> self root trans)
+      :to *entity-pool*
+      )
+    (ja-no-eval :group! (ja-group) :num! (seek!) :frame-num 0.0)
+    (until (ja-done? 0)
+      (suspend)
+      (ja :num! (seek!))
+      )
+    (cleanup-for-death self)
+    (deactivate self)
+    )
+  :post ja-post
+  )
+
+(defstate shortcut-boulder-idle (shortcut-boulder)
+  :event (behavior ((proc process) (argc int) (message symbol) (block event-message-block))
+    (case message
+      (('attack)
+       (if (and (>= argc 2) (= (-> block param 1) 'eco-yellow))
+           (go shortcut-boulder-break)
+           )
+       )
+      )
+    )
+  :code (behavior ()
+    (transform-post)
+    (loop
+      (logior! (-> self mask) (process-mask sleep))
+      (suspend)
+      )
+    )
+  )
+
+(defmethod init-from-entity! ((this shortcut-boulder) (arg0 entity-actor))
+  (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum hit-by-others))))
+    (let ((s3-0 (new 'process 'collide-shape-prim-mesh s4-0 (the-as uint 0) (the-as uint 0))))
+      (set! (-> s3-0 prim-core collide-as) (collide-kind wall-object))
+      (set! (-> s3-0 collide-with) (collide-kind target))
+      (set! (-> s3-0 prim-core action) (collide-action solid))
+      (set! (-> s3-0 prim-core offense) (collide-offense indestructible))
+      (set! (-> s3-0 transform-index) 3)
+      (set-vector! (-> s3-0 local-sphere) 0.0 22528.0 0.0 30720.0)
+      (set-root-prim! s4-0 s3-0)
+      )
+    (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
+    (backup-collide-with-as s4-0)
+    (set! (-> this root) s4-0)
+    )
+  (process-drawable-from-entity! this arg0)
+  (initialize-skeleton this *shortcut-boulder-whole-sg* '())
+  (setup-lods! (-> this broken-look) *shortcut-boulder-broken-sg* (-> this draw art-group) (-> this entity))
+  (set-vector! (-> this draw color-emissive) 0.125 0.0625 0.0 0.0)
+  (go shortcut-boulder-idle)
+  (none)
+  )

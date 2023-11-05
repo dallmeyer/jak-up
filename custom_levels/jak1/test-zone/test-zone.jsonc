@@ -36,7 +36,9 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["plat-ag"],
+  // Removed so that the release builds don't have to double-decompile the game
+  // "art_groups": ["plat-ag"],
+  "art_groups": [],
 
    // Any textures you want to include in your custom level. This is mainly useful for things such as the zoomer HUD,
    // which is not in the common level files and has no art group associated with it.
@@ -57,16 +59,16 @@
   // Ambients you want to use in your custom level. Ambients can be used for various things like changing the music variation (flava),
   // adding ambient sounds, level name hints, etc.
   "ambients": [
-    {
-      "trans": [-21.6238, 20.0496, 17.1191, 10.0],
-      "bsphere": [-21.6238, 20.0496, 17.1191, 15.0],
-      "lump": {
-        "name": "test-ambient",
-        "type": "'hint",
-        "text-id": ["int32", 557], // text id for the "POWER CELL" text
-        "play-mode": "'notice"
-      }
-    }
+    // {
+    //   "trans": [-21.6238, 20.0496, 17.1191, 10.0],
+    //   "bsphere": [-21.6238, 20.0496, 17.1191, 15.0],
+    //   "lump": {
+    //     "name": "test-ambient",
+    //     "type": "'hint",
+    //     "text-id": ["int32", 557], // text id for the "POWER CELL" text
+    //     "play-mode": "'notice"
+    //   }
+    // }
   ],
 
   "actors" : [
@@ -103,7 +105,8 @@
     //   "lump": {
     //     "name": "test-eco"
     //   }
-    // },
+    // }
+
     // {
     //   "trans": [-7.41, 3.5, 28.42], // translation
     //   "etype": "plat",  // actor type

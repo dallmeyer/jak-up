@@ -101,111 +101,111 @@
     //   }
     // },
 
-    // {
-    //   "trans": [1941.03, 5327.0, 1888.12], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 126, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunkenb-fuel-cell",
-    //     "eco-info":["int32", 6, 126]
-    //   }
-    // }//,
+    {
+      "trans": [1941.03, 5327.0, 1888.12], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 126, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1941.03, 5327.0, 1888.12, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunkenb-fuel-cell",
+        "eco-info":["int32", 6, 126]
+      }
+    },
 
     // // // FLIES
 
     // {
-    //   "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
+    //   "trans": [2079.10, 3367.73, 1868.91], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-buzzer-01",
+    //     "name":"jakup-sunkenb-buzzer-01",
     //     "crate-type":"'iron",
     //     "eco-info": ["int32", 8, 75], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
     //   }
     // },
     // {
-    //   "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
+    //   "trans": [1972.42, 3537.45, 1515.43], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-buzzer-02",
+    //     "name":"jakup-sunkenb-buzzer-02",
     //     "crate-type":"'iron",
     //     "eco-info": ["int32", 8, 65611], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
     //   }
     // },
     // {
-    //   "trans": [2170.59, 3497.58, 1699.88], // ledge above "boggy" entrance
+    //   "trans": [2170.59, 3497.58, 1699.88], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2170.59, 3497.58, 1699.88, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-buzzer-03",
+    //     "name":"jakup-sunkenb-buzzer-03",
     //     "crate-type":"'iron",
     //     "eco-info": ["int32", 8, 131147], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2170.59, 3497.58, 1699.88]
     //   }
     // },
     // {
-    //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
+    //   "trans": [2226.44, 3578.08, 1911.60], // 
     //   "etype": "crate",  // actor type
     //   "game_task": 75, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-buzzer-04",
+    //     "name":"jakup-sunkenb-buzzer-04",
     //     "crate-type":"'iron",
     //     "eco-info": ["int32", 8, 196683], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
     //   }
     // },
-    // {
-    //   "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunken-buzzer-05",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262219], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.54, 3717.59, 1907.00], // walk the plank
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunken-buzzer-06",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327755], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2170.54, 3717.59, 1907.00]
-    //   }
-    // },
-    // { 
-    //   "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
-    //   "etype": "crate",  // actor type
-    //   "game_task": 75, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-sunken-buzzer-07",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393291], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2153.48, 3863.30, 1883.65]
-    //   }
-    // }//,
+    {
+      "trans": [1981.71, 5170.98, 1950.00], // 
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1981.71, 5170.98, 1950.00, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunkenb-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262193], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1981.71, 5170.98, 1950.00]
+      }
+    },
+    {
+      "trans": [2010.89, 5169.03, 1887.99], // 
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2010.89, 5169.03, 1887.99, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunkenb-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327729], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2010.89, 5169.03, 1887.99]
+      }
+    },
+    { 
+      "trans": [2057.61, 4961.47, 1819.74], // 
+      "etype": "crate",  // actor type
+      "game_task": 75, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2057.61, 4961.47, 1819.74, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-sunkenb-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393265], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2057.61, 4961.47, 1819.74]
+      }
+    }//,
 
     // ORBS
 
@@ -216,7 +216,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-01"
+    //     "name":"jakup-sunkenb-money-01"
     //   }
     // },
     // {
@@ -226,7 +226,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-02"
+    //     "name":"jakup-sunkenb-money-02"
     //   }
     // },
     // {
@@ -236,7 +236,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-03"
+    //     "name":"jakup-sunkenb-money-03"
     //   }
     // },     
 
@@ -247,7 +247,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-04"
+    //     "name":"jakup-sunkenb-money-04"
     //   }
     // },
     // {
@@ -257,7 +257,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-05"
+    //     "name":"jakup-sunkenb-money-05"
     //   }
     // },
     // {
@@ -267,7 +267,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-06"
+    //     "name":"jakup-sunkenb-money-06"
     //   }
     // },
     // {
@@ -277,7 +277,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-07"
+    //     "name":"jakup-sunkenb-money-07"
     //   }
     // },
     // {
@@ -287,7 +287,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-08"
+    //     "name":"jakup-sunkenb-money-08"
     //   }
     // },
     // {
@@ -297,7 +297,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-09"
+    //     "name":"jakup-sunkenb-money-09"
     //   }
     // }
     // ,
@@ -308,7 +308,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-10"
+    //     "name":"jakup-sunkenb-money-10"
     //   }
     // },
     // {
@@ -318,7 +318,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-11"
+    //     "name":"jakup-sunkenb-money-11"
     //   }
     // },
     // {
@@ -328,7 +328,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-12"
+    //     "name":"jakup-sunkenb-money-12"
     //   }
     // },
     // {
@@ -338,7 +338,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-13"
+    //     "name":"jakup-sunkenb-money-13"
     //   }
     // },
     // {
@@ -348,7 +348,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-14"
+    //     "name":"jakup-sunkenb-money-14"
     //   }
     // },
     // {
@@ -358,7 +358,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-15"
+    //     "name":"jakup-sunkenb-money-15"
     //   }
     // },
     // {
@@ -368,7 +368,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-16"
+    //     "name":"jakup-sunkenb-money-16"
     //   }
     // },
     // {
@@ -378,7 +378,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-17"
+    //     "name":"jakup-sunkenb-money-17"
     //   }
     // },
     // {
@@ -388,7 +388,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-18"
+    //     "name":"jakup-sunkenb-money-18"
     //   }
     // },
     // {
@@ -398,7 +398,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-19"
+    //     "name":"jakup-sunkenb-money-19"
     //   }
     // },
     // {
@@ -408,7 +408,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-20"
+    //     "name":"jakup-sunkenb-money-20"
     //   }
     // },
     // {
@@ -418,7 +418,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-21"
+    //     "name":"jakup-sunkenb-money-21"
     //   }
     // },
     // {
@@ -428,7 +428,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-22"
+    //     "name":"jakup-sunkenb-money-22"
     //   }
     // },
     // {
@@ -438,7 +438,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-23"
+    //     "name":"jakup-sunkenb-money-23"
     //   }
     // },
     // {
@@ -448,7 +448,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-24"
+    //     "name":"jakup-sunkenb-money-24"
     //   }
     // },
     // {
@@ -458,7 +458,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-25"
+    //     "name":"jakup-sunkenb-money-25"
     //   }
     // },
     // {
@@ -468,7 +468,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-26"
+    //     "name":"jakup-sunkenb-money-26"
     //   }
     // },
     // {
@@ -478,7 +478,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-27"
+    //     "name":"jakup-sunkenb-money-27"
     //   }
     // },
     // {
@@ -488,7 +488,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-28"
+    //     "name":"jakup-sunkenb-money-28"
     //   }
     // },
     // {
@@ -498,7 +498,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-29"
+    //     "name":"jakup-sunkenb-money-29"
     //   }
     // },
     // {
@@ -508,7 +508,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-30"
+    //     "name":"jakup-sunkenb-money-30"
     //   }
     // },
     // {
@@ -518,7 +518,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-31"
+    //     "name":"jakup-sunkenb-money-31"
     //   }
     // },
     // {
@@ -528,7 +528,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-32"
+    //     "name":"jakup-sunkenb-money-32"
     //   }
     // },
     // {
@@ -538,7 +538,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-33"
+    //     "name":"jakup-sunkenb-money-33"
     //   }
     // },
     // {
@@ -548,7 +548,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-34"
+    //     "name":"jakup-sunkenb-money-34"
     //   }
     // },
     // {
@@ -558,7 +558,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-35"
+    //     "name":"jakup-sunkenb-money-35"
     //   }
     // },
     // {
@@ -568,7 +568,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-36"
+    //     "name":"jakup-sunkenb-money-36"
     //   }
     // },
     // {
@@ -578,7 +578,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-37"
+    //     "name":"jakup-sunkenb-money-37"
     //   }
     // },
     // {
@@ -588,7 +588,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-38"
+    //     "name":"jakup-sunkenb-money-38"
     //   }
     // },
     // {
@@ -598,7 +598,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-39"
+    //     "name":"jakup-sunkenb-money-39"
     //   }
     // },
     // {
@@ -608,7 +608,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-40"
+    //     "name":"jakup-sunkenb-money-40"
     //   }
     // },
     // {
@@ -618,7 +618,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-41"
+    //     "name":"jakup-sunkenb-money-41"
     //   }
     // },
     // {
@@ -628,7 +628,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-42"
+    //     "name":"jakup-sunkenb-money-42"
     //   }
     // },
     // {
@@ -638,7 +638,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-43"
+    //     "name":"jakup-sunkenb-money-43"
     //   }
     // },
     // {
@@ -648,7 +648,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-4"
+    //     "name":"jakup-sunkenb-money-4"
     //   }
     // },
     // {
@@ -658,7 +658,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-45"
+    //     "name":"jakup-sunkenb-money-45"
     //   }
     // },
     // {
@@ -668,7 +668,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-46"
+    //     "name":"jakup-sunkenb-money-46"
     //   }
     // },
     // {
@@ -678,7 +678,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-47"
+    //     "name":"jakup-sunkenb-money-47"
     //   }
     // },
     // {
@@ -688,7 +688,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-48"
+    //     "name":"jakup-sunkenb-money-48"
     //   }
     // },
     // {
@@ -698,7 +698,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-49"
+    //     "name":"jakup-sunkenb-money-49"
     //   }
     // },
     // {
@@ -708,7 +708,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"jakup-sunken-money-50"
+    //     "name":"jakup-sunkenb-money-50"
     //   }
     // }
   ]

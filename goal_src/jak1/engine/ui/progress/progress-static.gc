@@ -174,7 +174,7 @@
   ;; (cave 14)
   ;; (lavatube 15)
   ;; (citadel 16)
-  (max 11)
+  (max 12)
   )
 
 ;; maps level-info indices to the appropriate offset in *level-task-data*

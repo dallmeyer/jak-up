@@ -12,19 +12,12 @@
 
 (deftype water-vol-deadly (process-hidden)
   ()
-  :method-count-assert 15
-  :size-assert         #x70
-  :flag-assert         #xf00000070
   )
 
 (deftype sunkencam (pov-camera)
-  ((ppointer-override (pointer sunkencam)  :offset         24)
-   (seq               uint64               :offset-assert 224)
+  ((ppointer-override  (pointer sunkencam)  :overlay-at ppointer)
+   (seq                uint64)
    )
-  :heap-base #x80
-  :method-count-assert 30
-  :size-assert         #xe8
-  :flag-assert         #x1e008000e8
   )
 
 
@@ -33,7 +26,7 @@
               :bounds (static-spherem 0 0 0 10)
               )
 
-(defmethod set-stack-size! sunkencam ((this sunkencam))
+(defmethod set-stack-size! ((this sunkencam))
   (stack-size-set! (-> this main-thread) 512)
   (none)
   )
@@ -183,12 +176,8 @@
   )
 
 (deftype seaweed (process-drawable)
-  ((anim-speed float  :offset-assert 176)
+  ((anim-speed  float)
    )
-  :heap-base #x50
-  :method-count-assert 20
-  :size-assert         #xb4
-  :flag-assert         #x14005000b4
   (:states
     seaweed-idle
     )
@@ -218,7 +207,7 @@
   :post ja-post
   )
 
-(defmethod init-from-entity! seaweed ((this seaweed) (arg0 entity-actor))
+(defmethod init-from-entity! ((this seaweed) (arg0 entity-actor))
   (set! (-> this root) (new 'process 'trsqv))
   (process-drawable-from-entity! this arg0)
   (initialize-skeleton this *seaweed-sg* '())

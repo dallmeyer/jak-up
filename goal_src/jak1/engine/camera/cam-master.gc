@@ -13,18 +13,15 @@
 ;; DECOMP BEGINS
 
 (deftype camera-master-bank (basic)
-  ((onscreen-head-height            meters  :offset-assert   4)
-   (onscreen-foot-height            meters  :offset-assert   8)
-   (target-height                   meters  :offset-assert  12)
-   (up-move-to-pitch-ratio-in-air   float   :offset-assert  16)
-   (down-move-to-pitch-ratio-in-air float   :offset-assert  20)
-   (up-move-to-pitch-on-ground      float   :offset-assert  24)
-   (down-move-to-pitch-on-ground    float   :offset-assert  28)
-   (pitch-off-blend                 float   :offset-assert  32)
+  ((onscreen-head-height             meters)
+   (onscreen-foot-height             meters)
+   (target-height                    meters)
+   (up-move-to-pitch-ratio-in-air    float)
+   (down-move-to-pitch-ratio-in-air  float)
+   (up-move-to-pitch-on-ground       float)
+   (down-move-to-pitch-on-ground     float)
+   (pitch-off-blend                  float)
    )
-  :method-count-assert 9
-  :size-assert         #x24
-  :flag-assert         #x900000024
   )
 
 
@@ -1431,42 +1428,42 @@
                    )
              )
            )
-          ;; ((= v1-0 'set-slave-option)
-          ;;  (case (-> block param 1)
-          ;;   ((#t)
-          ;;     (logior! (-> self slave-options) (-> block param 0))
-          ;;     (let ((a0-193 (-> self slave 0))
-          ;;           (v1-360 (-> self slave 1))
-          ;;           )
-          ;;       (if a0-193
-          ;;           (logior! (-> a0-193 0 options) (-> block param 0))
-          ;;           )
-          ;;       (set! v0-0 (when v1-360
-          ;;                     (set! v0-0 (logior (-> v1-360 0 options) (-> block param 0)))
-          ;;                     (set! (-> v1-360 0 options) (the-as uint v0-0))
-          ;;                     v0-0
-          ;;                     )
-          ;;             )
-          ;;       )
-          ;;     )
-          ;;   (else
-          ;;     (logclear! (-> self slave-options) (-> block param 0))
-          ;;     (let ((a0-193 (-> self slave 0))
-          ;;           (v1-360 (-> self slave 1))
-          ;;           )
-          ;;       (if a0-193
-          ;;           (logclear! (-> a0-193 0 options) (-> block param 0))
-          ;;           )
-          ;;       (set! v0-0 (when v1-360
-          ;;                     (set! v0-0 (logclear (-> v1-360 0 options) (-> block param 0)))
-          ;;                     (set! (-> v1-360 0 options) (the-as uint v0-0))
-          ;;                     v0-0
-          ;;                     )
-          ;;             )
-          ;;       )
-          ;;     )
-          ;;   )
-          ;;  )
+          ((= v1-0 'set-slave-option)
+           (case (-> block param 1)
+            ((#t)
+              (logior! (-> self slave-options) (-> block param 0))
+              (let ((a0-193 (-> self slave 0))
+                    (v1-360 (-> self slave 1))
+                    )
+                (if a0-193
+                    (logior! (-> a0-193 0 options) (-> block param 0))
+                    )
+                (set! v0-0 (when v1-360
+                              (set! v0-0 (logior (-> v1-360 0 options) (-> block param 0)))
+                              (set! (-> v1-360 0 options) (the-as uint v0-0))
+                              v0-0
+                              )
+                      )
+                )
+              )
+            (else
+              (logclear! (-> self slave-options) (-> block param 0))
+              (let ((a0-193 (-> self slave 0))
+                    (v1-360 (-> self slave 1))
+                    )
+                (if a0-193
+                    (logclear! (-> a0-193 0 options) (-> block param 0))
+                    )
+                (set! v0-0 (when v1-360
+                              (set! v0-0 (logclear (-> v1-360 0 options) (-> block param 0)))
+                              (set! (-> v1-360 0 options) (the-as uint v0-0))
+                              v0-0
+                              )
+                      )
+                )
+              )
+            )
+           )
           (else
             (set! v0-0
                   (cond
@@ -1634,12 +1631,8 @@
   )
 
 (deftype list-keeper (process)
-  ((dummy float  :offset-assert 112)
+  ((dummy  float)
    )
-  :heap-base #x10
-  :method-count-assert 14
-  :size-assert         #x74
-  :flag-assert         #xe00100074
   )
 
 

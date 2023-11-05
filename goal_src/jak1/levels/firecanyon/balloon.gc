@@ -11,12 +11,8 @@
 
 
 (deftype balloon (process-drawable)
-  ((root-override collide-shape  :offset 112)
+  ((root  collide-shape :override)
    )
-  :heap-base #x40
-  :method-count-assert 20
-  :size-assert         #xb0
-  :flag-assert         #x14004000b0
   (:states
     balloon-idle
     balloon-popping
@@ -94,7 +90,7 @@
 (defstate balloon-popping (balloon)
   :code (behavior ()
     (ja-channel-set! 0)
-    (clear-collide-with-as (-> self root-override))
+    (clear-collide-with-as (-> self root))
     (ja-post)
     (sound-play "cool-balloon")
     (process-spawn
@@ -105,21 +101,20 @@
       #f
       #f
       #f
-      (-> self root-override trans)
+      (-> self root trans)
       :to *entity-pool*
       )
     (suspend)
     (cleanup-for-death self)
     (deactivate self)
-    (none)
     )
   )
 
 (defstate balloon-idle (balloon)
-  :event (behavior ((arg0 process) (arg1 int) (arg2 symbol) (arg3 event-message-block))
-    (case arg2
+  :event (behavior ((proc process) (argc int) (message symbol) (block event-message-block))
+    (case message
       (('attack)
-       (send-event arg0 'heat -10.0)
+       (send-event proc 'heat -10.0)
        (go balloon-popping)
        )
       )
@@ -133,18 +128,12 @@
         (ja :num! (seek!))
         )
       )
-    (none)
     )
-  :post (the-as (function none :behavior balloon) ja-post)
+  :post ja-post
   )
 
-;; (defskelgroup *balloon-sg* balloon balloon-lod0-jg balloon-idle-ja
-;;               ((balloon-lod0-mg (meters 20)) (balloon-lod1-mg (meters 999999)))
-;;               :bounds (static-spherem 0 0.3 0 6.3)
-;;               )
-
-(defmethod init-from-entity! balloon ((obj balloon) (arg0 entity-actor))
-  (let ((s4-0 (new 'process 'collide-shape obj (collide-list-enum hit-by-player))))
+(defmethod init-from-entity! ((this balloon) (arg0 entity-actor))
+  (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum hit-by-player))))
     (let ((s3-0 (new 'process 'collide-shape-prim-sphere s4-0 (the-as uint 0))))
       (set! (-> s3-0 prim-core collide-as) (collide-kind enemy))
       (set! (-> s3-0 collide-with) (collide-kind target))
@@ -154,11 +143,11 @@
       )
     (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
     (backup-collide-with-as s4-0)
-    (set! (-> obj root-override) s4-0)
+    (set! (-> this root) s4-0)
     )
-  (process-drawable-from-entity! obj arg0)
-  (initialize-skeleton obj *balloon-sg* '())
-  (set! (-> obj part) (create-launch-control (-> *part-group-id-table* 227) obj))
+  (process-drawable-from-entity! this arg0)
+  (initialize-skeleton this *balloon-sg* '())
+  (set! (-> this part) (create-launch-control (-> *part-group-id-table* 227) this))
   (go balloon-idle)
   (none)
   )

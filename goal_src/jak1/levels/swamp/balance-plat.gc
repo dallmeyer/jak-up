@@ -6,20 +6,15 @@
 ;; dgos: L1, SWA
 ;; note: changed for high fps
 
-
 (deftype balance-plat (process-drawable)
-  ((root-override collide-shape-moving  :offset        112)
-   (y-travel      float                 :offset-assert 176)
-   (y-init        float                 :offset-assert 180)
-   (y-offset      float                 :offset-assert 184)
-   (y-vel         float                 :offset-assert 188)
-   (y-accel       float                 :offset-assert 192)
-   (got-grow      symbol                :offset-assert 196)
+  ((root      collide-shape-moving :override)
+   (y-travel  float)
+   (y-init    float)
+   (y-offset  float)
+   (y-vel     float)
+   (y-accel   float)
+   (got-grow  symbol)
    )
-  :heap-base #x60
-  :method-count-assert 20
-  :size-assert         #xc8
-  :flag-assert         #x14006000c8
   (:states
     balance-plat-idle
     )
@@ -50,7 +45,7 @@
             (f28-0 (* -0.025 (- (-> self y-offset) (-> self y-travel))))
             )
         (cond
-          ((and (-> self root-override riders) (nonzero? (-> self root-override riders num-riders)))
+          ((and (-> self root riders) (nonzero? (-> self root riders num-riders)))
            ;; has rider, accelerate downwards
            (send-event *target* 'no-look-around (seconds 0.25))
            (set! (-> self y-accel) (fmin 4.096 (fmax -4.096 (+ (* DISPLAY_FPS_RATIO -0.2048) (-> self y-accel)))))
@@ -86,14 +81,14 @@
           )
         )
       (+! (-> self y-offset) (* DISPLAY_FPS_RATIO (-> self y-vel)))
-      (set! (-> self root-override trans y) (+ (-> self y-init) (-> self y-offset)))
+      (set! (-> self root trans y) (+ (-> self y-init) (-> self y-offset)))
       (suspend)
       )
     )
   :post rider-post
   )
 
-(defmethod init-from-entity! balance-plat ((this balance-plat) (arg0 entity-actor))
+(defmethod init-from-entity! ((this balance-plat) (arg0 entity-actor))
   ;; og:preserve-this PAL patch here. usually-hit-by-player -> hit-by-others
   (logior! (-> this mask) (process-mask platform))
   (let ((s4-0 (new 'process 'collide-shape-moving this (collide-list-enum hit-by-others))))
@@ -114,7 +109,7 @@
       )
     (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
     (backup-collide-with-as s4-0)
-    (set! (-> this root-override) s4-0)
+    (set! (-> this root) s4-0)
     )
   (process-drawable-from-entity! this arg0)
   (initialize-skeleton this *balance-plat-sg* '())
@@ -122,7 +117,7 @@
   (set! (-> this y-accel) 0.0)
   (set! (-> this y-vel) 0.0)
   (set! (-> this y-offset) 0.0)
-  (set! (-> this y-init) (-> this root-override trans y))
+  (set! (-> this y-init) (-> this root trans y))
   (set! (-> this got-grow) #f)
   (set! (-> this y-travel) (res-lump-float arg0 'distance :default 20480.0))
   (go balance-plat-idle)
