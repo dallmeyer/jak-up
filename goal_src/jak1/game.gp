@@ -1044,6 +1044,7 @@
  "firecanyon-part.gc"
  "assistant-firecanyon.gc"
  "balloon.gc"
+ "crate-darkeco-cluster.gc"
  "firecanyon-obs.gc"
 
  )
@@ -1075,6 +1076,8 @@
  :deps ("$OUT/obj/ticky.o")
  "ogre-part.gc"
  "ogreboss.gc"
+ "tntbarrel.gc"
+ "shortcut-boulder.gc"
  "ogre-obs.gc"
  "flying-lurker.gc"
  )

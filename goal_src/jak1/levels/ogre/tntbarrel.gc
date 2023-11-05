@@ -1,0 +1,381 @@
+;;-*-Lisp-*-
+(in-package goal)
+
+;; name: ogre-obs.gc
+;; name in dgo: ogre-obs
+;; dgos: L1, OGR
+
+
+;; DECOMP BEGINS
+
+(defpartgroup group-tntbarrel-BIG-explosion
+  :id 473
+  :flags (use-local-clock)
+  :bounds (static-bspherem 0 0 0 64)
+  :parts ((sp-item 2234 :period (seconds 10) :length (seconds 0.017))
+    (sp-item 2235 :period (seconds 10) :length (seconds 0.017))
+    (sp-item 2236 :period (seconds 10) :length (seconds 0.135))
+    (sp-item 2237 :period (seconds 10) :length (seconds 0.135))
+    (sp-item 2238 :period (seconds 10) :length (seconds 0.135))
+    )
+  )
+
+(defpart 2236
+  :init-specs ((:texture (new 'static 'texture-id :index #xf :page #x2))
+    (:num 32.0)
+    (:y (meters 0) (meters 1))
+    (:scale-x (meters 2.4) (meters 1.8))
+    (:scale-y :copy scale-x)
+    (:r 192.0 64.0)
+    (:g 192.0 64.0)
+    (:b 128.0)
+    (:a 32.0 96.0)
+    (:vel-y (meters 0.32) (meters 0.42666668))
+    (:scalevel-x (meters -0.009333333))
+    (:scalevel-y :copy scalevel-x)
+    (:fade-g -2.1333334)
+    (:fade-b -1.4222223)
+    (:accel-y (meters -0.0005) (meters -0.0005))
+    (:friction 0.9)
+    (:timer (seconds 1))
+    (:flags (bit2 bit14))
+    (:next-time (seconds 0.1) (seconds 0.297))
+    (:next-launcher 2239)
+    (:conerot-x (degrees 0) (degrees 120))
+    (:conerot-y (degrees 0) (degrees 360))
+    (:conerot-radius (meters 2) (meters 12))
+    )
+  )
+
+(defpart 2239
+  :init-specs ((:fade-r 0.0) (:fade-g 0.0) (:fade-b 0.0) (:fade-a -1.0666667))
+  )
+
+(defpart 2238
+  :init-specs ((:texture (new 'static 'texture-id :index #xf :page #x2))
+    (:num 6.0)
+    (:y (meters 0) (meters 1))
+    (:scale-x (meters 0.5))
+    (:rot-z (degrees 0) (degrees 180))
+    (:scale-y (meters 32))
+    (:r 255.0)
+    (:g 196.0)
+    (:b 64.0)
+    (:a 32.0 64.0)
+    (:scalevel-y (meters 3.4133334))
+    (:fade-g -3.2666667)
+    (:fade-b -1.0666667)
+    (:fade-a -1.6)
+    (:timer (seconds 0.2))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+(defpart 2234
+  :init-specs ((:texture (new 'static 'texture-id :index #x12 :page #x2))
+    (:num 1.0)
+    (:y (meters 2))
+    (:scale-x (meters 128))
+    (:scale-y :copy scale-x)
+    (:r 255.0)
+    (:g 192.0 32.0)
+    (:b 128.0)
+    (:a 128.0)
+    (:timer (seconds 3))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+(defpart 2235
+  :init-specs ((:texture (new 'static 'texture-id :index #x12 :page #x2))
+    (:num 1.0)
+    (:y (meters 2))
+    (:scale-x (meters 32))
+    (:scale-y :copy scale-x)
+    (:r 255.0)
+    (:g 192.0 32.0)
+    (:b 128.0)
+    (:a 128.0)
+    (:timer (seconds 3))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+(defpart 2237
+  :init-specs ((:texture (new 'static 'texture-id :page #x2))
+    (:num 48.0)
+    (:y (meters 0) (meters 1))
+    (:scale-x (meters 16) (meters 10))
+    (:rot-z (degrees 0) (degrees 360))
+    (:scale-y :copy scale-x)
+    (:r 255.0)
+    (:g 128.0 64.0)
+    (:b 128.0)
+    (:a 48.0 48.0)
+    (:vel-y (meters 0.32) (meters 0.21333334))
+    (:scalevel-x (meters 0.053333335))
+    (:rotvel-z (degrees -0.6) (degrees 1.2))
+    (:scalevel-y :copy scalevel-x)
+    (:fade-a -0.08533333)
+    (:accel-y (meters 0.0005) (meters 0.0005))
+    (:friction 0.85)
+    (:timer (seconds 1.7))
+    (:flags (bit2 bit14))
+    (:next-time (seconds 0.14))
+    (:next-launcher 2240)
+    (:conerot-x (degrees 0) (degrees 160))
+    (:conerot-y (degrees 0) (degrees 360))
+    (:conerot-radius (meters 0) (meters 8))
+    )
+  )
+
+(defpart 2240
+  :init-specs ((:fade-r -0.26666668)
+    (:fade-g -0.26666668)
+    (:fade-b -0.52916664)
+    (:next-time (seconds 0.8))
+    (:next-launcher 2241)
+    )
+  )
+
+(defpart 2241
+  :init-specs ((:fade-r -0.24380952)
+    (:fade-g -0.12190476)
+    (:fade-b 0.0)
+    (:fade-a -0.09142857)
+    (:next-time (seconds 1.75))
+    (:next-launcher 2242)
+    )
+  )
+
+(defpart 2242
+  :init-specs ((:fade-r 0.0) (:fade-g 0.0) (:fade-b 0.0))
+  )
+
+(defpartgroup group-tntbarrel-explosion
+  :id 474
+  :duration (seconds 2)
+  :flags (use-local-clock)
+  :bounds (static-bspherem 0 0 0 12)
+  :parts ((sp-item 2079 :period (seconds 2) :length (seconds 0.017))
+    (sp-item 2080 :period (seconds 2) :length (seconds 0.135))
+    (sp-item 2081 :period (seconds 2) :length (seconds 0.067))
+    (sp-item 2082 :period (seconds 2) :length (seconds 0.067))
+    )
+  )
+
+(defpart 2080
+  :init-specs ((:texture (new 'static 'texture-id :index #xf :page #x2))
+    (:num 8.0)
+    (:y (meters 0) (meters 1))
+    (:scale-x (meters 0.4) (meters 0.8))
+    (:scale-y :copy scale-x)
+    (:r 192.0 64.0)
+    (:g 192.0 64.0)
+    (:b 128.0)
+    (:a 32.0 96.0)
+    (:vel-y (meters 0.04) (meters 0.16))
+    (:scalevel-x (meters -0.0026666666))
+    (:scalevel-y :copy scalevel-x)
+    (:fade-g -2.1333334)
+    (:fade-b -1.4222223)
+    (:accel-y (meters -0.00016666666) (meters -0.00016666666))
+    (:friction 0.9)
+    (:timer (seconds 1))
+    (:flags (bit2 bit14))
+    (:next-time (seconds 0.1) (seconds 0.297))
+    (:next-launcher 2083)
+    (:conerot-x (degrees 0) (degrees 120))
+    (:conerot-y (degrees 0) (degrees 360))
+    (:conerot-radius (meters 2) (meters 4))
+    )
+  )
+
+(defpart 2083
+  :init-specs ((:fade-r 0.0) (:fade-g 0.0) (:fade-b 0.0) (:fade-a -1.0666667))
+  )
+
+(defpart 2082
+  :init-specs ((:texture (new 'static 'texture-id :index #xf :page #x2))
+    (:num 6.0)
+    (:y (meters 0) (meters 1))
+    (:scale-x (meters 0.3))
+    (:rot-z (degrees 0) (degrees 180))
+    (:scale-y (meters 12))
+    (:r 255.0)
+    (:g 196.0)
+    (:b 64.0)
+    (:a 32.0 64.0)
+    (:scalevel-y (meters 0.85333335))
+    (:fade-g -3.2666667)
+    (:fade-b -1.0666667)
+    (:fade-a -1.6)
+    (:timer (seconds 0.2))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+(defpart 2079
+  :init-specs ((:texture (new 'static 'texture-id :index #x12 :page #x2))
+    (:num 1.0)
+    (:y (meters 2))
+    (:scale-x (meters 24))
+    (:scale-y :copy scale-x)
+    (:r 255.0)
+    (:g 192.0 32.0)
+    (:b 128.0)
+    (:a 128.0)
+    (:fade-a -2.3272727)
+    (:timer (seconds 0.18))
+    (:flags (bit2 bit3 bit14))
+    )
+  )
+
+(defpart 2081
+  :init-specs ((:texture (new 'static 'texture-id :page #x2))
+    (:num 16.0)
+    (:y (meters 0) (meters 1))
+    (:scale-x (meters 3) (meters 1.5))
+    (:rot-z (degrees 0) (degrees 360))
+    (:scale-y :copy scale-x)
+    (:r 255.0)
+    (:g 128.0 64.0)
+    (:b 128.0)
+    (:a 64.0 64.0)
+    (:vel-y (meters 0.08) (meters 0.04))
+    (:scalevel-x (meters 0.02))
+    (:rotvel-z (degrees -0.6) (degrees 1.2))
+    (:scalevel-y :copy scalevel-x)
+    (:fade-a -0.28444445)
+    (:accel-y (meters 0.00016666666) (meters 0.00016666666))
+    (:friction 0.8)
+    (:timer (seconds 1.7))
+    (:flags (bit2 bit14))
+    (:next-time (seconds 0.14))
+    (:next-launcher 2084)
+    (:conerot-x (degrees 0) (degrees 120))
+    (:conerot-y (degrees 0) (degrees 360))
+    (:conerot-radius (meters 0) (meters 3))
+    )
+  )
+
+(defpart 2084
+  :init-specs ((:fade-r -1.0666667)
+    (:fade-g -1.0666667)
+    (:fade-b -2.1166666)
+    (:next-time (seconds 0.2))
+    (:next-launcher 2085)
+    )
+  )
+
+(defpart 2085
+  :init-specs ((:fade-r -0.5688889)
+    (:fade-g -0.28444445)
+    (:fade-b 0.0)
+    (:fade-a -0.21333334)
+    (:next-time (seconds 0.75))
+    (:next-launcher 2086)
+    )
+  )
+
+(defpart 2086
+  :init-specs ((:fade-r 0.0) (:fade-g 0.0) (:fade-b 0.0))
+  )
+
+(defskelgroup *tntbarrel-sg* tntbarrel tntbarrel-lod0-jg tntbarrel-idle-ja
+              ((tntbarrel-lod0-mg (meters 999999)))
+              :bounds (static-spherem 0 2 0 4)
+              )
+
+(deftype tntbarrel (process-drawable)
+  ((root  collide-shape :override)
+   )
+  (:state-methods
+    idle
+    (die symbol)
+    )
+  )
+
+
+(defstate die (tntbarrel)
+  :virtual #t
+  :code (behavior ((arg0 symbol))
+    (ja-channel-set! 0)
+    (clear-collide-with-as (-> self root))
+    (ja-post)
+    (sound-play "dcrate-break")
+    (if arg0
+        (process-spawn
+          part-tracker
+          :init part-tracker-init
+          (-> *part-group-id-table* 473)
+          -1
+          #f
+          #f
+          #f
+          (-> self root trans)
+          :to *entity-pool*
+          )
+        (process-spawn
+          part-tracker
+          :init part-tracker-init
+          (-> *part-group-id-table* 474)
+          -1
+          #f
+          #f
+          #f
+          (-> self root trans)
+          :to *entity-pool*
+          )
+        )
+    (suspend)
+    (cleanup-for-death self)
+    (deactivate self)
+    )
+  )
+
+(defstate idle (tntbarrel)
+  :virtual #t
+  :event (behavior ((proc process) (argc int) (message symbol) (block event-message-block))
+    (case message
+      (('die-big)
+       (go-virtual die #t)
+       )
+      (('die)
+       (go-virtual die #f)
+       )
+      (('attack 'touch)
+       (send-event proc 'attack-invinc (-> block param 0) (static-attack-info ((mode 'death))))
+       (go-virtual die #f)
+       )
+      )
+    )
+  :code (behavior ()
+    (transform-post)
+    (logior! (-> self mask) (process-mask sleep))
+    (suspend)
+    0
+    )
+  )
+
+(defmethod init-from-entity! ((this tntbarrel) (arg0 entity-actor))
+  (let ((s4-0 (new 'process 'collide-shape this (collide-list-enum usually-hit-by-player))))
+    (let ((s3-0 (new 'process 'collide-shape-prim-mesh s4-0 (the-as uint 0) (the-as uint 0))))
+      (set! (-> s3-0 prim-core collide-as) (collide-kind crate))
+      (set! (-> s3-0 collide-with) (collide-kind target))
+      (set! (-> s3-0 prim-core action) (collide-action solid))
+      (set! (-> s3-0 prim-core offense) (collide-offense touch))
+      (set! (-> s3-0 transform-index) 3)
+      (set-vector! (-> s3-0 local-sphere) 0.0 9216.0 0.0 14336.0)
+      (set-root-prim! s4-0 s3-0)
+      )
+    (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
+    (backup-collide-with-as s4-0)
+    (set! (-> this root) s4-0)
+    )
+  (process-drawable-from-entity! this arg0)
+  (initialize-skeleton this *tntbarrel-sg* '())
+  (set-vector! (-> this draw color-mult) 1.3 1.3 1.3 1.0)
+  (go (method-of-object this idle))
+  (none)
+  )

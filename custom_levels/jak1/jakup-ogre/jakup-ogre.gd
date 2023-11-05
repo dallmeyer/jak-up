@@ -10,6 +10,8 @@
   ;; "target-racer.o"
   ;; "racer-states.o"
   ;; "collide-reaction-racer.o"
+  "tntbarrel.o"
+  "tntbarrel-ag.go"
   "eichar-racer+0-ag.go"
   "tpage-1119.go"
   "ef-plane-ag.go"

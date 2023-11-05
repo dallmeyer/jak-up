@@ -36,11 +36,51 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [],
+  "art_groups": ["shortcut-boulder-ag", "crate-darkeco-cluster-ag"],
 
   "ambients": [],
 
-  "actors" : [    
+  "actors" : [
+    {
+      "trans": [2390.97, 9740.83, 1605.31], // translation
+      "etype": "crate-darkeco-cluster",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2390.97, 9740.83, 1605.31, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-crate-darkeco-cluster-01"
+      }
+    },
+    {
+      "trans": [2329.45, 9657.34, 1453.26], // translation
+      "etype": "crate-darkeco-cluster",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2329.45, 9657.34, 1453.26, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-crate-darkeco-cluster-02"
+      }
+    },
+    {
+      "trans": [2127.80, 9417.31, 1017.93], // translation
+      "etype": "crate-darkeco-cluster",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2127.80, 9417.31, 1017.93, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-crate-darkeco-cluster-03"
+      }
+    },
+    {
+      "trans": [2452.16, 9882.12, 1806.87], // translation
+      "etype": "shortcut-boulder",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2452.16, 9882.12, 1806.87, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-ogreb-shortcut-boulder-01"
+      }
+    },
     {
       "trans": [2110.01, 9423.24, 1019.28], // translation
       "etype": "ventblue",  // actor type

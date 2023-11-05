@@ -36,7 +36,7 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag"],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "tntbarrel-ag"],
 
   "ambients": [],
 
@@ -63,18 +63,67 @@
         "name": "jakup-rolling-racer-02",
         "index": ["int32", 7] // fuck it, made up my own condition
       }
-    }, 
-    // {
-    //   "trans": [1914.79, 7197.52, 1456.17], // translation
-    //   "etype": "flutflut",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1914.79, 7197.52, 1456.17, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "jakup-ogre-flutflut-01",
-    //     "index": ["int32", 7] // fuck it, made up my own condition 
-    //   }
-    // },
+    },
+    {
+      "trans": [2194.06, 8551.97, 1838.45], // translation
+      "etype": "tntbarrel",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2194.06, 8551.97, 1838.45, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-tntbarrel-01"
+      }
+    },
+    {
+      "trans": [2214.72, 8558.72, 1852.91], // translation
+      "etype": "tntbarrel",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2214.72, 8558.72, 1852.91, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-tntbarrel-02"
+      }
+    },
+    {
+      "trans": [2187.72, 8559.63, 1888.41], // translation
+      "etype": "tntbarrel",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2187.72, 8559.63, 1888.41, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-tntbarrel-03"
+      }
+    },
+    {
+      "trans": [2311.84, 8647.15, 2034.43], // translation
+      "etype": "tntbarrel",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2311.84, 8647.15, 2034.43, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-tntbarrel-04"
+      }
+    },
+    {
+      "trans": [2375.36, 8668.11, 2053.12], // translation
+      "etype": "tntbarrel",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2375.36, 8668.11, 2053.12, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-tntbarrel-05"
+      }
+    },
+    {
+      "trans": [2362.99, 8694.21, 2111.53], // translation
+      "etype": "tntbarrel",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2362.99, 8694.21, 2111.53, 10], // bounding sphere
+      "lump": {
+        "name": "jakup-ogre-tntbarrel-06"
+      }
+    },
     // {
     //   "trans": [2135.15, 8027.27, 1287.42], // translation
     //   "etype": "flutflut",  // actor type
