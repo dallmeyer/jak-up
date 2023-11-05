@@ -41,42 +41,42 @@
   "ambients": [],
 
   "actors" : [
-    // {
-    //   "trans": [1915.32,  12.9, 1986.38], // translation
-    //   "etype": "warpgate",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1915.32,  12.9, 1986.38, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-training-warpgate-01" 
-    //   }
-    // },	
-    // {
-    //   "trans": [1921.99,  11.23, 1983.46], 
-    //   "etype": "warp-gate-switch",
-    //   "game_task": 0,
-    //   "quat" : [0, 0, 0, 1],
-    //   "bsphere": [1921.99,  11.23, 1983.46, 10],
-    //   "lump": {
-    //     "name": "jakup-training-warp-gate-switch-01",
-    //     "alt-actor": "jakup-training-part-01"
-    //   }
-    // },
-    // {
-    //   "trans": [1915.32,  16.0, 1986.38], 
-    //   "etype": "training-part",
-    //   "game_task": 0,
-    //   "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
-    //   "bsphere": [1915.32,  16.0, 1986.38, 10],
-    //   "lump": {
-    //     "name": "jakup-training-part-01",
-    //     "effect-name": "'warpgate-loop",
-    //     "art-name":"group-training-warpgate",
-    //     "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
-    //     "cycle-speed": ["float", -1.0000, 0.0000],
-    //     "rot": ["float", -1.0000, -1.0000,-1.0]
-    //   }
-    // },
+    {
+      "trans": [1915.32,  12.9, 1986.38], // translation
+      "etype": "warpgate",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1915.32,  12.9, 1986.38, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-training-warpgate-01" 
+      }
+    },	
+    {
+      "trans": [1921.99,  11.23, 1983.46], 
+      "etype": "warp-gate-switch",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [1921.99,  11.23, 1983.46, 10],
+      "lump": {
+        "name": "jakup-training-warp-gate-switch-01",
+        "alt-actor": "jakup-training-part-01"
+      }
+    },
+    {
+      "trans": [1915.32,  16.0, 1986.38], 
+      "etype": "training-part",
+      "game_task": 0,
+      "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
+      "bsphere": [1915.32,  16.0, 1986.38, 10],
+      "lump": {
+        "name": "jakup-training-part-01",
+        "effect-name": "'warpgate-loop",
+        "art-name":"group-training-warpgate",
+        "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
+        "cycle-speed": ["float", -1.0000, 0.0000],
+        "rot": ["float", -1.0000, -1.0000,-1.0]
+      }
+    },
     {
       "trans": [2093.74,  11.56, 1810.99], // translation
       "etype": "crate",  // actor type

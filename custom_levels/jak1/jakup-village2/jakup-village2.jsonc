@@ -145,19 +145,19 @@
       }
     },
 
-    // {
-    //   "trans": [2132.10, 3904.60, 1877.44], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2132.10, 3904.60, 1877.44, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"jakup-village2-fuel-cell",
-    //     "eco-info":["int32", 6, 125]
-    //   }
-    // },
+    {
+      "trans": [2132.10, 3904.60, 1877.44], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 125, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2132.10, 3904.60, 1877.44, 10], // bounding sphere
+      "lump": {
+        "name":"jakup-village2-fuel-cell",
+        "eco-info":["int32", 6, 125]
+      }
+    },
 
-    // // // FLIES
+    // // FLIES
 
     {
       "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
