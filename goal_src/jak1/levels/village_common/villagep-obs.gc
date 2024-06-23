@@ -255,8 +255,8 @@
   (let ((v1-11 (-> self level)))
     (set! (-> self level-slot)
           (cond
-            ((= v1-11 'jakup-training) 0)
-            ((= v1-11 'jakup-village2) 1)
+            ((= v1-11 'ju-train) 0)
+            ((= v1-11 'ju-vil2) 1)
             ((= v1-11 'jakup-village3) 2)
             ((or (= v1-11 'jakup-citadel)) 3)
             (else -1))))

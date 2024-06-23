@@ -1541,9 +1541,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-ogre jakup-ogreb)
+                                        :fwd (load ju-ogre ju-ogreb)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; ogre   ogreb    ogreb
                   ;; hide/show ogre        BOTH
@@ -1559,10 +1559,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-ogre display)
+                                        :fwd (display ju-ogre display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-ogre #f))
+                                        (display ju-ogre #f))
                   ;; ogre   ogreb    ogreb
                   ;; give ogreb checkpt       UP
                   (static-load-boundary :flags (player)
@@ -1574,7 +1574,7 @@
                                         ((meters 2271.24) (meters 1239.8) (meters 2331.54) (meters 1174.76))
                                         :fwd
                                         (vis upe #f)
-                                        ;; :bwd (checkpt "jakup-ogreb-start" #f)
+                                        ;; :bwd (checkpt "ju-ogreb-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -1584,9 +1584,9 @@
                                         :points
                                         ((meters 2271.24) (meters 1239.8) (meters 2331.54) (meters 1174.76))
                                         :fwd
-                                        (checkpt "jakup-ogreb-start" #f)
+                                        (checkpt "ju-ogreb-start" #f)
                                         :bwd
-                                        (checkpt "jakup-ogreb-start" #f))
+                                        (checkpt "ju-ogreb-start" #f))
                   ;; ogre   ogreb    ogre
                   ;; give ogre checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -1603,7 +1603,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis upd #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 9291.06)
@@ -1618,8 +1618,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-ogre-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-ogre-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; ogre   ogreb    ogre
                   ;; hide/show ogreb        BOTH
@@ -1636,8 +1636,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-ogreb #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-ogreb display))
+                                        (display ju-ogreb #f) ;; fwd is down it seems?
+                                        :bwd (display ju-ogreb display))
                   ;; ogre   ogreb    ogre
                   ;; load ogre + ogreb    UP
                   (static-load-boundary :flags (closed player)
@@ -1652,8 +1652,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-ogre jakup-ogreb))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-ogre ju-ogreb))
                   ;; SWAMPB
                   ;; swampb   ogre    ogre
                   ;; load swampb + ogre  DOWN
@@ -1669,9 +1669,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-swampb jakup-ogre)
+                                        :fwd (load ju-swampb ju-ogre)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; swampb   ogre    ogre
                   ;; hide/show swampb        BOTH
@@ -1687,10 +1687,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-swampb display)
+                                        :fwd (display ju-swampb display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-swampb #f))
+                                        (display ju-swampb #f))
                   ;; swampb   ogre    ogre
                   ;; give ogre checkpt       UP
                   (static-load-boundary :flags (player)
@@ -1702,7 +1702,7 @@
                                         ((meters 2179.22) (meters 1433.51) (meters 2127.97) (meters 1435.3))
                                         :fwd
                                         (vis upd #f)
-                                        ;; :bwd (checkpt "jakup-ogre-start" #f)
+                                        ;; :bwd (checkpt "ju-ogre-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -1712,9 +1712,9 @@
                                         :points
                                         ((meters 2179.22) (meters 1433.51) (meters 2127.97) (meters 1435.3))
                                         :fwd
-                                        (checkpt "jakup-ogre-start" #f)
+                                        (checkpt "ju-ogre-start" #f)
                                         :bwd
-                                        (checkpt "jakup-ogre-start" #f))
+                                        (checkpt "ju-ogre-start" #f))
                   ;; swampb   ogre    swampb
                   ;; give swampb checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -1731,7 +1731,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis upc #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 8350.72)
@@ -1746,8 +1746,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-swampb-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-swampb-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; swampb   ogre    swampb
                   ;; hide/show ogre        BOTH
@@ -1764,8 +1764,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-ogre #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-ogre display))
+                                        (display ju-ogre #f) ;; fwd is down it seems?
+                                        :bwd (display ju-ogre display))
                   ;; swampb   ogre    swampb
                   ;; load swampb + ogre    UP
                   (static-load-boundary :flags (closed player)
@@ -1780,8 +1780,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-swampb jakup-ogre))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-swampb ju-ogre))
                   ;; SWAMP
                   ;; swamp   swampb    swampb
                   ;; load swamp + swampb  DOWN
@@ -1797,9 +1797,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-swamp jakup-swampb)
+                                        :fwd (load ju-swamp ju-swampb)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; swamp   swampb    swampb
                   ;; hide/show swamp        BOTH
@@ -1815,10 +1815,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-swamp display)
+                                        :fwd (display ju-swamp display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-swamp #f))
+                                        (display ju-swamp #f))
                   ;; swamp   swampb    swampb
                   ;; give swampb checkpt       UP
                   (static-load-boundary :flags (player)
@@ -1830,7 +1830,7 @@
                                         ((meters 2055.24) (meters 1394.94) (meters 2150.02) (meters 1348.23))
                                         :fwd
                                         (vis upc #f)
-                                        ;; :bwd (checkpt "jakup-swampb-start" #f)
+                                        ;; :bwd (checkpt "ju-swampb-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -1840,9 +1840,9 @@
                                         :points
                                         ((meters 2055.24) (meters 1394.94) (meters 2150.02) (meters 1348.23))
                                         :fwd
-                                        (checkpt "jakup-swampb-start" #f)
+                                        (checkpt "ju-swampb-start" #f)
                                         :bwd
-                                        (checkpt "jakup-swampb-start" #f))
+                                        (checkpt "ju-swampb-start" #f))
                   ;; swamp   swampb    swamp
                   ;; give swamp checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -1859,7 +1859,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis upb #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 7104.31)
@@ -1874,8 +1874,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-swamp-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-swamp-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; swamp   swampb    swamp
                   ;; hide/show swampb        BOTH
@@ -1892,8 +1892,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-swampb #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-swampb display))
+                                        (display ju-swampb #f) ;; fwd is down it seems?
+                                        :bwd (display ju-swampb display))
                   ;; swamp   swampb    swamp
                   ;; load swamp + swampb    UP
                   (static-load-boundary :flags (closed player)
@@ -1908,8 +1908,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-swamp jakup-swampb))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-swamp ju-swampb))
                   ;; ROLLING
                   ;; rolling   swamp    swamp
                   ;; load rolling + swamp  DOWN
@@ -1925,9 +1925,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-rolling jakup-swamp)
+                                        :fwd (load ju-roll ju-swamp)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; rolling   swamp    swamp
                   ;; hide/show rolling        BOTH
@@ -1943,10 +1943,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-rolling display)
+                                        :fwd (display ju-roll display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-rolling #f))
+                                        (display ju-roll #f))
                   ;; rolling   swamp    swamp
                   ;; give swamp checkpt       UP
                   (static-load-boundary :flags (player)
@@ -1958,7 +1958,7 @@
                                         ((meters 1780.46) (meters 1342.6) (meters 1826.27) (meters 1387.05))
                                         :fwd
                                         (vis upb #f)
-                                        ;; :bwd (checkpt "jakup-swamp-start" #f)
+                                        ;; :bwd (checkpt "ju-swamp-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -1968,9 +1968,9 @@
                                         :points
                                         ((meters 1780.46) (meters 1342.6) (meters 1826.27) (meters 1387.05))
                                         :fwd
-                                        (checkpt "jakup-swamp-start" #f)
+                                        (checkpt "ju-swamp-start" #f)
                                         :bwd
-                                        (checkpt "jakup-swamp-start" #f))
+                                        (checkpt "ju-swamp-start" #f))
                   ;; rolling   swamp    rolling
                   ;; give rolling checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -1987,7 +1987,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis upa #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 6484.2)
@@ -2002,8 +2002,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-rolling-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-roll-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; rolling   swamp    rolling
                   ;; hide/show swamp        BOTH
@@ -2020,8 +2020,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-swamp #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-swamp display))
+                                        (display ju-swamp #f) ;; fwd is down it seems?
+                                        :bwd (display ju-swamp display))
                   ;; rolling   swamp    rolling
                   ;; load rolling + swamp    UP
                   (static-load-boundary :flags (closed player)
@@ -2036,8 +2036,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-rolling jakup-swamp))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-roll ju-swamp))
                   ;; SUNKENB
                   ;; sunkenb   rolling    rolling
                   ;; load sunkenb + rolling  DOWN
@@ -2053,9 +2053,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-sunkenb jakup-rolling)
+                                        :fwd (load ju-sunkb ju-roll)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; sunkenb   rolling    rolling
                   ;; hide/show sunkenb        BOTH
@@ -2071,10 +2071,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-sunkenb display)
+                                        :fwd (display ju-sunkb display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-sunkenb #f))
+                                        (display ju-sunkb #f))
                   ;; sunkenb   rolling    rolling
                   ;; give rolling checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2086,7 +2086,7 @@
                                         ((meters 1847.18) (meters 1908.35) (meters 1975.8) (meters 1827.27))
                                         :fwd
                                         (vis upa #f)
-                                        ;; :bwd (checkpt "jakup-rolling-start" #f)
+                                        ;; :bwd (checkpt "ju-roll-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2096,9 +2096,9 @@
                                         :points
                                         ((meters 1847.18) (meters 1908.35) (meters 1975.8) (meters 1827.27))
                                         :fwd
-                                        (checkpt "jakup-rolling-start" #f)
+                                        (checkpt "ju-roll-start" #f)
                                         :bwd
-                                        (checkpt "jakup-rolling-start" #f))
+                                        (checkpt "ju-roll-start" #f))
                   ;; sunkenb   rolling    sunkenb
                   ;; give sunkenb checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2115,7 +2115,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up9 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 5301.31)
@@ -2130,8 +2130,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-sunkenb-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-sunkb-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; sunkenb   rolling    sunkenb
                   ;; hide/show rolling        BOTH
@@ -2148,8 +2148,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-rolling #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-rolling display))
+                                        (display ju-roll #f) ;; fwd is down it seems?
+                                        :bwd (display ju-roll display))
                   ;; sunkenb   rolling    sunkenb
                   ;; load sunkenb + rolling    UP
                   (static-load-boundary :flags (closed player)
@@ -2164,8 +2164,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-sunkenb jakup-rolling))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-sunkb ju-roll))
                   ;; SUNKEN
                   ;; sunken   sunkenb    sunkenb
                   ;; load sunken + sunkenb  DOWN
@@ -2181,9 +2181,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-sunken jakup-sunkenb)
+                                        :fwd (load ju-sunk ju-sunkb)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; sunken   sunkenb    sunkenb
                   ;; hide/show sunken        BOTH
@@ -2199,10 +2199,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-sunken display)
+                                        :fwd (display ju-sunk display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-sunken #f))
+                                        (display ju-sunk #f))
                   ;; sunken   sunkenb    sunkenb
                   ;; give sunkenb checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2214,7 +2214,7 @@
                                         ((meters 2077.42) (meters 1899.95) (meters 2032.08) (meters 1931.87))
                                         :fwd
                                         (vis up9 #f)
-                                        ;; :bwd (checkpt "jakup-sunkenb-start" #f)
+                                        ;; :bwd (checkpt "ju-sunkb-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2224,9 +2224,9 @@
                                         :points
                                         ((meters 2077.42) (meters 1899.95) (meters 2032.08) (meters 1931.87))
                                         :fwd
-                                        (checkpt "jakup-sunkenb-start" #f)
+                                        (checkpt "ju-sunkb-start" #f)
                                         :bwd
-                                        (checkpt "jakup-sunkenb-start" #f))
+                                        (checkpt "ju-sunkb-start" #f))
                   ;; sunken   sunkenb    sunken
                   ;; give sunken checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2243,7 +2243,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up8 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 4817.47)
@@ -2258,8 +2258,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-sunken-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-sunk-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; sunken   sunkenb    sunken
                   ;; hide/show sunkenb        BOTH
@@ -2276,8 +2276,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-sunkenb #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-sunkenb display))
+                                        (display ju-sunkb #f) ;; fwd is down it seems?
+                                        :bwd (display ju-sunkb display))
                   ;; sunken   sunkenb    sunken
                   ;; load sunken + sunkenb    UP
                   (static-load-boundary :flags (closed player)
@@ -2292,8 +2292,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-sunken jakup-sunkenb))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-sunk ju-sunkb))
                   ;; VILLAGE2
                   ;; village2   sunken    sunken
                   ;; load village2 + sunken  DOWN
@@ -2309,9 +2309,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-village2 jakup-sunken)
+                                        :fwd (load ju-vil2 ju-sunk)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; village2   sunken    sunken
                   ;; hide/show village2        BOTH
@@ -2327,10 +2327,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-village2 display)
+                                        :fwd (display ju-vil2 display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-village2 #f))
+                                        (display ju-vil2 #f))
                   ;; village2   sunken    sunken
                   ;; give sunken checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2342,7 +2342,7 @@
                                         ((meters 2161.26) (meters 1950.59) (meters 2050.91) (meters 1886.91))
                                         :fwd
                                         (vis up8 #f)
-                                        ;; :bwd (checkpt "jakup-sunken-start" #f)
+                                        ;; :bwd (checkpt "ju-sunk-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2352,9 +2352,9 @@
                                         :points
                                         ((meters 2161.26) (meters 1950.59) (meters 2050.91) (meters 1886.91))
                                         :fwd
-                                        (checkpt "jakup-sunken-start" #f)
+                                        (checkpt "ju-sunk-start" #f)
                                         :bwd
-                                        (checkpt "jakup-sunken-start" #f))
+                                        (checkpt "ju-sunk-start" #f))
                   ;; village2   sunken    village2
                   ;; give village2 checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2371,7 +2371,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up7 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 3783.08)
@@ -2386,8 +2386,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-village2-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-vil2-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; village2   sunken    village2
                   ;; hide/show sunken        BOTH
@@ -2404,8 +2404,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-sunken #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-sunken display))
+                                        (display ju-sunk #f) ;; fwd is down it seems?
+                                        :bwd (display ju-sunk display))
                   ;; village2   sunken    village2
                   ;; load village2 + sunken    UP
                   (static-load-boundary :flags (closed player)
@@ -2420,8 +2420,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-village2 jakup-sunken))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-vil2 ju-sunk))
                   ;; FIRE
                   ;; fire   village2    village2
                   ;; load fire + village2  DOWN
@@ -2437,9 +2437,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-fire jakup-village2)
+                                        :fwd (load ju-fire ju-vil2)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; fire   village2    village2
                   ;; hide/show fire        BOTH
@@ -2455,10 +2455,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-fire display)
+                                        :fwd (display ju-fire display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-fire #f))
+                                        (display ju-fire #f))
                   ;; fire   village2    village2
                   ;; give village2 checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2470,7 +2470,7 @@
                                         ((meters 1911.12) (meters 1869.57) (meters 2025.37) (meters 1925.97))
                                         :fwd
                                         (vis up7 #f)
-                                        ;; :bwd (checkpt "jakup-village2-start" #f)
+                                        ;; :bwd (checkpt "ju-vil2-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2480,9 +2480,9 @@
                                         :points
                                         ((meters 1911.12) (meters 1869.57) (meters 2025.37) (meters 1925.97))
                                         :fwd
-                                        (checkpt "jakup-village2-start" #f)
+                                        (checkpt "ju-vil2-start" #f)
                                         :bwd
-                                        (checkpt "jakup-village2-start" #f))
+                                        (checkpt "ju-vil2-start" #f))
                   ;; fire   village2    fire
                   ;; give fire checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2499,7 +2499,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up6 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 3361.65)
@@ -2514,8 +2514,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-fire-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-fire-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; fire   village2    fire
                   ;; hide/show village2        BOTH
@@ -2532,8 +2532,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-village2 #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-village2 display))
+                                        (display ju-vil2 #f) ;; fwd is down it seems?
+                                        :bwd (display ju-vil2 display))
                   ;; fire   village2    fire
                   ;; load fire + village2    UP
                   (static-load-boundary :flags (closed player)
@@ -2548,8 +2548,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-fire jakup-village2))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-fire ju-vil2))
                   ;; BEACH
                   ;; beach   fire    fire
                   ;; load beach + fire  DOWN
@@ -2565,9 +2565,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-beach jakup-fire)
+                                        :fwd (load ju-beach ju-fire)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; beach   fire    fire
                   ;; hide/show beach        BOTH
@@ -2583,10 +2583,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-beach display)
+                                        :fwd (display ju-beach display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-beach #f))
+                                        (display ju-beach #f))
                   ;; beach   fire    fire
                   ;; give fire checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2598,7 +2598,7 @@
                                         ((meters 1852.36) (meters 1786.06) (meters 1738.44) (meters 1843.12))
                                         :fwd
                                         (vis up6 #f)
-                                        ;; :bwd (checkpt "jakup-fire-start" #f)
+                                        ;; :bwd (checkpt "ju-fire-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2608,9 +2608,9 @@
                                         :points
                                         ((meters 1852.36) (meters 1786.06) (meters 1738.44) (meters 1843.12))
                                         :fwd
-                                        (checkpt "jakup-fire-start" #f)
+                                        (checkpt "ju-fire-start" #f)
                                         :bwd
-                                        (checkpt "jakup-fire-start" #f))
+                                        (checkpt "ju-fire-start" #f))
                   ;; beach   fire    beach
                   ;; give beach checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2627,7 +2627,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up5 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 1977.14)
@@ -2642,8 +2642,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-beach-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-beach-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; beach   fire    beach
                   ;; hide/show fire        BOTH
@@ -2660,8 +2660,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-fire #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-fire display))
+                                        (display ju-fire #f) ;; fwd is down it seems?
+                                        :bwd (display ju-fire display))
                   ;; beach   fire    beach
                   ;; load beach + fire    UP
                   (static-load-boundary :flags (closed player)
@@ -2676,8 +2676,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-beach jakup-fire))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-beach ju-fire))
                   ;; MISTY
                   ;; misty   beach    beach
                   ;; load misty + beach  DOWN
@@ -2693,9 +2693,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-misty jakup-beach)
+                                        :fwd (load ju-misty ju-beach)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; misty   beach    beach
                   ;; hide/show misty        BOTH
@@ -2711,10 +2711,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-misty display)
+                                        :fwd (display ju-misty display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-misty #f))
+                                        (display ju-misty #f))
                   ;; misty   beach    beach
                   ;; give beach checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2726,7 +2726,7 @@
                                         ((meters 1788.63) (meters 2138.39) (meters 1915.91) (meters 2132.87))
                                         :fwd
                                         (vis up5 #f)
-                                        ;; :bwd (checkpt "jakup-beach-start" #f)
+                                        ;; :bwd (checkpt "ju-beach-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2736,9 +2736,9 @@
                                         :points
                                         ((meters 1788.63) (meters 2138.39) (meters 1915.91) (meters 2132.87))
                                         :fwd
-                                        (checkpt "jakup-beach-start" #f)
+                                        (checkpt "ju-beach-start" #f)
                                         :bwd
-                                        (checkpt "jakup-beach-start" #f))
+                                        (checkpt "ju-beach-start" #f))
                   ;; misty   beach    misty
                   ;; give misty checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2755,7 +2755,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up4 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 1556.58)
@@ -2770,8 +2770,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-misty-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-misty-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; misty   beach    misty
                   ;; hide/show beach        BOTH
@@ -2788,8 +2788,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-beach #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-beach display))
+                                        (display ju-beach #f) ;; fwd is down it seems?
+                                        :bwd (display ju-beach display))
                   ;; misty   beach    misty
                   ;; load misty + beach    UP
                   (static-load-boundary :flags (closed player)
@@ -2804,8 +2804,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-misty jakup-beach))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-misty ju-beach))
                   ;; JUNGLEB
                   ;; jungleb   misty    misty
                   ;; load jungleb + misty  DOWN
@@ -2821,9 +2821,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-jungleb jakup-misty)
+                                        :fwd (load ju-jungb ju-misty)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; jungleb   misty    misty
                   ;; hide/show jungleb        BOTH
@@ -2839,10 +2839,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-jungleb display)
+                                        :fwd (display ju-jungb display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-jungleb #f))
+                                        (display ju-jungb #f))
                   ;; jungleb   misty    misty
                   ;; give misty checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2854,7 +2854,7 @@
                                         ((meters 2155.79) (meters 1711.78) (meters 2040.78) (meters 1656.94))
                                         :fwd
                                         (vis up4 #f)
-                                        ;; :bwd (checkpt "jakup-misty-start" #f)
+                                        ;; :bwd (checkpt "ju-misty-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2864,9 +2864,9 @@
                                         :points
                                         ((meters 2155.79) (meters 1711.78) (meters 2040.78) (meters 1656.94))
                                         :fwd
-                                        (checkpt "jakup-misty-start" #f)
+                                        (checkpt "ju-misty-start" #f)
                                         :bwd
-                                        (checkpt "jakup-misty-start" #f))
+                                        (checkpt "ju-misty-start" #f))
                   ;; jungleb   misty    jungleb
                   ;; give jungleb checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -2883,7 +2883,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up3 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 1090.75)
@@ -2898,8 +2898,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-jungleb-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-jungb-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; jungleb   misty    jungleb
                   ;; hide/show misty        BOTH
@@ -2916,8 +2916,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-misty #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-misty display))
+                                        (display ju-misty #f) ;; fwd is down it seems?
+                                        :bwd (display ju-misty display))
                   ;; jungleb   misty    jungleb
                   ;; load jungleb + misty    UP
                   (static-load-boundary :flags (closed player)
@@ -2932,8 +2932,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-jungleb jakup-misty))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-jungb ju-misty))
                   ;; JUNGLE
                   ;; jungle   jungleb    jungleb
                   ;; load jungle + jungleb  DOWN
@@ -2949,9 +2949,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-jungle jakup-jungleb)
+                                        :fwd (load ju-jung ju-jungb)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; jungle   jungleb    jungleb
                   ;; hide/show jungle        BOTH
@@ -2967,10 +2967,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-jungle display)
+                                        :fwd (display ju-jung display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-jungle #f))
+                                        (display ju-jung #f))
                   ;; jungle   jungleb    jungleb
                   ;; give jungleb checkpt       UP
                   (static-load-boundary :flags (player)
@@ -2982,7 +2982,7 @@
                                         ((meters 2348.61) (meters 1582.12) (meters 2432.02) (meters 1678.42))
                                         :fwd
                                         (vis up3 #f)
-                                        ;; :bwd (checkpt "jakup-jungleb-start" #f)
+                                        ;; :bwd (checkpt "ju-jungb-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -2992,9 +2992,9 @@
                                         :points
                                         ((meters 2348.61) (meters 1582.12) (meters 2432.02) (meters 1678.42))
                                         :fwd
-                                        (checkpt "jakup-jungleb-start" #f)
+                                        (checkpt "ju-jungb-start" #f)
                                         :bwd
-                                        (checkpt "jakup-jungleb-start" #f))
+                                        (checkpt "ju-jungb-start" #f))
                   ;; jungle   jungleb    jungle
                   ;; give jungle checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -3011,7 +3011,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up2 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 933.228)
@@ -3026,8 +3026,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-jungle-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-jung-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; jungle   jungleb    jungle
                   ;; hide/show jungleb        BOTH
@@ -3044,8 +3044,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-jungleb #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-jungleb display))
+                                        (display ju-jungb #f) ;; fwd is down it seems?
+                                        :bwd (display ju-jungb display))
                   ;; jungle   jungleb    jungle
                   ;; load jungle + jungleb    UP
                   (static-load-boundary :flags (closed player)
@@ -3060,8 +3060,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-jungle jakup-jungleb))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-jung ju-jungb))
                   ;; VILLAGE1
                   ;; village1 jungle    jungle
                   ;; load village1 + jungle  DOWN
@@ -3077,9 +3077,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-village1 jakup-jungle)
+                                        :fwd (load ju-vil1 ju-jung)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; village1 jungle    jungle
                   ;; hide/show village1        BOTH
@@ -3095,10 +3095,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-village1 display)
+                                        :fwd (display ju-vil1 display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-village1 #f))
+                                        (display ju-vil1 #f))
                   ;; village1 jungle    jungle
                   ;; give jungle checkpt       UP
                   (static-load-boundary :flags (player)
@@ -3110,7 +3110,7 @@
                                         ((meters 2132.49) (meters 1646.91) (meters 2045.82) (meters 1740.3))
                                         :fwd
                                         (vis up2 #f)
-                                        ;; :bwd (checkpt "jakup-jungle-start" #f)
+                                        ;; :bwd (checkpt "ju-jung-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -3120,9 +3120,9 @@
                                         :points
                                         ((meters 2132.49) (meters 1646.91) (meters 2045.82) (meters 1740.3))
                                         :fwd
-                                        (checkpt "jakup-jungle-start" #f)
+                                        (checkpt "ju-jung-start" #f)
                                         :bwd
-                                        (checkpt "jakup-jungle-start" #f))
+                                        (checkpt "ju-jung-start" #f))
                   ;; village1 jungle  village1
                   ;; give village1 checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -3139,7 +3139,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up1 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 696.095)
@@ -3154,8 +3154,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-village1-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-vil1-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; village1 jungle  village1
                   ;; hide/show jungle        BOTH
@@ -3172,8 +3172,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-jungle #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-jungle display))
+                                        (display ju-jung #f) ;; fwd is down it seems?
+                                        :bwd (display ju-jung display))
                   ;; village1 jungle  village1
                   ;; load village1 + jungle    UP
                   (static-load-boundary :flags (closed player)
@@ -3188,8 +3188,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-village1 jakup-jungle))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-vil1 ju-jung))
                   ;; TRAINING
                   ;; training village1  village1
                   ;; load training + village1  DOWN
@@ -3205,9 +3205,9 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (load jakup-training jakup-village1)
+                                        :fwd (load ju-train ju-vil1)
                                         ;; fwd is down it seems?
-                                        ;; :bwd (load jakup-training jakup-village1)
+                                        ;; :bwd (load ju-train ju-vil1)
                                         )
                   ;; training village1  village1
                   ;; hide/show training        BOTH
@@ -3223,10 +3223,10 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        :fwd (display jakup-training display)
+                                        :fwd (display ju-train display)
                                         ;; fwd is down it seems?
                                         :bwd
-                                        (display jakup-training #f))
+                                        (display ju-train #f))
                   ;; training village1  village1
                   ;; give village1 checkpt     UP
                   (static-load-boundary :flags (player)
@@ -3238,7 +3238,7 @@
                                         ((meters 1917.55) (meters 1883.97) (meters 2041.89) (meters 1911.75))
                                         :fwd
                                         (vis up1 #f)
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (player)
                                         ;;     y top                y bottom
@@ -3248,9 +3248,9 @@
                                         :points
                                         ((meters 1917.55) (meters 1883.97) (meters 2041.89) (meters 1911.75))
                                         :fwd
-                                        (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-vil1-start" #f)
                                         :bwd
-                                        (checkpt "jakup-village1-start" #f))
+                                        (checkpt "ju-vil1-start" #f))
                   ;; training village1  training
                   ;; give training checkpt     DOWN
                   (static-load-boundary :flags (closed player)
@@ -3267,7 +3267,7 @@
                                          (meters 3716.22))
                                         :fwd
                                         (vis up0 #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   (static-load-boundary :flags (closed player)
                                         :top (meters 332.377)
@@ -3282,8 +3282,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (checkpt "jakup-training-start" #f) ;; fwd is down it seems?
-                                        ;; :bwd (checkpt "jakup-village1-start" #f)
+                                        (checkpt "ju-train-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
                                         )
                   ;; training village1  training
                   ;; hide/show village1        BOTH
@@ -3300,8 +3300,8 @@
                                          (meters 2947.54)
                                          (meters 3716.22))
                                         :fwd
-                                        (display jakup-village1 #f) ;; fwd is down it seems?
-                                        :bwd (display jakup-village1 display))
+                                        (display ju-vil1 #f) ;; fwd is down it seems?
+                                        :bwd (display ju-vil1 display))
                   ;; training village1  training
                   ;; load training + village1  UP
                   (static-load-boundary :flags (closed player)
@@ -3316,8 +3316,8 @@
                                          (meters 804.937)
                                          (meters 2947.54)
                                          (meters 3716.22))
-                                        ;; :fwd (load jakup-training jakup-village1) ;; fwd is down it seems?
-                                        :bwd (load jakup-training jakup-village1))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-train ju-vil1))
                   ;; END
                   ))
 

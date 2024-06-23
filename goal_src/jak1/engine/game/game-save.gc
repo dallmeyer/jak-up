@@ -608,7 +608,7 @@
   ;; if we're a new game, set our checkpoint.
   (when (nonzero? (-> save new-game))
     ;; (set-continue! obj "game-start")
-    (set-continue! this "jakup-training-start")
+    (set-continue! this "ju-train-start")
     (set! save save)
     (goto cfg-134))
   ;; loop over all tags

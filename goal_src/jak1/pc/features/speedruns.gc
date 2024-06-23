@@ -147,7 +147,7 @@
     (((speedrun-category full-game))
      ;; spawn at the geyser warp gate checkpoint
      ;; (initialize! *game-info* 'game (the-as game-save #f) "game-start")
-     (initialize! *game-info* 'game (the-as game-save #f) "jakup-training-start"))
+     (initialize! *game-info* 'game (the-as game-save #f) "ju-train-start"))
     (((speedrun-category il-training))
      ;; spawn at the geyser warp gate checkpoint
      (initialize! *game-info* 'game (the-as game-save #f) "game-start"))

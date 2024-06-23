@@ -1668,50 +1668,50 @@
 ;; Set up the build system to build the level geometry
 ;; this path is relative to the custom_assets/jak1/levels/ folder
 ;; it should point to the .jsonc file that specifies the level.
-(build-custom-level "jakup-training")
-(custom-level-cgo "UP0.DGO" "jakup-training/jakup-training.gd")
+(build-custom-level "ju-train")
+(custom-level-cgo "UP0.DGO" "ju-train/ju-train.gd")
 
-(build-custom-level "jakup-village1")
-(custom-level-cgo "UP1.DGO" "jakup-village1/jakup-village1.gd")
+(build-custom-level "ju-vil1")
+(custom-level-cgo "UP1.DGO" "ju-vil1/ju-vil1.gd")
 
-(build-custom-level "jakup-jungle")
-(custom-level-cgo "UP2.DGO" "jakup-jungle/jakup-jungle.gd")
+(build-custom-level "ju-jung")
+(custom-level-cgo "UP2.DGO" "ju-jung/ju-jung.gd")
 
-(build-custom-level "jakup-jungleb")
-(custom-level-cgo "UP3.DGO" "jakup-jungleb/jakup-jungleb.gd")
+(build-custom-level "ju-jungb")
+(custom-level-cgo "UP3.DGO" "ju-jungb/ju-jungb.gd")
 
-(build-custom-level "jakup-misty")
-(custom-level-cgo "UP4.DGO" "jakup-misty/jakup-misty.gd")
+(build-custom-level "ju-misty")
+(custom-level-cgo "UP4.DGO" "ju-misty/ju-misty.gd")
 
-(build-custom-level "jakup-beach")
-(custom-level-cgo "UP5.DGO" "jakup-beach/jakup-beach.gd")
+(build-custom-level "ju-beach")
+(custom-level-cgo "UP5.DGO" "ju-beach/ju-beach.gd")
 
-(build-custom-level "jakup-fire")
-(custom-level-cgo "UP6.DGO" "jakup-fire/jakup-fire.gd")
+(build-custom-level "ju-fire")
+(custom-level-cgo "UP6.DGO" "ju-fire/ju-fire.gd")
 
-(build-custom-level "jakup-village2")
-(custom-level-cgo "UP7.DGO" "jakup-village2/jakup-village2.gd")
+(build-custom-level "ju-vil2")
+(custom-level-cgo "UP7.DGO" "ju-vil2/ju-vil2.gd")
 
-(build-custom-level "jakup-sunken")
-(custom-level-cgo "UP8.DGO" "jakup-sunken/jakup-sunken.gd")
+(build-custom-level "ju-sunk")
+(custom-level-cgo "UP8.DGO" "ju-sunk/ju-sunk.gd")
 
-(build-custom-level "jakup-sunkenb")
-(custom-level-cgo "UP9.DGO" "jakup-sunkenb/jakup-sunkenb.gd")
+(build-custom-level "ju-sunkb")
+(custom-level-cgo "UP9.DGO" "ju-sunkb/ju-sunkb.gd")
 
-(build-custom-level "jakup-rolling")
-(custom-level-cgo "UPA.DGO" "jakup-rolling/jakup-rolling.gd")
+(build-custom-level "ju-roll")
+(custom-level-cgo "UPA.DGO" "ju-roll/ju-roll.gd")
 
-(build-custom-level "jakup-swamp")
-(custom-level-cgo "UPB.DGO" "jakup-swamp/jakup-swamp.gd")
+(build-custom-level "ju-swamp")
+(custom-level-cgo "UPB.DGO" "ju-swamp/ju-swamp.gd")
 
-(build-custom-level "jakup-swampb")
-(custom-level-cgo "UPC.DGO" "jakup-swampb/jakup-swampb.gd")
+(build-custom-level "ju-swampb")
+(custom-level-cgo "UPC.DGO" "ju-swampb/ju-swampb.gd")
 
-(build-custom-level "jakup-ogre")
-(custom-level-cgo "UPD.DGO" "jakup-ogre/jakup-ogre.gd")
+(build-custom-level "ju-ogre")
+(custom-level-cgo "UPD.DGO" "ju-ogre/ju-ogre.gd")
 
-(build-custom-level "jakup-ogreb")
-(custom-level-cgo "UPE.DGO" "jakup-ogreb/jakup-ogreb.gd")
+(build-custom-level "ju-ogreb")
+(custom-level-cgo "UPE.DGO" "ju-ogreb/ju-ogreb.gd")
 
 ;; generate the art group for a custom actor.
 ;; requires a .glb model file in custom_assets/jak1/models

@@ -792,19 +792,19 @@
   (input-opts-controller-led-reflect-heat #x1617)
 
   ;; text for "get to next level" tasks
-  (jakup-training #x2000)
-  (jakup-village1 #x2001)
-  (jakup-jungle   #x2002)
-  (jakup-jungleb  #x2003)
-  (jakup-misty    #x2004)
-  (jakup-beach    #x2005)
-  (jakup-fire     #x2006)
-  (jakup-village2 #x2007)
-  (jakup-sunken   #x2008)
-  (jakup-rolling  #x2009)
-  (jakup-swamp    #x200a)
+  (ju-train #x2000)
+  (ju-vil1 #x2001)
+  (ju-jung   #x2002)
+  (ju-jungb  #x2003)
+  (ju-misty    #x2004)
+  (ju-beach    #x2005)
+  (ju-fire     #x2006)
+  (ju-vil2 #x2007)
+  (ju-sunk   #x2008)
+  (ju-roll  #x2009)
+  (ju-swamp    #x200a)
   ;; since village 3 not ready, just re-use end of MP text
-  ;; (jakup-ogre     #x200b)
+  ;; (ju-ogre     #x200b)
 ;; GAME-TEXT-ID ENUM ENDS
   )
 

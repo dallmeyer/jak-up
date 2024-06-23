@@ -361,9 +361,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-training)
+                      :task-id (game-task ju-train)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-training) (text-id jakup-training) (text-id jakup-training) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-train) (text-id ju-train) (text-id ju-train) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task training-buzzer)
@@ -389,9 +389,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-village1)
+                      :task-id (game-task ju-vil1)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-village1) (text-id jakup-village1) (text-id jakup-village1) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-vil1) (text-id ju-vil1) (text-id ju-vil1) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task village1-buzzer)
@@ -410,9 +410,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-jungle)
+                      :task-id (game-task ju-jung)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-jungle) (text-id jakup-jungle) (text-id jakup-jungle) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-jung) (text-id ju-jung) (text-id ju-jung) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task jungle-buzzer)
@@ -431,9 +431,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-jungleb)
+                      :task-id (game-task ju-jungb)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-jungleb) (text-id jakup-jungleb) (text-id jakup-jungleb) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-jungb) (text-id ju-jungb) (text-id ju-jungb) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task jungleb-buzzer)
@@ -452,9 +452,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-misty)
+                      :task-id (game-task ju-misty)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-misty) (text-id jakup-misty) (text-id jakup-misty) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-misty) (text-id ju-misty) (text-id ju-misty) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task misty-buzzer)
@@ -473,9 +473,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-beach)
+                      :task-id (game-task ju-beach)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-beach) (text-id jakup-beach) (text-id jakup-beach) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-beach) (text-id ju-beach) (text-id ju-beach) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task beach-buzzer)
@@ -494,9 +494,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-fire)
+                      :task-id (game-task ju-fire)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-fire) (text-id jakup-fire) (text-id jakup-fire) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-fire) (text-id ju-fire) (text-id ju-fire) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task firecanyon-buzzer)
@@ -522,9 +522,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-village2)
+                      :task-id (game-task ju-vil2)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-village2) (text-id jakup-village2) (text-id jakup-village2) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-vil2) (text-id ju-vil2) (text-id ju-vil2) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task village2-buzzer)
@@ -543,15 +543,15 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-sunken)
+                      :task-id (game-task ju-sunk)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-sunken) (text-id jakup-sunken) (text-id jakup-sunken) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-sunk) (text-id ju-sunk) (text-id ju-sunk) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task sunken-buzzer)
                       :task-name
                       (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
-       ;; jakup-sunkenb fake level
+       ;; ju-sunkb fake level
        (new 'static
             'level-tasks-info
             :level-name-id (text-id rolling-level-name)
@@ -565,9 +565,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-rolling)
+                      :task-id (game-task ju-roll)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-rolling) (text-id jakup-rolling) (text-id jakup-rolling) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-roll) (text-id ju-roll) (text-id ju-roll) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task rolling-buzzer)
@@ -586,15 +586,15 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-swamp)
+                      :task-id (game-task ju-swamp)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id jakup-swamp) (text-id jakup-swamp) (text-id jakup-swamp) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-swamp) (text-id ju-swamp) (text-id ju-swamp) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task swamp-buzzer)
                       :task-name
                       (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
-       ;; jakup-swampb fake level
+       ;; ju-swampb fake level
        (new 'static
             'level-tasks-info
             :level-name-id (text-id ogre-level-name)
@@ -608,7 +608,7 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task jakup-ogre)
+                      :task-id (game-task ju-ogre)
                       :task-name
                       (new 'static 'array text-id 4 (text-id ogre-end) (text-id ogre-end) (text-id ogre-end) (text-id zero)))
                  (new 'static
@@ -616,7 +616,7 @@
                       :task-id (game-task ogre-buzzer)
                       :task-name
                       (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
-       ;; jakup-ogreb fake level
+       ;; ju-ogreb fake level
        ))
 
 ;; goes down by 24 or 23 every time

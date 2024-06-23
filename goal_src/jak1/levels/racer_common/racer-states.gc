@@ -831,7 +831,7 @@
           (set! (-> *hud-parts* buzzers 0 next-y-offset) -120)
           (set! (-> *hud-parts* buzzers 0 y-sgn) 0)
           0)
-        (when (!= (-> *target* current-level name) 'jakup-fire)
+        (when (!= (-> *target* current-level name) 'ju-fire)
           (set! (-> *hud-parts* bike-speed) (process-spawn hud-bike-speed :init hud-init-by-other 0 :to self)))
         (set! (-> *hud-parts* power 0 next-y-offset) -120)
         (set! (-> *hud-parts* power 0 y-sgn) 0)

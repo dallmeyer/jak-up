@@ -178,7 +178,7 @@
                     (cond
                       (continue-point-override (empty) continue-point-override)
                       ((!= *kernel-boot-message* 'play) "demo-start")
-                      (*debug-segment* "jakup-training-start")
+                      (*debug-segment* "ju-train-start")
                       (else "title-start")))
      (reset-jakup-info)
      (set! (-> this auto-save-count) 0)

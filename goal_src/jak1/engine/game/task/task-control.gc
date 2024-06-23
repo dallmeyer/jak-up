@@ -5009,7 +5009,7 @@
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-training
+                    'task-control ;; ju-train
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5018,7 +5018,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-training)
+                              :game-task (game-task ju-train)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5026,7 +5026,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-training)
+                              :game-task (game-task ju-train)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5034,7 +5034,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-training)
+                              :game-task (game-task ju-train)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5042,14 +5042,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-training)
+                              :game-task (game-task ju-train)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-village1
+                    'task-control ;; ju-vil1
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5058,7 +5058,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village1)
+                              :game-task (game-task ju-vil1)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5066,7 +5066,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village1)
+                              :game-task (game-task ju-vil1)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5074,7 +5074,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village1)
+                              :game-task (game-task ju-vil1)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5082,14 +5082,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village1)
+                              :game-task (game-task ju-vil1)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-jungle
+                    'task-control ;; ju-jung
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5098,7 +5098,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungle)
+                              :game-task (game-task ju-jung)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5106,7 +5106,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungle)
+                              :game-task (game-task ju-jung)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5114,7 +5114,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungle)
+                              :game-task (game-task ju-jung)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5122,14 +5122,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungle)
+                              :game-task (game-task ju-jung)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-jungleb
+                    'task-control ;; ju-jungb
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5138,7 +5138,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungleb)
+                              :game-task (game-task ju-jungb)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5146,7 +5146,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungleb)
+                              :game-task (game-task ju-jungb)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5154,7 +5154,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungleb)
+                              :game-task (game-task ju-jungb)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5162,7 +5162,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-jungleb)
+                              :game-task (game-task ju-jungb)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
@@ -5209,7 +5209,7 @@
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-misty
+                    'task-control ;; ju-misty
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5218,7 +5218,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-misty)
+                              :game-task (game-task ju-misty)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5226,7 +5226,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-misty)
+                              :game-task (game-task ju-misty)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5234,7 +5234,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-misty)
+                              :game-task (game-task ju-misty)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5242,14 +5242,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-misty)
+                              :game-task (game-task ju-misty)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-beach
+                    'task-control ;; ju-beach
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5258,7 +5258,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-beach)
+                              :game-task (game-task ju-beach)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5266,7 +5266,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-beach)
+                              :game-task (game-task ju-beach)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5274,7 +5274,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-beach)
+                              :game-task (game-task ju-beach)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5282,14 +5282,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-beach)
+                              :game-task (game-task ju-beach)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-fire
+                    'task-control ;; ju-fire
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5298,7 +5298,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-fire)
+                              :game-task (game-task ju-fire)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5306,7 +5306,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-fire)
+                              :game-task (game-task ju-fire)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5314,7 +5314,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-fire)
+                              :game-task (game-task ju-fire)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5322,14 +5322,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-fire)
+                              :game-task (game-task ju-fire)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-village2
+                    'task-control ;; ju-vil2
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5338,7 +5338,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village2)
+                              :game-task (game-task ju-vil2)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5346,7 +5346,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village2)
+                              :game-task (game-task ju-vil2)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5354,7 +5354,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village2)
+                              :game-task (game-task ju-vil2)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5362,14 +5362,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-village2)
+                              :game-task (game-task ju-vil2)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-sunken
+                    'task-control ;; ju-sunk
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5378,7 +5378,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-sunken)
+                              :game-task (game-task ju-sunk)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5386,7 +5386,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-sunken)
+                              :game-task (game-task ju-sunk)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5394,7 +5394,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-sunken)
+                              :game-task (game-task ju-sunk)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5402,15 +5402,15 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-sunken)
+                              :game-task (game-task ju-sunk)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
-               ;; jakup-sunkenb fake level
+               ;; ju-sunkb fake level
                (new 'static
-                    'task-control ;; jakup-rolling
+                    'task-control ;; ju-roll
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5419,7 +5419,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-rolling)
+                              :game-task (game-task ju-roll)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5427,7 +5427,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-rolling)
+                              :game-task (game-task ju-roll)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5435,7 +5435,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-rolling)
+                              :game-task (game-task ju-roll)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5443,14 +5443,14 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-rolling)
+                              :game-task (game-task ju-roll)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                (new 'static
-                    'task-control ;; jakup-swamp
+                    'task-control ;; ju-swamp
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5459,7 +5459,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-swamp)
+                              :game-task (game-task ju-swamp)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5467,7 +5467,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-swamp)
+                              :game-task (game-task ju-swamp)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5475,7 +5475,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-swamp)
+                              :game-task (game-task ju-swamp)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5483,15 +5483,15 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-swamp)
+                              :game-task (game-task ju-swamp)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
-               ;; jakup-swampb fake level
+               ;; ju-swampb fake level
                (new 'static
-                    'task-control ;; jakup-ogre
+                    'task-control ;; ju-ogre
                     :current-stage -1
                     :stage
                     (new 'static
@@ -5500,7 +5500,7 @@
                          task-cstage
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-ogre)
+                              :game-task (game-task ju-ogre)
                               :status (task-status need-hint)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5508,7 +5508,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-ogre)
+                              :game-task (game-task ju-ogre)
                               :status (task-status need-introduction)
                               :flags (task-flags has-entity closed-by-default)
                               :condition
@@ -5516,7 +5516,7 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-ogre)
+                              :game-task (game-task ju-ogre)
                               :status (task-status need-reminder)
                               :flags (task-flags has-entity)
                               :condition
@@ -5524,13 +5524,13 @@
                                 #t))
                          (new 'static
                               'task-cstage
-                              :game-task (game-task jakup-ogre)
+                              :game-task (game-task ju-ogre)
                               :status (task-status need-resolution)
                               :flags (task-flags has-entity)
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
-               ;; jakup-ogreb fake level
+               ;; ju-ogreb fake level
                )))
 
 (defun task-control-reset ((arg0 symbol))

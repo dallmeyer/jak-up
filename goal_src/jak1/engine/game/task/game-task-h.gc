@@ -126,22 +126,22 @@
   (assistant-village3 115)
   (dummy 116)
 
-  (jakup-training 117)
-  (jakup-village1 118)
-  (jakup-jungle 119)
-  (jakup-jungleb 120)
+  (ju-train 117)
+  (ju-vil1 118)
+  (ju-jung 119)
+  (ju-jungb 120)
   (jungleb-buzzer 121)
-  (jakup-misty 122)
-  (jakup-beach 123)
-  (jakup-fire 124)
-  (jakup-village2 125)
-  (jakup-sunken 126)
-  ;; (jakup-sunkenb 127)  ;; jakup-sunken cell is really in sunkenb
-  (jakup-rolling 127)
-  (jakup-swamp 128)
-  ;; (jakup-swampb 128)  ;; jakup-swamp cell is really in swampb
-  (jakup-ogre 129)
-  ;; (jakup-ogreb 129)  ;; jakup-ogre cell is really in ogreb
+  (ju-misty 122)
+  (ju-beach 123)
+  (ju-fire 124)
+  (ju-vil2 125)
+  (ju-sunk 126)
+  ;; (ju-sunkb 127)  ;; ju-sunk cell is really in sunkenb
+  (ju-roll 127)
+  (ju-swamp 128)
+  ;; (ju-swampb 128)  ;; ju-swamp cell is really in swampb
+  (ju-ogre 129)
+  ;; (ju-ogreb 129)  ;; ju-ogre cell is really in ogreb
 
   (max 130)
   )

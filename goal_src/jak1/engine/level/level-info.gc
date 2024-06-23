@@ -2502,12 +2502,12 @@
             default-level))
 
 ;;;;;;;;; CUSTOM LEVELS
-(define jakup-training
+(define ju-train
   (new 'static
        'level-load-info
        :index 27
-       :name 'jakup-training
-       :visname 'jakup-training-vis
+       :name 'ju-train
+       :visname 'ju-train-vis
        ;; name + -vis
        :nickname 'up0
        ;; nickname
@@ -2523,8 +2523,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-training-start"
-             :level 'jakup-training
+             :name "ju-train-start"
+             :level 'ju-train
              :flags (continue-flags game-start)
              :trans
              (new 'static 'vector :x (meters 1919.85) :y (meters 25.22) :z (meters 1966.66) :w 1.0)
@@ -2537,14 +2537,14 @@
              :load-commands
              '()
              :vis-nick 'up0
-             :lev0 'jakup-training
+             :lev0 'ju-train
              :disp0 'display
              :lev1 #f
              :disp1 #f)
         (new 'static
              'continue-point
-             :name "jakup-training-warp"
-             :level 'jakup-training
+             :name "ju-train-warp"
+             :level 'ju-train
              :flags (continue-flags warp)
              :trans
              (new 'static 'vector :x (meters 1915.32) :y (meters 11.21) :z (meters 1986.38) :w 1.0)
@@ -2557,7 +2557,7 @@
              :load-commands
              '()
              :vis-nick 'up0
-             :lev0 'jakup-training
+             :lev0 'ju-train
              :disp0 'display
              :lev1 #f
              :disp1 #f))
@@ -2577,12 +2577,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-village1
+(define ju-vil1
   (new 'static
        'level-load-info
        :index 28
-       :name 'jakup-village1
-       :visname 'jakup-village1-vis
+       :name 'ju-vil1
+       :visname 'ju-vil1-vis
        ;; name + -vis
        :nickname 'up1
        ;; nickname
@@ -2598,8 +2598,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-village1-start"
-             :level 'jakup-village1
+             :name "ju-vil1-start"
+             :level 'ju-vil1
              :trans
              (new 'static 'vector :x (meters 1974.29) :y (meters 387.66) :z (meters 1859.86) :w 1.0)
              :quat
@@ -2611,9 +2611,9 @@
              :load-commands
              '()
              :vis-nick 'up1
-             :lev0 'jakup-training
+             :lev0 'ju-train
              :disp0 'display
-             :lev1 'jakup-village1
+             :lev1 'ju-vil1
              :disp1 'display))
        :tasks
        '()
@@ -2631,12 +2631,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-jungle
+(define ju-jung
   (new 'static
        'level-load-info
        :index 29
-       :name 'jakup-jungle
-       :visname 'jakup-jungle-vis
+       :name 'ju-jung
+       :visname 'ju-jung-vis
        ;; name + -vis
        :nickname 'up2
        ;; nickname
@@ -2652,8 +2652,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-jungle-start"
-             :level 'jakup-jungle
+             :name "ju-jung-start"
+             :level 'ju-jung
              :trans
              (new 'static 'vector :x 8650917.0000 :y 2933038.0000 :z 6876151.0000 :w 1.0)
              :quat
@@ -2665,9 +2665,9 @@
              :load-commands
              '()
              :vis-nick 'up2
-             :lev0 'jakup-village1
+             :lev0 'ju-vil1
              :disp0 'display
-             :lev1 'jakup-jungle
+             :lev1 'ju-jung
              :disp1 'display))
        :tasks
        '()
@@ -2685,12 +2685,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-jungleb
+(define ju-jungb
   (new 'static
        'level-load-info
        :index 30
-       :name 'jakup-jungleb
-       :visname 'jakup-jungleb-vis
+       :name 'ju-jungb
+       :visname 'ju-jungb-vis
        ;; name + -vis
        :nickname 'up3
        ;; nickname
@@ -2706,8 +2706,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-jungleb-start"
-             :level 'jakup-jungleb
+             :name "ju-jungb-start"
+             :level 'ju-jungb
              :trans
              (new 'static 'vector :x 9788850.0000 :y 3864919.5000 :z 6634067.0 :w 1.0)
              :quat
@@ -2719,9 +2719,9 @@
              :load-commands
              '()
              :vis-nick 'up3
-             :lev0 'jakup-jungle
+             :lev0 'ju-jung
              :disp0 'display
-             :lev1 'jakup-jungleb
+             :lev1 'ju-jungb
              :disp1 'display))
        :tasks
        '()
@@ -2739,12 +2739,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-misty
+(define ju-misty
   (new 'static
        'level-load-info
        :index 31
-       :name 'jakup-misty
-       :visname 'jakup-misty-vis
+       :name 'ju-misty
+       :visname 'ju-misty-vis
        ;; name + -vis
        :nickname 'up4
        ;; nickname
@@ -2760,8 +2760,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-misty-start"
-             :level 'jakup-misty
+             :name "ju-misty-start"
+             :level 'ju-misty
              :trans
              (new 'static 'vector :x (meters 2112.8547) :y (meters 1103.6628) :z (meters 1715.1802) :w 1.0)
              :quat
@@ -2773,9 +2773,9 @@
              :load-commands
              '()
              :vis-nick 'up4
-             :lev0 'jakup-jungleb
+             :lev0 'ju-jungb
              :disp0 'display
-             :lev1 'jakup-misty
+             :lev1 'ju-misty
              :disp1 'display))
        :tasks
        '()
@@ -2793,12 +2793,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-beach
+(define ju-beach
   (new 'static
        'level-load-info
        :index 32
-       :name 'jakup-beach
-       :visname 'jakup-beach-vis
+       :name 'ju-beach
+       :visname 'ju-beach-vis
        ;; name + -vis
        :nickname 'up5
        ;; nickname
@@ -2814,8 +2814,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-beach-start"
-             :level 'jakup-beach
+             :name "ju-beach-start"
+             :level 'ju-beach
              :trans
              (new 'static 'vector :x (meters 1805.2045) :y (meters 1570.8099) :z (meters 2166.8842) :w 1.0)
              :quat
@@ -2827,9 +2827,9 @@
              :load-commands
              '()
              :vis-nick 'up5
-             :lev0 'jakup-misty
+             :lev0 'ju-misty
              :disp0 'display
-             :lev1 'jakup-beach
+             :lev1 'ju-beach
              :disp1 'display))
        :tasks
        '()
@@ -2847,12 +2847,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-fire
+(define ju-fire
   (new 'static
        'level-load-info
        :index 33
-       :name 'jakup-fire
-       :visname 'jakup-fire-vis
+       :name 'ju-fire
+       :visname 'ju-fire-vis
        ;; name + -vis
        :nickname 'up6
        ;; nickname
@@ -2868,8 +2868,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-fire-start"
-             :level 'jakup-fire
+             :name "ju-fire-start"
+             :level 'ju-fire
              :trans
              (new 'static 'vector :x (meters 1800.44) :y (meters 1999.59) :z (meters 1818.39) :w 1.0)
              :quat
@@ -2881,9 +2881,9 @@
              :load-commands
              '()
              :vis-nick 'up6
-             :lev0 'jakup-beach
+             :lev0 'ju-beach
              :disp0 'display
-             :lev1 'jakup-fire
+             :lev1 'ju-fire
              :disp1 'display))
        :tasks
        '()
@@ -2901,12 +2901,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-village2
+(define ju-vil2
   (new 'static
        'level-load-info
        :index 34
-       :name 'jakup-village2
-       :visname 'jakup-village2-vis
+       :name 'ju-vil2
+       :visname 'ju-vil2-vis
        ;; name + -vis
        :nickname 'up7
        ;; nickname
@@ -2922,8 +2922,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-village2-start"
-             :level 'jakup-village2
+             :name "ju-vil2-start"
+             :level 'ju-vil2
              :trans
              (new 'static 'vector :x (meters 1958.4868) :y (meters 3385.0971) :z (meters 1881.9865) :w 1.0)
              :quat
@@ -2935,13 +2935,13 @@
              :load-commands
              '()
              :vis-nick 'up7
-             :lev0 'jakup-fire
+             :lev0 'ju-fire
              :disp0 'display
-             :lev1 'jakup-village2
+             :lev1 'ju-vil2
              :disp1 'display)
         (new 'static
              'continue-point
-             :name "jakup-village2-warp"
+             :name "ju-vil2-warp"
              :level 'village2
              :flags (continue-flags warp)
              :trans
@@ -2955,9 +2955,9 @@
              :load-commands
              '()
              :vis-nick 'up7
-             :lev0 'jakup-fire
+             :lev0 'ju-fire
              :disp0 'display
-             :lev1 'jakup-village2
+             :lev1 'ju-vil2
              :disp1 'display))
        :tasks
        '()
@@ -2975,12 +2975,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-sunken
+(define ju-sunk
   (new 'static
        'level-load-info
        :index 35
-       :name 'jakup-sunken
-       :visname 'jakup-sunken-vis
+       :name 'ju-sunk
+       :visname 'ju-sunk-vis
        ;; name + -vis
        :nickname 'up8
        ;; nickname
@@ -2996,8 +2996,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-sunken-start"
-             :level 'jakup-sunken
+             :name "ju-sunk-start"
+             :level 'ju-sunk
              :trans
              (new 'static 'vector :x (meters 2126.2785) :y (meters 3900.8212) :z (meters 1888.2790) :w 1.0)
              :quat
@@ -3009,9 +3009,9 @@
              :load-commands
              '()
              :vis-nick 'up8
-             :lev0 'jakup-village2
+             :lev0 'ju-vil2
              :disp0 'display
-             :lev1 'jakup-sunken
+             :lev1 'ju-sunk
              :disp1 'display))
        :tasks
        '()
@@ -3029,12 +3029,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-sunkenb
+(define ju-sunkb
   (new 'static
        'level-load-info
        :index 36
-       :name 'jakup-sunkenb
-       :visname 'jakup-sunkenb-vis
+       :name 'ju-sunkb
+       :visname 'ju-sunkb-vis
        ;; name + -vis
        :nickname 'up9
        ;; nickname
@@ -3050,8 +3050,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-sunkenb-start"
-             :level 'jakup-sunkenb
+             :name "ju-sunkb-start"
+             :level 'ju-sunkb
              :trans
              (new 'static 'vector :x (meters 2039.0715) :y (meters 4864.4208) :z (meters 1896.6206) :w 1.0)
              :quat
@@ -3063,9 +3063,9 @@
              :load-commands
              '()
              :vis-nick 'up9
-             :lev0 'jakup-sunken
+             :lev0 'ju-sunk
              :disp0 'display
-             :lev1 'jakup-sunkenb
+             :lev1 'ju-sunkb
              :disp1 'display))
        :tasks
        '()
@@ -3083,12 +3083,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-rolling
+(define ju-roll
   (new 'static
        'level-load-info
        :index 37
-       :name 'jakup-rolling
-       :visname 'jakup-rolling-vis
+       :name 'ju-roll
+       :visname 'ju-roll-vis
        ;; name + -vis
        :nickname 'upa
        ;; nickname
@@ -3104,8 +3104,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-rolling-start"
-             :level 'jakup-rolling
+             :name "ju-roll-start"
+             :level 'ju-roll
              :trans
              (new 'static 'vector :x (meters 1910.48) :y (meters 5311.81) :z (meters 1855.63) :w 1.0)
              ;;  :trans (new 'static 'vector :x (meters 1576.62) :y (meters 6145.15) :z (meters 1770.61) :w 1.0)
@@ -3118,9 +3118,9 @@
              :load-commands
              '()
              :vis-nick 'upa
-             :lev0 'jakup-sunkenb
+             :lev0 'ju-sunkb
              :disp0 'display
-             :lev1 'jakup-rolling
+             :lev1 'ju-roll
              :disp1 'display))
        :tasks
        '()
@@ -3138,12 +3138,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-swamp
+(define ju-swamp
   (new 'static
        'level-load-info
        :index 38
-       :name 'jakup-swamp
-       :visname 'jakup-swamp-vis
+       :name 'ju-swamp
+       :visname 'ju-swamp-vis
        ;; name + -vis
        :nickname 'upb
        ;; nickname
@@ -3159,8 +3159,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-swamp-start"
-             :level 'jakup-swamp
+             :name "ju-swamp-start"
+             :level 'ju-swamp
              ;;  :trans (new 'static 'vector :x (meters 1906.5292) :y (meters 5311.8183) :z (meters 1856.2711) :w 1.0)
              :trans
              (new 'static 'vector :x (meters 1807.99) :y (meters 6505.39) :z (meters 1361.27) :w 1.0)
@@ -3173,9 +3173,9 @@
              :load-commands
              '()
              :vis-nick 'upb
-             :lev0 'jakup-rolling
+             :lev0 'ju-roll
              :disp0 'display
-             :lev1 'jakup-swamp
+             :lev1 'ju-swamp
              :disp1 'display))
        :tasks
        '()
@@ -3193,12 +3193,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-swampb
+(define ju-swampb
   (new 'static
        'level-load-info
        :index 39
-       :name 'jakup-swampb
-       :visname 'jakup-swampb-vis
+       :name 'ju-swampb
+       :visname 'ju-swampb-vis
        ;; name + -vis
        :nickname 'upc
        ;; nickname
@@ -3214,8 +3214,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-swampb-start"
-             :level 'jakup-swampb
+             :name "ju-swampb-start"
+             :level 'ju-swampb
              :trans
              (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
              ;;  :trans (new 'static 'vector :x (meters 2123.96) :y (meters 8028.97) :z (meters 1304.86) :w 1.0)
@@ -3228,9 +3228,9 @@
              :load-commands
              '()
              :vis-nick 'upc
-             :lev0 'jakup-swamp
+             :lev0 'ju-swamp
              :disp0 'display
-             :lev1 'jakup-swampb
+             :lev1 'ju-swampb
              :disp1 'display))
        :tasks
        '()
@@ -3248,12 +3248,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-ogre
+(define ju-ogre
   (new 'static
        'level-load-info
        :index 40
-       :name 'jakup-ogre
-       :visname 'jakup-ogre-vis
+       :name 'ju-ogre
+       :visname 'ju-ogre-vis
        ;; name + -vis
        :nickname 'upd
        ;; nickname
@@ -3269,8 +3269,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-ogre-start"
-             :level 'jakup-ogre
+             :name "ju-ogre-start"
+             :level 'ju-ogre
              ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
              :trans
              (new 'static 'vector :x (meters 2152.2607) :y (meters 8375.8662) :z (meters 1442.7186) :w 1.0)
@@ -3283,9 +3283,9 @@
              :load-commands
              '()
              :vis-nick 'upd
-             :lev0 'jakup-swampb
+             :lev0 'ju-swampb
              :disp0 'display
-             :lev1 'jakup-ogre
+             :lev1 'ju-ogre
              :disp1 'display))
        :tasks
        '()
@@ -3303,12 +3303,12 @@
        '("common")
        :wait-for-load #t))
 
-(define jakup-ogreb
+(define ju-ogreb
   (new 'static
        'level-load-info
        :index 41
-       :name 'jakup-ogreb
-       :visname 'jakup-ogreb-vis
+       :name 'ju-ogreb
+       :visname 'ju-ogreb-vis
        ;; name + -vis
        :nickname 'upe
        ;; nickname
@@ -3324,8 +3324,8 @@
        :continues
        '((new 'static
              'continue-point
-             :name "jakup-ogreb-start"
-             :level 'jakup-ogreb
+             :name "ju-ogreb-start"
+             :level 'ju-ogreb
              ;;  :trans (new 'static 'vector :x (meters 1904.5605) :y (meters 7196.3862) :z (meters 1451.2327) :w 1.0)
              :trans
              (new 'static 'vector :x (meters 2267.4914) :y (meters 9347.2890) :z (meters 1167.3717) :w 1.0)
@@ -3338,14 +3338,14 @@
              :load-commands
              '()
              :vis-nick 'upe
-             :lev0 'jakup-ogre
+             :lev0 'ju-ogre
              :disp0 'display
-             :lev1 'jakup-ogreb
+             :lev1 'ju-ogreb
              :disp1 'display)
         (new 'static
              'continue-point
-             :name "jakup-ogreb-end"
-             :level 'jakup-ogreb
+             :name "ju-ogreb-end"
+             :level 'ju-ogreb
              :trans
              (new 'static 'vector :x (meters 2232.9528) :y (meters 10159.4306) :z (meters 1982.6517) :w 1.0)
              :quat
@@ -3357,7 +3357,7 @@
              :load-commands
              '()
              :vis-nick 'upe
-             :lev0 'jakup-ogreb
+             :lev0 'ju-ogreb
              :disp0 'display
              :lev1 #f
              :disp1 #f))
@@ -3378,32 +3378,32 @@
        :wait-for-load #t))
 
 ;; cons! adds to the front of the list, so add in reverse order
-(cons! *level-load-list* 'jakup-ogreb)
+(cons! *level-load-list* 'ju-ogreb)
 
-(cons! *level-load-list* 'jakup-ogre)
+(cons! *level-load-list* 'ju-ogre)
 
-(cons! *level-load-list* 'jakup-swampb)
+(cons! *level-load-list* 'ju-swampb)
 
-(cons! *level-load-list* 'jakup-swamp)
+(cons! *level-load-list* 'ju-swamp)
 
-(cons! *level-load-list* 'jakup-rolling)
+(cons! *level-load-list* 'ju-roll)
 
-(cons! *level-load-list* 'jakup-sunkenb)
+(cons! *level-load-list* 'ju-sunkb)
 
-(cons! *level-load-list* 'jakup-sunken)
+(cons! *level-load-list* 'ju-sunk)
 
-(cons! *level-load-list* 'jakup-village2)
+(cons! *level-load-list* 'ju-vil2)
 
-(cons! *level-load-list* 'jakup-fire)
+(cons! *level-load-list* 'ju-fire)
 
-(cons! *level-load-list* 'jakup-beach)
+(cons! *level-load-list* 'ju-beach)
 
-(cons! *level-load-list* 'jakup-misty)
+(cons! *level-load-list* 'ju-misty)
 
-(cons! *level-load-list* 'jakup-jungleb)
+(cons! *level-load-list* 'ju-jungb)
 
-(cons! *level-load-list* 'jakup-jungle)
+(cons! *level-load-list* 'ju-jung)
 
-(cons! *level-load-list* 'jakup-village1)
+(cons! *level-load-list* 'ju-vil1)
 
-(cons! *level-load-list* 'jakup-training)
+(cons! *level-load-list* 'ju-train)
