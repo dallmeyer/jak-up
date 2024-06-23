@@ -456,6 +456,7 @@
     (cat-string<-string_to_charp arg0 arg1 s4-0)
     )
   )
+
 (defmacro is-whitespace-char? (c)
   ;; 32 = space
   ;; 9 = \t
@@ -811,6 +812,14 @@
   `(begin
      (format (clear *temp-string*) ,@args)
      *temp-string*
+     )
+  )
+
+(defmacro temp-string-format (buf &rest args)
+  "Like [[string-format]], but takes a string as an argument."
+  `(begin
+     (format (clear ,buf) ,@args)
+     ,buf
      )
   )
 

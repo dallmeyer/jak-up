@@ -26,6 +26,7 @@ class Loader {
   void set_active_levels(const std::vector<std::string>& levels);
   std::vector<LevelData*> get_in_use_levels();
   void draw_debug_window();
+  void debug_print_loaded_levels();
 
  private:
   void loader_thread();
@@ -55,6 +56,8 @@ class Loader {
   std::vector<std::string> m_desired_levels;
   std::vector<std::string> m_active_levels;
   std::vector<std::unique_ptr<LoaderStage>> m_loader_stages;
+  std::vector<GLuint> m_garbage_textures;
+  std::vector<GLuint> m_garbage_buffers;
 
   fs::path m_base_path;
   int m_max_levels = 0;

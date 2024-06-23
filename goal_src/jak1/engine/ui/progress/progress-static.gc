@@ -1,158 +1,262 @@
 ;;-*-Lisp-*-
 (in-package goal)
-
-;; name: progress-static.gc
-;; name in dgo: progress-static
-;; dgos: GAME, ENGINE
+(bundles "ENGINE.CGO" "GAME.CGO")
+(require "engine/ui/progress/progress-h.gc")
+(require "engine/ui/text-h.gc")
+(require "engine/game/task/game-task-h.gc")
 
 ;; This file contains the layouts for all of the menus.
 
 ;; options in the start menu options
 (define *main-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id game-options) :scale #t :param3 (game-option-menu game-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id graphic-options) :scale #t :param3 (game-option-menu graphic-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id sound-options) :scale #t :param3 (game-option-menu sound-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id load-game) :scale #t :param3 (game-option-menu load-game))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id save-game) :scale #t :param3 (game-option-menu save-game))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id quit-game) :scale #t :param3 (game-option-menu quit))
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id game-options)
+            :scale #t
+            :param3 (game-option-menu game-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id graphic-options)
+            :scale #t
+            :param3 (game-option-menu graphic-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id sound-options)
+            :scale #t
+            :param3 (game-option-menu sound-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id load-game)
+            :scale #t
+            :param3 (game-option-menu load-game))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id save-game)
+            :scale #t
+            :param3 (game-option-menu save-game))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id quit-game)
+            :scale #t
+            :param3 (game-option-menu quit))
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *title*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id new-game) :scale #t :param3 (game-option-menu save-game-title))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id load-game) :scale #t :param3 (game-option-menu load-game))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id options) :scale #t :param3 (game-option-menu settings-title))
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id new-game)
+            :scale #t
+            :param3 (game-option-menu save-game-title))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id load-game)
+            :scale #t
+            :param3 (game-option-menu load-game))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id options)
+            :scale #t
+            :param3 (game-option-menu settings-title))
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id game-options) :scale #t :param3 (game-option-menu game-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id graphic-options) :scale #t :param3 (game-option-menu graphic-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id sound-options) :scale #t :param3 (game-option-menu sound-settings))
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id game-options)
+            :scale #t
+            :param3 (game-option-menu game-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id graphic-options)
+            :scale #t
+            :param3 (game-option-menu graphic-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id sound-options)
+            :scale #t
+            :param3 (game-option-menu sound-settings))
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *main-options-demo*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id game-options) :scale #t :param3 (game-option-menu game-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id graphic-options) :scale #t :param3 (game-option-menu graphic-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id sound-options) :scale #t :param3 (game-option-menu sound-settings))
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id game-options)
+            :scale #t
+            :param3 (game-option-menu game-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id graphic-options)
+            :scale #t
+            :param3 (game-option-menu graphic-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id sound-options)
+            :scale #t
+            :param3 (game-option-menu sound-settings))
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *main-options-demo-shared*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id game-options) :scale #t :param3 (game-option-menu game-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id graphic-options) :scale #t :param3 (game-option-menu graphic-settings))
-    (new 'static 'game-option :option-type (game-option-type menu) :name (text-id sound-options) :scale #t :param3 (game-option-menu sound-settings))
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id exit-demo) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id game-options)
+            :scale #t
+            :param3 (game-option-menu game-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id graphic-options)
+            :scale #t
+            :param3 (game-option-menu graphic-settings))
+       (new 'static
+            'game-option
+            :option-type (game-option-type menu)
+            :name (text-id sound-options)
+            :scale #t
+            :param3 (game-option-menu sound-settings))
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id exit-demo) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *game-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id vibrations) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id play-hints) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type language) :name (text-id language) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id vibrations) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id play-hints) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type language) :name (text-id language) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *game-options-japan*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id vibrations) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id play-hints) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id vibrations) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id play-hints) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *game-options-demo*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id vibrations) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id play-hints) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id vibrations) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type on-off) :name (text-id play-hints) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *graphic-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type center-screen) :name (text-id center-screen) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type aspect-ratio) :name (text-id aspect-ratio) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type center-screen) :name (text-id center-screen) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type aspect-ratio) :name (text-id aspect-ratio) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *graphic-title-options-pal*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type center-screen) :name (text-id center-screen) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type video-mode) :name (text-id video-mode) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type aspect-ratio) :name (text-id aspect-ratio) :scale #t)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type center-screen) :name (text-id center-screen) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type video-mode) :name (text-id video-mode) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type aspect-ratio) :name (text-id aspect-ratio) :scale #t)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
 (define *sound-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :name (text-id sfx-volume) :scale #t :param2 100.0)
-    (new 'static 'game-option :name (text-id music-volume) :scale #t :param2 100.0)
-    (new 'static 'game-option :name (text-id speech-volume) :scale #t :param2 100.0)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :name (text-id sfx-volume) :scale #t :param2 100.0)
+       (new 'static 'game-option :name (text-id music-volume) :scale #t :param2 100.0)
+       (new 'static 'game-option :name (text-id speech-volume) :scale #t :param2 100.0)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #t)))
 
-(define *yes-no-options* (new 'static 'boxed-array :type game-option
-                           (new 'static 'game-option :option-type (game-option-type yes-no) :scale #f)
-                           )
-        )
+(define *yes-no-options*
+  (new 'static 'boxed-array :type game-option (new 'static 'game-option :option-type (game-option-type yes-no) :scale #f)))
 
 (define *ok-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id ok) :scale #f)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id ok) :scale #f)))
 
 (define *load-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #f)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #f)))
 
 (define *save-options*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #f)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #f)))
 
 (define *save-options-title*
-  (new 'static 'boxed-array :type game-option
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id continue-without-saving) :scale #f)
-    (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #f)
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       game-option
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id continue-without-saving) :scale #f)
+       (new 'static 'game-option :option-type (game-option-type button) :name (text-id back) :scale #f)))
 
 ;; maps options to a progress screen
 ;; the length matches with `(progress-screen max)`
-(define *options-remap* (new 'static 'boxed-array :type (array game-option) :length 0 :allocated-length (#if (not PC_PORT) 35 68)))
+(define *options-remap*
+  (new 'static 'boxed-array :type (array game-option) :length 0 :allocated-length (#if (not PC_PORT) 35 68)))
 
 ;; added in PC port
 (defenum level-task-data-index
@@ -174,442 +278,348 @@
   ;; (cave 14)
   ;; (lavatube 15)
   ;; (citadel 16)
-  (max 12)
-  )
+  (max 12))
 
 ;; maps level-info indices to the appropriate offset in *level-task-data*
 (define *level-task-data-remap*
-   (new 'static 'boxed-array :type int32
-    0 ;; (level-task-data-index training)
-    0 ;; (level-task-data-index village1)
-    0 ;; (level-task-data-index beach)
-    0 ;; (level-task-data-index jungle) ;; jungle?
-    0 ;; (level-task-data-index jungle) ;; jungleb?
-    0 ;; (level-task-data-index misty)
-    0 ;; (level-task-data-index firecanyon)
-    0 ;; (level-task-data-index village2)
-    0 ;; (level-task-data-index sunken) ;; sunken?
-    0 ;; (level-task-data-index sunken) ;; sunkenb?
-    0 ;; (level-task-data-index swamp)
-    0 ;; (level-task-data-index rolling)
-    0 ;; (level-task-data-index ogre)
-    0 ;; (level-task-data-index village3)
-    0 ;; (level-task-data-index snow)
-    0 ;; (level-task-data-index cave) ;; maincave?
-    0 ;; (level-task-data-index cave) ;; robocave?
-    0 ;; (level-task-data-index cave) ;; darkcave?
-    0 ;; (level-task-data-index lavatube)
-    0 ;; (level-task-data-index citadel) ;; citadel?
-    0 ;; (level-task-data-index citadel) ;; finalboss?
-    0 ;; (level-task-data-index misty) ;; demo?
-    0 ;; (level-task-data-index misty) ;; title?
-    0 ;; halfpipe
-    0 ;; default
-    0 ;; testzone, but I removed it
-    (level-task-data-index training)
-    (level-task-data-index village1)
-    (level-task-data-index jungle)
-    (level-task-data-index jungleb)
-    (level-task-data-index misty)
-    (level-task-data-index beach)
-    (level-task-data-index firecanyon)
-    (level-task-data-index village2)
-    (level-task-data-index sunken)
-    (level-task-data-index sunken)  ;; sunkenb
-    (level-task-data-index rolling)
-    (level-task-data-index swamp)
-    (level-task-data-index swamp) ;; swampb
-    (level-task-data-index ogre)
-    (level-task-data-index ogre)  ;; ogreb
-    )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       int32
+       0 ;; (level-task-data-index training)
+       0 ;; (level-task-data-index village1)
+       0 ;; (level-task-data-index beach)
+       0 ;; (level-task-data-index jungle) ;; jungle?
+       0 ;; (level-task-data-index jungle) ;; jungleb?
+       0 ;; (level-task-data-index misty)
+       0 ;; (level-task-data-index firecanyon)
+       0 ;; (level-task-data-index village2)
+       0 ;; (level-task-data-index sunken) ;; sunken?
+       0 ;; (level-task-data-index sunken) ;; sunkenb?
+       0 ;; (level-task-data-index swamp)
+       0 ;; (level-task-data-index rolling)
+       0 ;; (level-task-data-index ogre)
+       0 ;; (level-task-data-index village3)
+       0 ;; (level-task-data-index snow)
+       0 ;; (level-task-data-index cave) ;; maincave?
+       0 ;; (level-task-data-index cave) ;; robocave?
+       0 ;; (level-task-data-index cave) ;; darkcave?
+       0 ;; (level-task-data-index lavatube)
+       0 ;; (level-task-data-index citadel) ;; citadel?
+       0 ;; (level-task-data-index citadel) ;; finalboss?
+       0 ;; (level-task-data-index misty) ;; demo?
+       0 ;; (level-task-data-index misty) ;; title?
+       0 ;; halfpipe
+       0 ;; default
+       0 ;; testzone, but I removed it
+       (level-task-data-index training)
+       (level-task-data-index village1)
+       (level-task-data-index jungle)
+       (level-task-data-index jungleb)
+       (level-task-data-index misty)
+       (level-task-data-index beach)
+       (level-task-data-index firecanyon)
+       (level-task-data-index village2)
+       (level-task-data-index sunken)
+       (level-task-data-index sunken) ;; sunkenb
+       (level-task-data-index rolling)
+       (level-task-data-index swamp)
+       (level-task-data-index swamp) ;; swampb
+       (level-task-data-index ogre)
+       (level-task-data-index ogre) ;; ogreb
+       ))
 
 ;; maps goal language ID to its name string ID
 (define *language-name-remap*
-    (new 'static 'boxed-array :type text-id
-         (text-id english)
-         (text-id french)
-         (text-id german)
-         (text-id spanish)
-         (text-id italian)
-         (text-id japanese)
-         )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       text-id
+       (text-id english)
+       (text-id french)
+       (text-id german)
+       (text-id spanish)
+       (text-id italian)
+       (text-id japanese)))
 
 ;; all level tasks
 (define *level-task-data*
-    (new 'static 'boxed-array :type level-tasks-info
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id training-level-name)
-              :text-group-index 1
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-training)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-training)
-                             (text-id jakup-training)
-                             (text-id jakup-training)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task training-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id training-buzzer-task-name)
-                             (text-id training-buzzer-task-name)
-                             (text-id training-buzzer-task-name)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id village1-level-name)
-              :text-group-index 2
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-village1)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-village1)
-                             (text-id jakup-village1)
-                             (text-id jakup-village1)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task village1-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id jungle-level-name)
-              :text-group-index 3
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-jungle)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-jungle)
-                             (text-id jakup-jungle)
-                             (text-id jakup-jungle)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task jungle-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id jungleb-level-name)
-              :text-group-index 4
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-jungleb)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-jungleb)
-                             (text-id jakup-jungleb)
-                             (text-id jakup-jungleb)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task jungleb-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id misty-level-name)
-              :text-group-index 5
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-misty)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-misty)
-                             (text-id jakup-misty)
-                             (text-id jakup-misty)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task misty-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id beach-level-name)
-              :text-group-index 6
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-beach)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-beach)
-                             (text-id jakup-beach)
-                             (text-id jakup-beach)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task beach-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id firecanyon-level-name)
-              :text-group-index 7
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-fire)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-fire)
-                             (text-id jakup-fire)
-                             (text-id jakup-fire)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task firecanyon-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id firecanyon-buzzer)
-                             (text-id firecanyon-buzzer)
-                             (text-id firecanyon-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id village2-level-name)
-              :text-group-index 8
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-village2)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-village2)
-                             (text-id jakup-village2)
-                             (text-id jakup-village2)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task village2-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              ) 
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id sunken-level-name)
-              :text-group-index 9
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-sunken)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-sunken)
-                             (text-id jakup-sunken)
-                             (text-id jakup-sunken)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task sunken-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-        ;; jakup-sunkenb fake level
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id rolling-level-name)
-              :text-group-index 10
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-rolling)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-rolling)
-                             (text-id jakup-rolling)
-                             (text-id jakup-rolling)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task rolling-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id swamp-level-name)
-              :text-group-index 11
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-swamp)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id jakup-swamp)
-                             (text-id jakup-swamp)
-                             (text-id jakup-swamp)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task swamp-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-        ;; jakup-swampb fake level
-         (new 'static 'level-tasks-info
-              :level-name-id (text-id ogre-level-name)
-              :text-group-index 12
-              :nb-of-tasks 2
-              :buzzer-task-index 1
-              :task-info
-              (new 'static 'array task-info-data 8
-                   (new 'static 'task-info-data
-                        :task-id (game-task jakup-ogre)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id ogre-end)
-                             (text-id ogre-end)
-                             (text-id ogre-end)
-                             (text-id zero)
-                             )
-                        )
-                   (new 'static 'task-info-data
-                        :task-id (game-task ogre-buzzer)
-                        :task-name
-                        (new 'static 'array text-id 4
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id beach-buzzer)
-                             (text-id zero)
-                             )
-                        )
-                   )
-              )
-        ;; jakup-ogreb fake level
-        
-         )
-  )
+  (new 'static
+       'boxed-array
+       :type
+       level-tasks-info
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id training-level-name)
+            :text-group-index 1
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-training)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-training) (text-id jakup-training) (text-id jakup-training) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task training-buzzer)
+                      :task-name
+                      (new 'static
+                           'array
+                           text-id
+                           4
+                           (text-id training-buzzer-task-name)
+                           (text-id training-buzzer-task-name)
+                           (text-id training-buzzer-task-name)
+                           (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id village1-level-name)
+            :text-group-index 2
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-village1)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-village1) (text-id jakup-village1) (text-id jakup-village1) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task village1-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id jungle-level-name)
+            :text-group-index 3
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-jungle)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-jungle) (text-id jakup-jungle) (text-id jakup-jungle) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jungle-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id jungleb-level-name)
+            :text-group-index 4
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-jungleb)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-jungleb) (text-id jakup-jungleb) (text-id jakup-jungleb) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jungleb-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id misty-level-name)
+            :text-group-index 5
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-misty)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-misty) (text-id jakup-misty) (text-id jakup-misty) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task misty-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id beach-level-name)
+            :text-group-index 6
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-beach)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-beach) (text-id jakup-beach) (text-id jakup-beach) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task beach-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id firecanyon-level-name)
+            :text-group-index 7
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-fire)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-fire) (text-id jakup-fire) (text-id jakup-fire) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task firecanyon-buzzer)
+                      :task-name
+                      (new 'static
+                           'array
+                           text-id
+                           4
+                           (text-id firecanyon-buzzer)
+                           (text-id firecanyon-buzzer)
+                           (text-id firecanyon-buzzer)
+                           (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id village2-level-name)
+            :text-group-index 8
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-village2)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-village2) (text-id jakup-village2) (text-id jakup-village2) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task village2-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id sunken-level-name)
+            :text-group-index 9
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-sunken)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-sunken) (text-id jakup-sunken) (text-id jakup-sunken) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task sunken-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       ;; jakup-sunkenb fake level
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id rolling-level-name)
+            :text-group-index 10
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-rolling)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-rolling) (text-id jakup-rolling) (text-id jakup-rolling) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task rolling-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id swamp-level-name)
+            :text-group-index 11
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-swamp)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id jakup-swamp) (text-id jakup-swamp) (text-id jakup-swamp) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task swamp-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       ;; jakup-swampb fake level
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id ogre-level-name)
+            :text-group-index 12
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task jakup-ogre)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id ogre-end) (text-id ogre-end) (text-id ogre-end) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task ogre-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       ;; jakup-ogreb fake level
+       ))
 
 ;; goes down by 24 or 23 every time
-(define *task-egg-starting-x*
-    (new 'static 'boxed-array :type int32
-         218
-         194
-         171
-         147
-         124
-         100
-         77
-         53
-         30
-         )
-  )
+(define *task-egg-starting-x* (new 'static 'boxed-array :type int32 218 194 171 147 124 100 77 53 30))
 
 ;; (define *game-counts* (the-as game-count-info #f))
-
-
-

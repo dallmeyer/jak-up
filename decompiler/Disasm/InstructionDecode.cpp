@@ -10,7 +10,7 @@
 
 #include "decompiler/ObjectFile/LinkedObjectFile.h"
 
-#include "third-party/fmt/core.h"
+#include "fmt/core.h"
 
 namespace decompiler {
 // utility class to extract fields of an opcode.
@@ -37,7 +37,10 @@ struct OpcodeFields {
   uint32_t sa() { return (data >> 6) & 0x1f; }
 
   // 0 - 5
+  // TODO - remove once we update clang-format
+  // clang-format off
   uint32_t function() { return (data)&0x3f; }
+  // clang-format on
 
   ////////////////
   // Immediates //

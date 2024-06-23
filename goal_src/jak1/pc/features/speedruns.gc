@@ -1,112 +1,124 @@
 ;;-*-Lisp-*-
 (in-package goal)
-
+(require "engine/game/game-save.gc")
+(require "engine/game/task/game-task-h.gc")
+(require "pc/pckernel-common.gc")
+(require "pc/features/autosplit-h.gc")
 (define *speedrun-info* (new 'static 'speedrun-info-jak1 :should-display? #t :needs-post-blackout-setup? #f))
 
-(define *hub1-cell-list* (new 'static 'boxed-array :type game-task
-  (game-task training-gimmie)
-  (game-task training-door)
-  (game-task training-climb)
-  (game-task training-buzzer)
-  (game-task village1-mayor-money)
-  (game-task village1-uncle-money)
-  (game-task village1-yakow)
-  (game-task village1-oracle-money1)
-  (game-task village1-oracle-money2)
-  (game-task village1-buzzer)
-  (game-task beach-ecorocks)
-  (game-task beach-flutflut)
-  (game-task beach-pelican)
-  (game-task beach-seagull)
-  (game-task beach-cannon)
-  (game-task beach-gimmie)
-  (game-task beach-sentinel)
-  (game-task beach-buzzer)
-  (game-task jungle-lurkerm)
-  (game-task jungle-tower)
-  (game-task jungle-eggtop)
-  (game-task jungle-plant)
-  (game-task jungle-fishgame)
-  (game-task jungle-canyon-end)
-  (game-task jungle-temple-door)
-  (game-task jungle-buzzer)
-  (game-task misty-muse)
-  (game-task misty-boat)
-  (game-task misty-cannon)
-  (game-task misty-warehouse)
-  (game-task misty-bike)
-  (game-task misty-bike-jump)
-  (game-task misty-eco-challenge)
-  (game-task misty-buzzer)
-  (game-task firecanyon-end)
-  (game-task firecanyon-buzzer)
-  ))
+(define *hub1-cell-list*
+  (new 'static
+       'boxed-array
+       :type
+       game-task
+       (game-task training-gimmie)
+       (game-task training-door)
+       (game-task training-climb)
+       (game-task training-buzzer)
+       (game-task village1-mayor-money)
+       (game-task village1-uncle-money)
+       (game-task village1-yakow)
+       (game-task village1-oracle-money1)
+       (game-task village1-oracle-money2)
+       (game-task village1-buzzer)
+       (game-task beach-ecorocks)
+       (game-task beach-flutflut)
+       (game-task beach-pelican)
+       (game-task beach-seagull)
+       (game-task beach-cannon)
+       (game-task beach-gimmie)
+       (game-task beach-sentinel)
+       (game-task beach-buzzer)
+       (game-task jungle-lurkerm)
+       (game-task jungle-tower)
+       (game-task jungle-eggtop)
+       (game-task jungle-plant)
+       (game-task jungle-fishgame)
+       (game-task jungle-canyon-end)
+       (game-task jungle-temple-door)
+       (game-task jungle-buzzer)
+       (game-task misty-muse)
+       (game-task misty-boat)
+       (game-task misty-cannon)
+       (game-task misty-warehouse)
+       (game-task misty-bike)
+       (game-task misty-bike-jump)
+       (game-task misty-eco-challenge)
+       (game-task misty-buzzer)
+       (game-task firecanyon-end)
+       (game-task firecanyon-buzzer)))
 
-(define *hub2-cell-list* (new 'static 'boxed-array :type game-task
-  (game-task village2-gambler-money)
-  (game-task village2-geologist-money)
-  (game-task village2-warrior-money)
-  (game-task village2-oracle-money1)
-  (game-task village2-oracle-money2)
-  (game-task village2-buzzer)
-  (game-task sunken-room)
-  (game-task sunken-pipe)
-  (game-task sunken-slide)
-  (game-task sunken-sharks)
-  (game-task sunken-platforms)
-  (game-task sunken-top-of-helix)
-  (game-task sunken-spinning-room)
-  (game-task sunken-buzzer)
-  (game-task swamp-flutflut)
-  (game-task swamp-billy)
-  (game-task swamp-battle)
-  (game-task swamp-tether-4)
-  (game-task swamp-tether-1)
-  (game-task swamp-tether-2)
-  (game-task swamp-tether-3)
-  (game-task swamp-buzzer)
-  (game-task rolling-moles)
-  (game-task rolling-robbers)
-  (game-task rolling-race)
-  (game-task rolling-lake)
-  (game-task rolling-plants)
-  (game-task rolling-ring-chase-1)
-  (game-task rolling-ring-chase-2)
-  (game-task rolling-buzzer)
-  (game-task ogre-boss)
-  (game-task ogre-end)
-  (game-task ogre-secret)
-  (game-task ogre-buzzer)
-  ))
+(define *hub2-cell-list*
+  (new 'static
+       'boxed-array
+       :type
+       game-task
+       (game-task village2-gambler-money)
+       (game-task village2-geologist-money)
+       (game-task village2-warrior-money)
+       (game-task village2-oracle-money1)
+       (game-task village2-oracle-money2)
+       (game-task village2-buzzer)
+       (game-task sunken-room)
+       (game-task sunken-pipe)
+       (game-task sunken-slide)
+       (game-task sunken-sharks)
+       (game-task sunken-platforms)
+       (game-task sunken-top-of-helix)
+       (game-task sunken-spinning-room)
+       (game-task sunken-buzzer)
+       (game-task swamp-flutflut)
+       (game-task swamp-billy)
+       (game-task swamp-battle)
+       (game-task swamp-tether-4)
+       (game-task swamp-tether-1)
+       (game-task swamp-tether-2)
+       (game-task swamp-tether-3)
+       (game-task swamp-buzzer)
+       (game-task rolling-moles)
+       (game-task rolling-robbers)
+       (game-task rolling-race)
+       (game-task rolling-lake)
+       (game-task rolling-plants)
+       (game-task rolling-ring-chase-1)
+       (game-task rolling-ring-chase-2)
+       (game-task rolling-buzzer)
+       (game-task ogre-boss)
+       (game-task ogre-end)
+       (game-task ogre-secret)
+       (game-task ogre-buzzer)))
 
-(define *hub3-cell-list* (new 'static 'boxed-array :type game-task
-  (game-task village3-miner-money1)
-  (game-task village3-miner-money2)
-  (game-task village3-miner-money3)
-  (game-task village3-miner-money4)
-  (game-task village3-oracle-money1)
-  (game-task village3-oracle-money2)
-  (game-task village3-extra1)
-  (game-task village3-buzzer)
-  (game-task snow-eggtop)
-  (game-task snow-ram)
-  (game-task snow-bumpers)
-  (game-task snow-cage)
-  (game-task snow-fort)
-  (game-task snow-ball)
-  (game-task snow-bunnies)
-  (game-task snow-buzzer)
-  (game-task cave-gnawers)
-  (game-task cave-dark-crystals)
-  (game-task cave-dark-climb)
-  (game-task cave-robot-climb)
-  (game-task cave-swing-poles)
-  (game-task cave-spider-tunnel)
-  (game-task cave-platforms)
-  (game-task cave-buzzer)
-  (game-task lavatube-end)
-  (game-task lavatube-buzzer)
-  ))
+(define *hub3-cell-list*
+  (new 'static
+       'boxed-array
+       :type
+       game-task
+       (game-task village3-miner-money1)
+       (game-task village3-miner-money2)
+       (game-task village3-miner-money3)
+       (game-task village3-miner-money4)
+       (game-task village3-oracle-money1)
+       (game-task village3-oracle-money2)
+       (game-task village3-extra1)
+       (game-task village3-buzzer)
+       (game-task snow-eggtop)
+       (game-task snow-ram)
+       (game-task snow-bumpers)
+       (game-task snow-cage)
+       (game-task snow-fort)
+       (game-task snow-ball)
+       (game-task snow-bunnies)
+       (game-task snow-buzzer)
+       (game-task cave-gnawers)
+       (game-task cave-dark-crystals)
+       (game-task cave-dark-climb)
+       (game-task cave-robot-climb)
+       (game-task cave-swing-poles)
+       (game-task cave-spider-tunnel)
+       (game-task cave-platforms)
+       (game-task cave-buzzer)
+       (game-task lavatube-end)
+       (game-task lavatube-buzzer)))
 
 ;; unused
 ;; (define *citadel-cell-list* (new 'static 'boxed-array :type game-task
@@ -119,9 +131,7 @@
 
 (defun is-speedrun-category? ((category symbol))
   (and (-> *pc-settings* speedrunner-mode?)
-        (name= category (enum->string speedrun-category (-> *speedrun-info* category)))
-        )
-  )
+       (name= category (enum->string speedrun-category (-> *speedrun-info* category)))))
 
 (defun start-speedrun ((category speedrun-category))
   ;; randomize game id so the autosplitter knows to restart
@@ -132,309 +142,252 @@
   (set! (-> *speedrun-info* should-display?) #t)
   (set! (-> *speedrun-info* needs-post-blackout-setup?) #t)
   ;; start new game with specified checkpoint, if any (otherwise we're resetting current category)
-  (if category
-    (set! (-> *speedrun-info* category) category)
-    )
+  (if category (set! (-> *speedrun-info* category) category))
   (case (-> *speedrun-info* category)
     (((speedrun-category full-game))
-      ;; spawn at the geyser warp gate checkpoint
-      ;; (initialize! *game-info* 'game (the-as game-save #f) "game-start")
-      (initialize! *game-info* 'game (the-as game-save #f) "jakup-training-start")
-      )
+     ;; spawn at the geyser warp gate checkpoint
+     ;; (initialize! *game-info* 'game (the-as game-save #f) "game-start")
+     (initialize! *game-info* 'game (the-as game-save #f) "jakup-training-start"))
     (((speedrun-category il-training))
-      ;; spawn at the geyser warp gate checkpoint
-      (initialize! *game-info* 'game (the-as game-save #f) "game-start")
-      )
+     ;; spawn at the geyser warp gate checkpoint
+     (initialize! *game-info* 'game (the-as game-save #f) "game-start"))
     (((speedrun-category il-village1))
-      ;; spawn at the green sage hut warp gate
-      (initialize! *game-info* 'game (the-as game-save #f) "village1-warp")
-      )
+     ;; spawn at the green sage hut warp gate
+     (initialize! *game-info* 'game (the-as game-save #f) "village1-warp"))
     (((speedrun-category il-beach))
-      ;; spawn at beach
-      (initialize! *game-info* 'game (the-as game-save #f) "beach-start")
-      )
+     ;; spawn at beach
+     (initialize! *game-info* 'game (the-as game-save #f) "beach-start"))
     (((speedrun-category il-jungle))
-      ;; spawn at start of FJ
-      (initialize! *game-info* 'game (the-as game-save #f) "jungle-start")
-      )
+     ;; spawn at start of FJ
+     (initialize! *game-info* 'game (the-as game-save #f) "jungle-start"))
     (((speedrun-category il-misty))
-      ;; spawn at start of misty
-      (initialize! *game-info* 'game (the-as game-save #f) "misty-start")
-      )
+     ;; spawn at start of misty
+     (initialize! *game-info* 'game (the-as game-save #f) "misty-start"))
     (((speedrun-category il-firecanyon))
-      ;; spawn at start of fire canyon
-      (initialize! *game-info* 'game (the-as game-save #f) "firecanyon-start")
-      )
+     ;; spawn at start of fire canyon
+     (initialize! *game-info* 'game (the-as game-save #f) "firecanyon-start"))
     (((speedrun-category il-village2))
-      ;; spawn at rock village start
-      (initialize! *game-info* 'game (the-as game-save #f) "village2-start")
-      )
+     ;; spawn at rock village start
+     (initialize! *game-info* 'game (the-as game-save #f) "village2-start"))
     (((speedrun-category il-sunken))
-      ;; spawn at start of LPC
-      (initialize! *game-info* 'game (the-as game-save #f) "sunken-start")
-      )
+     ;; spawn at start of LPC
+     (initialize! *game-info* 'game (the-as game-save #f) "sunken-start"))
     (((speedrun-category il-swamp))
-      ;; spawn at start of boggy
-      (initialize! *game-info* 'game (the-as game-save #f) "swamp-start")
-      )
+     ;; spawn at start of boggy
+     (initialize! *game-info* 'game (the-as game-save #f) "swamp-start"))
     (((speedrun-category il-rolling))
-      ;; spawn at start of basin
-      (initialize! *game-info* 'game (the-as game-save #f) "rolling-start")
-      )
+     ;; spawn at start of basin
+     (initialize! *game-info* 'game (the-as game-save #f) "rolling-start"))
     (((speedrun-category il-ogre))
-      ;; spawn before klaww
-      (initialize! *game-info* 'game (the-as game-save #f) "ogre-start")
-      )
+     ;; spawn before klaww
+     (initialize! *game-info* 'game (the-as game-save #f) "ogre-start"))
     (((speedrun-category il-village3))
-      ;; spawn at start of volcanic crater
-      (initialize! *game-info* 'game (the-as game-save #f) "village3-start")
-      )
+     ;; spawn at start of volcanic crater
+     (initialize! *game-info* 'game (the-as game-save #f) "village3-start"))
     (((speedrun-category il-snow))
-      ;; spawn at start of snowy
-      (initialize! *game-info* 'game (the-as game-save #f) "snow-start")
-      )
+     ;; spawn at start of snowy
+     (initialize! *game-info* 'game (the-as game-save #f) "snow-start"))
     (((speedrun-category il-cave))
-      ;; spawn at start of spider cave
-      (initialize! *game-info* 'game (the-as game-save #f) "maincave-start")
-      )
+     ;; spawn at start of spider cave
+     (initialize! *game-info* 'game (the-as game-save #f) "maincave-start"))
     (((speedrun-category il-lavatube))
-      ;; spawn at start of lava tube
-      (initialize! *game-info* 'game (the-as game-save #f) "lavatube-start")
-      )
+     ;; spawn at start of lava tube
+     (initialize! *game-info* 'game (the-as game-save #f) "lavatube-start"))
     (((speedrun-category il-citadel))
-      ;; spawn outside first citadel door
-      (initialize! *game-info* 'game (the-as game-save #f) "citadel-entrance")
-      )
+     ;; spawn outside first citadel door
+     (initialize! *game-info* 'game (the-as game-save #f) "citadel-entrance"))
     (((speedrun-category new-game-plus))
-      ;; spawn at the geyser warp gate checkpoint
-      (initialize! *game-info* 'game (the-as game-save #f) "game-start")
-      )
+     ;; spawn at the geyser warp gate checkpoint
+     (initialize! *game-info* 'game (the-as game-save #f) "game-start"))
     (((speedrun-category hub1-100))
-      ;; spawn at the geyser warp gate checkpoint
-      (initialize! *game-info* 'game (the-as game-save #f) "game-start")
-      )
+     ;; spawn at the geyser warp gate checkpoint
+     (initialize! *game-info* 'game (the-as game-save #f) "game-start"))
     (((speedrun-category hub2-100))
-      ;; spawn at end of fire canyon
-      (initialize! *game-info* 'game (the-as game-save #f) "firecanyon-end")
-      )
+     ;; spawn at end of fire canyon
+     (initialize! *game-info* 'game (the-as game-save #f) "firecanyon-end"))
     (((speedrun-category hub3-100))
-      ;; spawn at end of mountain pass
-      (initialize! *game-info* 'game (the-as game-save #f) "ogre-end")
-      )
+     ;; spawn at end of mountain pass
+     (initialize! *game-info* 'game (the-as game-save #f) "ogre-end"))
     (((speedrun-category all-cutscenes))
-      ;; turn play hints back on
-      (set! (-> *setting-control* default play-hints) #t)
-      ;; don't allow cutscene skips
-      (set! (-> *pc-settings* skip-movies?) #f)
-      ;; spawn at the geyser warp gate checkpoint
-      (initialize! *game-info* 'game (the-as game-save #f) "intro-start")
-      )
+     ;; turn play hints back on
+     (set! (-> *setting-control* default play-hints) #t)
+     ;; don't allow cutscene skips
+     (set! (-> *pc-settings* skip-movies?) #f)
+     ;; spawn at the geyser warp gate checkpoint
+     (initialize! *game-info* 'game (the-as game-save #f) "intro-start"))
     (else
-      (format 0 "start-speedrun: unrecognized category ~S~%" (enum->string speedrun-category (-> *speedrun-info* category)))
-      )
-    )
+     (format 0 "start-speedrun: unrecognized category ~S~%" (enum->string speedrun-category (-> *speedrun-info* category)))))
   ;; ensure actor vis is enabled
   (set! (-> *pc-settings* ps2-actor-vis?) #t)
   ;; force FPS to `60`
   (set-frame-rate! *pc-settings* 60 #t)
   ;; enable auto saving by default
   (set! (-> *setting-control* default auto-save) #t)
-  (none)
-  )
+  (none))
 
 (defun setup-speedrun-post-blackout ()
-  (when (and (-> *speedrun-info* needs-post-blackout-setup?) (>= (-> *display* base-frame-counter) (-> *game-info* blackout-time)))
+  (when (and (-> *speedrun-info* needs-post-blackout-setup?)
+             (>= (-> *display* base-frame-counter) (-> *game-info* blackout-time)))
     (set! (-> *speedrun-info* needs-post-blackout-setup?) #f)
     (case (-> *speedrun-info* category)
       (((speedrun-category full-game))
-        ;; skip intro cutscene
-        (close-specific-task! (game-task intro) (task-status need-resolution))
-        )
+       ;; skip intro cutscene
+       (close-specific-task! (game-task intro) (task-status need-resolution)))
       (((speedrun-category il-training))
-        ;; skip intro cutscene
-        (close-specific-task! (game-task intro) (task-status need-resolution))
-        (mark-text-as-seen *game-info* (text-id training-level-name))
-        )
+       ;; skip intro cutscene
+       (close-specific-task! (game-task intro) (task-status need-resolution))
+       (mark-text-as-seen *game-info* (text-id training-level-name)))
       (((speedrun-category il-village1))
-        ;; give enough orbs to buy all cells 120+120+90+90=420
-        (set! (-> *game-info* money-total) 420.0)
-        (set! (-> *game-info* money) 420.0)
-        (mark-text-as-seen *game-info* (text-id village1-level-name))
-        )
+       ;; give enough orbs to buy all cells 120+120+90+90=420
+       (set! (-> *game-info* money-total) 420.0)
+       (set! (-> *game-info* money) 420.0)
+       (mark-text-as-seen *game-info* (text-id village1-level-name)))
       (((speedrun-category il-beach))
-        ;; unlock blue eco vent
-        (close-specific-task! (game-task jungle-eggtop) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task jungle-eggtop)))
-        (mark-text-as-seen *game-info* (text-id beach-level-name))
-        )
-      (((speedrun-category il-jungle))
-        (mark-text-as-seen *game-info* (text-id jungle-level-name))
-        )
+       ;; unlock blue eco vent
+       (close-specific-task! (game-task jungle-eggtop) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task jungle-eggtop)))
+       (mark-text-as-seen *game-info* (text-id beach-level-name)))
+      (((speedrun-category il-jungle)) (mark-text-as-seen *game-info* (text-id jungle-level-name)))
       (((speedrun-category il-misty))
-        ;; unlock fisherman's boat
-        (close-specific-task! (game-task jungle-fishgame) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task jungle-fishgame)))
-        (mark-text-as-seen *game-info* (text-id misty-level-name))
-        )
+       ;; unlock fisherman's boat
+       (close-specific-task! (game-task jungle-fishgame) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task jungle-fishgame)))
+       (mark-text-as-seen *game-info* (text-id misty-level-name)))
       (((speedrun-category il-firecanyon))
-        ;; skip keira intro cutscene
-        (close-specific-task! (game-task firecanyon-assistant) (task-status need-reward-speech))
-        ;; unlock blue eco vent
-        (close-specific-task! (game-task jungle-eggtop) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task jungle-eggtop)))
-        (mark-text-as-seen *game-info* (text-id firecanyon-level-name))
-        )
+       ;; skip keira intro cutscene
+       (close-specific-task! (game-task firecanyon-assistant) (task-status need-reward-speech))
+       ;; unlock blue eco vent
+       (close-specific-task! (game-task jungle-eggtop) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task jungle-eggtop)))
+       (mark-text-as-seen *game-info* (text-id firecanyon-level-name)))
       (((speedrun-category il-village2))
-        ;; give enough orbs to buy all cells 120+120+90+90+90=510
-        (set! (-> *game-info* money-total) 510.0)
-        (set! (-> *game-info* money) 510.0)
-        (mark-text-as-seen *game-info* (text-id village2-level-name))
-        )
-      (((speedrun-category il-sunken))
-        (mark-text-as-seen *game-info* (text-id sunken-level-name))
-        )
+       ;; give enough orbs to buy all cells 120+120+90+90+90=510
+       (set! (-> *game-info* money-total) 510.0)
+       (set! (-> *game-info* money) 510.0)
+       (mark-text-as-seen *game-info* (text-id village2-level-name)))
+      (((speedrun-category il-sunken)) (mark-text-as-seen *game-info* (text-id sunken-level-name)))
       (((speedrun-category il-swamp))
-        ;; unlock flutflut
-        (close-specific-task! (game-task beach-flutflut) (task-status need-resolution))
-        (close-specific-task! (game-task village2-levitator) (task-status need-introduction))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task beach-flutflut)))
-        (mark-text-as-seen *game-info* (text-id swamp-level-name))
-        )
+       ;; unlock flutflut
+       (close-specific-task! (game-task beach-flutflut) (task-status need-resolution))
+       (close-specific-task! (game-task village2-levitator) (task-status need-introduction))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task beach-flutflut)))
+       (mark-text-as-seen *game-info* (text-id swamp-level-name)))
       (((speedrun-category il-rolling))
-        ;; unlock zoomer
-        (close-specific-task! (game-task village2-levitator) (task-status need-introduction))
-        ;; unlock DMG
-        (close-specific-task! (game-task rolling-race) (task-status need-introduction))
-        ;; unlock moles
-        (close-specific-task! (game-task rolling-moles) (task-status need-introduction))
-        (mark-text-as-seen *game-info* (text-id rolling-level-name))
-        )
+       ;; unlock zoomer
+       (close-specific-task! (game-task village2-levitator) (task-status need-introduction))
+       ;; unlock DMG
+       (close-specific-task! (game-task rolling-race) (task-status need-introduction))
+       ;; unlock moles
+       (close-specific-task! (game-task rolling-moles) (task-status need-introduction))
+       (mark-text-as-seen *game-info* (text-id rolling-level-name)))
       (((speedrun-category il-ogre))
-        ;; skip klaww intro cutscene
-        (close-specific-task! (game-task ogre-boss) (task-status need-hint))
-        ;; unlock yellow eco vent
-        (close-specific-task! (game-task snow-eggtop) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task snow-eggtop)))
-        (mark-text-as-seen *game-info* (text-id ogre-level-name))
-        )
+       ;; skip klaww intro cutscene
+       (close-specific-task! (game-task ogre-boss) (task-status need-hint))
+       ;; unlock yellow eco vent
+       (close-specific-task! (game-task snow-eggtop) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task snow-eggtop)))
+       (mark-text-as-seen *game-info* (text-id ogre-level-name)))
       (((speedrun-category il-village3))
-        ;; give enough orbs to buy all cells 120+120+90+90+90+90=600
-        (set! (-> *game-info* money-total) 600.0)
-        (set! (-> *game-info* money) 600.0)
-        (mark-text-as-seen *game-info* (text-id village3-level-name))
-        )
+       ;; give enough orbs to buy all cells 120+120+90+90+90+90=600
+       (set! (-> *game-info* money-total) 600.0)
+       (set! (-> *game-info* money) 600.0)
+       (mark-text-as-seen *game-info* (text-id village3-level-name)))
       (((speedrun-category il-snow))
-        ;; unlock flutflut
-        (close-specific-task! (game-task beach-flutflut) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task beach-flutflut)))
-        ;; unlock gondola
-        (close-specific-task! (game-task village3-button) (task-status need-introduction))
-        (mark-text-as-seen *game-info* (text-id snow-level-name))
-        )
+       ;; unlock flutflut
+       (close-specific-task! (game-task beach-flutflut) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task beach-flutflut)))
+       ;; unlock gondola
+       (close-specific-task! (game-task village3-button) (task-status need-introduction))
+       (mark-text-as-seen *game-info* (text-id snow-level-name)))
       (((speedrun-category il-cave))
-        ;; unlock yellow eco vent
-        (close-specific-task! (game-task snow-eggtop) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task snow-eggtop)))
-        (mark-text-as-seen *game-info* (text-id cave-level-name))
-        )
+       ;; unlock yellow eco vent
+       (close-specific-task! (game-task snow-eggtop) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task snow-eggtop)))
+       (mark-text-as-seen *game-info* (text-id cave-level-name)))
       (((speedrun-category il-lavatube))
-        ;; skip keira intro cutscene
-        (close-specific-task! (game-task lavatube-start) (task-status need-reward-speech))
-        (mark-text-as-seen *game-info* (text-id lavatube-level-name))
-        )
+       ;; skip keira intro cutscene
+       (close-specific-task! (game-task lavatube-start) (task-status need-reward-speech))
+       (mark-text-as-seen *game-info* (text-id lavatube-level-name)))
       (((speedrun-category il-citadel))
-        ;; remove invisible wall
-        (close-specific-task! (game-task lavatube-end) (task-status need-resolution))
-        (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task lavatube-end)))
-        ;; unlock door
-        (close-specific-task! (game-task village4-button) (task-status need-reward-speech))
-        (mark-text-as-seen *game-info* (text-id citadel-level-name))
-        )
+       ;; remove invisible wall
+       (close-specific-task! (game-task lavatube-end) (task-status need-resolution))
+       (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (game-task lavatube-end)))
+       ;; unlock door
+       (close-specific-task! (game-task village4-button) (task-status need-reward-speech))
+       (mark-text-as-seen *game-info* (text-id citadel-level-name)))
       (((speedrun-category new-game-plus))
-        ;; skip intro cutscene
-        (close-specific-task! (game-task intro) (task-status need-resolution))
-        ;; unlock hub1 cells
-        (dotimes (idx (length *hub1-cell-list*))
-          (close-specific-task! (-> *hub1-cell-list* idx) (task-status need-resolution))
-          (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub1-cell-list* idx)))
-          )
-        ;; unlock hub2 cells
-        (dotimes (idx (length *hub2-cell-list*))
-          (close-specific-task! (-> *hub2-cell-list* idx) (task-status need-resolution))
-          (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub2-cell-list* idx)))
-          )
-        ;; unlock hub3 cells
-        (dotimes (idx (length *hub3-cell-list*))
-          (close-specific-task! (-> *hub3-cell-list* idx) (task-status need-resolution))
-          (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub3-cell-list* idx)))
-          )
-        )
+       ;; skip intro cutscene
+       (close-specific-task! (game-task intro) (task-status need-resolution))
+       ;; unlock hub1 cells
+       (dotimes (idx (length *hub1-cell-list*))
+         (close-specific-task! (-> *hub1-cell-list* idx) (task-status need-resolution))
+         (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub1-cell-list* idx))))
+       ;; unlock hub2 cells
+       (dotimes (idx (length *hub2-cell-list*))
+         (close-specific-task! (-> *hub2-cell-list* idx) (task-status need-resolution))
+         (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub2-cell-list* idx))))
+       ;; unlock hub3 cells
+       (dotimes (idx (length *hub3-cell-list*))
+         (close-specific-task! (-> *hub3-cell-list* idx) (task-status need-resolution))
+         (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub3-cell-list* idx)))))
       (((speedrun-category hub1-100))
-        ;; skip intro cutscene
-        (close-specific-task! (game-task intro) (task-status need-resolution))
-        )
+       ;; skip intro cutscene
+       (close-specific-task! (game-task intro) (task-status need-resolution)))
       (((speedrun-category hub2-100))
-        ;; skip intro cutscene
-        (close-specific-task! (game-task intro) (task-status need-resolution))
-        ;; unlock hub1 cells
-        (dotimes (idx (length *hub1-cell-list*))
-          (close-specific-task! (-> *hub1-cell-list* idx) (task-status need-resolution))
-          (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub1-cell-list* idx)))
-          )
-        ;; give all orbs from hub1
-        (set! (-> *game-info* money-total) 600.0)  ;; 50+50+150+150+150+50
-        (set! (-> *game-info* money) 180.0)  ;; 50+50+150+150+150+50 - (90+90+120+120)
-        )
+       ;; skip intro cutscene
+       (close-specific-task! (game-task intro) (task-status need-resolution))
+       ;; unlock hub1 cells
+       (dotimes (idx (length *hub1-cell-list*))
+         (close-specific-task! (-> *hub1-cell-list* idx) (task-status need-resolution))
+         (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub1-cell-list* idx))))
+       ;; give all orbs from hub1
+       (set! (-> *game-info* money-total) 600.0) ;; 50+50+150+150+150+50
+       (set! (-> *game-info* money) 180.0) ;; 50+50+150+150+150+50 - (90+90+120+120)
+       )
       (((speedrun-category hub3-100))
-        ;; skip intro cutscene
-        (close-specific-task! (game-task intro) (task-status need-resolution))
-        ;; unlock hub1 cells
-        (dotimes (idx (length *hub1-cell-list*))
-          (close-specific-task! (-> *hub1-cell-list* idx) (task-status need-resolution))
-          (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub1-cell-list* idx)))
-          )
-        ;; unlock hub2 cells
-        (dotimes (idx (length *hub2-cell-list*))
-          (close-specific-task! (-> *hub2-cell-list* idx) (task-status need-resolution))
-          (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub2-cell-list* idx)))
-          )
-        ;; give all orbs from hub1+2
-        (set! (-> *game-info* money-total) 1300.0)  ;; 50+50+150+150+150+50 + 50+200+200+200+50
-        (set! (-> *game-info* money) 370.0)  ;; 50+50+150+150+150+50 - (90+90+120+120) + 50+200+200+200+50 - (90+90+90+120+120)
-        )
+       ;; skip intro cutscene
+       (close-specific-task! (game-task intro) (task-status need-resolution))
+       ;; unlock hub1 cells
+       (dotimes (idx (length *hub1-cell-list*))
+         (close-specific-task! (-> *hub1-cell-list* idx) (task-status need-resolution))
+         (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub1-cell-list* idx))))
+       ;; unlock hub2 cells
+       (dotimes (idx (length *hub2-cell-list*))
+         (close-specific-task! (-> *hub2-cell-list* idx) (task-status need-resolution))
+         (send-event *target* 'get-pickup (pickup-type fuel-cell) (the float (-> *hub2-cell-list* idx))))
+       ;; give all orbs from hub1+2
+       (set! (-> *game-info* money-total) 1300.0) ;; 50+50+150+150+150+50 + 50+200+200+200+50
+       (set! (-> *game-info* money) 370.0) ;; 50+50+150+150+150+50 - (90+90+120+120) + 50+200+200+200+50 - (90+90+90+120+120)
+       )
       (((speedrun-category all-cutscenes))
-        ;; no post-blackout actions needed
-        )
+       ;; no post-blackout actions needed
+       )
       (else
-        (format 0 "setup-speedrun-post-blackout: unrecognized category ~S~%" (enum->string speedrun-category (-> *speedrun-info* category)))
-        )
-      )
-      ;; reset speedrun display (gets hidden on first collectable pickup)
-      (set! (-> *speedrun-info* should-display?) #t)
-      ;; reset actors to ensure any above changes take effect
-      (reset-actors 'life)
-      ;; autosave any changes back to file
-      (auto-save-command 'auto-save 0 0 *default-pool*)
-    )
-  (none)
-  )
+       (format 0
+               "setup-speedrun-post-blackout: unrecognized category ~S~%"
+               (enum->string speedrun-category (-> *speedrun-info* category)))))
+    ;; reset speedrun display (gets hidden on first collectable pickup)
+    (set! (-> *speedrun-info* should-display?) #t)
+    ;; reset actors to ensure any above changes take effect
+    (reset-actors 'life)
+    ;; autosave any changes back to file
+    (auto-save-command 'auto-save 0 0 *default-pool*))
+  (none))
 
 (defun hide-speedrun-display ()
   (set! (-> *speedrun-info* should-display?) #f)
-  (none)
-  )
+  (none))
 
-(define *jakup-info* 
-  (new 'static 'jakup-info
-    :last-grounded-height (meters 0.0)
-    :worst-fall (meters 0.0)
-    :best-height (meters 0.0)
-    ;; :next-checkpoint-time (the-as time-frame #f)
-    :checkpoint-saves 0
-    :checkpoint-loads 0
-    :cam (jakup-cam original)
-    )
-  )
+(define *jakup-info*
+  (new 'static
+       'jakup-info
+       :last-grounded-height (meters 0.0)
+       :worst-fall (meters 0.0)
+       :best-height (meters 0.0)
+       ;; :next-checkpoint-time (the-as time-frame #f)
+       :checkpoint-saves 0
+       :checkpoint-loads 0
+       :cam (jakup-cam original)))
 
 (defun reset-jakup-info ()
   (set! (-> *jakup-info* last-grounded-height) (meters 0.0))
@@ -444,26 +397,31 @@
   (set! (-> *jakup-info* checkpoint-saves) 0)
   (set! (-> *jakup-info* checkpoint-loads) 0)
   (set! (-> *jakup-info* cam) (jakup-cam original))
-  (none)
-  )
+  (none))
 
-(define *tmp-continue-point* (new 'static 'continue-point
-                             :name "tmp"
-                             :level #f
-                             :trans (new 'static 'vector :w 1.0)
-                             :quat (new 'static 'quaternion :w 1.0)
-                             :camera-trans (new 'static 'vector :w 1.0)
-                             :camera-rot (new 'static 'array float 9)
-                             :load-commands '()
-                             :vis-nick #f
-                             :lev0 #f
-                             :disp0 #f
-                             :lev1 #f
-                             :disp1 #f
-                             )
-    )
+(define *tmp-continue-point*
+  (new 'static
+       'continue-point
+       :name "tmp"
+       :level #f
+       :trans
+       (new 'static 'vector :w 1.0)
+       :quat
+       (new 'static 'quaternion :w 1.0)
+       :camera-trans
+       (new 'static 'vector :w 1.0)
+       :camera-rot
+       (new 'static 'array float 9)
+       :load-commands
+       '()
+       :vis-nick #f
+       :lev0 #f
+       :disp0 #f
+       :lev1 #f
+       :disp1 #f))
 
 (define *practice-spawn-post-init* (the-as (function none) #f))
+
 (define *last-real-continue-point* (the-as continue-point #f))
 
 (defun speedrun-start-full-game-run ()
@@ -473,223 +431,207 @@
 
 (defun speedrun-target-state-toggle-continue? ()
   (case (-> *target* state)
-    ((target-stance target-wade-stance target-swim-stance target-flut-stance target-racing target-hit-ground target-edge-grab target-duck-stance target-stance-ambient)
-      #t
-      )
-    (else
-      #f
-      )
-    )
-  )
+    ((target-stance target-wade-stance
+                    target-swim-stance
+                    target-flut-stance
+                    target-racing
+                    target-hit-ground
+                    target-edge-grab
+                    target-duck-stance
+                    target-stance-ambient)
+     #t)
+    (else #f)))
 
 (defun speedrun-target-grounded? ()
-  (logtest? (-> *target* control status) (cshape-moving-flags onsurf))
-  )
+  (logtest? (-> *target* control status) (cshape-moving-flags onsurf)))
 
 (defun refresh-jakup-cam ()
   (case (-> *jakup-info* cam)
     (((jakup-cam wide-no-collide))
-      (send-event *camera* 'change-state cam-stick 0)
-      (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
-      )
+     (send-event *camera* 'change-state cam-stick 0)
+     (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f))
     (((jakup-cam locked))
-      (send-event *camera* 'change-state cam-lookat 0)
-      (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f)
-      )
+     (send-event *camera* 'change-state cam-lookat 0)
+     (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #f))
     (else ;; ((jakup-cam original))
-      (cond
-        ;; idk racer is fucked
-        ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
-          (set! (-> *target* alt-cam-pos quad) (-> (&-> (-> *target* control) unknown-qword00) 0))
-          (logclear! (-> *target* state-flags) (state-flags use-alt-cam-pos))
-          (send-event *camera* 'change-state *camera-base-mode* 0)
-          (send-event *camera* 'clear-slave-option #x6000)
-          (send-event *camera* 'set-fov (degrees 94.9999))
-          )
-        (else    
-          (send-event *camera* 'change-state *camera-base-mode* 0)
-          (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)
-          )
-        )
-      )
-    )
-  (none)
-  )
+     (cond
+       ;; idk racer is fucked
+       ((logtest? (-> *target* control root-prim prim-core action) (collide-action racer racer-unused))
+        (set! (-> *target* alt-cam-pos quad) (-> (&-> (-> *target* control) unknown-qword00) 0))
+        (logclear! (-> *target* state-flags) (state-flags use-alt-cam-pos))
+        (send-event *camera* 'change-state *camera-base-mode* 0)
+        (send-event *camera* 'clear-slave-option #x6000)
+        (send-event *camera* 'set-fov (degrees 94.9999)))
+       (else
+        (send-event *camera* 'change-state *camera-base-mode* 0)
+        (send-event *camera* 'set-slave-option (cam-slave-options COLLIDE) #t)))))
+  (none))
 
 (defconstant PITY_FALL_DIST (meters 300.0))
 
 (defun speedrun-draw-settings ()
   "Draw speedrun related settings in the bottom left corner"
-  (when (and (not (paused?))
-             *target*
-             (!= (-> *target* current-level name) 'title)
-             )
-    (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf))
-                                      (bucket-id subtitle))
+  (when (and (not (paused?)) *target* (!= (-> *target* current-level name) 'title))
+    (with-dma-buffer-add-bucket ((buf (-> (current-frame) global-buf)) (bucket-id subtitle))
       (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
         ;; print checkpoint info
         (cond
           ((-> *tmp-continue-point* lev0)
-            ;; player has set a checkpoint
-            (cond
-              ((speedrun-target-state-toggle-continue?)
-                (cond
-                  ((or (= (-> *jakup-info* next-checkpoint-time) #f) 
-                      (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-                    (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
-                                    buf 2 (- 222 (* 8 2)) 
-                                    (font-color default) 
-                                    (font-flags shadow kerning))
-                    )
-                  (else
-                    (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
-                                    buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
-                    )
-                  )
-                )
-              ((< PITY_FALL_DIST fall-dist)  ;; fell long enough
-                (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LL2 + Down to set new checkpoint")
-                                    buf 2 (- 222 (* 8 2)) 
-                                    (font-color default) 
-                                    (font-flags shadow kerning))
-                )
-              ((or (= (-> *jakup-info* next-checkpoint-time) #f)
-                    (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-                (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
-                                buf 2 (- 222 (* 8 2)) 
-                                (font-color default) 
-                                (font-flags shadow kerning))
-                )
-              (else
-                (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
-                                buf 2 (- 222 (* 8 2)) (font-color default) (font-flags shadow kerning))
-                )
-              )
-
-            ;; print number of checkpoints saved/loaded
-            (draw-string-xy (string-format "~1L~D saves / ~D loads" (-> *jakup-info* checkpoint-saves) (-> *jakup-info* checkpoint-loads))
-                                    buf 2 (- 222 (* 8 3)) 
-                                    (font-color default) 
-                                    (font-flags shadow kerning))
-            )
-          (else
-            ;; player hasn't set a checkpoint yet
-              (cond 
-                ((or (= (-> *jakup-info* next-checkpoint-time) #f)
-                    (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-                  (cond
-                    ((speedrun-target-state-toggle-continue?)
-                      (draw-string-xy "~1LL2 + Down to set new checkpoint"
-                                      buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
-                      )
-                    (else
-                      (draw-string-xy "~2LL2 + Down to set new checkpoint"
-                                      buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
-                      )
-                    )
-                  )
+           ;; player has set a checkpoint
+           (cond
+             ((speedrun-target-state-toggle-continue?)
+              (cond
+                ((or (= (-> *jakup-info* next-checkpoint-time) #f) (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+                 (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
+                                 buf
+                                 2
+                                 (- 222 (* 8 2))
+                                 (font-color default)
+                                 (font-flags shadow kerning)))
                 (else
-                  (draw-string-xy (string-format "Next checkpoint available in ~Ds" (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
-                                  buf 2 (- 222 (* 8 1)) (font-color default) (font-flags shadow kerning))
-                  )
-                )
-            )
-          )
-
+                 (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LNext checkpoint available in ~Ds"
+                                                (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
+                                 buf
+                                 2
+                                 (- 222 (* 8 2))
+                                 (font-color default)
+                                 (font-flags shadow kerning)))))
+             ((< PITY_FALL_DIST fall-dist) ;; fell long enough
+              (draw-string-xy (string-format "~1LL2 + Up to go to checkpoint ~%~2LL2 + Down to set new checkpoint")
+                              buf
+                              2
+                              (- 222 (* 8 2))
+                              (font-color default)
+                              (font-flags shadow kerning)))
+             ((or (= (-> *jakup-info* next-checkpoint-time) #f) (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+              (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%L2 + Down to set new checkpoint")
+                              buf
+                              2
+                              (- 222 (* 8 2))
+                              (font-color default)
+                              (font-flags shadow kerning)))
+             (else
+              (draw-string-xy (string-format "~2LL2 + Up to go to checkpoint ~%Next checkpoint available in ~Ds"
+                                             (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
+                              buf
+                              2
+                              (- 222 (* 8 2))
+                              (font-color default)
+                              (font-flags shadow kerning))))
+           ;; print number of checkpoints saved/loaded
+           (draw-string-xy (string-format "~1L~D saves / ~D loads" (-> *jakup-info* checkpoint-saves) (-> *jakup-info* checkpoint-loads))
+                           buf
+                           2
+                           (- 222 (* 8 3))
+                           (font-color default)
+                           (font-flags shadow kerning)))
+          (else
+           ;; player hasn't set a checkpoint yet
+           (cond
+             ((or (= (-> *jakup-info* next-checkpoint-time) #f) (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+              (cond
+                ((speedrun-target-state-toggle-continue?)
+                 (draw-string-xy "~1LL2 + Down to set new checkpoint"
+                                 buf
+                                 2
+                                 (- 222 (* 8 1))
+                                 (font-color default)
+                                 (font-flags shadow kerning)))
+                (else
+                 (draw-string-xy "~2LL2 + Down to set new checkpoint"
+                                 buf
+                                 2
+                                 (- 222 (* 8 1))
+                                 (font-color default)
+                                 (font-flags shadow kerning)))))
+             (else
+              (draw-string-xy (string-format "Next checkpoint available in ~Ds"
+                                             (/ (- (-> *jakup-info* next-checkpoint-time) (current-time)) TICKS_PER_SECOND))
+                              buf
+                              2
+                              (- 222 (* 8 1))
+                              (font-color default)
+                              (font-flags shadow kerning))))))
         ;; check/print fall info
-        (cond 
-          ((speedrun-target-grounded?)
-            (set! (-> *jakup-info* last-grounded-height) (-> *target* root trans y))
-            )
+        (cond
+          ((speedrun-target-grounded?) (set! (-> *jakup-info* last-grounded-height) (-> *target* root trans y)))
+          (else (when (> fall-dist (-> *jakup-info* worst-fall)) (set! (-> *jakup-info* worst-fall) fall-dist))))
+        (cond
+          ((and (> (-> *jakup-info* worst-fall) (meters 1)) (< (fabs (- (-> *jakup-info* worst-fall) fall-dist)) (meters 1)))
+           (draw-string-xy (string-format "~7LWorst fall: ~5dm" (the int (/ (-> *jakup-info* worst-fall) METER_LENGTH)))
+                           buf
+                           510
+                           (- 222 (* 8 3))
+                           (font-color default)
+                           (font-flags right shadow kerning)))
           (else
-            (when (> fall-dist (-> *jakup-info* worst-fall))
-              (set! (-> *jakup-info* worst-fall) fall-dist)
-              )
-            )
-          )
-        (cond 
-          ((and (> (-> *jakup-info* worst-fall) (meters 1)) 
-                (< (fabs (- (-> *jakup-info* worst-fall) fall-dist)) (meters 1)))
-            (draw-string-xy (string-format "~7LWorst fall: ~5dm" (the int (/ (-> *jakup-info* worst-fall) METER_LENGTH)))
-                                buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))
-            )
-          (else
-            (draw-string-xy (string-format "Worst fall: ~5dm" (the int (/ (-> *jakup-info* worst-fall) METER_LENGTH)))
-                                buf 510 (- 222 (* 8 3)) (font-color default) (font-flags right shadow kerning))            
-            )
-          )
-        )
-      
+           (draw-string-xy (string-format "Worst fall: ~5dm" (the int (/ (-> *jakup-info* worst-fall) METER_LENGTH)))
+                           buf
+                           510
+                           (- 222 (* 8 3))
+                           (font-color default)
+                           (font-flags right shadow kerning)))))
       ;; check/print height info
       (cond
         ((< (fabs (- (-> *jakup-info* best-height) (-> *target* root trans y))) (meters 5))
-          (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
-          (draw-string-xy (string-format "~3LBest height: ~5dm~%Current height: ~5dm" (the int (/ (-> *jakup-info* best-height) METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
-                                buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
-          )
+         (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
+         (draw-string-xy (string-format "~3LBest height: ~5dm~%Current height: ~5dm"
+                                        (the int (/ (-> *jakup-info* best-height) METER_LENGTH))
+                                        (the int (/ (-> *target* root trans y) METER_LENGTH)))
+                         buf
+                         510
+                         (- 222 (* 8 2))
+                         (font-color default)
+                         (font-flags right shadow kerning)))
         (else
-          (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
-          (draw-string-xy (string-format "Best height: ~5dm~%Current height: ~5dm" (the int (/ (-> *jakup-info* best-height) METER_LENGTH)) (the int (/ (-> *target* root trans y) METER_LENGTH)))
-                                buf 510 (- 222 (* 8 2)) (font-color default) (font-flags right shadow kerning))
-          )
-        )
-
+         (set! (-> *jakup-info* best-height) (max (-> *jakup-info* best-height) (-> *target* root trans y)))
+         (draw-string-xy (string-format "Best height: ~5dm~%Current height: ~5dm"
+                                        (the int (/ (-> *jakup-info* best-height) METER_LENGTH))
+                                        (the int (/ (-> *target* root trans y) METER_LENGTH)))
+                         buf
+                         510
+                         (- 222 (* 8 2))
+                         (font-color default)
+                         (font-flags right shadow kerning))))
       ;; check for camera changes
       (case (-> *jakup-info* cam)
-          (((jakup-cam wide-no-collide))
-            (if (not (send-event *camera* 'query-state cam-stick))
-              (set! (-> *jakup-info* cam) (jakup-cam original))
-              )
-            )
-          (((jakup-cam locked))
-            (if (not (send-event *camera* 'query-state cam-lookat))
-              (set! (-> *jakup-info* cam) (jakup-cam original))
-              )
-            )
-          (else ;; ((jakup-cam original))
-            )
-          )
+        (((jakup-cam wide-no-collide))
+         (if (not (send-event *camera* 'query-state cam-stick)) (set! (-> *jakup-info* cam) (jakup-cam original))))
+        (((jakup-cam locked))
+         (if (not (send-event *camera* 'query-state cam-lookat)) (set! (-> *jakup-info* cam) (jakup-cam original))))
+        (else ;; ((jakup-cam original))
+         ))
       ;; check for camera toggle
-      (when (or (and (not *debug-segment*) (cpad-pressed? 0 r3))
-                (and *debug-segment* (cpad-pressed? 0 l3))
-                )
-        (set! (-> *jakup-info* cam)
-          (the jakup-cam
-            (mod 
-              (+ (-> *jakup-info* cam) 1)
-              (jakup-cam max)
-              )
-            )
-          )
+      (when (or (and (not *debug-segment*) (cpad-pressed? 0 r3)) (and *debug-segment* (cpad-pressed? 0 l3)))
+        (set! (-> *jakup-info* cam) (the jakup-cam (mod (+ (-> *jakup-info* cam) 1) (jakup-cam max))))
         ;; update camera to jakup-cam
-        (refresh-jakup-cam)
-        )
+        (refresh-jakup-cam))
       ;; print camera info if not original
       (let ((cam-button (if *debug-segment* "L3" "R3")))
         (case (-> *jakup-info* cam)
           (((jakup-cam wide-no-collide))
-            (draw-string-xy (string-format "wide camera (~S to toggle)" cam-button)
-                                buf 255 5 (font-color default) (font-flags middle shadow kerning))
-            )
+           (draw-string-xy (string-format "wide camera (~S to toggle)" cam-button)
+                           buf
+                           255
+                           5
+                           (font-color default)
+                           (font-flags middle shadow kerning)))
           (((jakup-cam locked))
-            (draw-string-xy (string-format "locked camera (~S to toggle)" cam-button)
-                                buf 255 5 (font-color default) (font-flags middle shadow kerning))
-            )
+           (draw-string-xy (string-format "locked camera (~S to toggle)" cam-button)
+                           buf
+                           255
+                           5
+                           (font-color default)
+                           (font-flags middle shadow kerning)))
           (else ;; ((jakup-cam original))
-            ;; print nothing
-            )
-          )
-        )
-      )
-    )
+           ;; print nothing
+           )))))
   (none))
 
 (defun generic-post-init ()
   (when *last-real-continue-point*
-    (set! (-> *game-info* current-continue) *last-real-continue-point*)
-    )
-  (none)
-  )
+    (set! (-> *game-info* current-continue) *last-real-continue-point*))
+  (none))
 
 (defun speedrun-reset-common-settings ()
   ;; disable hints (this seems to be overriden by your slot 1 save though)
@@ -702,11 +644,12 @@
   (close-specific-task! (game-task intro) (task-status need-resolution))
   ;; reset camera
   (set! (-> *jakup-info* cam) (jakup-cam original))
-  (none)
-  )
+  (none))
 
 (define *tmp-flut?* #f)
+
 (define *tmp-zoomer?* #f)
+
 (define *full-hp?* #f)
 
 (defun full-hp ()
@@ -714,77 +657,56 @@
   (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
   (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
   (pickup-collectable! (-> *target* fact) (pickup-type eco-green) 1.0 (process->handle (-> *target* fact process)))
-  (none)
-  )
-  
+  (none))
+
 (defun get-on-flutflut ()
   (generic-post-init)
   (case (-> *target* state)
-    ((target-flut-stance target-racing)
-      (send-event *target* 'end-mode)
-      )
-    (else
-      (send-event *target* 'change-mode 'flut #f)
-      )
-    )
-  (none)
-  )
+    ((target-flut-stance target-racing) (send-event *target* 'end-mode))
+    (else (send-event *target* 'change-mode 'flut #f)))
+  (none))
 
 (defun get-on-zoomer ()
   (generic-post-init)
   (case (-> *target* state)
-    ((target-flut-stance target-racing)
-      (send-event *target* 'end-mode)
-      )
-    (else
-      (send-event *target* 'change-mode 'racing #f)
-      )
-    )
-  (none)
-  )
+    ((target-flut-stance target-racing) (send-event *target* 'end-mode))
+    (else (send-event *target* 'change-mode 'racing #f)))
+  (none))
 
 (defun custom-reset-multi-post-init ()
   (generic-post-init)
-  (when *full-hp?* (full-hp))
+  (when *full-hp?*
+    (full-hp))
   (cond
     (*tmp-flut?* (get-on-flutflut))
-    (*tmp-zoomer?* (get-on-zoomer))
-    )
-  (none)
-  )
+    (*tmp-zoomer?* (get-on-zoomer)))
+  (none))
 
 (defun speedrun-practice-temp-checkpoint ()
   (let ((fall-dist (- (-> *jakup-info* last-grounded-height) (-> *target* root trans y))))
     (cond
       ;; only allow reset to checkpoint if in one of these states
       ((or (speedrun-target-state-toggle-continue?)
-           (< PITY_FALL_DIST fall-dist)  ;; fell long enough
+           (< PITY_FALL_DIST fall-dist) ;; fell long enough
            )
-        (when (-> *tmp-continue-point* lev0)
-          (set! *practice-spawn-post-init* custom-reset-multi-post-init)
-          (+! (-> *jakup-info* checkpoint-loads) 1)
-          ;; fully reset game if r2 held too
-          ;; (if (cpad-hold? 0 r2)  
-          ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
-          ;;   )
-          ;; store last real checkpoint to restore later
-          (when (not (string= (-> *game-info* current-continue name) "tmp"))
-            (set! *last-real-continue-point* (-> *game-info* current-continue))
-            )
-          (set! (-> *game-info* current-continue) *tmp-continue-point*)
-          (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
-          (speedrun-reset-common-settings)
-          )
-        )
+       (when (-> *tmp-continue-point* lev0)
+         (set! *practice-spawn-post-init* custom-reset-multi-post-init)
+         (+! (-> *jakup-info* checkpoint-loads) 1)
+         ;; fully reset game if r2 held too
+         ;; (if (cpad-hold? 0 r2)  
+         ;;   (initialize! *game-info* 'game (the-as game-save #f) "default")
+         ;;   )
+         ;; store last real checkpoint to restore later
+         (when (not (string= (-> *game-info* current-continue name) "tmp"))
+           (set! *last-real-continue-point* (-> *game-info* current-continue)))
+         (set! (-> *game-info* current-continue) *tmp-continue-point*)
+         (initialize! *game-info* 'dead (the-as game-save #f) (the-as string #f))
+         (speedrun-reset-common-settings)))
       (else
-        ;; (format 0 "get a standpoint first coward~%")
-        )
-      )
-    )
-  (none)
-  )
+       ;; (format 0 "get a standpoint first coward~%")
+       )))
+  (none))
 
-  
 (defun continue-point-copy! ((dst continue-point) (src continue-point))
   (set! (-> dst level) (-> src level))
   (set! (-> dst quat y) 0.0)
@@ -793,16 +715,12 @@
   (set! (-> dst vis-nick) (-> src vis-nick))
   (when (-> *level* level0)
     (set! (-> dst lev0) (-> *level* level0 name))
-    (set! (-> dst disp0) 'display)
-    )
+    (set! (-> dst disp0) 'display))
   (when (-> *level* level1)
     (set! (-> dst lev1) (-> *level* level1 name))
-    (set! (-> dst disp1) 'display)
-    )
-  (none)
-  )
+    (set! (-> dst disp1) 'display))
+  (none))
 
-  
 (defun camera-rot-copy! ((dst continue-point) (src matrix))
   (set! (-> dst camera-rot 0) (-> src vector 0 x))
   (set! (-> dst camera-rot 1) (-> src vector 0 y))
@@ -813,59 +731,41 @@
   (set! (-> dst camera-rot 6) (-> src vector 2 x))
   (set! (-> dst camera-rot 7) (-> src vector 2 y))
   (set! (-> dst camera-rot 8) (-> src vector 2 z))
-  (none)
-  )
+  (none))
 
 (defun speedrun-practice-store-temp-checkpoint ()
   ;; outside of bsp breaks shit
   ;; (when (or (-> *level* level0 inside-boxes?) (-> *level* level1 inside-boxes?))
-    (cond
-      ((speedrun-target-state-toggle-continue?)
-        (when (or (= (-> *jakup-info* next-checkpoint-time) #f) (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
-          ;; (set! *last-speedrun-practice-option* (speedrun-practice-option none))
-          
-          ;; assume current continue is good enough for the current location
-          (continue-point-copy! *tmp-continue-point* (-> *game-info* current-continue))
-          (vector-copy! (-> *tmp-continue-point* trans) (-> *target* root trans))
-          (quaternion-copy! (-> *tmp-continue-point* quat) (-> *target* control unknown-quaternion00))
-          (vector-copy! (-> *tmp-continue-point* camera-trans) (-> *camera-combiner* trans))
-          (camera-rot-copy! *tmp-continue-point* (-> *camera-combiner* inv-camera-rot))
-
-          (set! *full-hp?* (and (!= *target* #f)
-                        (= (-> *target* fact health) 3.0)
-                        (= (-> *target* fact eco-pill) 50.0)
-                        ))
-          (set! *tmp-flut?* #f)
-          (set! *tmp-zoomer?* #f)
-          (case (-> *target* state)
-            ((target-flut-stance)
-              (set! *tmp-flut?* #t)
-              )
-            ((target-racing)
-              (set! *tmp-zoomer?* #t)
-              )
-            )
-
-          ;; wait X min til next checkpoint
-          (set! (-> *jakup-info* next-checkpoint-time) (+ (current-time) *checkpoint-interval*))
-          (+! (-> *jakup-info* checkpoint-saves) 1)
-          (sound-play "select-menu")
-          )
-        )
-      )
-    ;; )
-  (none)
-  )
+  (cond
+    ((speedrun-target-state-toggle-continue?)
+     (when (or (= (-> *jakup-info* next-checkpoint-time) #f) (<= (-> *jakup-info* next-checkpoint-time) (current-time)))
+       ;; (set! *last-speedrun-practice-option* (speedrun-practice-option none))
+       ;; assume current continue is good enough for the current location
+       (continue-point-copy! *tmp-continue-point* (-> *game-info* current-continue))
+       (vector-copy! (-> *tmp-continue-point* trans) (-> *target* root trans))
+       (quaternion-copy! (-> *tmp-continue-point* quat) (-> *target* control unknown-quaternion00))
+       (vector-copy! (-> *tmp-continue-point* camera-trans) (-> *camera-combiner* trans))
+       (camera-rot-copy! *tmp-continue-point* (-> *camera-combiner* inv-camera-rot))
+       (set! *full-hp?* (and (!= *target* #f) (= (-> *target* fact health) 3.0) (= (-> *target* fact eco-pill) 50.0)))
+       (set! *tmp-flut?* #f)
+       (set! *tmp-zoomer?* #f)
+       (case (-> *target* state)
+         ((target-flut-stance) (set! *tmp-flut?* #t))
+         ((target-racing) (set! *tmp-zoomer?* #t)))
+       ;; wait X min til next checkpoint
+       (set! (-> *jakup-info* next-checkpoint-time) (+ (current-time) *checkpoint-interval*))
+       (+! (-> *jakup-info* checkpoint-saves) 1)
+       (sound-play "select-menu"))))
+  ;; )
+  (none))
 
 (defun speedrun-practice-spawn ()
   ;; enable speedrunner mode
   (set! (-> *pc-settings* speedrunner-mode?) #t)
   ;; randomize game id so the autosplitter knows to restart
   (update-autosplit-jak1-new-game)
-
   ;; reset any previous post-target-init callback
   ;; (set! *practice-spawn-post-init* #f)
-
   ;; (case *last-speedrun-practice-option*
   ;;   (((speedrun-practice-option lts-old))
   ;;     (speedrun-practice-LTS-old-start-run)
@@ -898,91 +798,62 @@
   ;;     (speedrun-practice-gondola-foot-start-run)
   ;;     )
   ;;   (else
-      (speedrun-practice-temp-checkpoint)
-    ;;   )
-    ;; )
-  
-  (none)
-  )
+  (speedrun-practice-temp-checkpoint)
+  ;;   )
+  ;; )
+  (none))
 
-  
 (defun speedrun-mode-update ()
   "A per frame update for speedrunning related stuff"
   ;; (when (-> *pc-settings* speedrunner-mode?)
-    ;; Update auto-splitter
-    (update-autosplit-info-jak1)
-    ;; Draw info to the screen
-    ;; (draw-deload-continue-info)
-    (speedrun-draw-settings)
-
-    (when (cpad-hold? 0 l2)
-      (cond 
-        ((cpad-pressed? 0 left)
-          ;; (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
-          (set! *hud-collectable-view* 
-            (the hud-collectable-view
-              (mod 
-                (+ *hud-collectable-view* (- (hud-collectable-view max) 1))
-                (hud-collectable-view max)
-                )
-              )
-            )
-          ;; (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
-          )
-        ((cpad-pressed? 0 right)
-          ;; (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
-          (set! *hud-collectable-view* 
-            (the hud-collectable-view
-              (mod 
-                (+ *hud-collectable-view* 1)
-                (hud-collectable-view max)
-                )
-              )
-            )
-          ;; (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
-          )
-        )
-      )
-
-    ;;Disable any active cheats
-    (set! (-> *pc-settings* cheats) (the-as pc-cheats #x0))
-    ;; Run after-blackout speedrun setup (if needed)
-    (setup-speedrun-post-blackout)
-
-    ;; call post-init function
-    (when (and *practice-spawn-post-init*
-               *target*
-               (-> *setting-control* current allow-pause)
-               (>= (- (-> *display* base-frame-counter) (-> *game-info* blackout-time)) (seconds 0.1))
-               )
-      (*practice-spawn-post-init*)
-      (set! *practice-spawn-post-init* #f)
-      )
-
-    (when (cpad-hold? 0 l2)
-      ;; Check for fast reset combo
-      (when (cpad-pressed? 0 up)
-        (format #t "player triggered reset combo~%")
-        (speedrun-practice-spawn)
-        )
-      
-      ;; Check for temp checkpoint combo
-      (when (cpad-pressed? 0 down)
-        (format #t "player triggered temp checkpoint combo~%")
-        (speedrun-practice-store-temp-checkpoint)
-        )
-      
-      ;; ;; Check for flutflut
-      ;; (when (cpad-pressed? 0 left)
-      ;;   (format #t "player triggered flutflut combo~%")
-      ;;   (get-on-flutflut)
-      ;;   )
-      
-      ;; ;; Check for zoomer
-      ;; (when (cpad-pressed? 0 right)
-      ;;   (format #t "player triggered zoomer combo~%")
-      ;;   (get-on-zoomer)
-      ;;   )
-      ;; )
+  ;; Update auto-splitter
+  (update-autosplit-info-jak1)
+  ;; Draw info to the screen
+  ;; (draw-deload-continue-info)
+  (speedrun-draw-settings)
+  (when (cpad-hold? 0 l2)
+    (cond
+      ((cpad-pressed? 0 left)
+       ;; (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
+       (set! *hud-collectable-view*
+             (the hud-collectable-view (mod (+ *hud-collectable-view* (- (hud-collectable-view max) 1)) (hud-collectable-view max))))
+       ;; (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
+       )
+      ((cpad-pressed? 0 right)
+       ;; (format 0 "~S -> " (enum->string hud-collectable-view *hud-collectable-view*))
+       (set! *hud-collectable-view* (the hud-collectable-view (mod (+ *hud-collectable-view* 1) (hud-collectable-view max))))
+       ;; (format 0 "~S ~% " (enum->string hud-collectable-view *hud-collectable-view*))
+       )))
+  ;;Disable any active cheats
+  (set! (-> *pc-settings* cheats) (the-as pc-cheats #x0))
+  ;; Run after-blackout speedrun setup (if needed)
+  (setup-speedrun-post-blackout)
+  ;; call post-init function
+  (when (and *practice-spawn-post-init*
+             *target*
+             (-> *setting-control* current allow-pause)
+             (>= (- (-> *display* base-frame-counter) (-> *game-info* blackout-time)) (seconds 0.1)))
+    (*practice-spawn-post-init*)
+    (set! *practice-spawn-post-init* #f))
+  (when (cpad-hold? 0 l2)
+    ;; Check for fast reset combo
+    (when (cpad-pressed? 0 up)
+      (format #t "player triggered reset combo~%")
+      (speedrun-practice-spawn))
+    ;; Check for temp checkpoint combo
+    (when (cpad-pressed? 0 down)
+      (format #t "player triggered temp checkpoint combo~%")
+      (speedrun-practice-store-temp-checkpoint))
+    ;; ;; Check for flutflut
+    ;; (when (cpad-pressed? 0 left)
+    ;;   (format #t "player triggered flutflut combo~%")
+    ;;   (get-on-flutflut)
+    ;;   )
+    ;; ;; Check for zoomer
+    ;; (when (cpad-pressed? 0 right)
+    ;;   (format #t "player triggered zoomer combo~%")
+    ;;   (get-on-zoomer)
+    ;;   )
+    ;; )
     )
   (none))

@@ -1,9 +1,6 @@
 ;;-*-Lisp-*-
 (in-package goal)
-
-;; name: game-task-h.gc
-;; name in dgo: game-task-h
-;; dgos: GAME, ENGINE
+(bundles "ENGINE.CGO" "GAME.CGO")
 
 ;; this file has no code.
 
