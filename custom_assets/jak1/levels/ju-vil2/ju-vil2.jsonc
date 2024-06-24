@@ -64,14 +64,14 @@
     },
     {
       "trans": [2178.0791, 3490.5, 1698.2213], 
-      "etype": "training-part",
+      "etype": "villageb-part",
       "game_task": 0,
       "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
       "bsphere": [2178.0791, 3490.5, 1698.2213, 10],
       "lump": {
         "name": "ju-vil2-part-01",
-        "effect-name": "'warpgate-loop",
-        "art-name":"group-training-warpgate",
+        "effect-name": "warpgate-loop",
+        "art-name":"group-village2-sagehut-warpgate",
         "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
         "cycle-speed": ["float", -1.0000, 0.0000],
         "rot": ["float", -1.0000, -1.0000,-1.0]

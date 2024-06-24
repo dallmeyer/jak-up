@@ -4,7 +4,7 @@
 ;; the actual file name still needs to be 8.3
 ("UPF.DGO"
  ("static-screen.o"
-  "training-part.o"
+  "village3-part.o"
   "villagep-obs.o"
   "warpgate-ag.go"
   "warp-gate-switch-ag.go"

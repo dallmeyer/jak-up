@@ -65,14 +65,14 @@
     },
     {
       "trans": [2177.61, 10177.93, 2163.20], 
-      "etype": "training-part",
+      "etype": "villagec-part",
       "game_task": 0,
       "quat" : [0, -0.9839, 0, 0.1782], // quaternion
       "bsphere": [2177.61, 10177.93, 2163.20, 10],
       "lump": {
         "name": "ju-vil3-part-01",
         "effect-name": "'warpgate-loop",
-        "art-name":"group-training-warpgate",
+        "art-name":"group-village3-sagehut-warpgate",
         "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
         "cycle-speed": ["float", -1.0000, 0.0000],
         "rot": ["float", -1.0000, -1.0000,-1.0]
