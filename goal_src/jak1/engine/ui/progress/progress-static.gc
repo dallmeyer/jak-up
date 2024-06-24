@@ -611,7 +611,7 @@
                       'task-info-data
                       :task-id (game-task ju-ogre)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id ogre-end) (text-id ogre-end) (text-id ogre-end) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-ogre) (text-id ju-ogre) (text-id ju-ogre) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task ogre-buzzer)
@@ -631,9 +631,9 @@
                  8
                  (new 'static
                       'task-info-data
-                      :task-id (game-task ju-ogre)
+                      :task-id (game-task ju-vil3)
                       :task-name
-                      (new 'static 'array text-id 4 (text-id ogre-end) (text-id ogre-end) (text-id ogre-end) (text-id zero)))
+                      (new 'static 'array text-id 4 (text-id ju-vil3) (text-id ju-vil3) (text-id ju-vil3) (text-id zero)))
                  (new 'static
                       'task-info-data
                       :task-id (game-task village3-buzzer)

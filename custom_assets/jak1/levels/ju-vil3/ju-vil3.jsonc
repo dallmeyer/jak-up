@@ -36,220 +36,154 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [], // "fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  "art_groups": ["warpgate-ag", "warp-gate-switch-ag"],
 
   "ambients": [],
 
-  "actors" : [    
-    // {
-    //   "trans": [2178.0791, 3489.5, 1698.2213], // translation
-    //   "etype": "warpgate",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2178.0791, 3489.5, 1698.2213, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-warpgate-01" 
-    //   }
-    // },
-    // {
-    //   "trans": [2176.52, 3488.01, 1701.15], 
-    //   "etype": "warp-gate-switch",
-    //   "game_task": 0,
-    //   "quat" : [0, 0, 0, 1],
-    //   "bsphere": [2176.52, 3488.01, 1701.15, 10],
-    //   "lump": {
-    //     "name": "ju-vil2-warp-gate-switch-01",
-    //     "alt-actor": "ju-vil2-part-01"
-    //   }
-    // },
-    // {
-    //   "trans": [2178.0791, 3490.5, 1698.2213], 
-    //   "etype": "training-part",
-    //   "game_task": 0,
-    //   "quat" : [-0.1204, -0.1174, 0.6881, 0.7057],
-    //   "bsphere": [2178.0791, 3490.5, 1698.2213, 10],
-    //   "lump": {
-    //     "name": "ju-vil2-part-01",
-    //     "effect-name": "'warpgate-loop",
-    //     "art-name":"group-training-warpgate",
-    //     "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
-    //     "cycle-speed": ["float", -1.0000, 0.0000],
-    //     "rot": ["float", -1.0000, -1.0000,-1.0]
-    //   }
-    // },
-    // {
-    //   "trans": [2111.34, 3467.22, 1624.24], // translation
-    //   "etype": "fireboulder",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2111.34, 3467.22, 1624.24, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-fireboulder-01",
-    //     "alt-vector": ["meters", 2111.34, 3467.22, 1624.24]
-    //   }
-    // },
-    // {
-    //   "trans": [2119.12, 3470.99, 1630.38], // translation
-    //   "etype": "fireboulder",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2119.12, 3470.99, 1630.38, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-fireboulder-02",
-    //     "alt-vector": ["meters", 2119.12, 3470.99, 1630.38]
-    //   }
-    // },
-    // {
-    //   "trans": [2125.42, 3472.83, 1635.57], // translation
-    //   "etype": "fireboulder",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2125.42, 3472.83, 1635.57, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-fireboulder-03",
-    //     "alt-vector": ["meters", 2125.42, 3472.83, 1635.57]
-    //   }
-    // },
-    // {
-    //   "trans": [2237.25, 3584.53, 1958.05], // translation
-    //   "etype": "pontoonfive",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2237.25, 3584.53, 1958.05, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-pontoonfive-01",
-    //     "task": 0,
-    //     "alt-vector": ["meters", 2237.25, 3584.53, 1958.05]
-    //   }
-    // },
-    // {
-    //   "trans": [2226.12, 3588.95, 1956.89], // translation
-    //   "etype": "pontoonten",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2226.12, 3588.95, 1956.89, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-pontoonten-01",
-    //     "alt-vector": ["meters", 2226.12, 3588.95, 1956.89]
-    //   }
-    // },
-    // {
-    //   "trans": [2231.83, 3596.1, 1957.68], // translation
-    //   "etype": "pontoonfive",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2231.83, 3596.1, 1957.68, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-pontoonfive-02",
-    //     "alt-vector": ["meters", 2231.83, 3596.1, 1957.68]
-    //   }
-    // },
+  "actors" : [
+    {
+      "trans": [2177.61, 10176.13, 2163.20], // translation
+      "etype": "warpgate",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, -0.9839, 0, 0.1782], // quaternion
+      "bsphere": [2177.61, 10176.13, 2163.20, 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-warpgate-01" 
+      }
+    },
+    {
+      "trans": [ 2179.55, 10174.04, 2159.17], 
+      "etype": "warp-gate-switch",
+      "game_task": 0,
+      "quat" : [0, 0, 0, 1],
+      "bsphere": [ 2179.55, 10174.14, 2159.17, 10],
+      "lump": {
+        "name": "ju-vil3-warp-gate-switch-01",
+        "alt-actor": "ju-vil3-part-01"
+      }
+    },
+    {
+      "trans": [2177.61, 10177.93, 2163.20], 
+      "etype": "training-part",
+      "game_task": 0,
+      "quat" : [0, -0.9839, 0, 0.1782], // quaternion
+      "bsphere": [2177.61, 10177.93, 2163.20, 10],
+      "lump": {
+        "name": "ju-vil3-part-01",
+        "effect-name": "'warpgate-loop",
+        "art-name":"group-training-warpgate",
+        "effect-param": ["float", 3.0000, 80.0000, 12.0000, 40.0000],
+        "cycle-speed": ["float", -1.0000, 0.0000],
+        "rot": ["float", -1.0000, -1.0000,-1.0]
+      }
+    },
 
-    // {
-    //   "trans": [2132.10, 3904.60, 1877.44], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2132.10, 3904.60, 1877.44, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-fuel-cell",
-    //     "eco-info":["int32", 6, 125]
-    //   }
-    // },
+    {
+      "trans": [2199.50, 10369.6, 2132.06  ], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 125, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2199.50, 10369.6, 2132.06  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-fuel-cell",
+        "eco-info":["int32", 6, 130]
+      }
+    },
 
     // // FLIES
 
-    // {
-    //   "trans": [2079.10, 3367.73, 1868.91], // water under og sagehut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2079.10, 3367.73, 1868.91, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-01",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 76], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2079.10, 3367.73, 1868.91]
-    //   }
-    // },
-    // {
-    //   "trans": [1972.42, 3537.45, 1515.43], // 2nd floor of sage hut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1972.42, 3537.45, 1515.43, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-02",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 65612], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1972.42, 3537.45, 1515.43]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.59, 3497.8, 1699.88], // ledge above "boggy" entrance
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2170.59, 3497.8, 1699.88, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-03",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 131148], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2170.59, 3497.8, 1699.88]
-    //   }
-    // },
-    // {
-    //   "trans": [2226.44, 3578.08, 1911.60], // chandelier
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2226.44, 3578.08, 1911.60, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-04",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 196684], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2226.44, 3578.08, 1911.60]
-    //   }
-    // },
-    // {
-    //   "trans": [2178.17, 3581.41, 1887.41], // broken hut in cliff up
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2178.17, 3581.41, 1887.41, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-05",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262220], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2178.17, 3581.41, 1887.41]
-    //   }
-    // },
-    // {
-    //   "trans": [2170.54, 3717.59, 1907.00], // walk the plank
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2170.54, 3717.59, 1907.00, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-06",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327756], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2170.54, 3717.59, 1907.00]
-    //   }
-    // },
-    // { 
-    //   "trans": [2153.48, 3863.30, 1883.65], // bubble of LPC entrance
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2153.48, 3863.30, 1883.65, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil2-buzzer-07",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393292], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2153.48, 3863.30, 1883.65]
-    //   }
-    // }//,
+    {
+      "trans": [2169.19, 10173.47, 2147.44], // inside busted furnace thing in sagehut
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2169.19, 10173.47, 2147.44, 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-01",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 77], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2169.19, 10173.47, 2147.44]
+      }
+    },
+    {
+      "trans": [ 2087.56, 10188.01, 2428.58  ], // sideways scaffolding near "start of lava tube"
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 2087.56, 10188.01, 2428.58  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65613], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2087.56, 10188.01, 2428.58  ]
+      }
+    },
+    {
+      "trans": [ 2308.90, 10173.02, 2211.70  ], // oracle
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 2308.90, 10173.02, 2211.70  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-03",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 131149], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters",  2308.90, 10173.02, 2211.70  ]
+      }
+    },
+    {
+      "trans": [2177.63, 10163.83, 2256.71  ], // rock bit below platform where you do new rocket
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2177.63, 10163.83, 2256.71  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-04",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 196685], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2177.63, 10163.83, 2256.71  ]
+      }
+    },
+    {
+      "trans": [2097.53, 10181.93, 2092.16  ], // where secret cell would be
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2097.53, 10181.93, 2092.16  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262221], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2097.53, 10181.93, 2092.16  ]
+      }
+    },
+    {
+      "trans": [2159.79, 10212.91, 2149.89  ], // top of sagehut
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2159.79, 10212.91, 2149.89  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327757], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2159.79, 10212.91, 2149.89  ]
+      }
+    },
+    { 
+      "trans": [2276.12, 10306.98, 2186.00  ], // on some crystals by miners/gem
+      "etype": "crate",  // actor type
+      "game_task": 76, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [2276.12, 10306.98, 2186.00  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-vil3-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393293], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2276.12, 10306.98, 2186.00  ]
+      }
+    }//,
 
     // ORBS
 
@@ -260,7 +194,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-01"
+    //     "name":"ju-vil3-money-01"
     //   }
     // },
     // {
@@ -270,7 +204,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-02"
+    //     "name":"ju-vil3-money-02"
     //   }
     // },
     // {
@@ -280,7 +214,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-03"
+    //     "name":"ju-vil3-money-03"
     //   }
     // },     
 
@@ -291,7 +225,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-04"
+    //     "name":"ju-vil3-money-04"
     //   }
     // },
     // {
@@ -301,7 +235,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-05"
+    //     "name":"ju-vil3-money-05"
     //   }
     // },
     // {
@@ -311,7 +245,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-06"
+    //     "name":"ju-vil3-money-06"
     //   }
     // },
     // {
@@ -321,7 +255,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-07"
+    //     "name":"ju-vil3-money-07"
     //   }
     // },
     // {
@@ -331,7 +265,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-08"
+    //     "name":"ju-vil3-money-08"
     //   }
     // },
     // {
@@ -341,7 +275,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-09"
+    //     "name":"ju-vil3-money-09"
     //   }
     // }
     // ,
@@ -352,7 +286,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-10"
+    //     "name":"ju-vil3-money-10"
     //   }
     // },
     // {
@@ -362,7 +296,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-11"
+    //     "name":"ju-vil3-money-11"
     //   }
     // },
     // {
@@ -372,7 +306,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-12"
+    //     "name":"ju-vil3-money-12"
     //   }
     // },
     // {
@@ -382,7 +316,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-13"
+    //     "name":"ju-vil3-money-13"
     //   }
     // },
     // {
@@ -392,7 +326,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-14"
+    //     "name":"ju-vil3-money-14"
     //   }
     // },
     // {
@@ -402,7 +336,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-15"
+    //     "name":"ju-vil3-money-15"
     //   }
     // },
     // {
@@ -412,7 +346,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-16"
+    //     "name":"ju-vil3-money-16"
     //   }
     // },
     // {
@@ -422,7 +356,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-17"
+    //     "name":"ju-vil3-money-17"
     //   }
     // },
     // {
@@ -432,7 +366,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-18"
+    //     "name":"ju-vil3-money-18"
     //   }
     // },
     // {
@@ -442,7 +376,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-19"
+    //     "name":"ju-vil3-money-19"
     //   }
     // },
     // {
@@ -452,7 +386,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-20"
+    //     "name":"ju-vil3-money-20"
     //   }
     // },
     // {
@@ -462,7 +396,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-21"
+    //     "name":"ju-vil3-money-21"
     //   }
     // },
     // {
@@ -472,7 +406,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-22"
+    //     "name":"ju-vil3-money-22"
     //   }
     // },
     // {
@@ -482,7 +416,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-23"
+    //     "name":"ju-vil3-money-23"
     //   }
     // },
     // {
@@ -492,7 +426,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-24"
+    //     "name":"ju-vil3-money-24"
     //   }
     // },
     // {
@@ -502,7 +436,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-25"
+    //     "name":"ju-vil3-money-25"
     //   }
     // },
     // {
@@ -512,7 +446,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-26"
+    //     "name":"ju-vil3-money-26"
     //   }
     // },
     // {
@@ -522,7 +456,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-27"
+    //     "name":"ju-vil3-money-27"
     //   }
     // },
     // {
@@ -532,7 +466,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-28"
+    //     "name":"ju-vil3-money-28"
     //   }
     // },
     // {
@@ -542,7 +476,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-29"
+    //     "name":"ju-vil3-money-29"
     //   }
     // },
     // {
@@ -552,7 +486,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-30"
+    //     "name":"ju-vil3-money-30"
     //   }
     // },
     // {
@@ -562,7 +496,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-31"
+    //     "name":"ju-vil3-money-31"
     //   }
     // },
     // {
@@ -572,7 +506,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-32"
+    //     "name":"ju-vil3-money-32"
     //   }
     // },
     // {
@@ -582,7 +516,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-33"
+    //     "name":"ju-vil3-money-33"
     //   }
     // },
     // {
@@ -592,7 +526,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-34"
+    //     "name":"ju-vil3-money-34"
     //   }
     // },
     // {
@@ -602,7 +536,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-35"
+    //     "name":"ju-vil3-money-35"
     //   }
     // },
     // {
@@ -612,7 +546,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-36"
+    //     "name":"ju-vil3-money-36"
     //   }
     // },
     // {
@@ -622,7 +556,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-37"
+    //     "name":"ju-vil3-money-37"
     //   }
     // },
     // {
@@ -632,7 +566,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-38"
+    //     "name":"ju-vil3-money-38"
     //   }
     // },
     // {
@@ -642,7 +576,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-39"
+    //     "name":"ju-vil3-money-39"
     //   }
     // },
     // {
@@ -652,7 +586,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-40"
+    //     "name":"ju-vil3-money-40"
     //   }
     // },
     // {
@@ -662,7 +596,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-41"
+    //     "name":"ju-vil3-money-41"
     //   }
     // },
     // {
@@ -672,7 +606,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-42"
+    //     "name":"ju-vil3-money-42"
     //   }
     // },
     // {
@@ -682,7 +616,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-43"
+    //     "name":"ju-vil3-money-43"
     //   }
     // },
     // {
@@ -692,7 +626,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-4"
+    //     "name":"ju-vil3-money-4"
     //   }
     // },
     // {
@@ -702,7 +636,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-45"
+    //     "name":"ju-vil3-money-45"
     //   }
     // },
     // {
@@ -712,7 +646,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-46"
+    //     "name":"ju-vil3-money-46"
     //   }
     // },
     // {
@@ -722,7 +656,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-47"
+    //     "name":"ju-vil3-money-47"
     //   }
     // },
     // {
@@ -732,7 +666,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-48"
+    //     "name":"ju-vil3-money-48"
     //   }
     // },
     // {
@@ -742,7 +676,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-49"
+    //     "name":"ju-vil3-money-49"
     //   }
     // },
     // {
@@ -752,7 +686,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil2-money-50"
+    //     "name":"ju-vil3-money-50"
     //   }
     // }
   ]

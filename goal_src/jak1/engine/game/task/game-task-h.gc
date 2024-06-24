@@ -142,6 +142,7 @@
   ;; (ju-swampb 128)  ;; ju-swamp cell is really in swampb
   (ju-ogre 129)
   ;; (ju-ogreb 129)  ;; ju-ogre cell is really in ogreb
+  (ju-vil3 130)
 
-  (max 130)
+  (max 131)
   )

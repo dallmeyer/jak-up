@@ -804,7 +804,8 @@
   (ju-roll  #x2009)
   (ju-swamp    #x200a)
   ;; since village 3 not ready, just re-use end of MP text
-  ;; (ju-ogre     #x200b)
+  (ju-ogre     #x200b)
+  (ju-vil3     #x200c)
 ;; GAME-TEXT-ID ENUM ENDS
   )
 

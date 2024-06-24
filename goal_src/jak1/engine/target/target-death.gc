@@ -192,19 +192,15 @@
            (cond
              ((string= (-> arg0 name) "ju-train-warp")
               (set! (-> s5-6 quad) (-> (entity-by-name "ju-train-warpgate-01") extra trans quad))
-              ;;   (set-continue! *game-info* "ju-train-start")
               )
              ((string= (-> arg0 name) "ju-vil2-warp")
               (set! (-> s5-6 quad) (-> (entity-by-name "ju-vil2-warpgate-01") extra trans quad))
-              ;;   (set-continue! *game-info* "ju-vil2-start")
               )
-             ((string= (-> arg0 name) "jakup-village3-warp")
-              (set! (-> s5-6 quad) (-> (entity-by-name "jakup-village3-warpgate-01") extra trans quad))
-              ;;   (set-continue! *game-info* "ju-vil2-start")
+             ((string= (-> arg0 name) "ju-vil3-warp")
+              (set! (-> s5-6 quad) (-> (entity-by-name "ju-vil3-warpgate-01") extra trans quad))
               )
-             ((string= (-> arg0 name) "jakup-village4-warp")
-              (set! (-> s5-6 quad) (-> (entity-by-name "jakup-village4-warpgate-01") extra trans quad))
-              ;;   (set-continue! *game-info* "ju-vil2-start")
+             ((string= (-> arg0 name) "ju-vil4-warp")
+              (set! (-> s5-6 quad) (-> (entity-by-name "ju-vil4-warpgate-01") extra trans quad))
               )
 
              ;; vanilla warp gates below

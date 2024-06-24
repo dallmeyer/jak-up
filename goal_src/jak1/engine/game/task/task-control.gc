@@ -5531,6 +5531,46 @@
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
                ;; ju-ogreb fake level
+               (new 'static
+                    'task-control ;; ju-vil3
+                    :current-stage -1
+                    :stage
+                    (new 'static
+                         'boxed-array
+                         :type
+                         task-cstage
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-vil3)
+                              :status (task-status need-hint)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-vil3)
+                              :status (task-status need-introduction)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-vil3)
+                              :status (task-status need-reminder)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-vil3)
+                              :status (task-status need-resolution)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))))
                )))
 
 (defun task-control-reset ((arg0 symbol))
