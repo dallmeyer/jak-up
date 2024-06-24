@@ -708,7 +708,8 @@
 
   (case (-> this name)
     (('ju-train 'ju-vil1 'ju-jung 'ju-jungb 'ju-misty 'ju-beach 'ju-fire
-      'ju-vil2 'ju-sunk 'ju-sunkb 'ju-roll 'ju-swamp 'ju-swampb 'ju-ogre 'ju-ogreb)
+      'ju-vil2 'ju-sunk 'ju-sunkb 'ju-roll 'ju-swamp 'ju-swampb 'ju-ogre 'ju-ogreb
+      'ju-vil3)
       (return #t)
       )
     )

@@ -3377,7 +3377,65 @@
        '("common")
        :wait-for-load #t))
 
+
+(define ju-vil3
+  (new 'static
+       'level-load-info
+       :index 41
+       :name 'ju-vil3
+       :visname 'ju-vil3-vis
+       ;; name + -vis
+       :nickname 'upf
+       ;; nickname
+       :packages '(ogre)
+       :sound-banks '(ogre)
+       :music-bank 'ogre
+       :ambient-sounds
+       '()
+       :mood '*ogre-mood*
+       :mood-func 'update-mood-ogre
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-vil3-start"
+             :level 'ju-vil3
+             :trans
+             (new 'static 'vector :x (meters 2232.9528) :y (meters 10159.4306) :z (meters 1982.6517) :w 1.0)
+             :quat
+             (new 'static 'quaternion :y -0.6820 :w 0.7312)
+             :camera-trans
+             (new 'static 'vector :x (meters 2245.2971) :y (meters 10164.5683) :z (meters 1980.6873) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 0.1570 -0.0000 0.9875 -0.1186 0.9927 0.0188 -0.9804 -0.1201 0.1559)
+             :load-commands
+             '()
+             :vis-nick 'upf
+             :lev0 'ju-ogreb
+             :disp0 'display
+             :lev1 'ju-vil3
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-vil3)
+
 (cons! *level-load-list* 'ju-ogreb)
 
 (cons! *level-load-list* 'ju-ogre)

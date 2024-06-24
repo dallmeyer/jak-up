@@ -90,3 +90,7 @@ __pycache__/
 unifont-15.0.03.ttf
 *.diff
 goalc-report.html
+
+# blender stuff
+*.blend
+*.blend1

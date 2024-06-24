@@ -273,12 +273,12 @@
   (rolling 9)
   (swamp 10)
   (ogre 11)
-  ;; (village3 12)
+  (village3 12)
   ;; (snow 13)
   ;; (cave 14)
   ;; (lavatube 15)
   ;; (citadel 16)
-  (max 12))
+  (max 13))
 
 ;; maps level-info indices to the appropriate offset in *level-task-data*
 (define *level-task-data-remap*
@@ -327,6 +327,7 @@
        (level-task-data-index swamp) ;; swampb
        (level-task-data-index ogre)
        (level-task-data-index ogre) ;; ogreb
+       (level-task-data-index village3)
        ))
 
 ;; maps goal language ID to its name string ID
@@ -617,6 +618,27 @@
                       :task-name
                       (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
        ;; ju-ogreb fake level
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id village3-level-name)
+            :text-group-index 13
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task ju-ogre)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id ogre-end) (text-id ogre-end) (text-id ogre-end) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task village3-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
        ))
 
 ;; goes down by 24 or 23 every time
