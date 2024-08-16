@@ -106,19 +106,9 @@ bool run_build_level(const std::string& input_file,
   // TODO remove hardcoded config settings
   if ((level_json.contains("art_groups") && !level_json.at("art_groups").empty()) ||
       (level_json.contains("textures") && !level_json.at("textures").empty())) {
-    const fs::path root_dir = file_util::get_jak_project_dir().string() + "/iso_data";
-    lg::info("Looking for ISO path starting from {}", root_dir.string());
-    // TODO - add to file_util
-    fs::path iso_folder = "";
-    for (const auto& entry : fs::recursive_directory_iterator(root_dir, ghc::filesystem::directory_options::follow_directory_symlink)) {
-      // TODO - hard-coded to jak 1
-      lg::info("  Considering {} ?", entry.path().string());
-      if ((entry.is_symlink() || entry.is_directory()) &&
-          (entry.path().filename().string().find("jak1") != std::string::npos)) {
-        lg::info("Found ISO path: {}", entry.path().string());
-        iso_folder = entry.path();
-      }
-    }
+    lg::info("Looking for ISO path...");
+    const auto iso_folder = file_util::get_iso_dir_for_game(GameVersion::Jak1);
+    lg::info("Found ISO path: {}", iso_folder.string());
 
     if (iso_folder.empty() || !fs::exists(iso_folder)) {
       lg::warn("Could not locate ISO path!");
@@ -136,22 +126,6 @@ bool run_build_level(const std::string& input_file,
           R"({"decompile_code": false, "find_functions": false, "levels_extract": true, "allowed_objects": [], "save_texture_pngs": false})");
     } catch (const std::exception& e) {
       lg::error("Failed to parse config: {}", e.what());
-      return false;
-    }
-
-    fs::path in_folder;
-    lg::info("Looking for ISO path starting from {}", file_util::get_jak_project_dir().string());
-    for (const auto& entry :
-         fs::directory_iterator(file_util::get_jak_project_dir() / "iso_data")) {
-      lg::info("Checking in path: {}", entry.path().string());
-      if ((entry.is_symlink() || entry.is_directory()) &&
-          (entry.path().filename().string().find("jak1") != std::string::npos)) {
-        lg::info("Found ISO path: {}", entry.path().string());
-        in_folder = entry.path();
-      }
-    }
-    if (!fs::exists(in_folder)) {
-      lg::error("Could not find ISO path!");
       return false;
     }
 
