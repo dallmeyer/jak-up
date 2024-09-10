@@ -28,14 +28,28 @@
 
 (defenum language-enum
   :type int64
-  (english)
-  (french)
-  (german)
-  (spanish)
-  (italian)
-  (japanese)
-  (korean)
-  (uk-english)
+  (english 0)
+  (french 1)
+  (german 2)
+  (spanish 3)
+  (italian 4)
+  (japanese 5)
+  (korean 6)
+  (uk-english 7)
+  ;; custom
+  (portuguese 8)
+  (finnish 9)
+  (swedish 10)
+  (danish 11)
+  (norwegian 12)
+  (dutch 13)
+  (br-portuguese 14)
+  (hungarian 15)
+  (catalan 16)
+  (icelandic 17)
+  (russian 18)
+  (polish 19)
+  (lithuanian 20)
   )
 
 (defenum runtime-exit-status
@@ -224,6 +238,20 @@
 (define-extern pc-discord-rpc-update (function discord-info none))
 (define-extern pc-discord-rpc-set (function int none))
 (define-extern pc-init-autosplitter-struct (function none))
+
+;;main music start
+(define-extern play-sound-file (function string int none))
+(define-extern play-main-music (function string int none))
+(define-extern pause-main-music (function none))
+(define-extern stop-main-music (function none))
+(define-extern resume-main-music (function none))
+(define-extern main-music-volume (function int none))
+;;main music end
+
+(define-extern play-sound-file (function string int none))
+(define-extern stop-sound-file (function string none))
+(define-extern stop-all-sounds (function none))
+
 (define-extern pc-filepath-exists? (function string symbol))
 (define-extern pc-mkdir-file-path (function string none))
 (define-extern pc-sound-set-flava-hack (function int none))

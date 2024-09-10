@@ -99,9 +99,9 @@ const tfrag3::MercVertex& find_closest(const std::vector<tfrag3::MercVertex>& ol
                                        float y,
                                        float z) {
   float best_dist = 1e10;
-  int best_idx = 0;
+  size_t best_idx = 0;
 
-  for (int i = 0; i < old.size(); i++) {
+  for (size_t i = 0; i < old.size(); i++) {
     auto& v = old[i];
     float dx = v.pos[0] - x;
     float dy = v.pos[1] - y;
@@ -131,9 +131,9 @@ void merc_convert_replacement(MercSwapData& out,
     x.pos[0] = y.x;
     x.pos[1] = y.y;
     x.pos[2] = y.z;
-    x.normal[0] = copy_from.normal[0];
-    x.normal[1] = copy_from.normal[1];
-    x.normal[2] = copy_from.normal[2];
+    x.normal[0] = in.normals.at(i).x();
+    x.normal[1] = in.normals.at(i).y();
+    x.normal[2] = in.normals.at(i).z();
     x.weights[0] = copy_from.weights[0];
     x.weights[1] = copy_from.weights[1];
     x.weights[2] = copy_from.weights[2];

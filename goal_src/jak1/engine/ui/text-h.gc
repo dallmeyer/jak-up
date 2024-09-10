@@ -791,22 +791,29 @@
   (progress-no-other-resolution-options #x1616)
   (input-opts-controller-led-reflect-heat #x1617)
 
+  ;; mod text mod-base-change
+  (pad-triangle #x2000)
+  (pad-circle #x2001)
+  (pad-x #x2002)
+  (pad-square #x2003)
+
   ;; text for "get to next level" tasks
-  (ju-train #x2000)
-  (ju-vil1 #x2001)
-  (ju-jung   #x2002)
-  (ju-jungb  #x2003)
-  (ju-misty    #x2004)
-  (ju-beach    #x2005)
-  (ju-fire     #x2006)
-  (ju-vil2 #x2007)
-  (ju-sunk   #x2008)
-  (ju-roll  #x2009)
-  (ju-swamp    #x200a)
+  (ju-train #x3000)
+  (ju-vil1 #x3001)
+  (ju-jung   #x3002)
+  (ju-jungb  #x3003)
+  (ju-misty    #x3004)
+  (ju-beach    #x3005)
+  (ju-fire     #x3006)
+  (ju-vil2 #x3007)
+  (ju-sunk   #x3008)
+  (ju-roll  #x3009)
+  (ju-swamp    #x300a)
   ;; since village 3 not ready, just re-use end of MP text
-  (ju-ogre     #x200b)
-  (ju-vil3     #x200c)
-;; GAME-TEXT-ID ENUM ENDS
+  (ju-ogre     #x300b)
+  (ju-vil3     #x300c)
+
+  ;; GAME-TEXT-ID ENUM ENDS
   )
 
 ;; DECOMP BEGINS

@@ -203,6 +203,7 @@
   "speedruns.o" ;; added
   "pckernel-common.o" ;; added
   "pckernel.o" ;; added
+  "input-display.o" ;; mod-base-change added
   "mood-tables.o"
   "mood.o"
   "weather-part.o"
@@ -346,11 +347,17 @@
   "ropebridge.o"
   "ticky.o"
   "hud-classes-pc.o" ;; added
-  "mod-custom-code.o"
+  
+  "mod-settings.o" ;; added mod-base-change
+  "mod-common-functions.o" ;; added
+  "orb-placer.o" ;; added
+  "mod-custom-code.o" ;; added
+  "mod-debug.o" ;; added
   ;; used in both jungle and jungleb
   "darkvine.o"
   "bouncer.o"
-  ;; zoomer stuff
+
+  ;; keep zoomer stuff loaded
   "target-racer-h.o"
   "racer-part.o"
   "racer.o"
@@ -360,12 +367,13 @@
   "racer-ag.go"
   "eichar-racer+0-ag.go"
   "tpage-1119.go"
-  ;; flutflut stuff
-  "blocking-plane.o"
+  ;; keep flutflut stuff loaded
   "flut-part.o"
   "flutflut.o"
   "target-flut.o"
-  "eichar-flut+0-ag.go"
-  "ef-plane-ag.go"
   "flut-saddle-ag.go"
+  "eichar-flut+0-ag.go"
+  ;; keep blocking-plane stuff loaded
+  "blocking-plane.o"
+  "ef-plane-ag.go"
  ))

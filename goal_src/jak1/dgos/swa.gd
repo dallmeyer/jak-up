@@ -1,9 +1,9 @@
 ("SWA.DGO"
  ("battlecontroller.o"
   "blocking-plane.o"
-  "flut-part.o"
-  "flutflut.o"
-  "target-flut.o"
+  ;; "flut-part.o"
+  ;; "flutflut.o"
+  ;; "target-flut.o" mod-base-change
   "eichar-flut+0-ag.go"
   "balance-plat.o"
   "swamp-spike.o"

@@ -62,9 +62,9 @@ node_modules/
 # custom_assets/jak3/texture_replacements/*
 
 # merc replacements
-custom_assets/jak1/merc_replacements/*
-custom_assets/jak2/merc_replacements/*
-custom_assets/jak3/merc_replacements/*
+# custom_assets/jak1/merc_replacements/*
+# custom_assets/jak2/merc_replacements/*
+# custom_assets/jak3/merc_replacements/*
 
 # generated cmake files
 svnrev.h
@@ -94,8 +94,12 @@ __pycache__/
 # docs
 /jak1-*.json
 /jak2-*.json
+
 /TODO.md
 unifont-15.0.03.ttf
+.vscode/settings.json
+out/jak2/fr3.rar
+
 *.diff
 goalc-report.html
 

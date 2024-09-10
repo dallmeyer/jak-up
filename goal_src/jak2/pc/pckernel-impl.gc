@@ -44,7 +44,6 @@
   (weather-good)
   (hijack-lines)
   )
-
 ;; pc enum for languages. this is the game's languages + custom ones.
 (defenum pc-language
   :type uint16
