@@ -2453,10 +2453,11 @@
        :music-bank #f
        :ambient-sounds
        '()
-       :mood '*default-mood*
-       :mood-func 'update-mood-default
-       :ocean #f
+       :mood '*village1-mood*
+       :mood-func 'update-mood-village1
+       :ocean '*ocean-map-village1*
        :sky #t
+       :sun-fade 1.0
        :continues
        '()
        :tasks

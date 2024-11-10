@@ -22,9 +22,6 @@
 
 (define-extern runs-on-jak-death (function symbol none))
 
-;;Forward declaration Variable for mod base settings
-(define-extern startingDebugContinuePoint (string))
-
 ;; DECOMP BEGINS
 
 ;;;;;;;;;;;;;;;;;;

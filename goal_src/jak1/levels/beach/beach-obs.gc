@@ -92,6 +92,7 @@
    grottopole-moving-down
    grottopole-moving-up))
 
+
 (defskelgroup *grottopole-sg*
   grottopole
   grottopole-lod0-jg
@@ -243,6 +244,7 @@
   ((root collide-shape :override))
   (:states (ecoventrock-break symbol)
    ecoventrock-idle))
+
 
 (defskelgroup *ecoventrock-sg*
   ecoventrock
@@ -450,7 +452,7 @@
         (set! sv-128 (the-as symbol #f))
         (apply-all (-> self link) actor-link-subtask-complete-hook (& sv-128))
         (when sv-128
-          (let ((s5-2 (current-time))) (until (time-elapsed? s5-2 (seconds 0.5)) (suspend)))
+          (suspend-for (seconds 0.5))
           (let ((gp-1 (cond
                         (arg0 (the-as int #f))
                         (else
@@ -494,6 +496,7 @@
   (:states
    flying-rock-idle
    flying-rock-rolling))
+
 
 (defskelgroup *kickrock-sg*
   kickrock
@@ -600,6 +603,7 @@
   (:states
    bladeassm-idle))
 
+
 (defskelgroup *bladeassm-sg*
   bladeassm
   bladeassm-lod0-jg
@@ -651,6 +655,7 @@
   (:states
    harvester-idle
    (harvester-inflate symbol)))
+
 
 (defskelgroup *harvester-sg*
   harvester
@@ -751,6 +756,7 @@
   (none))
 
 (deftype beachcam (process-hidden) ())
+
 
 (defun beachcam-spawn ()
   (with-pp
