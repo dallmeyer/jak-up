@@ -3543,18 +3543,17 @@
              'continue-point
              :name "ju-dcave-start"
              :level 'ju-dcave
-             ;; TODO
              :trans
-             (new 'static 'vector :x (meters 2190.7597) :y (meters 10374.9111) :z (meters 2139.7033) :w 1.0)
+             (new 'static 'vector :x (meters 2034.0838) :y (meters 10828.8242) :z (meters 2046.4193) :w 1.0)
              :quat
-             (new 'static 'quaternion :x 0.0000 :y 0.5412 :z 0.0000 :w -0.8408)
+             (new 'static 'quaternion :x 0.0000 :y 0.9997 :z 0.0000 :w 0.0225)
              :camera-trans
-             (new 'static 'vector :x (meters 2200.0004) :y (meters 10379.3808) :z (meters 2135.8833) :w 1.0)
+             (new 'static 'vector :x (meters 2030.3364) :y (meters 10833.9599) :z (meters 2058.3439) :w 1.0)
              :camera-rot
              (new 'static 'array float 9 
-                0.3819 0.0000 0.9241
-                -0.1325 0.9896 0.0547
-                -0.9146 -0.1434 0.3780)
+               -0.9542 0.0000 -0.2989
+               0.0358 0.9927 -0.1143
+               0.2968 -0.1198 -0.9473)
              :load-commands
              '()
              :vis-nick 'uph
