@@ -3520,7 +3520,68 @@
        '("common")
        :wait-for-load #t))
 
+(define ju-dcave
+  (new 'static
+       'level-load-info
+       :index 44
+       :name 'ju-dcave
+       :visname 'ju-dcave-vis
+       ;; name + -vis
+       :nickname 'uph
+       ;; nickname
+       :packages '(darkcave)
+       :sound-banks '(darkcave)
+       :music-bank 'maincave
+       :ambient-sounds
+       '()
+       :mood '*darkcave-mood*
+       :mood-func 'update-mood-darkcave
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-dcave-start"
+             :level 'ju-dcave
+             ;; TODO
+             :trans
+             (new 'static 'vector :x (meters 2190.7597) :y (meters 10374.9111) :z (meters 2139.7033) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.5412 :z 0.0000 :w -0.8408)
+             :camera-trans
+             (new 'static 'vector :x (meters 2200.0004) :y (meters 10379.3808) :z (meters 2135.8833) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+                0.3819 0.0000 0.9241
+                -0.1325 0.9896 0.0547
+                -0.9146 -0.1434 0.3780)
+             :load-commands
+             '()
+             :vis-nick 'uph
+             :lev0 'ju-mcave
+             :disp0 'display
+             :lev1 'ju-dcave
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-dcave)
+
 (cons! *level-load-list* 'ju-mcave)
 
 (cons! *level-load-list* 'ju-vil3)
