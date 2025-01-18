@@ -504,7 +504,7 @@
   (set! (-> this sound)
         (new 'process 'ambient-sound (static-sound-spec "spatula" :fo-min 25 :fo-max 50) (-> this root trans)))
   (case (-> (if (-> this entity) (-> this entity extra level) (-> *level* level-default)) name)
-    (('darkcave)
+    (('darkcave 'ju-dcave)
      (initialize-skeleton this *cavespatula-darkcave-sg* '())
      (ja-channel-push! 1 0)
      (let ((s5-1 (-> this skel root-channel 0)))

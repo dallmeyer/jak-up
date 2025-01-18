@@ -1316,6 +1316,80 @@
             (new 'static 'mood-sun)
             (new 'static 'mood-sun))))
 
+;; based on misty one but reduced fog end dist
+(define *jupdcave-mood-fog-table*
+  (new 'static
+       'mood-fog-table
+       :data
+       (new 'static
+            'inline-array
+            mood-fog
+            8
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :x 186.0 :y 148.0 :z 164.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :x 132.0 :y 140.0 :z 227.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :x 132.0 :y 140.0 :z 243.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :x 132.0 :y 140.0 :z 241.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :x 186.0 :y 148.0 :z 164.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :y 64.0 :z 152.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :y 32.0 :z 96.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0))
+            (new 'static
+                 'mood-fog
+                 :fog-color
+                 (new 'static 'vector :x 17.0 :y 119.0 :z 143.0 :w 128.0)
+                 :fog-dists
+                 (new 'static 'vector :y 16384.0 :z 255.0 :w 50.0)
+                 :erase-color
+                 (new 'static 'vector :w 128.0)))))
+
 (define *misty-mood-fog-table*
   (new 'static
        'mood-fog-table
@@ -3468,6 +3542,22 @@
 (set! (-> *darkcave-mood* sky-texture-interp) *default-interp-table*)
 
 (set! (-> *darkcave-mood* num-stars) 0.0)
+
+(define *jupdcave-mood* (new 'global 'mood-context))
+
+(set! (-> *jupdcave-mood* mood-fog-table) *jupdcave-mood-fog-table*)
+
+(set! (-> *jupdcave-mood* mood-lights-table) *darkcave-mood-lights-table*)
+
+(set! (-> *jupdcave-mood* mood-sun-table) *darkcave-mood-sun-table*)
+
+(set! (-> *jupdcave-mood* fog-interp) *default-interp-table*)
+
+(set! (-> *jupdcave-mood* palette-interp) *village1-palette-interp-table*)
+
+(set! (-> *jupdcave-mood* sky-texture-interp) *default-interp-table*)
+
+(set! (-> *jupdcave-mood* num-stars) 0.0)
 
 (define *robocave-mood* (new 'global 'mood-context))
 

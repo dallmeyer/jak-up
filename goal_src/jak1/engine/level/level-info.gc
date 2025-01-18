@@ -3534,7 +3534,7 @@
        :music-bank 'maincave
        :ambient-sounds
        '()
-       :mood '*darkcave-mood*
+       :mood '*jupdcave-mood*
        :mood-func 'update-mood-darkcave
        :ocean #f
        :sky #t

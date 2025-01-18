@@ -4,5 +4,8 @@
 ;; the actual file name still needs to be 8.3
 ("UPH.DGO"
  ("static-screen.o"
+  "cavecrystal-light.o"
+  "maincave-obs.o"
+  "cavespatula-darkcave-ag.go"
   "ju-dcave.go"
  ))
