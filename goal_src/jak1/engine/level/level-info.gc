@@ -3578,7 +3578,68 @@
        '("common")
        :wait-for-load #t))
 
+
+(define ju-rcave
+  (new 'static
+       'level-load-info
+       :index 45
+       :name 'ju-rcave
+       :visname 'ju-rcave-vis
+       ;; name + -vis
+       :nickname 'upi
+       ;; nickname
+       :packages '(robocave)
+       :sound-banks '(robocave)
+       :music-bank 'maincave
+       :ambient-sounds
+       '()
+       :mood '*robocave-mood*
+       :mood-func 'update-mood-robocave
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-rcave-start"
+             :level 'ju-rcave
+             :trans
+             (new 'static 'vector :x (meters 2034.0838) :y (meters 10828.8242) :z (meters 2046.4193) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.9997 :z 0.0000 :w 0.0225)
+             :camera-trans
+             (new 'static 'vector :x (meters 2030.3364) :y (meters 10833.9599) :z (meters 2058.3439) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               -0.9542 0.0000 -0.2989
+               0.0358 0.9927 -0.1143
+               0.2968 -0.1198 -0.9473)
+             :load-commands
+             '()
+             :vis-nick 'uph
+             :lev0 'ju-dcave
+             :disp0 'display
+             :lev1 'ju-rcave
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-rcave)
+
 (cons! *level-load-list* 'ju-dcave)
 
 (cons! *level-load-list* 'ju-mcave)
