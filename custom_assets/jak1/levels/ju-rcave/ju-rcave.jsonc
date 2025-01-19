@@ -37,7 +37,7 @@
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
   // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
-  "art_groups": [],
+  "art_groups": ["spiderwebs-ag"],
 
   "ambients": [],
 
@@ -149,35 +149,35 @@
     //   }
     // }//,
 
-    // {
-    //   "trans": [ 2073.3295, 10942.6337, 2017.7703  ], // translation
-    //   "etype": "cavespatula",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [ 2073.3295, 10942.6337, 2017.7703  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-dcave-cavespatula-1"
-    //   }
-    // },
-    // {
-    //   "trans": [  2086.8710, 10999.1425, 1960.3660  ], // translation
-    //   "etype": "cavespatula",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [ 2086.8710, 10999.1425, 1960.3660 , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-dcave-cavespatula-2"
-    //   }
-    // },
-    // {
-    //   "trans": [  2081.3217, 11028.5126, 1979.7821  ], // translation
-    //   "etype": "cavespatula",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [  2081.3217, 11028.5126, 1979.7821  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-dcave-cavespatula-3"
-    //   }
-    // }
+    {
+      "trans": [ 1919.5, 11153.5, 2247.8], // translation
+      "etype": "spiderwebs",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1919.5, 11153.5, 2247.8, 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-spiderwebs-1"
+      }
+    },
+    {
+      "trans": [  1941.1, 11161.0, 2226.7], // translation
+      "etype": "spiderwebs",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1941.1, 11161.0, 2226.7, 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-spiderwebs-2"
+      }
+    },
+    {
+      "trans": [  1927.2, 11173.5, 2221.9  ], // translation
+      "etype": "spiderwebs",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [  1927.25, 11173.5, 2221.9  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-spiderwebs-3"
+      }
+    }
   ]
 }

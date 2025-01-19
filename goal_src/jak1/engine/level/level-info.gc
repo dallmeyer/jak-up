@@ -3603,16 +3603,16 @@
              :name "ju-rcave-start"
              :level 'ju-rcave
              :trans
-             (new 'static 'vector :x (meters 2034.0838) :y (meters 10828.8242) :z (meters 2046.4193) :w 1.0)
+             (new 'static 'vector :x (meters 2063.7272) :y (meters 11046.0566) :z (meters 2056.8500) :w 1.0)
              :quat
-             (new 'static 'quaternion :x 0.0000 :y 0.9997 :z 0.0000 :w 0.0225)
+             (new 'static 'quaternion :x 0.0000 :y 0.0747 :z -0.0000 :w -0.9971)
              :camera-trans
-             (new 'static 'vector :x (meters 2030.3364) :y (meters 10833.9599) :z (meters 2058.3439) :w 1.0)
+             (new 'static 'vector :x (meters 2070.1035) :y (meters 11050.8984) :z (meters 2047.3734) :w 1.0)
              :camera-rot
              (new 'static 'array float 9 
-               -0.9542 0.0000 -0.2989
-               0.0358 0.9927 -0.1143
-               0.2968 -0.1198 -0.9473)
+                    0.8299 -0.0000 0.5578
+                    -0.0676 0.9926 0.1006
+                    -0.5537 -0.1213 0.8237)
              :load-commands
              '()
              :vis-nick 'uph

@@ -4,5 +4,7 @@
 ;; the actual file name still needs to be 8.3
 ("UPI.DGO"
  ("static-screen.o"
+  "spiderwebs.o"
+  "spiderwebs-ag.go"
   "ju-rcave.go"
  ))
