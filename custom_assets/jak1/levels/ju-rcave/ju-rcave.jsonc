@@ -37,11 +37,363 @@
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
   // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
-  "art_groups": ["spiderwebs-ag"],
+  "art_groups": ["spiderwebs-ag", "eichar-pole+0-ag", "cavespatulatwo-ag"],
 
   "ambients": [],
 
   "actors" : [
+
+    {
+      "trans": [1897.51, 11252.57, 2187.73], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1897.51, 11252.57, 2187.73, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-01",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1887.77, 11261.33, 2163.31  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1887.77, 11261.33, 2163.31  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-02",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1885.53, 11263.60, 2156.90  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1885.53, 11263.60, 2156.90  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-03",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1877.09, 11271.38, 2135.01  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1877.09, 11271.38, 2135.01  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-04",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    // 2nd set
+    {
+      "trans": [2026.36, 11373.76, 2025.71], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6289, -0.3229, 0.3229, 0.6289], // quaternion - Along Z axis in Blender
+      "bsphere": [2026.36, 11373.76, 2025.71, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-05",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2030.29, 11375.72, 2032.52  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6289, -0.3229, 0.3229, 0.6289], // quaternion - Along Z axis in Blender
+      "bsphere": [2030.29, 11375.72, 2032.52  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-06",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2034.43, 11377.65, 2039.01   ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6289, -0.3229, 0.3229, 0.6289], // quaternion - Along Z axis in Blender
+      "bsphere": [2034.43, 11377.65, 2039.01   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-07",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    // 3rd set
+    {
+      "trans": [2083.52, 11418.98, 2123.31  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2083.52, 11418.98, 2123.31  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-08",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2076.75, 11418.72, 2125.31  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2076.75, 11418.72, 2125.31  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-09",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2068.94, 11418.44, 2127.14], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2068.94, 11418.44, 2127.14, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-10",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2083.17, 11426.96, 2123.05  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2083.17, 11426.96, 2123.05  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-11",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2076.37, 11426.71, 2124.97  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2076.37, 11426.71, 2124.97  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-12",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2082.59, 11434.91, 2123.45  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2082.59, 11434.91, 2123.45  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-13",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [2076.16, 11434.66, 2124.92   ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6866, 0.1690, -0.1690, 0.6866], // quaternion - Along Z axis in Blender
+      "bsphere": [2076.16, 11434.66, 2124.92   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-14",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+
+    {
+      "trans": [1877.56, 11477.96, 2109.44  ], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1877.56, 11477.96, 2109.44  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans":  [1860.2, 11471.0, 2114.3], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1860.2, 11471.0, 2114.3, 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-launcher-01",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 80.0],
+        "alt-vector": ["vector4m", [1841.70, 11539.68, 2101.27, 0.0003]]
+      }
+    },
+
+    {
+      "trans": [ 1855.83, 11584.6601, 2157.50   ], // translation
+      "etype": "cavespatulatwo",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1855.83, 11584.6601, 2157.50   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-cavespatula-1"
+      }
+    },
+
+    // last set of poles
+    {
+      "trans": [1872.89	,	11578.77	,	2151], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.89	,	11578.77	,	2151, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-15",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.555	,	11578.77	,	2159.315], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.555	,	11578.77	,	2159.315, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-16",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.22	,	11578.77	,	2167.63], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.22	,	11578.77	,	2167.63, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-17",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.89	,	11570.43	,	2151], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.89	,	11570.43	,	2151, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-18",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.555	,	11570.43	,	2159.315], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.555	,	11570.43	,	2159.315, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-19",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.22	,	11570.43	,	2167.63], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.22	,	11570.43	,	2167.63, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-20",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.89	,	11562.19	,	2151], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.89	,	11562.19	,	2151, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-21",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.555	,	11562.19	,	2159.315], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.555	,	11562.19	,	2159.315, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-22",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.22	,	11562.19	,	2167.63], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.22	,	11562.19	,	2167.63, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-23",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.89	,	11554.16	,	2151], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.89	,	11554.16	,	2151, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-24",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.555	,	11554.16	,	2159.315], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.555	,	11554.16	,	2159.315, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-25",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1872.22	,	11554.16	,	2167.63], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.5696, 0.4188, -0.4188, 0.5696], // quaternion - Along Z axis in Blender
+      "bsphere": [1872.22	,	11554.16	,	2167.63, 10], // bounding sphere
+      "lump": {
+        "name": "ju-rcave-swingpole-26",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+
+    {
+      "trans": [1786.24, 11637.75, 2273.66  ], // translation
+      "etype": "ventblue",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1786.24, 11637.75, 2273.66  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-ventblue-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans":  [1691.69, 11636.38, 2300.62  ], // translation
+      "etype": "launcher",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1691.69, 11636.38, 2300.62  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-launcher-02",
+        "mode": "'#x1", // what does this do?
+        "spring-height": ["meters", 80.0],
+        "alt-vector": ["vector4m", [1841.70, 11539.68, 2101.27, 0.0003]]
+      }
+    },
 
     // {
     //   "trans": [2199.50, 10369.6, 2132.06  ], // translation

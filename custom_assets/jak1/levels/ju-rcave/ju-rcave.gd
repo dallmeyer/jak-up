@@ -4,7 +4,11 @@
 ;; the actual file name still needs to be 8.3
 ("UPI.DGO"
  ("static-screen.o"
+  "cavecrystal-light.o"
+  "maincave-obs.o"
   "spiderwebs.o"
   "spiderwebs-ag.go"
+  "eichar-pole+0-ag.go"
+  "cavespatulatwo-ag.go"
   "ju-rcave.go"
  ))
