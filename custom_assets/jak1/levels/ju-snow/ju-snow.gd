@@ -4,5 +4,7 @@
 ;; the actual file name still needs to be 8.3
 ("UPJ.DGO"
  ("static-screen.o"
+  "target-ice.o"
+  "eichar-ice+0-ag.go"
   "ju-snow.go"
  ))

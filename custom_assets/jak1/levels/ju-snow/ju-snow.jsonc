@@ -37,7 +37,7 @@
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
   // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
-  "art_groups": [],
+  "art_groups": ["eichar-ice+0-ag"],
 
   "ambients": [],
 
