@@ -1726,6 +1726,9 @@
 (build-custom-level "ju-rcave")
 (custom-level-cgo "UPI.DGO" "ju-rcave/ju-rcave.gd")
 
+(build-custom-level "ju-snow")
+(custom-level-cgo "UPJ.DGO" "ju-snow/ju-snow.gd")
+
 ;; generate the art group for a custom actor.
 ;; requires a .glb model file in custom_assets/jak1/models/custom_levels
 ;; to also generate a collide-mesh, add :gen-mesh #t

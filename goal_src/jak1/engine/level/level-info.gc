@@ -3615,7 +3615,7 @@
                     -0.5537 -0.1213 0.8237)
              :load-commands
              '()
-             :vis-nick 'uph
+             :vis-nick 'upi
              :lev0 'ju-dcave
              :disp0 'display
              :lev1 'ju-rcave
@@ -3637,7 +3637,67 @@
        '("common")
        :wait-for-load #t))
 
+(define ju-snow
+  (new 'static
+       'level-load-info
+       :index 46
+       :name 'ju-snow
+       :visname 'ju-snow-vis
+       ;; name + -vis
+       :nickname 'upj
+       ;; nickname
+       :packages '(snow)
+       :sound-banks '(snow)
+       :music-bank 'snow
+       :ambient-sounds
+       '()
+       :mood '*snow-mood*
+       :mood-func 'update-mood-snow
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-snow-start"
+             :level 'ju-snow
+             :trans
+             (new 'static 'vector :x (meters 1639.9603) :y (meters 11819.9082) :z (meters 2312.8063) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.5578 :z 0.0000 :w 0.8299)
+             :camera-trans
+             (new 'static 'vector :x (meters 1651.4862) :y (meters 11825.0644) :z (meters 2307.9689) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+                    0.3879 0.0000 0.9216
+                    -0.1125 0.9925 0.0473
+                    -0.9147 -0.1221 0.3850)
+             :load-commands
+             '()
+             :vis-nick 'upj
+             :lev0 'ju-rcave
+             :disp0 'display
+             :lev1 'ju-snow
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-snow)
+
 (cons! *level-load-list* 'ju-rcave)
 
 (cons! *level-load-list* 'ju-dcave)

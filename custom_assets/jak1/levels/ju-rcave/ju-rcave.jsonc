@@ -390,8 +390,8 @@
       "lump": {
         "name":"ju-rcave-launcher-02",
         "mode": "'#x1", // what does this do?
-        "spring-height": ["meters", 80.0],
-        "alt-vector": ["vector4m", [1841.70, 11539.68, 2101.27, 0.0003]]
+        "spring-height": ["meters", 230.0],
+        "alt-vector": ["vector4m", [1641.97, 11820.01, 2311.97, 0.0003]]
       }
     },
 
