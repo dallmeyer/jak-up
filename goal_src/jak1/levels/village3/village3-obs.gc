@@ -86,6 +86,10 @@
   :bounds (static-spherem 0 -5.5 0 6.5)
   :shadow gondola-shadow-mg)
 
+(defun up? ()
+  (or (= (-> *load-state* want 0 name) 'ju-snowb) 
+      (= (-> *load-state* want 1 name) 'ju-snowb)))
+
 (defstate idle (gondola)
   :virtual #t
   :code
@@ -95,6 +99,18 @@
       (cond
         (arg0
          (set! (-> self anim)
+            (if (up?)
+               (new 'static
+                    'spool-anim
+                    :name "gondola-ride-down"
+                    :index 6
+                    :parts 3
+                    :command-list
+                    '((0 shadow target #f)
+                     (0 shadow sidekick #f)
+                     (618 save)
+                     (619 blackout 20)
+                     (619 shadow target #t)))            
                (new 'static
                     'spool-anim
                     :name "gondola-ride-down"
@@ -109,23 +125,34 @@
                      (300 setting-reset music village3)
                      (618 save)
                      (619 blackout 20)
-                     (619 shadow target #t))))
+                     (619 shadow target #t)))))
          (ja :group! gondola-idle-up-ja))
         (else
          (set! (-> self anim)
+            (if (up?)
                (new 'static
                     'spool-anim
                     :name "gondola-ride-up"
                     :index 5
                     :parts 3
                     :command-list
-                    '((0 want-levels village3 snow)
-                     (0 shadow target #f)
-                     (400 setting-reset music snow)
-                     (400 display-level snow display)
-                     (678 save)
-                     (679 blackout 20)
-                     (679 shadow target #t))))
+                      '((0 shadow target #f)
+                      (678 save)
+                      (679 blackout 20)
+                      (679 shadow target #t)))
+               (new 'static
+                    'spool-anim
+                    :name "gondola-ride-up"
+                    :index 5
+                    :parts 3
+                    :command-list
+                      '((0 want-levels village3 snow)
+                      (0 shadow target #f)
+                      (400 setting-reset music snow)
+                      (400 display-level snow display)
+                      (678 save)
+                      (679 blackout 20)
+                      (679 shadow target #t)))))
          (ja :group! gondola-idle-down-ja)))
       (transform-post)
       (loop
@@ -149,11 +176,11 @@
                 (s4-1 (and *cheat-mode* (cpad-hold? 0 l3)))
                 (s5-1 (vector<-cspace! (new 'stack-no-clear 'vector) (joint-node gondola-lod0-jg main))))
             (cond
-              ((not (or s4-1 (task-closed? (game-task village3-button) (task-status need-hint)))))
-              ((and (< (the int (-> *game-info* fuel)) (+ s3-0 2)) (< (the int (-> *game-info* fuel)) 71) (not s4-1))
+              ((not (or (up?) s4-1 (task-closed? (game-task village3-button) (task-status need-hint)))))
+              ((and (< (the int (-> *game-info* fuel)) (+ s3-0 2)) (< (the int (-> *game-info* fuel)) 71) (not s4-1) (not (up?)))
                (level-hint-spawn (text-id gondola-need-cells) "asstvb75" (the-as entity #f) *entity-pool* (game-task none)))
               (else
-               (level-hint-spawn (text-id gondola-enough-cells) "asstvb76" (the-as entity #f) *entity-pool* (game-task none))
+               (if (not (up?)) (level-hint-spawn (text-id gondola-enough-cells) "asstvb76" (the-as entity #f) *entity-pool* (game-task none)))
                (let ((s4-3 (new 'stack-no-clear 'event-message-block)))
                  (set! (-> s4-3 from) self)
                  (set! (-> s4-3 num-params) 0)
@@ -215,7 +242,7 @@
           (suspend)
           (send-event *camera* 'teleport-to-other-start-string))
         (load-state-want-vis 'sno)
-        (set-continue! *game-info* "snow-start"))
+        (if (not (up?)) (set-continue! *game-info* "snow-start")))
       (process-entity-status! self (entity-perm-status bit-3) #f)
       (go-virtual idle #t))
   :post
@@ -251,7 +278,7 @@
           (suspend)
           (send-event *camera* 'teleport-to-other-start-string))
         (load-state-want-vis 'vi3)
-        (set-continue! *game-info* "village3-farside"))
+        (if (not (up?)) (set-continue! *game-info* "village3-farside")))
       (process-entity-status! self (entity-perm-status bit-3) #f)
       (go-virtual idle #f))
   :post

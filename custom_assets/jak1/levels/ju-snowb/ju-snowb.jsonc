@@ -37,7 +37,7 @@
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
   // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
-  "art_groups": ["eichar-ice+0-ag", "eichar-pole+0-ag", "snow-bumper-ag", "snow-spatula-ag", "eichar-flut+0-ag", "ef-plane-ag", "flut-saddle-ag"],
+  "art_groups": ["eichar-ice+0-ag", "eichar-pole+0-ag", "snow-bumper-ag", "snow-spatula-ag", "eichar-flut+0-ag", "ef-plane-ag", "flut-saddle-ag", "gondola-ag"],
 
   "ambients": [],
 
@@ -229,6 +229,17 @@
         "scale": ["float", 1.0, 1.0, 1.0, 1.0]
       }
     },
+    {
+      "trans": [1464.23, 12270.26, 2267.19   ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1464.23, 12270.26, 2267.19   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-06",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
 
     {
       "trans": [1358.82, 12268.81, 2330.00   ], // translation
@@ -285,18 +296,28 @@
         "name": "ju-snowb-flutflut-01",
         "index": ["int32", 7] // fuck it, made up my own condition 
       }
-    }//,
-    // {
-    //   "trans": [2135.15, 8027.27, 1287.42], // translation
-    //   "etype": "flutflut",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2135.15, 8027.27, 1287.42, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "ju-snowb-flutflut-02",
-    //     "index": ["int32", 4] // empty pad, return only
-    //   }
-    // }
+    },
+    {
+      "trans": [1330.65, 12733.72, 2365.33  ], // translation
+      "etype": "flutflut",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.0339, -0.9775, 0.1921, -0.0795], // quaternion
+      "bsphere": [1330.65, 12733.72, 2365.33  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-flutflut-02",
+        "index": ["int32", 4] // empty pad, return only
+      }
+    },
+    {
+      "trans": [ 1319.0850, 12750.3769, 2379.2924  ], // translation
+      "etype": "gondola",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.0339, -0.9775, 0.1921, -0.0795], // quaternion
+      "bsphere": [ 1319.0850, 12750.3769, 2379.2924, 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-gondola-01"
+      }
+    }
 
     // {
     //   "trans": [2199.50, 10369.6, 2132.06  ], // translation

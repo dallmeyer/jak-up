@@ -3717,7 +3717,7 @@
        '((new 'static
              'continue-point
              :name "ju-snowb-start"
-             :level 'ju-snow
+             :level 'ju-snowb
              :trans
              (new 'static 'vector :x (meters 1104.2363) :y (meters 12127.2246) :z (meters 2342.7382) :w 1.0)
              :quat
@@ -3753,7 +3753,68 @@
        '("common")
        :wait-for-load #t))
 
+
+(define ju-lava
+  (new 'static
+       'level-load-info
+       :index 48
+       :name 'ju-lava
+       :visname 'ju-lava-vis
+       ;; name + -vis
+       :nickname 'upl
+       ;; nickname
+       :packages '(lavatube)
+       :sound-banks '(lavatube)
+       :music-bank 'lavatube
+       :ambient-sounds
+       '()
+       :mood '*lavatube-mood*
+       :mood-func 'update-mood-lavatube
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-lava-start"
+             :level 'ju-lava
+             :trans
+             (new 'static 'vector :x (meters 1252.84) :y (meters 12937.55) :z (meters 2441.64) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.8580 :z -0.0000 :w 0.5136)
+             :camera-trans
+             (new 'static 'vector :x (meters 1106.5660) :y (meters 12131.7666) :z (meters 2352.7514) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               -0.9688 -0.0000 0.2474
+               -0.0342 0.9903 -0.1341
+               -0.2450 -0.1384 -0.9595)
+             :load-commands
+             '()
+             :vis-nick 'upl
+             :lev0 'ju-snowb
+             :disp0 'display
+             :lev1 'ju-lava
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-lava)
+
 (cons! *level-load-list* 'ju-snowb)
 
 (cons! *level-load-list* 'ju-snow)
