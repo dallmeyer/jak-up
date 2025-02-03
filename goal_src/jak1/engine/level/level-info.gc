@@ -3771,23 +3771,23 @@
        :mood '*lavatube-mood*
        :mood-func 'update-mood-lavatube
        :ocean #f
-       :sky #t
+       :sky #f
        :continues
        '((new 'static
              'continue-point
              :name "ju-lava-start"
              :level 'ju-lava
              :trans
-             (new 'static 'vector :x (meters 1252.84) :y (meters 12937.55) :z (meters 2441.64) :w 1.0)
+             (new 'static 'vector :x (meters 1248.1433) :y (meters 12940.1904) :z (meters 2451.3598) :w 1.0)
              :quat
-             (new 'static 'quaternion :x 0.0000 :y -0.8580 :z -0.0000 :w 0.5136)
+             (new 'static 'quaternion :x 0.0000 :y -0.2804 :z 0.0000 :w 0.9598)
              :camera-trans
-             (new 'static 'vector :x (meters 1106.5660) :y (meters 12131.7666) :z (meters 2352.7514) :w 1.0)
+             (new 'static 'vector :x (meters 1256.4759) :y (meters 12945.3271) :z (meters 2442.0417) :w 1.0)
              :camera-rot
              (new 'static 'array float 9 
-               -0.9688 -0.0000 0.2474
-               -0.0342 0.9903 -0.1341
-               -0.2450 -0.1384 -0.9595)
+               0.7456 0.0000 0.6663
+               -0.0799 0.9927 0.0894
+               -0.6615 -0.1199 0.7402)
              :load-commands
              '()
              :vis-nick 'upl
@@ -3812,7 +3812,67 @@
        '("common")
        :wait-for-load #t))
 
+(define ju-lavab
+  (new 'static
+       'level-load-info
+       :index 49
+       :name 'ju-lavab
+       :visname 'ju-lavab-vis
+       ;; name + -vis
+       :nickname 'upm
+       ;; nickname
+       :packages '(lavatube)
+       :sound-banks '(lavatube)
+       :music-bank 'lavatube
+       :ambient-sounds
+       '()
+       :mood '*lavatube-mood*
+       :mood-func 'update-mood-lavatube
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-lavab-start"
+             :level 'ju-lavab
+             :trans
+             (new 'static 'vector :x (meters 1252.84) :y (meters 12937.55) :z (meters 2441.64) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.8580 :z -0.0000 :w 0.5136)
+             :camera-trans
+             (new 'static 'vector :x (meters 1106.5660) :y (meters 12131.7666) :z (meters 2352.7514) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               -0.9688 -0.0000 0.2474
+               -0.0342 0.9903 -0.1341
+               -0.2450 -0.1384 -0.9595)
+             :load-commands
+             '()
+             :vis-nick 'upm
+             :lev0 'ju-lava
+             :disp0 'display
+             :lev1 'ju-lavab
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-lavab)
+
 (cons! *level-load-list* 'ju-lava)
 
 (cons! *level-load-list* 'ju-snowb)
