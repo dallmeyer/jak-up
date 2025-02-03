@@ -1,0 +1,717 @@
+{
+  // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
+  // the name of this file, and the folder this file is in must have the same name.
+  "long_name": "ju-lava",
+  // The file name, should be upper case and 8 characters or less.
+  "iso_name": "UPLAVA",
+  // The nickname, should be exactly 3 characters
+  "nickname": "upl", // 3 char name, all lowercase
+  // Background mesh file.
+  // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
+  // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
+  // only have 1.
+  "gltf_file": "custom_assets/jak1/levels/ju-lava/ju-lava.glb",
+
+  // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
+  "automatic_wall_detection": true,
+  "automatic_wall_angle": 60.0,
+
+  // if your mesh has triangles with incorrect orientation, set this to make all collision mesh triangles double sided
+  // this makes collision 2x slower and bigger, so only use if really needed
+  "double_sided_collide": true,
+
+  // available res-lump tag data types:
+  // int32, float, meters, vector, vector4m (meters)
+  //
+  // examples:
+  //
+  // adds a float tag 'spring-height' with value of 200 meters (1 meter = 4096.0 units):
+  // "spring-height": ["meters", 200.0]
+  //
+  // adds a vector tag 'movie-pos':
+  // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
+
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 22000,
+  
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "balloon-ag"],
+
+  "ambients": [],
+
+  "actors" : [
+    // {
+    //   "trans": [1801.66, 1999.63, 1818.89], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1801.66, 1999.63, 1818.89, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "ju-fire-racer-01"//,
+    //     // "index": ["int32", 2] // always spawn I think
+    //   }
+    // },
+    // {
+    //   "trans": [2311.18, 3101.37, 2050.84], // translation
+    //   "etype": "racer",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2311.18, 3101.37, 2050.84, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "ju-fire-racer-02",
+    //     "index": ["int32", 7] // fuck it, made up my own condition
+    //   }
+    // },
+    // {
+    //   "trans": [2304.97, 2889.68, 1989.87], // translation
+    //   "etype": "balloon",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2304.97, 2889.68, 1989.87, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "ju-fire-balloon-01"
+    //   }
+    // },
+    // {
+    //   "trans": [1950.80, 2544.77, 1963.16], // translation
+    //   "etype": "balloon",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1950.80, 2544.77, 1963.16, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "ju-fire-balloon-02"
+    //   }
+    // },
+    // {
+    //   "trans": [1823.14, 2321.57, 1923.91], // translation
+    //   "etype": "balloon",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1823.14, 2321.57, 1923.91, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "ju-fire-balloon-03"
+    //   }
+    // },
+    // {
+    //   "trans": [1871.19, 2255.46, 1893.33], // translation
+    //   "etype": "balloon",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1871.19, 2255.46, 1893.33, 10], // bounding sphere
+    //   "lump": {
+    //     "name": "ju-fire-balloon-04"
+    //   }
+    // },
+    // {
+    //   "trans": [1949.79, 3381.5, 1913.05], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 124, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1949.79, 3381.5, 1913.05, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-fuel-cell",
+    //     "eco-info":["int32", 6, 124]
+    //   }
+    // },
+
+    // // FLIES
+
+    // {
+    //   "trans": [1840.83, 2059.47, 1853.37], // behind first bridge
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+    //   "bsphere": [1840.83, 2059.47, 1853.37, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-01",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 68], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 1840.83, 2059.47, 1853.37]
+    //   }
+    // },
+    // {
+    //   "trans": [1820.33, 2328.14, 1943.37], // in gap on right side
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [0.0, -0.0, 0.0, 0.0], // quaternion
+    //   "bsphere": [1820.33, 2328.14, 1943.37, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-02",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 65604], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 1820.33, 2328.14, 1943.37]
+    //   }
+    // },
+    // {
+    //   "trans": [1761.84, 2497.02, 1980.56], // tree next to gap
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+    //   "bsphere": [1761.84, 2497.02, 1980.56, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-03",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 131140], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 1761.84, 2497.02, 1980.56]
+    //   }
+    // },
+    // {
+    //   "trans": [2195.21, 2735.6, 1980.40], // behind rock in pit towards end
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+    //   "bsphere": [2195.21, 2735.6, 1980.40, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-04",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 196676], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2195.21, 2735.6, 1980.40]
+    //   }
+    // },
+    // {
+    //   "trans": [2055.13, 3343.89, 2020.62], // in precursor thing hole
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [-0.0, 0.0, -0.0, 0.0], // quaternion
+    //   "bsphere": [2055.13, 3343.89, 2020.62, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-05",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 262212], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2055.13, 3343.89, 2020.62]
+    //   }
+    // },
+    // {
+    //   "trans": [2114.96, 3307.09, 2008.18], // on stone pillar in final section
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+    //   "bsphere": [2114.96, 3307.09, 2008.18, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-06",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 327748], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2114.96, 3307.09, 2008.18]
+    //   }
+    // },
+    // {
+    //   "trans": [1928.09, 3364.43, 2006.71], // small stone island towards very end
+    //   "etype": "crate",  // actor type
+    //   "game_task": 68, // associated game task (for powercells, etc)
+    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+    //   "bsphere": [1928.09, 3364.43, 2006.71, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-buzzer-07",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 393284], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 1928.09, 3364.43, 2006.71]
+    //   }
+    // }//,
+
+    // ORBS
+
+    // {
+    //   "trans": [ 1916.08,  27.50, 1937.77  ], // 3 on left at start
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-01"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1917.15,  27.00, 1933.05  ], // 3 on left at start
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-02"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1918.61, 27.01, 1927.68   ], // 3 on left at start
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-03"
+    //   }
+    // },     
+
+    // {
+    //   "trans": [ 1905.80,  25.13, 1908.50   ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-04"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1905.33,  31.71, 1905.45   ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-05"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1909.41,  38.80, 1902.86   ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-06"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1907.10,  47.66, 1898.40   ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-07"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1908.04,  56.63, 1893.46   ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-08"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1911.93,  61.8, 1891.84     ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-09"
+    //   }
+    // }
+    // ,
+    // {
+    //   "trans": [ 1932.75,  73.2, 1907.89    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-10"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1934.35,  82.5, 1919.34    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-11"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1961.10,  91.2, 1924.98    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-12"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1990.43, 102.8, 1929.85    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-13"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1996.35, 110.9, 1949.22    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-14"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1992.36, 112.0, 1937.42    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-15"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1997.77, 120.0, 1934.13    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-16"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2021.17, 125.7, 1944.38    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-17"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2017.72, 128.7, 1953.01    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-18"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2028.49, 133.9, 1958.19    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-19"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2064.01, 146.2, 1935.98    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-20"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2080.08, 171.9, 1913.53    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-21"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2056.40, 182.5, 1873.46    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-22"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2023.06, 190.5, 1864.60    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-23"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2024.65, 190.8, 1863.42    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-24"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2026.40, 191.3, 1861.88    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-25"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2022.26, 195.0, 1842.67    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-26"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2017.01, 205.9, 1845.62    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-27"
+    //   }
+    // },
+    // {
+    //   "trans": [ 2011.03, 218.5, 1860.14    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-28"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1991.92, 227.2, 1858.66    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-29"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1953.40, 234.5, 1860.77    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-30"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1953.31, 242.0, 1858.33    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-31"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1952.29, 249.3, 1858.84    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-32"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1948.76, 260.4, 1861.82    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-33"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1890.23, 254.1, 1893.81    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-34"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1890.68, 256.6, 1906.01    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-35"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1870.17, 254.0, 1931.34    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-36"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1865.78, 265.5, 1951.03    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-37"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1879.60, 274.7, 1973.11    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-38"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1875.96, 287.6, 1979.28    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-39"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1915.32, 308.0, 2003.52    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-40"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1921.40, 314.8, 2004.11    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-41"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1928.29, 322.0, 2000.41    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-42"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1944.86, 329.4, 1998.06    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-43"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1980.84, 340.1, 1979.74    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-4"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1983.92, 349.0, 1984.67    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-45"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1974.26, 352.2, 1981.85    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-46"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1992.89, 366.5, 1945.88    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-47"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1986.64, 379.9, 1923.50    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-48"
+    //   }
+    // },
+    // {
+    //   "trans": [ 1970.54, 383.6, 1906.81    ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-49"
+    //   }
+    // },
+    // {
+    //   "trans": [  1958.38, 377.1, 1931.69     ], // path up cliff
+    //   "etype": "money",  // actor type
+    //   "game_task": 0, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-fire-money-50"
+    //   }
+    // }
+  ]
+}
