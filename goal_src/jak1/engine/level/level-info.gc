@@ -3836,7 +3836,7 @@
              :name "ju-lavab-start"
              :level 'ju-lavab
              :trans
-             (new 'static 'vector :x (meters 1252.84) :y (meters 12937.55) :z (meters 2441.64) :w 1.0)
+             (new 'static 'vector :x (meters 1352.7801) :y (meters 13424.0263) :z (meters 2470.5187) :w 1.0) ;; TODO change this
              :quat
              (new 'static 'quaternion :x 0.0000 :y -0.8580 :z -0.0000 :w 0.5136)
              :camera-trans

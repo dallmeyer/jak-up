@@ -36,34 +36,110 @@
   
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": [],
-  // "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "balloon-ag"],
+  "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "balloon-ag"],
 
   "ambients": [],
 
   "actors" : [
-    // {
-    //   "trans": [1801.66, 1999.63, 1818.89], // translation
-    //   "etype": "racer",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [1801.66, 1999.63, 1818.89, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "ju-fire-racer-01"//,
-    //     // "index": ["int32", 2] // always spawn I think
-    //   }
-    // },
-    // {
-    //   "trans": [2311.18, 3101.37, 2050.84], // translation
-    //   "etype": "racer",  // actor type
-    //   "game_task": 0, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2311.18, 3101.37, 2050.84, 10], // bounding sphere
-    //   "lump": {
-    //     "name": "ju-fire-racer-02",
-    //     "index": ["int32", 7] // fuck it, made up my own condition
-    //   }
-    // },
+    {
+      "trans": [1381.97, 13435.74, 2370.98  ], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1381.97, 13435.74, 2370.98  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-lavab-racer-01"//,
+        // "index": ["int32", 2] // always spawn I think
+      }
+    },
+    {
+      "trans": [1397.43, 13428.21, 2413.72], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1397.43, 13428.21, 2413.72, 10], // bounding sphere
+      "lump": {
+        "name": "ju-lavab-racer-02"//,
+        // "index": ["int32", 2] // always spawn I think
+      }
+    },
+    {
+      "trans": [1088.37, 13512.98, 2260.33], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1088.37, 13512.98, 2260.33, 10], // bounding sphere
+      "lump": {
+        "name":"ju-lavab-blue-eco-01",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [1019.56, 13527.39, 2262.99], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1019.56, 13527.39, 2262.99, 10], // bounding sphere
+      "lump": {
+        "name":"ju-lavab-blue-eco-02",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [957.41, 13543.98, 2247.25], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [957.41, 13543.98, 2247.251, 10], // bounding sphere
+      "lump": {
+        "name":"ju-lavab-blue-eco-03",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [909.12, 13560.72, 2210.56], // translation
+      "etype": "eco",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [909.12, 13560.72, 2210.561, 10], // bounding sphere
+      "lump": {
+        "name":"ju-lavab-blue-eco-04",
+        "eco-info": ["int32", 3, 1]
+      }
+    },
+    {
+      "trans": [999.58, 13529.86, 2257.74], // translation
+      "etype": "ventyellow",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [999.58, 13529.86, 2257.74, 10], // bounding sphere
+      "lump": {
+        "name":"ju-lavab-ventyellow-01",
+        "eco-info": ["int32", 1, 1]
+      }
+    }, 
+    {
+      "trans": [1276.99, 13820.38, 2410.52], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1276.99, 13820.38, 2410.52, 10], // bounding sphere
+      "lump": {
+        "name": "ju-lavab-racer-03",
+        "index": ["int32", 7] // fuck it, made up my own condition
+      }
+    },
+    {
+      "trans": [1258.41, 13758.57, 2319.04], // translation
+      "etype": "racer",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1258.41, 13758.57, 2319.04, 10], // bounding sphere
+      "lump": {
+        "name": "ju-lavab-racer-04",
+        "index": ["int32", 7] // fuck it, made up my own condition
+      }
+    }//,
     // {
     //   "trans": [2304.97, 2889.68, 1989.87], // translation
     //   "etype": "balloon",  // actor type
