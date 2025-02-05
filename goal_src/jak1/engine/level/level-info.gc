@@ -3836,16 +3836,16 @@
              :name "ju-lavab-start"
              :level 'ju-lavab
              :trans
-             (new 'static 'vector :x (meters 1352.7801) :y (meters 13424.0263) :z (meters 2470.5187) :w 1.0) ;; TODO change this
+             (new 'static 'vector :x (meters 834.4803) :y (meters 13239.5664) :z (meters 3267.8803)  :w 1.0)
              :quat
-             (new 'static 'quaternion :x 0.0000 :y -0.8580 :z -0.0000 :w 0.5136)
+             (new 'static 'quaternion :x 0.0000 :y 0.8933 :z 0.0000 :w 0.4494)
              :camera-trans
-             (new 'static 'vector :x (meters 1106.5660) :y (meters 12131.7666) :z (meters 2352.7514) :w 1.0)
+             (new 'static 'vector :x (meters 823.2460) :y (meters 13244.7031) :z (meters 3273.3596) :w 1.0)
              :camera-rot
              (new 'static 'array float 9 
-               -0.9688 -0.0000 0.2474
-               -0.0342 0.9903 -0.1341
-               -0.2450 -0.1384 -0.9595)
+               -0.4393 0.0000 -0.8983
+               0.1086 0.9926 -0.0531
+               0.8917 -0.1209 -0.4361)
              :load-commands
              '()
              :vis-nick 'upm
@@ -3870,7 +3870,91 @@
        '("common")
        :wait-for-load #t))
 
+(define ju-cita
+  (new 'static
+       'level-load-info
+       :index 50
+       :name 'ju-cita
+       :visname 'ju-cita-vis
+       ;; name + -vis
+       :nickname 'upn
+       ;; nickname
+       :packages '(citadel)
+       :sound-banks '(citadel)
+       :music-bank 'citadel
+       :ambient-sounds
+       '()
+       :mood '*citadel-mood*
+       :mood-func 'update-mood-citadel
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-cita-start"
+             :level 'ju-cita
+             :trans
+             (new 'static 'vector :x (meters 1280.6676) :y (meters 13819.5068) :z (meters 2429.8464) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.0841 :z 0.0000 :w -0.9964)
+             :camera-trans
+             (new 'static 'vector :x (meters 1281.0549) :y (meters 13824.3574) :z (meters 2418.5053) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               0.9993 -0.0000 0.0348
+               -0.0043 0.9923 0.1235
+               -0.0345 -0.1235 0.9917)
+             :load-commands
+             '()
+             :vis-nick 'upn
+             :lev0 'ju-lavab
+             :disp0 'display
+             :lev1 'ju-cita
+             :disp1 'display)
+                        
+          (new 'static
+               'continue-point
+               :name "ju-cita-warp"
+               :level 'ju-cita
+               :flags (continue-flags warp)
+               :trans
+               (new 'static 'vector :x (meters 2002.4630) :y (meters 14153.9101) :z (meters 3126.6381) :w 1.0)
+               :quat
+               (new 'static 'quaternion :x -0.0000 :y 0.9986 :z 0.0000 :w -0.0523)
+               :camera-trans
+               (new 'static 'vector :x (meters 2000.2675) :y (meters 14158.9238) :z (meters 3114.9177) :w 1.0)
+               :camera-rot
+               (new 'static 'array float 9 
+                    0.9810 -0.0000 -0.1939
+                    0.0294 0.9883 0.1491
+                    0.1916 -0.1520 0.9696)
+               :load-commands
+               '()
+               :vis-nick 'upn
+               :lev0 'ju-lavab
+               :disp0 'display
+               :lev1 'ju-cita
+               :disp1 'display)
+          )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-cita)
+
 (cons! *level-load-list* 'ju-lavab)
 
 (cons! *level-load-list* 'ju-lava)

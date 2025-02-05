@@ -200,8 +200,8 @@
              ((string= (-> arg0 name) "ju-vil3-warp")
               (set! (-> s5-6 quad) (-> (entity-by-name "ju-vil3-warpgate-01") extra trans quad))
               )
-             ((string= (-> arg0 name) "ju-vil4-warp")
-              (set! (-> s5-6 quad) (-> (entity-by-name "ju-vil4-warpgate-01") extra trans quad))
+             ((string= (-> arg0 name) "ju-cita-warp")
+              (set! (-> s5-6 quad) (-> (entity-by-name "ju-cita-warpgate-01") extra trans quad))
               )
 
              ;; vanilla warp gates below
