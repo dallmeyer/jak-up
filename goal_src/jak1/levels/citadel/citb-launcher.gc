@@ -1,0 +1,41 @@
+;;-*-Lisp-*-
+(in-package goal)
+(bundles "CIT.DGO")
+(require "engine/common-obs/plat.gc")
+(require "engine/common-obs/baseplat.gc")
+(require "engine/common-obs/basebutton.gc")
+(require "levels/common/battlecontroller.gc")
+(require "engine/camera/pov-camera-h.gc")
+
+;; DECOMP BEGINS
+
+(deftype citb-launcher (plat)
+  ((launcher (pointer launcher))))
+
+
+(defstate plat-path-active (citb-launcher)
+  :virtual #t
+  :post
+    (behavior ()
+      (let ((t9-0 (-> (method-of-type plat plat-path-active) post)))
+        (if t9-0 ((the-as (function none :behavior citb-launcher) t9-0))))
+      (send-event (ppointer->process (-> self launcher)) 'trans (-> self basetrans))))
+
+(defskelgroup *citb-launcher-sg*
+  citb-launcher
+  citb-launcher-lod0-jg
+  citb-launcher-idle-ja
+  ((citb-launcher-lod0-mg (meters 999999)))
+  :bounds (static-spherem 0 0 0 4))
+
+(defmethod get-unlit-skel ((this citb-launcher))
+  *citb-launcher-sg*)
+
+(defmethod baseplat-method-26 ((this citb-launcher))
+  (let ((f30-0 (res-lump-float (-> this entity) 'spring-height :default 163840.0))
+        (s5-0 (res-lump-value (-> this entity) 'mode uint128)))
+    (set! (-> this launcher) (process-spawn launcher (-> this root trans) f30-0 s5-0 81920.0 :to this)))
+  (set! (-> this root root-prim local-sphere w) 18432.0)
+  (logclear! (-> this mask) (process-mask actor-pause))
+  0
+  (none))

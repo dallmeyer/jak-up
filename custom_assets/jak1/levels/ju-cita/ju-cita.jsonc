@@ -3,7 +3,7 @@
   // the name of this file, and the folder this file is in must have the same name.
   "long_name": "ju-cita",
   // The file name, should be upper case and 8 characters or less.
-  "iso_name": "UPcita",
+  "iso_name": "UPCITA",
   // The nickname, should be exactly 3 characters
   "nickname": "upn", // 3 char name, all lowercase
   // Background mesh file.
@@ -42,32 +42,32 @@
 
   "actors" : [
     {
-      "trans": [2002.88, 14156.13, 3130.24  ], // translation
+      "trans": [2010.74, 14156.17, 3124.11  ], // translation
       "etype": "warpgate",  // actor type
       "game_task": 0, // associated game task (for powercells, etc)
-      "quat" : [0, 0.6843, 0, -0.7291], // quaternion
-      "bsphere": [2002.88, 14156.13, 3130.24  , 10], // bounding sphere
+      "quat" : [0, -0.6557, 0, 0.7550], // quaternion
+      "bsphere": [2010.74, 14156.17, 3124.11  , 10], // bounding sphere
       "lump": {
         "name":"ju-cita-warpgate-01" 
       }
     },
     {
-      "trans": [2008.66, 14154.65, 3125.68  ], 
+      "trans": [2003.0, 14155.06, 3129.3  ], 
       "etype": "warp-gate-switch",
       "game_task": 0,
       "quat" : [0.0357, 0.8123, -0.2075, -0.5438],
-      "bsphere": [ 2008.66, 14154.65, 3125.68  , 10],
+      "bsphere": [2003.0, 14155.06, 3129.3   , 10],
       "lump": {
         "name": "ju-cita-warp-gate-switch-01",
         "alt-actor": "ju-cita-part-01"
       }
     },
     {
-      "trans": [2002.88, 14158.53, 3130.24  ], 
+      "trans": [2010.74, 14158.17, 3124.11  ], 
       "etype": "citb-part",
       "game_task": 0,
-      "quat" : [0, 0.6843, 0, -0.7291], // quaternion
-      "bsphere": [2002.88, 14158.53, 3130.24  , 10],
+      "quat" : [0, -0.6557, 0, 0.7550], // quaternion
+      "bsphere": [2010.74, 14158.17, 3124.11  , 10],
       "lump": {
         "name": "ju-cita-part-01",
         "effect-name": "'warpgate-loop",

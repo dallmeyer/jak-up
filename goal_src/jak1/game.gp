@@ -1479,6 +1479,8 @@
 
   "citadel-part.gc"
   "citadel-obs.gc"
+  "citadel-generator.gc"
+  "citb-launcher.gc"
   "citb-plat.gc"
   "citadel-sages.gc"
   "citb-bunny.gc"
@@ -1740,6 +1742,12 @@
 
 (build-custom-level "ju-cita")
 (custom-level-cgo "UPN.DGO" "ju-cita/ju-cita.gd")
+
+(build-custom-level "ju-citab")
+(custom-level-cgo "UPO.DGO" "ju-citab/ju-citab.gd")
+
+(build-custom-level "ju-final")
+(custom-level-cgo "UPP.DGO" "ju-final/ju-final.gd")
 
 ;; generate the art group for a custom actor.
 ;; requires a .glb model file in custom_assets/jak1/models/custom_levels
