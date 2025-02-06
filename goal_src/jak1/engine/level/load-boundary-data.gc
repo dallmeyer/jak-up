@@ -1526,6 +1526,1590 @@
                   ;; training village1  training    load training + village1  UP
                   ;; ~~~ halfway through training ~~~
                   ;; training none      training    baseline                  n/a
+
+
+                  ;; FINAL
+                  ;; final   XXX    XXX
+                  ;; load final + XXX  DOWN
+                  ;; (static-load-boundary :flags (closed player)
+                  ;;                       :top (meters 9683.71)
+                  ;;                       :bot (meters 9683.71)
+                  ;;                       :points
+                  ;;                       ((meters 272.536)
+                  ;;                        (meters 2727.19)
+                  ;;                        (meters 1348.93)
+                  ;;                        (meters -184.095)
+                  ;;                        (meters 4023.93)
+                  ;;                        (meters 804.937)
+                  ;;                        (meters 2947.54)
+                  ;;                        (meters 3716.22))
+                  ;;                       :fwd (load ju-final ju-XXX)
+                  ;;                       ;; fwd is down it seems?
+                  ;;                       ;; :bwd (load ju-train ju-vil1)
+                  ;;                       )
+                  ;; ;; final   XXX    XXX
+                  ;; ;; hide/show final        BOTH
+                  ;; (static-load-boundary :flags (closed player)
+                  ;;                       :top (meters 9674.12)
+                  ;;                       :bot (meters 9674.12)
+                  ;;                       :points
+                  ;;                       ((meters 272.536)
+                  ;;                        (meters 2727.19)
+                  ;;                        (meters 1348.93)
+                  ;;                        (meters -184.095)
+                  ;;                        (meters 4023.93)
+                  ;;                        (meters 804.937)
+                  ;;                        (meters 2947.54)
+                  ;;                        (meters 3716.22))
+                  ;;                       :fwd (display ju-final display)
+                  ;;                       ;; fwd is down it seems?
+                  ;;                       :bwd
+                  ;;                       (display ju-final #f))
+                  ;; final   XXX    XXX
+                  ;; give XXX checkpt       UP
+                  ;; (static-load-boundary :flags (player)
+                  ;;                       ;;     y top                y bottom
+                  ;;                       :top (meters 9381.11)
+                  ;;                       :bot (meters 9327.42)
+                  ;;                       ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                  ;;                       :points
+                  ;;                       ((meters 2271.24) (meters 1239.8) (meters 2331.54) (meters 1174.76))
+                  ;;                       :fwd
+                  ;;                       (vis upe #f)
+                  ;;                       ;; :bwd (checkpt "ju-XXX-start" #f)
+                  ;;                       )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 17875.0)
+                                        :bot (meters 17788.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2381.4) (meters 1286.7) (meters 2301.0) (meters 1344.6))
+                                        :fwd
+                                        (checkpt "ju-final-gg" #f)
+                                        :bwd
+                                        (checkpt "ju-final-gg" #f))
+                  ;; final   XXX    final
+                  ;; give final checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 17789.0)
+                                        :bot (meters 17789.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upp #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 17789.0)
+                                        :bot (meters 17789.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-final-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; final   XXX    final
+                  ;; hide/show XXX        BOTH
+                  ;; (static-load-boundary :flags (closed player)
+                  ;;                       :top (meters 8801.83)
+                  ;;                       :bot (meters 8801.83)
+                  ;;                       :points
+                  ;;                       ((meters 272.536)
+                  ;;                        (meters 2727.19)
+                  ;;                        (meters 1348.93)
+                  ;;                        (meters -184.095)
+                  ;;                        (meters 4023.93)
+                  ;;                        (meters 804.937)
+                  ;;                        (meters 2947.54)
+                  ;;                        (meters 3716.22))
+                  ;;                       :fwd
+                  ;;                       (display ju-XXX #f) ;; fwd is down it seems?
+                  ;;                       :bwd (display ju-XXX display))
+                  ;; final   XXX    final
+                  ;; ;; load final + XXX    UP
+                  ;; (static-load-boundary :flags (closed player)
+                  ;;                       :top (meters 8791.49)
+                  ;;                       :bot (meters 8791.49)
+                  ;;                       :points
+                  ;;                       ((meters 272.536)
+                  ;;                        (meters 2727.19)
+                  ;;                        (meters 1348.93)
+                  ;;                        (meters -184.095)
+                  ;;                        (meters 4023.93)
+                  ;;                        (meters 804.937)
+                  ;;                        (meters 2947.54)
+                  ;;                        (meters 3716.22))
+                  ;;                       ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                  ;;                       :bwd (load ju-final ju-XXX))
+
+                  ;; CITAB
+                  ;; citab   final    final
+                  ;; load citab + final  DOWN
+                  ;; (static-load-boundary :flags (closed player)
+                  ;;                       :top (meters 9683.71)
+                  ;;                       :bot (meters 9683.71)
+                  ;;                       :points
+                  ;;                       ((meters 272.536)
+                  ;;                        (meters 2727.19)
+                  ;;                        (meters 1348.93)
+                  ;;                        (meters -184.095)
+                  ;;                        (meters 4023.93)
+                  ;;                        (meters 804.937)
+                  ;;                        (meters 2947.54)
+                  ;;                        (meters 3716.22))
+                  ;;                       :fwd (load ju-citab ju-final)
+                  ;;                       ;; fwd is down it seems?
+                  ;;                       ;; :bwd (load ju-train ju-vil1)
+                  ;;                       )
+                  ;; ;; citab   final    final
+                  ;; ;; hide/show citab        BOTH
+                  ;; (static-load-boundary :flags (closed player)
+                  ;;                       :top (meters 9674.12)
+                  ;;                       :bot (meters 9674.12)
+                  ;;                       :points
+                  ;;                       ((meters 272.536)
+                  ;;                        (meters 2727.19)
+                  ;;                        (meters 1348.93)
+                  ;;                        (meters -184.095)
+                  ;;                        (meters 4023.93)
+                  ;;                        (meters 804.937)
+                  ;;                        (meters 2947.54)
+                  ;;                        (meters 3716.22))
+                  ;;                       :fwd (display ju-citab display)
+                  ;;                       ;; fwd is down it seems?
+                  ;;                       :bwd
+                  ;;                       (display ju-citab #f))
+                  ;; citab   final    final
+                  ;; give final checkpt       UP - SPECIAL
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 16437.0)
+                                        :bot (meters 16437.0)
+                                        :points
+                                        ((meters 2164.6)
+                                         (meters 1429.8)
+                                         (meters 2319.1)
+                                         (meters 1406.1)
+                                         (meters 2299.4)
+                                         (meters 1278.2)
+                                         (meters 2144.9)
+                                         (meters 1301.9))
+                                        :fwd
+                                        (vis upp #f)
+                                        :bwd
+                                        (vis upp #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 16437.0)
+                                        :bot (meters 16437.0)
+                                        :points
+                                        ((meters 2164.6)
+                                         (meters 1429.8)
+                                         (meters 2319.1)
+                                         (meters 1406.1)
+                                         (meters 2299.4)
+                                         (meters 1278.2)
+                                         (meters 2144.9)
+                                         (meters 1301.9))
+                                        :fwd
+                                        (checkpt "ju-final-start" #f)
+                                        :bwd
+                                        (checkpt "ju-final-start" #f))
+                  ;; citab   final    citab
+                  ;; give citab checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 16321.0)
+                                        :bot (meters 16321.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upo #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 16321.0)
+                                        :bot (meters 16321.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-citab-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; citab   final    citab
+                  ;; hide/show final        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 15909.0)
+                                        :bot (meters 15909.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-final #f) ;; fwd is down it seems?
+                                        :bwd (display ju-final display))
+                  ;; citab   final    citab
+                  ;; load citab + final    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 15647.0)
+                                        :bot (meters 15647.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-citab ju-final))
+
+                  ;; CITA
+                  ;; cita   citab    citab
+                  ;; load cita + citab  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 15410.0)
+                                        :bot (meters 15410.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-cita ju-citab)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; cita   citab    citab
+                  ;; hide/show cita        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 15137.0)
+                                        :bot (meters 15137.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-cita display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-cita #f))
+                  ;; cita   citab    citab
+                  ;; give citab checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 14954.0)
+                                        :bot (meters 14867.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2481.5) (meters 3002.7) (meters 2448.5) (meters 2909.3))
+                                        :fwd
+                                        (vis upo #f)
+                                        ;; :bwd (checkpt "ju-citab-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 14954.0)
+                                        :bot (meters 14867.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2481.5) (meters 3002.7) (meters 2448.5) (meters 2909.3))
+                                        :fwd
+                                        (checkpt "ju-citab-start" #f)
+                                        :bwd
+                                        (checkpt "ju-citab-start" #f))
+                  ;; cita   citab    cita
+                  ;; give cita checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 14868.0)
+                                        :bot (meters 14868.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upn #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 14868.0)
+                                        :bot (meters 14868.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-cita-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; cita   citab    cita
+                  ;; hide/show citab        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 14719.0)
+                                        :bot (meters 14719.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-citab #f) ;; fwd is down it seems?
+                                        :bwd (display ju-citab display))
+                  ;; cita   citab    cita
+                  ;; load cita + citab    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 14586.0)
+                                        :bot (meters 14586.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-cita ju-citab))
+
+                  ;; LAVAB
+                  ;; lavab   cita    cita
+                  ;; load lavab + cita  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 14425.0)
+                                        :bot (meters 14425.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-lavab ju-cita)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; lavab   cita    cita
+                  ;; hide/show lavab        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 14271.0)
+                                        :bot (meters 14271.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-lavab display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-lavab #f))
+                  ;; BONUS lavab   cita    cita
+                  ;; BONNUS give cita checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 14267.0)
+                                        :bot (meters 14127.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2079.0) (meters 3087.0) (meters 1957.0) (meters 3209.0))
+                                        :fwd
+                                        (vis upn #f)
+                                        ;; :bwd (checkpt "ju-cita-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 14267.0)
+                                        :bot (meters 14127.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2079.0) (meters 3087.0) (meters 1957.0) (meters 3209.0))
+                                        :fwd
+                                        (checkpt "ju-cita-warp" #f)
+                                        :bwd
+                                        (checkpt "ju-cita-warp" #f))
+                  ;; give cita checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 13891.0)
+                                        :bot (meters 13751.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1335.4) (meters 2463.6) (meters 1164.6) (meters 2438.4))
+                                        :fwd
+                                        (vis upn #f)
+                                        ;; :bwd (checkpt "ju-cita-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 13891.0)
+                                        :bot (meters 13751.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1335.4) (meters 2463.6) (meters 1164.6) (meters 2438.4))
+                                        :fwd
+                                        (checkpt "ju-cita-start" #f)
+                                        :bwd
+                                        (checkpt "ju-cita-start" #f))
+                  ;; lavab   cita    lavab
+                  ;; give lavab checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13751.0)
+                                        :bot (meters 13751.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upm #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13751.0)
+                                        :bot (meters 13751.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-lavab-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; lavab   cita    lavab
+                  ;; hide/show cita        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13646.0)
+                                        :bot (meters 13646.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-cita #f) ;; fwd is down it seems?
+                                        :bwd (display ju-cita display))
+                  ;; lavab   cita    lavab
+                  ;; load lavab + cita    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13552.0)
+                                        :bot (meters 13552.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-lavab ju-cita))
+
+                  ;; LAVA
+                  ;; lava   lavab    lavab
+                  ;; load lava + lavab  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13470.0)
+                                        :bot (meters 13470.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-lava ju-lavab)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; lava   lavab    lavab
+                  ;; hide/show lava        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13370.0)
+                                        :bot (meters 13370.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-lava display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-lava #f))
+                  ;; lava   lavab    lavab
+                  ;; give lavab checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 13363.0)
+                                        :bot (meters 13223.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 781.11) (meters 3206.5) (meters 860.89) (meters 3359.5))
+                                        :fwd
+                                        (vis upm #f)
+                                        ;; :bwd (checkpt "ju-lavab-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 13363.0)
+                                        :bot (meters 13223.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 781.11) (meters 3206.5) (meters 860.89) (meters 3359.5))
+                                        :fwd
+                                        (checkpt "ju-lavab-start" #f)
+                                        :bwd
+                                        (checkpt "ju-lavab-start" #f))
+                  ;; lava   lavab    lava
+                  ;; give lava checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13224.0)
+                                        :bot (meters 13224.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upl #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13224.0)
+                                        :bot (meters 13224.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-lava-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; lava   lavab    lava
+                  ;; hide/show lavab        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13139.0)
+                                        :bot (meters 13139.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-lavab #f) ;; fwd is down it seems?
+                                        :bwd (display ju-lavab display))
+                  ;; lava   lavab    lava
+                  ;; load lava + lavab    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13070.0)
+                                        :bot (meters 13070.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-lava ju-lavab))
+
+                  ;; SNOWB
+                  ;; snowb   lava    lava
+                  ;; load snowb + lava  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 13022.0)
+                                        :bot (meters 13022.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-snowb ju-lava)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; snowb   lava    lava
+                  ;; hide/show snowb        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12967.0)
+                                        :bot (meters 12967.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-snowb display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-snowb #f))
+                  ;; snowb   lava    lava
+                  ;; give lava checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 12993.0)
+                                        :bot (meters 12729.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1319.1) (meters 2462.8) (meters 1202.9) (meters 2373.2))
+                                        :fwd
+                                        (vis upl #f)
+                                        ;; :bwd (checkpt "ju-lava-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 12993.0)
+                                        :bot (meters 12729.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1319.1) (meters 2462.8) (meters 1202.9) (meters 2373.2))
+                                        :fwd
+                                        (checkpt "ju-lava-start" #f)
+                                        :bwd
+                                        (checkpt "ju-lava-start" #f))
+                  ;; snowb   lava    snowb
+                  ;; give snowb checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12729.0)
+                                        :bot (meters 12729.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upk #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12729.0)
+                                        :bot (meters 12729.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-snowb-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; snowb   lava    snowb
+                  ;; hide/show lava        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12644.0)
+                                        :bot (meters 12644.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-lava #f) ;; fwd is down it seems?
+                                        :bwd (display ju-lava display))
+                  ;; snowb   lava    snowb
+                  ;; load snowb + lava    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12487.0)
+                                        :bot (meters 12487.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-snowb ju-lava))
+
+                  ;; SNOW
+                  ;; snow   snowb    snowb
+                  ;; load snow + snowb  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12358.0)
+                                        :bot (meters 12358.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-snow ju-snowb)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; snow   snowb    snowb
+                  ;; hide/show snow        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12229.0)
+                                        :bot (meters 12229.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-snow display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-snow #f))
+                  ;; snow   snowb    snowb
+                  ;; give snowb checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 12230.0)
+                                        :bot (meters 12116.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1037.6) (meters 2371.2) (meters 1152.4) (meters 2314.8))
+                                        :fwd
+                                        (vis upk #f)
+                                        ;; :bwd (checkpt "ju-snowb-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 12230.0)
+                                        :bot (meters 12116.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1037.6) (meters 2371.2) (meters 1152.4) (meters 2314.8))
+                                        :fwd
+                                        (checkpt "ju-snowb-start" #f)
+                                        :bwd
+                                        (checkpt "ju-snowb-start" #f))
+                  ;; snow   snowb    snow
+                  ;; give snow checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12116.0)
+                                        :bot (meters 12116.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upj #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12116.0)
+                                        :bot (meters 12116.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-snow-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; snow   snowb    snow
+                  ;; hide/show snowb        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 12041.0)
+                                        :bot (meters 12041.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-snowb #f) ;; fwd is down it seems?
+                                        :bwd (display ju-snowb display))
+                  ;; snow   snowb    snow
+                  ;; load snow + snowb    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11980.0)
+                                        :bot (meters 11980.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-snow ju-snowb))
+
+                  ;; RCAVE
+                  ;; rcave   snow    snow
+                  ;; load rcave + snow  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11921.0)
+                                        :bot (meters 11921.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-rcave ju-snow)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; rcave   snow    snow
+                  ;; hide/show rcave        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11862.0)
+                                        :bot (meters 11862.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-rcave display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-rcave #f))
+                  ;; rcave   snow    snow
+                  ;; give snow checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 11895.0)
+                                        :bot (meters 11659.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1698.4) (meters 2365.6) (meters 1657.6) (meters 2244.4))
+                                        :fwd
+                                        (vis upj #f)
+                                        ;; :bwd (checkpt "ju-snow-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 11895.0)
+                                        :bot (meters 11659.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 1698.4) (meters 2365.6) (meters 1657.6) (meters 2244.4))
+                                        :fwd
+                                        (checkpt "ju-snow-start" #f)
+                                        :bwd
+                                        (checkpt "ju-snow-start" #f))
+                  ;; rcave   snow    rcave
+                  ;; give rcave checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11659.0)
+                                        :bot (meters 11659.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upi #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11659.0)
+                                        :bot (meters 11659.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-rcave-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; rcave   snow    rcave
+                  ;; hide/show snow        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11406.0)
+                                        :bot (meters 11406.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-snow #f) ;; fwd is down it seems?
+                                        :bwd (display ju-snow display))
+                  ;; rcave   snow    rcave
+                  ;; load rcave + snow    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11297.0)
+                                        :bot (meters 11297.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-rcave ju-snow))
+
+                  ;; DCAVE
+                  ;; dcave   rcave    rcave
+                  ;; load dcave + rcave  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11197.0)
+                                        :bot (meters 11197.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-dcave ju-rcave)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; dcave   rcave    rcave
+                  ;; hide/show dcave        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11118.0)
+                                        :bot (meters 11118.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-dcave display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-dcave #f))
+                  ;; dcave   rcave    rcave
+                  ;; give rcave checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 11080.0)
+                                        :bot (meters 11022.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2097.9) (meters 2015.5) (meters 2040.1) (meters 2022.5))
+                                        :fwd
+                                        (vis upi #f)
+                                        ;; :bwd (checkpt "ju-rcave-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 11080.0)
+                                        :bot (meters 11022.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2097.9) (meters 2015.5) (meters 2040.1) (meters 2022.5))
+                                        :fwd
+                                        (checkpt "ju-rcave-start" #f)
+                                        :bwd
+                                        (checkpt "ju-rcave-start" #f))
+                  ;; dcave   rcave    dcave
+                  ;; give dcave checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11022.0)
+                                        :bot (meters 11022.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis uph #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 11022.0)
+                                        :bot (meters 11022.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-dcave-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; dcave   rcave    dcave
+                  ;; hide/show rcave        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10977.0)
+                                        :bot (meters 10977.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-rcave #f) ;; fwd is down it seems?
+                                        :bwd (display ju-rcave display))
+                  ;; dcave   rcave    dcave
+                  ;; load dcave + rcave    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10934.0)
+                                        :bot (meters 10934.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-dcave ju-rcave))
+                  
+                  ;; MCAVE
+                  ;; mcave   dcave    dcave
+                  ;; load mcave + dcave  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10897.0)
+                                        :bot (meters 10897.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-mcave ju-dcave)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; mcave   dcave    dcave
+                  ;; hide/show mcave        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10861.0)
+                                        :bot (meters 10861.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-mcave display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-mcave #f))
+                  ;; mcave   dcave    dcave
+                  ;; give dcave checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 10868.0)
+                                        :bot (meters 10810.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2010.2) (meters 2053.4) (meters 2067.8) (meters 2060.6))
+                                        :fwd
+                                        (vis uph #f)
+                                        ;; :bwd (checkpt "ju-dcave-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 10868.0)
+                                        :bot (meters 10810.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2010.2) (meters 2053.4) (meters 2067.8) (meters 2060.6))
+                                        :fwd
+                                        (checkpt "ju-dcave-start" #f)
+                                        :bwd
+                                        (checkpt "ju-dcave-start" #f))
+                  ;; mcave   dcave    mcave
+                  ;; give mcave checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10810.0)
+                                        :bot (meters 10810.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upg #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10810.0)
+                                        :bot (meters 10810.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-mcave-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; mcave   dcave    mcave
+                  ;; hide/show dcave        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10691.0)
+                                        :bot (meters 10691.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-dcave #f) ;; fwd is down it seems?
+                                        :bwd (display ju-dcave display))
+                  ;; mcave   dcave    mcave
+                  ;; load mcave + dcave    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10605.0)
+                                        :bot (meters 10605.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-mcave ju-dcave))
+
+                  ;; VIL3
+                  ;; vil3   mcave    mcave
+                  ;; load vil3 + mcave  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10527.0)
+                                        :bot (meters 10527.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-vil3 ju-mcave)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; vil3   mcave    mcave
+                  ;; hide/show vil3        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10457.0)
+                                        :bot (meters 10457.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-vil3 display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-vil3 #f))
+                  ;; vil3   mcave    mcave
+                  ;; give mcave checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 10420.0)
+                                        :bot (meters 10362.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2213.7) (meters 2159.0) (meters 2178.3) (meters 2113.0))
+                                        :fwd
+                                        (vis upg #f)
+                                        ;; :bwd (checkpt "ju-mcave-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 10420.0)
+                                        :bot (meters 10362.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2213.7) (meters 2159.0) (meters 2178.3) (meters 2113.0))
+                                        :fwd
+                                        (checkpt "ju-mcave-start" #f)
+                                        :bwd
+                                        (checkpt "ju-mcave-start" #f))
+                  ;; vil3   mcave    vil3
+                  ;; give vil3 checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10362.0)
+                                        :bot (meters 10362.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upf #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10362.0)
+                                        :bot (meters 10362.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-vil3-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; vil3   mcave    vil3
+                  ;; hide/show mcave        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10310.0)
+                                        :bot (meters 10310.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-mcave #f) ;; fwd is down it seems?
+                                        :bwd (display ju-mcave display))
+                  ;; vil3   mcave    vil3
+                  ;; load vil3 + mcave    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10266.0)
+                                        :bot (meters 10266.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-vil3 ju-mcave))
+
+                  ;; OGREB
+                  ;; ogreb   vil3    vil3
+                  ;; load ogreb + vil3  DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10226.0)
+                                        :bot (meters 10226.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (load ju-ogreb ju-vil3)
+                                        ;; fwd is down it seems?
+                                        ;; :bwd (load ju-train ju-vil1)
+                                        )
+                  ;; ogreb   vil3    vil3
+                  ;; hide/show ogreb        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10181.0)
+                                        :bot (meters 10181.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd (display ju-ogreb display)
+                                        ;; fwd is down it seems?
+                                        :bwd
+                                        (display ju-ogreb #f))
+                  ;; ogreb   vil3    vil3
+                  ;; give vil3 checkpt       UP
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 10231.0)
+                                        :bot (meters 10114.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2250.6) (meters 2036.3) (meters 2179.4) (meters 1943.7))
+                                        :fwd
+                                        (vis upf #f)
+                                        ;; :bwd (checkpt "ju-vil3-start" #f)
+                                        )
+                  (static-load-boundary :flags (player)
+                                        ;;     y top                y bottom
+                                        :top (meters 10231.0)
+                                        :bot (meters 10114.0)
+                                        ;;          point 0 x        point 0 z      point 1 x        point 1 z
+                                        :points
+                                        ((meters 2250.6) (meters 2036.3) (meters 2179.4) (meters 1943.7))
+                                        :fwd
+                                        (checkpt "ju-vil3-start" #f)
+                                        :bwd
+                                        (checkpt "ju-vil3-start" #f))
+                  ;; ogreb   vil3    ogreb
+                  ;; give ogreb checkpt     DOWN
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10115.0)
+                                        :bot (meters 10115.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (vis upe #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10115.0)
+                                        :bot (meters 10115.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (checkpt "ju-ogreb-start" #f) ;; fwd is down it seems?
+                                        ;; :bwd (checkpt "ju-vil1-start" #f)
+                                        )
+                  ;; ogreb   vil3    ogreb
+                  ;; hide/show vil3        BOTH
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 10060.0)
+                                        :bot (meters 10060.0)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        :fwd
+                                        (display ju-vil3 #f) ;; fwd is down it seems?
+                                        :bwd (display ju-vil3 display))
+                  ;; ogreb   vil3    ogreb
+                  ;; load ogreb + vil3    UP
+                  (static-load-boundary :flags (closed player)
+                                        :top (meters 9865.7)
+                                        :bot (meters 9865.7)
+                                        :points
+                                        ((meters 272.536)
+                                         (meters 2727.19)
+                                         (meters 1348.93)
+                                         (meters -184.095)
+                                         (meters 4023.93)
+                                         (meters 804.937)
+                                         (meters 2947.54)
+                                         (meters 3716.22))
+                                        ;; :fwd (load ju-train ju-vil1) ;; fwd is down it seems?
+                                        :bwd (load ju-ogreb ju-vil3))
+
                   ;; OGRE
                   ;; ogre   ogreb    ogreb
                   ;; load ogre + ogreb  DOWN
