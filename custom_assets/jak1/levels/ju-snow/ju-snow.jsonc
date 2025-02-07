@@ -1,0 +1,152 @@
+{
+  // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
+  // the name of this file, and the folder this file is in must have the same name.
+  "long_name": "ju-snow",
+  // The file name, should be upper case and 8 characters or less.
+  "iso_name": "UPSNOW",
+  // The nickname, should be exactly 3 characters
+  "nickname": "upj", // 3 char name, all lowercase
+  // Background mesh file.
+  // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
+  // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
+  // only have 1.
+  "gltf_file": "custom_assets/jak1/levels/ju-snow/ju-snow.glb",
+
+  // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
+  "automatic_wall_detection": true,
+  "automatic_wall_angle": 60.0,
+
+  // if your mesh has triangles with incorrect orientation, set this to make all collision mesh triangles double sided
+  // this makes collision 2x slower and bigger, so only use if really needed
+  "double_sided_collide": true,
+
+  // available res-lump tag data types:
+  // int32, float, meters, vector, vector4m (meters)
+  //
+  // examples:
+  //
+  // adds a float tag 'spring-height' with value of 200 meters (1 meter = 4096.0 units):
+  // "spring-height": ["meters", 200.0]
+  //
+  // adds a vector tag 'movie-pos':
+  // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
+
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 20000,
+
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  "art_groups": ["eichar-ice+0-ag"],
+
+  "ambients": [],
+
+  "actors" : [
+
+    // {
+    //   "trans": [2199.50, 10369.6, 2132.06  ], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 132, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2199.50, 10369.6, 2132.06  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snow-fuel-cell",
+    //     "eco-info":["int32", 6, 132]
+    //   }
+    // },
+
+    // // // FLIES
+
+    {
+      "trans": [1561.68, 11792.75, 2393.90  ], // inside busted furnace thing in sagehut
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1561.68, 11792.75, 2393.90  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-buzzer-01",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1561.68, 11792.75, 2393.90  ]
+      }
+    },
+    {
+      "trans": [ 1606.26, 11986.76, 2409.94   ], // top of "other" mountain top
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1606.26, 11986.76, 2409.94  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65601], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1606.26, 11987.76, 2409.94   ]
+      }
+    },
+    {
+      "trans": [ 1203.91, 11827.81, 2390.66  ], // where flut normally is
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1203.91, 11827.81, 2390.66  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-buzzer-03",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 131137], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters",  1203.91, 11828.81, 2390.66  ]
+      }
+    }//,
+    // {
+    //   "trans": [2177.63, 10163.83, 2256.71  ], // rock bit below platform where you do new rocket
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2177.63, 10163.83, 2256.71  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snow-buzzer-04",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 196673], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2177.63, 10163.83, 2256.71  ]
+    //   }
+    // },
+    // {
+    //   "trans": [2097.53, 10181.93, 2092.16  ], // where secret cell would be
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2097.53, 10181.93, 2092.16  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snow-buzzer-05",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 262209], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2097.53, 10181.93, 2092.16  ]
+    //   }
+    // },
+    // {
+    //   "trans": [2159.79, 10212.91, 2149.89  ], // top of sagehut
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2159.79, 10212.91, 2149.89  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snow-buzzer-06",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 327745], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2159.79, 10212.91, 2149.89  ]
+    //   }
+    // },
+    // { 
+    //   "trans": [2276.12, 10306.98, 2186.00  ], // on some crystals by miners/gem
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2276.12, 10306.98, 2186.00  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snow-buzzer-07",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 393281], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2276.12, 10306.98, 2186.00  ]
+    //   }
+    // }//,
+  ]
+}

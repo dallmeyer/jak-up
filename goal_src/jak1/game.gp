@@ -1340,6 +1340,8 @@
  "maincave/cavecrystal-light.gc"
  "darkcave/darkcave-obs.gc"
  "maincave/maincave-obs.gc"
+ "maincave/cavespatula.gc"
+ "maincave/cavespatula-two.gc"
  "maincave/maincave-part.gc"
  "maincave/spiderwebs.gc"
  "maincave/dark-crystal.gc"
@@ -1479,6 +1481,8 @@
 
   "citadel-part.gc"
   "citadel-obs.gc"
+  "citadel-generator.gc"
+  "citb-launcher.gc"
   "citb-plat.gc"
   "citadel-sages.gc"
   "citb-bunny.gc"
@@ -1719,6 +1723,33 @@
 
 (build-custom-level "ju-mcave")
 (custom-level-cgo "UPG.DGO" "ju-mcave/ju-mcave.gd")
+
+(build-custom-level "ju-dcave")
+(custom-level-cgo "UPH.DGO" "ju-dcave/ju-dcave.gd")
+
+(build-custom-level "ju-rcave")
+(custom-level-cgo "UPI.DGO" "ju-rcave/ju-rcave.gd")
+
+(build-custom-level "ju-snow")
+(custom-level-cgo "UPJ.DGO" "ju-snow/ju-snow.gd")
+
+(build-custom-level "ju-snowb")
+(custom-level-cgo "UPK.DGO" "ju-snowb/ju-snowb.gd")
+
+(build-custom-level "ju-lava")
+(custom-level-cgo "UPL.DGO" "ju-lava/ju-lava.gd")
+
+(build-custom-level "ju-lavab")
+(custom-level-cgo "UPM.DGO" "ju-lavab/ju-lavab.gd")
+
+(build-custom-level "ju-cita")
+(custom-level-cgo "UPN.DGO" "ju-cita/ju-cita.gd")
+
+(build-custom-level "ju-citab")
+(custom-level-cgo "UPO.DGO" "ju-citab/ju-citab.gd")
+
+(build-custom-level "ju-final")
+(custom-level-cgo "UPP.DGO" "ju-final/ju-final.gd")
 
 ;; generate the art group for a custom actor.
 ;; requires a .glb model file in custom_assets/jak1/models/custom_levels

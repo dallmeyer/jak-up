@@ -1,0 +1,183 @@
+{
+  // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
+  // the name of this file, and the folder this file is in must have the same name.
+  "long_name": "ju-dcave",
+  // The file name, should be upper case and 8 characters or less.
+  "iso_name": "UPDCAVE",
+  // The nickname, should be exactly 3 characters
+  "nickname": "uph", // 3 char name, all lowercase
+  // Background mesh file.
+  // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
+  // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
+  // only have 1.
+  "gltf_file": "custom_assets/jak1/levels/ju-dcave/ju-dcave.glb",
+
+  // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
+  "automatic_wall_detection": true,
+  "automatic_wall_angle": 60.0,
+
+  // if your mesh has triangles with incorrect orientation, set this to make all collision mesh triangles double sided
+  // this makes collision 2x slower and bigger, so only use if really needed
+  "double_sided_collide": true,
+
+  // available res-lump tag data types:
+  // int32, float, meters, vector, vector4m (meters)
+  //
+  // examples:
+  //
+  // adds a float tag 'spring-height' with value of 200 meters (1 meter = 4096.0 units):
+  // "spring-height": ["meters", 200.0]
+  //
+  // adds a vector tag 'movie-pos':
+  // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
+
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 18000,
+
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  "art_groups": ["cavespatula-darkcave-ag"],
+
+  "ambients": [],
+
+  "actors" : [
+
+    // {
+    //   "trans": [2199.50, 10369.6, 2132.06  ], // translation
+    //   "etype": "fuel-cell",  // actor type
+    //   "game_task": 125, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2199.50, 10369.6, 2132.06  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-fuel-cell",
+    //     "eco-info":["int32", 6, 130]
+    //   }
+    // },
+
+    // // // FLIES
+
+    // {
+    //   "trans": [2169.19, 10173.47, 2147.44], // inside busted furnace thing in sagehut
+    //   "etype": "crate",  // actor type
+    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2169.19, 10173.47, 2147.44, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-buzzer-01",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 77], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2169.19, 10173.47, 2147.44]
+    //   }
+    // },
+    // {
+    //   "trans": [ 2087.56, 10188.01, 2428.58  ], // sideways scaffolding near "start of lava tube"
+    //   "etype": "crate",  // actor type
+    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [ 2087.56, 10188.01, 2428.58  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-buzzer-02",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 65613], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2087.56, 10188.01, 2428.58  ]
+    //   }
+    // },
+    // {
+    //   "trans": [ 2308.90, 10173.02, 2211.70  ], // oracle
+    //   "etype": "crate",  // actor type
+    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [ 2308.90, 10173.02, 2211.70  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-buzzer-03",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 131149], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters",  2308.90, 10173.02, 2211.70  ]
+    //   }
+    // },
+    // {
+    //   "trans": [2177.63, 10163.83, 2256.71  ], // rock bit below platform where you do new rocket
+    //   "etype": "crate",  // actor type
+    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2177.63, 10163.83, 2256.71  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-buzzer-04",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 196685], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2177.63, 10163.83, 2256.71  ]
+    //   }
+    // },
+    {
+      "trans": [2032.98, 11048.96, 2008.57   ], // behind precursor thing at end
+      "etype": "crate",  // actor type
+      "game_task": 85, // associated game task (for powercells, etc)
+      "quat" : [-0.1021, 0.7906, -0.0059, -0.6036], // quaternion
+      "bsphere": [2032.98, 11048.96, 2008.57   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-dcave-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262229], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2032.98, 11049.96, 2008.57   ]
+      }
+    },
+    // {
+    //   "trans": [2159.79, 10212.91, 2149.89  ], // top of sagehut
+    //   "etype": "crate",  // actor type
+    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2159.79, 10212.91, 2149.89  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-buzzer-06",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 327757], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2159.79, 10212.91, 2149.89  ]
+    //   }
+    // },
+    // { 
+    //   "trans": [2276.12, 10306.98, 2186.00  ], // on some crystals by miners/gem
+    //   "etype": "crate",  // actor type
+    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2276.12, 10306.98, 2186.00  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-vil3-buzzer-07",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 393293], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2276.12, 10306.98, 2186.00  ]
+    //   }
+    // }//,
+
+    {
+      "trans": [ 2073.3295, 10942.6337, 2017.7703  ], // translation
+      "etype": "cavespatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 2073.3295, 10942.6337, 2017.7703  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-dcave-cavespatula-1"
+      }
+    },
+    {
+      "trans": [  2086.8710, 10999.1425, 1960.3660  ], // translation
+      "etype": "cavespatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 2086.8710, 10999.1425, 1960.3660 , 10], // bounding sphere
+      "lump": {
+        "name":"ju-dcave-cavespatula-2"
+      }
+    },
+    {
+      "trans": [  2081.3217, 11028.5126, 1979.7821  ], // translation
+      "etype": "cavespatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [  2081.3217, 11028.5126, 1979.7821  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-dcave-cavespatula-3"
+      }
+    }
+  ]
+}

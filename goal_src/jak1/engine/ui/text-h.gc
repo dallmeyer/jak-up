@@ -798,20 +798,23 @@
   (pad-square #x2003)
 
   ;; text for "get to next level" tasks
-  (ju-train #x3000)
-  (ju-vil1 #x3001)
-  (ju-jung   #x3002)
-  (ju-jungb  #x3003)
-  (ju-misty    #x3004)
-  (ju-beach    #x3005)
-  (ju-fire     #x3006)
-  (ju-vil2 #x3007)
-  (ju-sunk   #x3008)
-  (ju-roll  #x3009)
-  (ju-swamp    #x300a)
-  ;; since village 3 not ready, just re-use end of MP text
-  (ju-ogre     #x300b)
-  (ju-vil3     #x300c)
+  (ju-train   #x3000)
+  (ju-vil1    #x3001)
+  (ju-jung    #x3002)
+  (ju-jungb   #x3003)
+  (ju-misty   #x3004)
+  (ju-beach   #x3005)
+  (ju-fire    #x3006)
+  (ju-vil2    #x3007)
+  (ju-sunk    #x3008)
+  (ju-roll    #x3009)
+  (ju-swamp   #x300a)
+  (ju-ogre    #x300b)
+  (ju-vil3    #x300c) ;; reach spider cave
+  (ju-cave    #x300d) ;; reach snowy mountain
+  (ju-snow    #x300e) ;; reach lavatube
+  (ju-lava    #x300f) ;; reach citadel
+  (ju-cita    #x3010) ;; reach the end!
 
   ;; GAME-TEXT-ID ENUM ENDS
   )

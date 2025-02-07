@@ -446,36 +446,36 @@
   (ja-post)
   (none))
 
-(deftype citb-launcher (plat)
-  ((launcher (pointer launcher))))
+;; (deftype citb-launcher (plat)
+;;   ((launcher (pointer launcher))))
 
 
-(defstate plat-path-active (citb-launcher)
-  :virtual #t
-  :post
-    (behavior ()
-      (let ((t9-0 (-> (method-of-type plat plat-path-active) post)))
-        (if t9-0 ((the-as (function none :behavior citb-launcher) t9-0))))
-      (send-event (ppointer->process (-> self launcher)) 'trans (-> self basetrans))))
+;; (defstate plat-path-active (citb-launcher)
+;;   :virtual #t
+;;   :post
+;;     (behavior ()
+;;       (let ((t9-0 (-> (method-of-type plat plat-path-active) post)))
+;;         (if t9-0 ((the-as (function none :behavior citb-launcher) t9-0))))
+;;       (send-event (ppointer->process (-> self launcher)) 'trans (-> self basetrans))))
 
-(defskelgroup *citb-launcher-sg*
-  citb-launcher
-  citb-launcher-lod0-jg
-  citb-launcher-idle-ja
-  ((citb-launcher-lod0-mg (meters 999999)))
-  :bounds (static-spherem 0 0 0 4))
+;; (defskelgroup *citb-launcher-sg*
+;;   citb-launcher
+;;   citb-launcher-lod0-jg
+;;   citb-launcher-idle-ja
+;;   ((citb-launcher-lod0-mg (meters 999999)))
+;;   :bounds (static-spherem 0 0 0 4))
 
-(defmethod get-unlit-skel ((this citb-launcher))
-  *citb-launcher-sg*)
+;; (defmethod get-unlit-skel ((this citb-launcher))
+;;   *citb-launcher-sg*)
 
-(defmethod baseplat-method-26 ((this citb-launcher))
-  (let ((f30-0 (res-lump-float (-> this entity) 'spring-height :default 163840.0))
-        (s5-0 (res-lump-value (-> this entity) 'mode uint128)))
-    (set! (-> this launcher) (process-spawn launcher (-> this root trans) f30-0 s5-0 81920.0 :to this)))
-  (set! (-> this root root-prim local-sphere w) 18432.0)
-  (logclear! (-> this mask) (process-mask actor-pause))
-  0
-  (none))
+;; (defmethod baseplat-method-26 ((this citb-launcher))
+;;   (let ((f30-0 (res-lump-float (-> this entity) 'spring-height :default 163840.0))
+;;         (s5-0 (res-lump-value (-> this entity) 'mode uint128)))
+;;     (set! (-> this launcher) (process-spawn launcher (-> this root trans) f30-0 s5-0 81920.0 :to this)))
+;;   (set! (-> this root root-prim local-sphere w) 18432.0)
+;;   (logclear! (-> this mask) (process-mask actor-pause))
+;;   0
+;;   (none))
 
 (defskelgroup *citb-robotboss-sg*
   citb-robotboss
@@ -797,216 +797,216 @@
 (deftype citb-chains (process-hidden) ())
 
 
-(defskelgroup *citb-generator-sg*
-  citb-generator
-  citb-generator-lod0-jg
-  citb-generator-idle-ja
-  ((citb-generator-lod0-mg (meters 999999)))
-  :bounds (static-spherem 0 0 0 2))
+;; (defskelgroup *citb-generator-sg*
+;;   citb-generator
+;;   citb-generator-lod0-jg
+;;   citb-generator-idle-ja
+;;   ((citb-generator-lod0-mg (meters 999999)))
+;;   :bounds (static-spherem 0 0 0 2))
 
-(defskelgroup *citb-generator-broken-sg*
-  citb-generator
-  citb-generator-broken-lod0-jg
-  citb-generator-idle-ja
-  ((citb-generator-broken-lod0-mg (meters 999999)))
-  :bounds (static-spherem 0 0 0 2))
+;; (defskelgroup *citb-generator-broken-sg*
+;;   citb-generator
+;;   citb-generator-broken-lod0-jg
+;;   citb-generator-idle-ja
+;;   ((citb-generator-broken-lod0-mg (meters 999999)))
+;;   :bounds (static-spherem 0 0 0 2))
 
-(deftype citb-generator (process-drawable)
-  ((root            collide-shape :override)
-   (normal-look     lod-set :inline)
-   (broken-look     lod-set :inline)
-   (mushroom-pos    vector :inline)
-   (mushroom        symbol)
-   (birth-fuel-cell symbol)
-   (trigger-others  symbol)
-   (part-broken     sparticle-launch-control)
-   (part-mushroom   sparticle-launch-control))
-  (:methods
-   (init! (_type_) none)
-   (citb-generator-method-21 (_type_) none))
-  (:states
-   citb-generator-break
-   citb-generator-broken
-   citb-generator-idle))
+;; (deftype citb-generator (process-drawable)
+;;   ((root            collide-shape :override)
+;;    (normal-look     lod-set :inline)
+;;    (broken-look     lod-set :inline)
+;;    (mushroom-pos    vector :inline)
+;;    (mushroom        symbol)
+;;    (birth-fuel-cell symbol)
+;;    (trigger-others  symbol)
+;;    (part-broken     sparticle-launch-control)
+;;    (part-mushroom   sparticle-launch-control))
+;;   (:methods
+;;    (init! (_type_) none)
+;;    (citb-generator-method-21 (_type_) none))
+;;   (:states
+;;    citb-generator-break
+;;    citb-generator-broken
+;;    citb-generator-idle))
 
 
-(defmethod relocate ((this citb-generator) (offset int))
-  (if (nonzero? (-> this part-broken)) (&+! (-> this part-broken) offset))
-  (if (nonzero? (-> this part-mushroom)) (&+! (-> this part-mushroom) offset))
-  (the-as citb-generator ((method-of-type process-drawable relocate) this offset)))
+;; (defmethod relocate ((this citb-generator) (offset int))
+;;   (if (nonzero? (-> this part-broken)) (&+! (-> this part-broken) offset))
+;;   (if (nonzero? (-> this part-mushroom)) (&+! (-> this part-mushroom) offset))
+;;   (the-as citb-generator ((method-of-type process-drawable relocate) this offset)))
 
-(defmethod deactivate ((this citb-generator))
-  (if (nonzero? (-> this part-broken)) (kill-and-free-particles (-> this part-broken)))
-  (if (nonzero? (-> this part-mushroom)) (kill-and-free-particles (-> this part-mushroom)))
-  ((method-of-type process-drawable deactivate) this)
-  (none))
+;; (defmethod deactivate ((this citb-generator))
+;;   (if (nonzero? (-> this part-broken)) (kill-and-free-particles (-> this part-broken)))
+;;   (if (nonzero? (-> this part-mushroom)) (kill-and-free-particles (-> this part-mushroom)))
+;;   ((method-of-type process-drawable deactivate) this)
+;;   (none))
 
-(defbehavior citb-generator-trigger-others citb-generator ()
-  (let ((gp-0 (entity-actor-count (-> self entity) 'alt-actor)))
-    (dotimes (s5-0 gp-0)
-      (let ((s4-0 (entity-actor-lookup (-> self entity) 'alt-actor s5-0))
-            (a1-2 (new 'stack-no-clear 'event-message-block)))
-        (set! (-> a1-2 from) self)
-        (set! (-> a1-2 num-params) 0)
-        (set! (-> a1-2 message) 'trigger)
-        (let ((t9-2 send-event-function)
-              (v1-1 s4-0))
-          (when (not (t9-2 (if v1-1 (-> v1-1 extra process)) a1-2))
-            (entity-birth-no-kill s4-0)
-            (suspend)
-            (send-event (if s4-0 (-> s4-0 extra process)) 'trigger))))))
-  (let ((gp-1 (current-time)))
-    (while (not (time-elapsed? gp-1 (seconds 0.5)))
-      (if (movie?) (set! gp-1 (current-time)))
-      (suspend)))
-  (let ((gp-2 (entity-actor-count (-> self entity) 'trigger-actor)))
-    (dotimes (s5-1 gp-2)
-      (let ((s4-1 (entity-actor-lookup (-> self entity) 'trigger-actor s5-1))
-            (a1-6 (new 'stack-no-clear 'event-message-block)))
-        (set! (-> a1-6 from) self)
-        (set! (-> a1-6 num-params) 0)
-        (set! (-> a1-6 message) 'trigger)
-        (let ((t9-8 send-event-function)
-              (v1-19 s4-1))
-          (when (not (t9-8 (if v1-19 (-> v1-19 extra process)) a1-6))
-            (entity-birth-no-kill s4-1)
-            (suspend)
-            (send-event (if s4-1 (-> s4-1 extra process)) 'trigger))))))
-  0
-  (none))
+;; (defbehavior citb-generator-trigger-others citb-generator ()
+;;   (let ((gp-0 (entity-actor-count (-> self entity) 'alt-actor)))
+;;     (dotimes (s5-0 gp-0)
+;;       (let ((s4-0 (entity-actor-lookup (-> self entity) 'alt-actor s5-0))
+;;             (a1-2 (new 'stack-no-clear 'event-message-block)))
+;;         (set! (-> a1-2 from) self)
+;;         (set! (-> a1-2 num-params) 0)
+;;         (set! (-> a1-2 message) 'trigger)
+;;         (let ((t9-2 send-event-function)
+;;               (v1-1 s4-0))
+;;           (when (not (t9-2 (if v1-1 (-> v1-1 extra process)) a1-2))
+;;             (entity-birth-no-kill s4-0)
+;;             (suspend)
+;;             (send-event (if s4-0 (-> s4-0 extra process)) 'trigger))))))
+;;   (let ((gp-1 (current-time)))
+;;     (while (not (time-elapsed? gp-1 (seconds 0.5)))
+;;       (if (movie?) (set! gp-1 (current-time)))
+;;       (suspend)))
+;;   (let ((gp-2 (entity-actor-count (-> self entity) 'trigger-actor)))
+;;     (dotimes (s5-1 gp-2)
+;;       (let ((s4-1 (entity-actor-lookup (-> self entity) 'trigger-actor s5-1))
+;;             (a1-6 (new 'stack-no-clear 'event-message-block)))
+;;         (set! (-> a1-6 from) self)
+;;         (set! (-> a1-6 num-params) 0)
+;;         (set! (-> a1-6 message) 'trigger)
+;;         (let ((t9-8 send-event-function)
+;;               (v1-19 s4-1))
+;;           (when (not (t9-8 (if v1-19 (-> v1-19 extra process)) a1-6))
+;;             (entity-birth-no-kill s4-1)
+;;             (suspend)
+;;             (send-event (if s4-1 (-> s4-1 extra process)) 'trigger))))))
+;;   0
+;;   (none))
 
-(defstate citb-generator-idle (citb-generator)
-  :event
-    (behavior ((proc process) (argc int) (message symbol) (block event-message-block))
-      (case message
-        (('attack)
-         (if (-> self mushroom)
-           (increment-success-for-hint (text-id citadel-generator))
-           (increment-success-for-hint (text-id citadel-generator-no-mushroom)))
-         (go citb-generator-break))
-        (('trigger) #t)))
-  :exit
-    (behavior ()
-      (stop! (-> self sound)))
-  :code
-    (behavior ()
-      (lods-assign! (-> self draw) (-> self normal-look))
-      (update-transforms! (-> self root))
-      (loop
-        (spawn (-> self part) (-> self root trans))
-        (update! (-> self sound))
-        (if (-> self mushroom) (spawn (-> self part-mushroom) (-> self mushroom-pos)))
-        (if (not (-> self mushroom)) (+! (-> *palette-fade-controls* control 3 fade) 0.3333))
-        (when (and *target* (>= 32768.0 (vector-vector-distance (-> self root trans) (-> *target* control trans))))
-          (if (-> self mushroom)
-            (level-hint-spawn (text-id citadel-generator) "sksp0381" (the-as entity #f) *entity-pool* (game-task none))
-            (level-hint-spawn (text-id citadel-generator-no-mushroom) "sksp0384" (the-as entity #f) *entity-pool* (game-task none))))
-        (suspend)))
-  :post ja-post)
+;; (defstate citb-generator-idle (citb-generator)
+;;   :event
+;;     (behavior ((proc process) (argc int) (message symbol) (block event-message-block))
+;;       (case message
+;;         (('attack)
+;;          (if (-> self mushroom)
+;;            (increment-success-for-hint (text-id citadel-generator))
+;;            (increment-success-for-hint (text-id citadel-generator-no-mushroom)))
+;;          (go citb-generator-break))
+;;         (('trigger) #t)))
+;;   :exit
+;;     (behavior ()
+;;       (stop! (-> self sound)))
+;;   :code
+;;     (behavior ()
+;;       (lods-assign! (-> self draw) (-> self normal-look))
+;;       (update-transforms! (-> self root))
+;;       (loop
+;;         (spawn (-> self part) (-> self root trans))
+;;         (update! (-> self sound))
+;;         (if (-> self mushroom) (spawn (-> self part-mushroom) (-> self mushroom-pos)))
+;;         (if (not (-> self mushroom)) (+! (-> *palette-fade-controls* control 3 fade) 0.3333))
+;;         (when (and *target* (>= 32768.0 (vector-vector-distance (-> self root trans) (-> *target* control trans))))
+;;           (if (-> self mushroom)
+;;             (level-hint-spawn (text-id citadel-generator) "sksp0381" (the-as entity #f) *entity-pool* (game-task none))
+;;             (level-hint-spawn (text-id citadel-generator-no-mushroom) "sksp0384" (the-as entity #f) *entity-pool* (game-task none))))
+;;         (suspend)))
+;;   :post ja-post)
 
-(defstate citb-generator-break (citb-generator)
-  :code
-    (behavior ()
-      (let ((gp-0 (entity-actor-count (-> self entity) 'open-actor)))
-        (dotimes (s5-0 gp-0)
-          (let ((s4-0 (entity-actor-lookup (-> self entity) 'open-actor s5-0))
-                (a1-2 (new 'stack-no-clear 'event-message-block)))
-            (set! (-> a1-2 from) self)
-            (set! (-> a1-2 num-params) 0)
-            (set! (-> a1-2 message) 'open)
-            (let ((t9-2 send-event-function)
-                  (v1-1 s4-0))
-              (when (not (t9-2 (if v1-1 (-> v1-1 extra process)) a1-2))
-                (entity-birth-no-kill s4-0)
-                (suspend)
-                (send-event (if s4-0 (-> s4-0 extra process)) 'open))))))
-      (process-entity-status! self (entity-perm-status complete) #t)
-      (process-spawn part-tracker
-                     :init
-                     part-tracker-init
-                     (-> *part-group-id-table* 598)
-                     -1
-                     #f
-                     #f
-                     #f
-                     (-> self root trans)
-                     :to
-                     *entity-pool*)
-      (sound-play "sagecage-open")
-      ;; og:preserve-this NTSC-J patch here
-      ; (if (name= (-> self name) "citb-generator-1")
-      ; (set-continue! *game-info* "citadel-elevator")
-      ; )
-      (go citb-generator-broken))
-  :post ja-post)
+;; (defstate citb-generator-break (citb-generator)
+;;   :code
+;;     (behavior ()
+;;       (let ((gp-0 (entity-actor-count (-> self entity) 'open-actor)))
+;;         (dotimes (s5-0 gp-0)
+;;           (let ((s4-0 (entity-actor-lookup (-> self entity) 'open-actor s5-0))
+;;                 (a1-2 (new 'stack-no-clear 'event-message-block)))
+;;             (set! (-> a1-2 from) self)
+;;             (set! (-> a1-2 num-params) 0)
+;;             (set! (-> a1-2 message) 'open)
+;;             (let ((t9-2 send-event-function)
+;;                   (v1-1 s4-0))
+;;               (when (not (t9-2 (if v1-1 (-> v1-1 extra process)) a1-2))
+;;                 (entity-birth-no-kill s4-0)
+;;                 (suspend)
+;;                 (send-event (if s4-0 (-> s4-0 extra process)) 'open))))))
+;;       (process-entity-status! self (entity-perm-status complete) #t)
+;;       (process-spawn part-tracker
+;;                      :init
+;;                      part-tracker-init
+;;                      (-> *part-group-id-table* 598)
+;;                      -1
+;;                      #f
+;;                      #f
+;;                      #f
+;;                      (-> self root trans)
+;;                      :to
+;;                      *entity-pool*)
+;;       (sound-play "sagecage-open")
+;;       ;; og:preserve-this NTSC-J patch here
+;;       ; (if (name= (-> self name) "citb-generator-1")
+;;       ; (set-continue! *game-info* "citadel-elevator")
+;;       ; )
+;;       (go citb-generator-broken))
+;;   :post ja-post)
 
-(defstate citb-generator-broken (citb-generator)
-  :code
-    (behavior ()
-      (lods-assign! (-> self draw) (-> self broken-look))
-      (update-transforms! (-> self root))
-      (cond
-        ((-> self birth-fuel-cell)
-         (process-drawable-birth-fuel-cell (the-as entity #f) (the-as vector #f) #t)
-         (when (-> self child)
-           (while (-> self child)
-             (suspend))
-           (citb-generator-trigger-others)))
-        (else (citb-generator-trigger-others)))
-      (anim-loop))
-  :post
-    (behavior ()
-      (spawn (-> self part-broken) (-> self root trans))
-      (ja-post)))
+;; (defstate citb-generator-broken (citb-generator)
+;;   :code
+;;     (behavior ()
+;;       (lods-assign! (-> self draw) (-> self broken-look))
+;;       (update-transforms! (-> self root))
+;;       (cond
+;;         ((-> self birth-fuel-cell)
+;;          (process-drawable-birth-fuel-cell (the-as entity #f) (the-as vector #f) #t)
+;;          (when (-> self child)
+;;            (while (-> self child)
+;;              (suspend))
+;;            (citb-generator-trigger-others)))
+;;         (else (citb-generator-trigger-others)))
+;;       (anim-loop))
+;;   :post
+;;     (behavior ()
+;;       (spawn (-> self part-broken) (-> self root trans))
+;;       (ja-post)))
 
-(defmethod init! ((this citb-generator))
-  (let ((s5-0 (new 'process 'collide-shape this (collide-list-enum hit-by-player))))
-    (let ((s4-0 (new 'process 'collide-shape-prim-sphere s5-0 (the-as uint 0))))
-      (set! (-> s4-0 prim-core collide-as) (collide-kind ground-object))
-      (set! (-> s4-0 collide-with) (collide-kind target))
-      (set! (-> s4-0 prim-core action) (collide-action solid))
-      (set! (-> s4-0 prim-core offense) (collide-offense indestructible))
-      (set-vector! (-> s4-0 local-sphere) 0.0 4096.0 0.0 4096.0)
-      (set-root-prim! s5-0 s4-0))
-    (set! (-> s5-0 nav-radius) (* 0.75 (-> s5-0 root-prim local-sphere w)))
-    (backup-collide-with-as s5-0)
-    (set! (-> this root) s5-0))
-  0
-  (none))
+;; (defmethod init! ((this citb-generator))
+;;   (let ((s5-0 (new 'process 'collide-shape this (collide-list-enum hit-by-player))))
+;;     (let ((s4-0 (new 'process 'collide-shape-prim-sphere s5-0 (the-as uint 0))))
+;;       (set! (-> s4-0 prim-core collide-as) (collide-kind ground-object))
+;;       (set! (-> s4-0 collide-with) (collide-kind target))
+;;       (set! (-> s4-0 prim-core action) (collide-action solid))
+;;       (set! (-> s4-0 prim-core offense) (collide-offense indestructible))
+;;       (set-vector! (-> s4-0 local-sphere) 0.0 4096.0 0.0 4096.0)
+;;       (set-root-prim! s5-0 s4-0))
+;;     (set! (-> s5-0 nav-radius) (* 0.75 (-> s5-0 root-prim local-sphere w)))
+;;     (backup-collide-with-as s5-0)
+;;     (set! (-> this root) s5-0))
+;;   0
+;;   (none))
 
-(defmethod citb-generator-method-21 ((this citb-generator))
-  (initialize-skeleton this *citb-generator-sg* '())
-  (setup-lods! (-> this normal-look) *citb-generator-sg* (-> this draw art-group) (-> this entity))
-  (setup-lods! (-> this broken-look) *citb-generator-broken-sg* (-> this draw art-group) (-> this entity))
-  (set! (-> this link) (new 'process 'actor-link-info this))
-  (set! (-> this birth-fuel-cell) (< (the-as uint 1) (the-as uint (-> this entity extra perm task))))
-  (set! (-> this trigger-others) #f)
-  (set! (-> this mushroom-pos quad) (-> this root trans quad))
-  (let ((f30-0 0.0))
-    (cond
-      ((name= (-> this name) "citb-generator-1") (set! (-> this mushroom) #t) (set! f30-0 21845.334))
-      ((name= (-> this name) "citb-generator-2") (set! (-> this mushroom) #t) (set! f30-0 16384.0))
-      ((name= (-> this name) "citb-generator-3") (set! (-> this mushroom) #t) (set! f30-0 16384.0))
-      ((name= (-> this name) "citb-generator-4") (set! (-> this mushroom) #t) (set! f30-0 -5461.3335))
-      (else (set! (-> this mushroom) #f)))
-    (when (-> this mushroom)
-      (+! (-> this mushroom-pos x) (* 19251.2 (sin f30-0)))
-      (+! (-> this mushroom-pos z) (* 19251.2 (cos f30-0)))))
-  (set! (-> this part) (create-launch-control (-> *part-group-id-table* 600) this))
-  (set! (-> this part-broken) (create-launch-control (-> *part-group-id-table* 597) this))
-  (set! (-> this part-mushroom) (create-launch-control (-> *part-group-id-table* 599) this))
-  (set! (-> this sound) (new 'process 'ambient-sound (static-sound-spec "mushroom-gen" :fo-max 20) (-> this root trans)))
-  0
-  (none))
+;; (defmethod citb-generator-method-21 ((this citb-generator))
+;;   (initialize-skeleton this *citb-generator-sg* '())
+;;   (setup-lods! (-> this normal-look) *citb-generator-sg* (-> this draw art-group) (-> this entity))
+;;   (setup-lods! (-> this broken-look) *citb-generator-broken-sg* (-> this draw art-group) (-> this entity))
+;;   (set! (-> this link) (new 'process 'actor-link-info this))
+;;   (set! (-> this birth-fuel-cell) (< (the-as uint 1) (the-as uint (-> this entity extra perm task))))
+;;   (set! (-> this trigger-others) #f)
+;;   (set! (-> this mushroom-pos quad) (-> this root trans quad))
+;;   (let ((f30-0 0.0))
+;;     (cond
+;;       ((name= (-> this name) "citb-generator-1") (set! (-> this mushroom) #t) (set! f30-0 21845.334))
+;;       ((name= (-> this name) "citb-generator-2") (set! (-> this mushroom) #t) (set! f30-0 16384.0))
+;;       ((name= (-> this name) "citb-generator-3") (set! (-> this mushroom) #t) (set! f30-0 16384.0))
+;;       ((name= (-> this name) "citb-generator-4") (set! (-> this mushroom) #t) (set! f30-0 -5461.3335))
+;;       (else (set! (-> this mushroom) #f)))
+;;     (when (-> this mushroom)
+;;       (+! (-> this mushroom-pos x) (* 19251.2 (sin f30-0)))
+;;       (+! (-> this mushroom-pos z) (* 19251.2 (cos f30-0)))))
+;;   (set! (-> this part) (create-launch-control (-> *part-group-id-table* 600) this))
+;;   (set! (-> this part-broken) (create-launch-control (-> *part-group-id-table* 597) this))
+;;   (set! (-> this part-mushroom) (create-launch-control (-> *part-group-id-table* 599) this))
+;;   (set! (-> this sound) (new 'process 'ambient-sound (static-sound-spec "mushroom-gen" :fo-max 20) (-> this root trans)))
+;;   0
+;;   (none))
 
-(defmethod init-from-entity! ((this citb-generator) (arg0 entity-actor))
-  (init! this)
-  (process-drawable-from-entity! this arg0)
-  (citb-generator-method-21 this)
-  (let ((v1-4 (entity-actor-lookup (-> this entity) 'state-actor 0)))
-    (if (not v1-4) (set! v1-4 (-> this entity)))
-    (if (logtest? (-> v1-4 extra perm status) (entity-perm-status complete)) (go citb-generator-broken) (go citb-generator-idle)))
-  (none))
+;; (defmethod init-from-entity! ((this citb-generator) (arg0 entity-actor))
+;;   (init! this)
+;;   (process-drawable-from-entity! this arg0)
+;;   (citb-generator-method-21 this)
+;;   (let ((v1-4 (entity-actor-lookup (-> this entity) 'state-actor 0)))
+;;     (if (not v1-4) (set! v1-4 (-> this entity)))
+;;     (if (logtest? (-> v1-4 extra perm status) (entity-perm-status complete)) (go citb-generator-broken) (go citb-generator-idle)))
+;;   (none))
 
 (defskelgroup *citadelcam-sg*
   citadelcam

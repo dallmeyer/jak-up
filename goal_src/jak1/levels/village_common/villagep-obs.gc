@@ -126,7 +126,7 @@
                        ((0) "GEYSER ROCK")
                        ((1) "ROCK VILLAGE")
                        ((2) "VOLCANIC CRATER")
-                       ((3) "GOL & MAIA'S CITADEL")
+                       ((3) "GOL AND MAIA'S CITADEL")
                        (else
                         "CRYSTAL CAVE?" ;; heh maybe
                         ))))
@@ -259,13 +259,14 @@
             ((= v1-11 'ju-train) 0)
             ((= v1-11 'ju-vil2) 1)
             ((= v1-11 'ju-vil3) 2)
-            ((or (= v1-11 'ju-vil4)) 3)
+            ((or (= v1-11 'ju-cita)) 3)
             (else -1))))
   (set! (-> self max-slot)
         (cond
-          ;; ((task-closed? (game-task ju-lava) (task-status need-resolution)) 3)
+          ((task-closed? (game-task ju-lava) (task-status need-resolution)) 3)
           ((task-closed? (game-task ju-ogre) (task-status need-resolution)) 2)
-          (else 1)))
+          ((task-closed? (game-task ju-fire) (task-status need-resolution)) 1)
+          (else 0)))
   (go-virtual idle)
   (none))
 

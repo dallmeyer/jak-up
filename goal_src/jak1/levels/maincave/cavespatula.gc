@@ -1,0 +1,92 @@
+;;-*-Lisp-*-
+(in-package goal)
+(bundles "MAI.DGO")
+(require "levels/maincave/cavecrystal-light.gc")
+(require "engine/util/sync-info.gc")
+(require "engine/geometry/path-h.gc")
+(require "engine/common-obs/collectables.gc")
+(require "engine/common-obs/water-anim.gc")
+(require "engine/camera/pov-camera-h.gc")
+
+;; DECOMP BEGINS
+
+(deftype cavespatula (process-drawable)
+  ((root collide-shape-moving :override)
+   (sync sync-info :inline))
+  (:states
+   cavespatula-idle))
+
+(defskelgroup *cavespatula-sg*
+  cavespatula
+  0
+  -1
+  ((1 (meters 20)) (2 (meters 999999)))
+  :bounds (static-spherem 0 -1 0 18))
+
+(defskelgroup *cavespatula-darkcave-sg*
+  cavespatula-darkcave
+  cavespatula-darkcave-lod0-jg
+  -1
+  ((cavespatula-darkcave-lod0-mg (meters 20)) (cavespatula-darkcave-lod1-mg (meters 999999)))
+  :bounds (static-spherem 0 -1 0 18))
+
+(defstate cavespatula-idle (cavespatula)
+  :trans
+    (behavior ()
+      (rider-trans)
+      (update! (-> self sound))
+      (let ((f0-0 (get-current-phase (-> self sync))))
+        (quaternion-axis-angle! (-> self root quat) 0.0 1.0 0.0 (* -65536.0 f0-0))))
+  :code
+    (behavior ()
+      (loop
+        (logior! (-> self mask) (process-mask sleep-code))
+        (suspend)))
+  :post rider-post)
+
+(defmethod init-from-entity! ((this cavespatula) (arg0 entity-actor))
+  (logior! (-> this mask) (process-mask platform))
+  (let ((s4-0 (new 'process 'collide-shape-moving this (collide-list-enum hit-by-player))))
+    (set! (-> s4-0 dynam) (copy *standard-dynamics* 'process))
+    (set! (-> s4-0 reaction) default-collision-reaction)
+    (set! (-> s4-0 no-reaction) (the-as (function collide-shape-moving collide-shape-intersect vector vector none) nothing))
+    (alloc-riders s4-0 1)
+    (let ((s3-0 (new 'process 'collide-shape-prim-mesh s4-0 (the-as uint 0) (the-as uint 0))))
+      (set! (-> s3-0 prim-core collide-as) (collide-kind ground-object))
+      (set! (-> s3-0 collide-with) (collide-kind target))
+      (set! (-> s3-0 prim-core action) (collide-action solid rider-plat-sticky))
+      (set! (-> s3-0 prim-core offense) (collide-offense indestructible))
+      (set! (-> s3-0 transform-index) 0)
+      (set-vector! (-> s3-0 local-sphere) 0.0 -8192.0 0.0 67584.0)
+      (set-root-prim! s4-0 s3-0))
+    (set! (-> s4-0 nav-radius) (* 0.75 (-> s4-0 root-prim local-sphere w)))
+    (backup-collide-with-as s4-0)
+    (set! (-> this root) s4-0))
+  (process-drawable-from-entity! this arg0)
+  (set! (-> this sound)
+        (new 'process 'ambient-sound (static-sound-spec "spatula" :fo-min 25 :fo-max 50) (-> this root trans)))
+  (case (-> (if (-> this entity) (-> this entity extra level) (-> *level* level-default)) name)
+    (('darkcave 'ju-dcave)
+     (initialize-skeleton this *cavespatula-darkcave-sg* '())
+     (ja-channel-push! 1 0)
+     (let ((s5-1 (-> this skel root-channel 0)))
+       (joint-control-channel-group-eval! s5-1 (the-as art-joint-anim (-> this draw art-group data 3)) num-func-identity)
+       (set! (-> s5-1 frame-num) 0.0)))
+    (else
+     (initialize-skeleton this *cavespatula-sg* '())
+     (ja-channel-push! 1 0)
+     (let ((s5-2 (-> this skel root-channel 0)))
+       (joint-control-channel-group-eval! s5-2 (the-as art-joint-anim (-> this draw art-group data 3)) num-func-identity)
+       (set! (-> s5-2 frame-num) 0.0))))
+  (logior! (-> this skel status) (janim-status inited))
+  (load-params! (-> this sync) this (the-as uint 3000) 0.0 0.15 0.15)
+  (ja-post)
+  (update-transforms! (-> this root))
+  (create-connection! *cavecrystal-light-control*
+                      this
+                      (-> this entity)
+                      (the-as (function object object object object object) cavecrystal-light-control-default-callback)
+                      -1
+                      32768.0)
+  (go cavespatula-idle)
+  (none))

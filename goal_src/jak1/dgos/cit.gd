@@ -4,6 +4,8 @@
   "battlecontroller.o"
   "citadel-part.o"
   "citadel-obs.o"
+  "citadel-generator.o"
+  "citb-launcher.o"
   "citb-plat.o"
   "citadel-sages.o"
   "snow-bunny.o"

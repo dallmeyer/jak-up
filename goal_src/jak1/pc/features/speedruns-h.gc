@@ -41,7 +41,7 @@
    (needs-post-blackout-setup? symbol)
    (should-display?            symbol)))
 
-(define *checkpoint-interval* (seconds 120))
+(define *checkpoint-interval* (if *debug-segment* (seconds 5) (seconds 30)))
 
 (defenum jakup-cam
   :type int32

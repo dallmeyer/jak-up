@@ -1,6 +1,8 @@
 ("MAI.DGO"
  ("cavecrystal-light.o"
   "maincave-obs.o"
+  "cavespatula.o"
+  "cavespatula-two.o"
   "maincave-part.o"
   "spiderwebs.o"
   "dark-crystal.o"

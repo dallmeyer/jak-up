@@ -1,0 +1,428 @@
+{
+  // The "in-game" name of the level. Should be lower case, with dashes (GOAL symbol name)
+  // the name of this file, and the folder this file is in must have the same name.
+  "long_name": "ju-snowb",
+  // The file name, should be upper case and 8 characters or less.
+  "iso_name": "UPSNOWB",
+  // The nickname, should be exactly 3 characters
+  "nickname": "upk", // 3 char name, all lowercase
+  // Background mesh file.
+  // Must have vertex colors. Use the blender cycles renderer, bake, diffuse, uncheck color,
+  // and bake to vertex colors. For now, only the first vertex color group is used, so make sure you
+  // only have 1.
+  "gltf_file": "custom_assets/jak1/levels/ju-snowb/ju-snowb.glb",
+
+  // automatically set wall vs. ground based on angle. Useful if you don't want to assign this yourself
+  "automatic_wall_detection": true,
+  "automatic_wall_angle": 60.0,
+
+  // if your mesh has triangles with incorrect orientation, set this to make all collision mesh triangles double sided
+  // this makes collision 2x slower and bigger, so only use if really needed
+  "double_sided_collide": true,
+
+  // available res-lump tag data types:
+  // int32, float, meters, vector, vector4m (meters)
+  //
+  // examples:
+  //
+  // adds a float tag 'spring-height' with value of 200 meters (1 meter = 4096.0 units):
+  // "spring-height": ["meters", 200.0]
+  //
+  // adds a vector tag 'movie-pos':
+  // "movie-pos": ["vector", [4096000.0, -176128.0, 1353973.76, 1.0]]
+
+  // The base actor id for your custom level. If you have multiple levels this should be unique!
+  "base_id": 21000,
+
+  // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
+  // Note: You will still have to add them to your level's .gd file.
+  // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  "art_groups": ["eichar-ice+0-ag", "eichar-pole+0-ag", "snow-bumper-ag", "snow-spatula-ag", "eichar-flut+0-ag", "ef-plane-ag", "flut-saddle-ag", "gondola-ag"],
+
+  "ambients": [],
+
+  "actors" : [
+
+    {
+      "trans": [1078.95, 12121.6, 2322.14 ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1078.95, 12121.6, 2322.14 , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-01"
+      }
+    },
+    {
+      "trans": [1067.76, 12119.5, 2341.41   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1067.76, 12119.5, 2341.41   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-02"
+      }
+    },
+    {
+      "trans": [1112.36, 12121.8, 2316.22   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1112.36, 12121.8, 2316.22    , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-03"
+      }
+    },
+    {
+      "trans": [1053.89, 12124.9, 2292.69   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1053.89, 12124.9, 2292.69   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-04"
+      }
+    },
+    {
+      "trans": [1045.32, 12129.06, 2253.45  ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1045.32, 12129.06, 2253.45  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-05"
+      }
+    },
+    {
+      "trans": [1038.19, 12131.45, 2234.43   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1038.19, 12131.45, 2234.43   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-06"
+      }
+    },
+    {
+      "trans": [1039.82, 12134.89, 2207.22   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1039.82, 12134.89, 2207.22    , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-07"
+      }
+    },
+    {
+      "trans": [1058.25, 12136.88, 2191.61   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1058.25, 12136.88, 2191.61  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-08"
+      }
+    },
+    {
+      "trans": [1059.99, 12141.0, 2162.13   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1059.99, 12141.0, 2162.13    , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-09"
+      }
+    },
+    {
+      "trans": [1068.82, 12139.75, 2169.01   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1068.82, 12139.75, 2169.01  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-10"
+      }
+    },
+    {
+      "trans": [1084.16, 12143.0, 2148.64   ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1084.16, 12143.0, 2148.64  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-11"
+      }
+    },
+    {
+      "trans": [1107.44, 12145.20, 2126.75  ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1107.44, 12145.20, 2126.75   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-12"
+      }
+    },
+    {
+      "trans": [1131.80, 12145.81, 2123.92  ], // translation
+      "etype": "snow-bumper",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1131.80, 12145.81, 2123.92   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-bumper-13"
+      }
+    },
+
+    {
+      "trans": [1324.45, 12276.35, 2293.74  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1324.45, 12276.35, 2293.74  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-01",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1346.65, 12282.24, 2318.65  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1346.65, 12282.24, 2318.65  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-02",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1365.45, 12287.20, 2337.11   ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1365.45, 12287.20, 2337.11   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-03",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1372.51, 12289.25, 2344.23  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1372.51, 12289.25, 2344.23  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-04",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1388.85, 12293.32, 2360.39  ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1388.85, 12293.32, 2360.39  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-05",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1464.23, 12270.26, 2267.19   ], // translation
+      "etype": "swingpole",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.6050, -0.3660, 0.3660, 0.6050], // quaternion - Along Z axis in Blender
+      "bsphere": [1464.23, 12270.26, 2267.19   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-swingpole-06",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+
+    {
+      "trans": [1358.82, 12268.81, 2330.00   ], // translation
+      "etype": "snow-spatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.0, -0.7071, 0.0, 0.7071], // quaternion - Along Z axis in Blender
+      "bsphere": [1358.82, 12268.81, 2330.00   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-spatula-01",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1401.16, 12279.94, 2370.55], // translation
+      "etype": "snow-spatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.4618, 0.0, -0.8869], // quaternion - Along Z axis in Blender
+      "bsphere": [1401.16, 12279.94, 2370.55, 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-spatula-02",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1432.43, 12243.50, 2240.12    ], // translation
+      "etype": "snow-spatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.7933, 0.0, 0.6087], // quaternion - Along Z axis in Blender
+      "bsphere": [1432.43, 12243.50, 2240.12    , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-spatula-03",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+    {
+      "trans": [1479.53, 12258.07, 2274.89  ], // translation
+      "etype": "snow-spatula",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0.0, -0.5735, 0.0, -0.8191], // quaternion - Along Z axis in Blender
+      "bsphere": [1479.53, 12258.07, 2274.89   , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-spatula-04",
+        "scale": ["float", 1.0, 1.0, 1.0, 1.0]
+      }
+    },
+
+    {
+      "trans": [1602.71, 12401.83, 2614.18  ], // translation
+      "etype": "flutflut",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1602.71, 12401.83, 2614.18  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-flutflut-01",
+        "index": ["int32", 7] // fuck it, made up my own condition 
+      }
+    },
+    {
+      "trans": [1330.65, 12733.72, 2365.33  ], // translation
+      "etype": "flutflut",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.0339, -0.9775, 0.1921, -0.0795], // quaternion
+      "bsphere": [1330.65, 12733.72, 2365.33  , 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-flutflut-02",
+        "index": ["int32", 4] // empty pad, return only
+      }
+    },
+    {
+      "trans": [ 1319.0850, 12750.3769, 2379.2924  ], // translation
+      "etype": "gondola",  // actor type
+      "game_task": 0, // associated game task (for powercells, etc)
+      "quat" : [ 0.0339, -0.9775, 0.1921, -0.0795], // quaternion
+      "bsphere": [ 1319.0850, 12750.3769, 2379.2924, 10], // bounding sphere
+      "lump": {
+        "name": "ju-snowb-gondola-01"
+      }
+    },
+
+    {
+      "trans": [1244.88, 12942.53, 2454.42  ], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 132, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1244.88, 12942.53, 2454.42  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snowb-fuel-cell",
+        "eco-info":["int32", 6, 132]
+      }
+    },
+
+    // // // FLIES
+
+    // {
+    //   "trans": [2169.19, 10173.47, 2147.44], // inside busted furnace thing in sagehut
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [2169.19, 10173.47, 2147.44, 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snowb-buzzer-01",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 65], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2169.19, 10173.47, 2147.44]
+    //   }
+    // },
+    // {
+    //   "trans": [ 2087.56, 10188.01, 2428.58  ], // sideways scaffolding near "start of lava tube"
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [ 2087.56, 10188.01, 2428.58  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snowb-buzzer-02",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 65601], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2087.56, 10188.01, 2428.58  ]
+    //   }
+    // },
+    // {
+    //   "trans": [ 2308.90, 10173.02, 2211.70  ], // oracle
+    //   "etype": "crate",  // actor type
+    //   "game_task": 65, // associated game task (for powercells, etc)
+    //   "quat" : [0, 0, 0, 1], // quaternion
+    //   "bsphere": [ 2308.90, 10173.02, 2211.70  , 10], // bounding sphere
+    //   "lump": {
+    //     "name":"ju-snowb-buzzer-03",
+    //     "crate-type":"'iron",
+    //     "eco-info": ["int32", 8, 131137], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters",  2308.90, 10173.02, 2211.70  ]
+    //   }
+    // },
+    {
+      "trans": [ 1209.9169, 12637.7734, 2161.9655  ], // hidden in ice in chamber near end
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1209.9169, 12637.7734, 2161.9655 , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snowb-buzzer-04",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 196673], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1204.75, 12628.79, 2170.02   ]
+      }
+    },
+    {
+      "trans": [ 1639.24, 12363.53, 2473.56   ], // top of snowball source mountain
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [ 0.0647, 0.8878, -0.2037, 0.4074], // quaternion
+      "bsphere": [ 1639.24, 12363.53, 2473.56  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snowb-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262209], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1639.24, 12364.53, 2473.56   ]
+      }
+    },
+    {
+      "trans": [1372.49, 12235.11, 2202.17  ], // inside ice layer of precursor/ram thing
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1372.49, 12235.11, 2202.17   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snowb-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327745], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1372.49, 12236.11, 2202.17  ]
+      }
+    },
+    { 
+      "trans": [1161.39, 12164.21, 2191.67  ], // snowpile outside fort
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [-0.3087, 0.8107, -0.3448, -0.3583], // quaternion
+      "bsphere": [1161.39, 12164.21, 2191.67  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snowb-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393281], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1161.39, 12165.21, 2191.67    ]
+      }
+    }//,
+  ]
+}

@@ -5571,6 +5571,166 @@
                               :condition
                               (lambda :behavior process-taskable ((arg0 task-control))
                                 #t))))
+               (new 'static
+                    'task-control ;; ju-cave (mcave/dcave/rcave)
+                    :current-stage -1
+                    :stage
+                    (new 'static
+                         'boxed-array
+                         :type
+                         task-cstage
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cave)
+                              :status (task-status need-hint)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cave)
+                              :status (task-status need-introduction)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cave)
+                              :status (task-status need-reminder)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cave)
+                              :status (task-status need-resolution)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))))
+               (new 'static
+                    'task-control ;; ju-snow (snow/snowb)
+                    :current-stage -1
+                    :stage
+                    (new 'static
+                         'boxed-array
+                         :type
+                         task-cstage
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-snow)
+                              :status (task-status need-hint)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-snow)
+                              :status (task-status need-introduction)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-snow)
+                              :status (task-status need-reminder)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-snow)
+                              :status (task-status need-resolution)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))))
+               (new 'static
+                    'task-control ;; ju-lava (lava/lavab/some of cita)
+                    :current-stage -1
+                    :stage
+                    (new 'static
+                         'boxed-array
+                         :type
+                         task-cstage
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-lava)
+                              :status (task-status need-hint)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-lava)
+                              :status (task-status need-introduction)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-lava)
+                              :status (task-status need-reminder)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-lava)
+                              :status (task-status need-resolution)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))))
+               (new 'static
+                    'task-control ;; ju-cita (cita/citab/final)
+                    :current-stage -1
+                    :stage
+                    (new 'static
+                         'boxed-array
+                         :type
+                         task-cstage
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cita)
+                              :status (task-status need-hint)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cita)
+                              :status (task-status need-introduction)
+                              :flags (task-flags has-entity closed-by-default)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cita)
+                              :status (task-status need-reminder)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))
+                         (new 'static
+                              'task-cstage
+                              :game-task (game-task ju-cita)
+                              :status (task-status need-resolution)
+                              :flags (task-flags has-entity)
+                              :condition
+                              (lambda :behavior process-taskable ((arg0 task-control))
+                                #t))))
                )))
 
 (defun task-control-reset ((arg0 symbol))

@@ -2548,7 +2548,7 @@
              :level 'ju-train
              :flags (continue-flags warp)
              :trans
-             (new 'static 'vector :x (meters 1915.32) :y (meters 11.21) :z (meters 1986.38) :w 1.0)
+             (new 'static 'vector :x (meters 1917.82) :y (meters 11.31) :z (meters 1983.22) :w 1.0)
              :quat
              (new 'static 'quaternion :y 0.084 :w 0.9964)
              :camera-trans
@@ -3520,7 +3520,596 @@
        '("common")
        :wait-for-load #t))
 
+(define ju-dcave
+  (new 'static
+       'level-load-info
+       :index 44
+       :name 'ju-dcave
+       :visname 'ju-dcave-vis
+       ;; name + -vis
+       :nickname 'uph
+       ;; nickname
+       :packages '(darkcave)
+       :sound-banks '(darkcave)
+       :music-bank 'maincave
+       :ambient-sounds
+       '()
+       :mood '*jupdcave-mood*
+       :mood-func 'update-mood-darkcave
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-dcave-start"
+             :level 'ju-dcave
+             :trans
+             (new 'static 'vector :x (meters 2034.0838) :y (meters 10828.8242) :z (meters 2046.4193) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.9997 :z 0.0000 :w 0.0225)
+             :camera-trans
+             (new 'static 'vector :x (meters 2030.3364) :y (meters 10833.9599) :z (meters 2058.3439) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               -0.9542 0.0000 -0.2989
+               0.0358 0.9927 -0.1143
+               0.2968 -0.1198 -0.9473)
+             :load-commands
+             '()
+             :vis-nick 'uph
+             :lev0 'ju-mcave
+             :disp0 'display
+             :lev1 'ju-dcave
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+
+(define ju-rcave
+  (new 'static
+       'level-load-info
+       :index 45
+       :name 'ju-rcave
+       :visname 'ju-rcave-vis
+       ;; name + -vis
+       :nickname 'upi
+       ;; nickname
+       :packages '(robocave)
+       :sound-banks '(robocave)
+       :music-bank 'maincave
+       :ambient-sounds
+       '()
+       :mood '*robocave-mood*
+       :mood-func 'update-mood-robocave
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-rcave-start"
+             :level 'ju-rcave
+             :trans
+             (new 'static 'vector :x (meters 2063.7272) :y (meters 11046.0566) :z (meters 2056.8500) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.0747 :z -0.0000 :w -0.9971)
+             :camera-trans
+             (new 'static 'vector :x (meters 2070.1035) :y (meters 11050.8984) :z (meters 2047.3734) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+                    0.8299 -0.0000 0.5578
+                    -0.0676 0.9926 0.1006
+                    -0.5537 -0.1213 0.8237)
+             :load-commands
+             '()
+             :vis-nick 'upi
+             :lev0 'ju-dcave
+             :disp0 'display
+             :lev1 'ju-rcave
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+(define ju-snow
+  (new 'static
+       'level-load-info
+       :index 46
+       :name 'ju-snow
+       :visname 'ju-snow-vis
+       ;; name + -vis
+       :nickname 'upj
+       ;; nickname
+       :packages '(snow)
+       :sound-banks '(snow)
+       :music-bank 'snow
+       :ambient-sounds
+       '()
+       :mood '*snow-mood*
+       :mood-func 'update-mood-snow
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-snow-start"
+             :level 'ju-snow
+             :trans
+             (new 'static 'vector :x (meters 1639.9603) :y (meters 11819.9082) :z (meters 2312.8063) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.5578 :z 0.0000 :w 0.8299)
+             :camera-trans
+             (new 'static 'vector :x (meters 1651.4862) :y (meters 11825.0644) :z (meters 2307.9689) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+                    0.3879 0.0000 0.9216
+                    -0.1125 0.9925 0.0473
+                    -0.9147 -0.1221 0.3850)
+             :load-commands
+             '()
+             :vis-nick 'upj
+             :lev0 'ju-rcave
+             :disp0 'display
+             :lev1 'ju-snow
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+(define ju-snowb
+  (new 'static
+       'level-load-info
+       :index 47
+       :name 'ju-snowb
+       :visname 'ju-snowb-vis
+       ;; name + -vis
+       :nickname 'upk
+       ;; nickname
+       :packages '(snow)
+       :sound-banks '(snow)
+       :music-bank 'snow
+       :ambient-sounds
+       '()
+       :mood '*snow-mood*
+       :mood-func 'update-mood-snow
+       :ocean #f
+       :sky #t
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-snowb-start"
+             :level 'ju-snowb
+             :trans
+             (new 'static 'vector :x (meters 1104.2363) :y (meters 12127.2246) :z (meters 2342.7382) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.8580 :z -0.0000 :w 0.5136)
+             :camera-trans
+             (new 'static 'vector :x (meters 1106.5660) :y (meters 12131.7666) :z (meters 2352.7514) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               -0.9688 -0.0000 0.2474
+               -0.0342 0.9903 -0.1341
+               -0.2450 -0.1384 -0.9595)
+             :load-commands
+             '()
+             :vis-nick 'upk
+             :lev0 'ju-snow
+             :disp0 'display
+             :lev1 'ju-snowb
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+
+(define ju-lava
+  (new 'static
+       'level-load-info
+       :index 48
+       :name 'ju-lava
+       :visname 'ju-lava-vis
+       ;; name + -vis
+       :nickname 'upl
+       ;; nickname
+       :packages '(lavatube)
+       :sound-banks '(lavatube)
+       :music-bank 'lavatube
+       :ambient-sounds
+       '()
+       :mood '*lavatube-mood*
+       :mood-func 'update-mood-lavatube
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-lava-start"
+             :level 'ju-lava
+             :trans
+             (new 'static 'vector :x (meters 1248.1433) :y (meters 12940.1904) :z (meters 2451.3598) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.2804 :z 0.0000 :w 0.9598)
+             :camera-trans
+             (new 'static 'vector :x (meters 1256.4759) :y (meters 12945.3271) :z (meters 2442.0417) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               0.7456 0.0000 0.6663
+               -0.0799 0.9927 0.0894
+               -0.6615 -0.1199 0.7402)
+             :load-commands
+             '()
+             :vis-nick 'upl
+             :lev0 'ju-snowb
+             :disp0 'display
+             :lev1 'ju-lava
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+(define ju-lavab
+  (new 'static
+       'level-load-info
+       :index 49
+       :name 'ju-lavab
+       :visname 'ju-lavab-vis
+       ;; name + -vis
+       :nickname 'upm
+       ;; nickname
+       :packages '(lavatube)
+       :sound-banks '(lavatube)
+       :music-bank 'lavatube
+       :ambient-sounds
+       '()
+       :mood '*lavatube-mood*
+       :mood-func 'update-mood-lavatube
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-lavab-start"
+             :level 'ju-lavab
+             :trans
+             (new 'static 'vector :x (meters 834.4803) :y (meters 13239.5664) :z (meters 3267.8803)  :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.8933 :z 0.0000 :w 0.4494)
+             :camera-trans
+             (new 'static 'vector :x (meters 823.2460) :y (meters 13244.7031) :z (meters 3273.3596) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               -0.4393 0.0000 -0.8983
+               0.1086 0.9926 -0.0531
+               0.8917 -0.1209 -0.4361)
+             :load-commands
+             '()
+             :vis-nick 'upm
+             :lev0 'ju-lava
+             :disp0 'display
+             :lev1 'ju-lavab
+             :disp1 'display)
+             )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+(define ju-cita
+  (new 'static
+       'level-load-info
+       :index 50
+       :name 'ju-cita
+       :visname 'ju-cita-vis
+       ;; name + -vis
+       :nickname 'upn
+       ;; nickname
+       :packages '(citadel)
+       :sound-banks '(citadel)
+       :music-bank 'citadel
+       :ambient-sounds
+       '()
+       :mood '*citadel-mood*
+       :mood-func 'update-mood-citadel
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-cita-start"
+             :level 'ju-cita
+             :trans
+             (new 'static 'vector :x (meters 1280.6676) :y (meters 13819.5068) :z (meters 2429.8464) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.0841 :z 0.0000 :w -0.9964)
+             :camera-trans
+             (new 'static 'vector :x (meters 1281.0549) :y (meters 13824.3574) :z (meters 2418.5053) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               0.9993 -0.0000 0.0348
+               -0.0043 0.9923 0.1235
+               -0.0345 -0.1235 0.9917)
+             :load-commands
+             '()
+             :vis-nick 'upn
+             :lev0 'ju-lavab
+             :disp0 'display
+             :lev1 'ju-cita
+             :disp1 'display)
+                        
+          (new 'static
+               'continue-point
+               :name "ju-cita-warp"
+               :level 'ju-cita
+               :flags (continue-flags warp)
+               :trans
+               (new 'static 'vector :x (meters 2005.9929) :y (meters 14153.3652) :z (meters 3123.7536) :w 1.0)
+               :quat
+               (new 'static 'quaternion :x 0.0000 :y -0.4254 :z 0.0000 :w 0.9049)
+               :camera-trans
+               (new 'static 'vector  :x (meters 1995.1951) :y (meters 14158.3798) :z (meters 3118.4104) :w 1.0)
+               :camera-rot
+               (new 'static 'array float 9 
+                    0.5423 0.0000 -0.8401
+                    0.1090 0.9915 0.0703
+                    0.8330 -0.1297 0.5377)
+               :load-commands
+               '()
+               :vis-nick 'upn
+               :lev0 'ju-lavab
+               :disp0 'display
+               :lev1 'ju-cita
+               :disp1 'display)
+          )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+       
+(define ju-citab
+  (new 'static
+       'level-load-info
+       :index 51
+       :name 'ju-citab
+       :visname 'ju-citab-vis
+       ;; name + -vis
+       :nickname 'upo
+       ;; nickname
+       :packages '(citadel)
+       :sound-banks '(citadel)
+       :music-bank 'citadel
+       :ambient-sounds
+       '()
+       :mood '*citadel-mood*
+       :mood-func 'update-mood-citadel
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-citab-start"
+             :level 'ju-citab
+             :trans
+             (new 'static 'vector :x (meters 2525.2883) :y (meters 14875.2148) :z (meters 2930.8403) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.6461 :z 0.0000 :w -0.7632)
+             :camera-trans
+             (new 'static 'vector :x (meters 2528.1862) :y (meters 14879.7509) :z (meters 2921.6772) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               0.8631 -0.0000 0.5049
+               -0.0784 0.9878 0.1341
+               -0.4987 -0.1553 0.8526)
+             :load-commands
+             '()
+             :vis-nick 'upo
+             :lev0 'ju-cita
+             :disp0 'display
+             :lev1 'ju-citab
+             :disp1 'display)
+          )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
+(define ju-final
+  (new 'static
+       'level-load-info
+       :index 52
+       :name 'ju-final
+       :visname 'ju-final-vis
+       ;; name + -vis
+       :nickname 'upp
+       ;; nickname
+       :packages '(finalboss)
+       :sound-banks '(finalboss)
+       :music-bank 'finalboss
+       :ambient-sounds
+       '()
+       :mood '*finalboss-mood*
+       :mood-func 'update-mood-finalboss
+       :ocean #f
+       :sky #f
+       :continues
+       '((new 'static
+             'continue-point
+             :name "ju-final-start"
+             :level 'ju-final
+             :trans
+             (new 'static 'vector :x (meters 2281.6) :y (meters 16451.5) :z (meters 1415.0) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y 0.6461 :z 0.0000 :w -0.7632)
+             :camera-trans
+             (new 'static 'vector :x (meters 2528.1862) :y (meters 14879.7509) :z (meters 2921.6772) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               0.8631 -0.0000 0.5049
+               -0.0784 0.9878 0.1341
+               -0.4987 -0.1553 0.8526)
+             :load-commands
+             '()
+             :vis-nick 'upp
+             :lev0 'ju-citab
+             :disp0 'display
+             :lev1 'ju-final
+             :disp1 'display)
+          (new 'static
+             'continue-point
+             :name "ju-final-gg"
+             :level 'ju-final
+             :trans
+             (new 'static 'vector :x (meters 2351.5620) :y (meters 17811.6289) :z (meters 1329.7558) :w 1.0)
+             :quat
+             (new 'static 'quaternion :x 0.0000 :y -0.2594 :z 0.0000 :w -0.9657)
+             :camera-trans
+             (new 'static 'vector :x (meters 2343.5532) :y (meters 17816.7460) :z (meters 1320.3852) :w 1.0)
+             :camera-rot
+             (new 'static 'array float 9 
+               0.7598 -0.0000 -0.6501
+               0.0796 0.9924 0.0931
+               0.6452 -0.1225 0.7540)
+             :load-commands
+             '()
+             :vis-nick 'upp
+             :lev0 'ju-citab
+             :disp0 'display
+             :lev1 'ju-final
+             :disp1 'display)
+          )
+       :tasks
+       '()
+       :custom-orb-count 0
+       :priority 100
+       :load-commands
+       '()
+       :alt-load-commands
+       '()
+       :bsp-mask #xffffffffffffffff
+       :bsphere
+       (new 'static 'sphere :w 167772160000.0)
+       :bottom-height (meters -20)
+       :run-packages
+       '("common")
+       :wait-for-load #t))
+
 ;; cons! adds to the front of the list, so add in reverse order
+(cons! *level-load-list* 'ju-final)
+
+(cons! *level-load-list* 'ju-citab)
+
+(cons! *level-load-list* 'ju-cita)
+
+(cons! *level-load-list* 'ju-lavab)
+
+(cons! *level-load-list* 'ju-lava)
+
+(cons! *level-load-list* 'ju-snowb)
+
+(cons! *level-load-list* 'ju-snow)
+
+(cons! *level-load-list* 'ju-rcave)
+
+(cons! *level-load-list* 'ju-dcave)
+
 (cons! *level-load-list* 'ju-mcave)
 
 (cons! *level-load-list* 'ju-vil3)
