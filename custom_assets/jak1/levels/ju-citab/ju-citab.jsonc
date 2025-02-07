@@ -106,7 +106,7 @@
         "spring-height": ["meters", 150.0],
         "alt-vector": ["vector4m", [2281.6, 16451.5, 1415.0, 0.0015]]
       }
-    }//, 
+    }, 
     
     // {
     //   "trans": [2304.97, 2889.68, 1989.87], // translation
@@ -115,7 +115,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2304.97, 2889.68, 1989.87, 10], // bounding sphere
     //   "lump": {
-    //     "name": "ju-fire-balloon-01"
+    //     "name": "ju-citab-balloon-01"
     //   }
     // },
     // {
@@ -125,7 +125,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1950.80, 2544.77, 1963.16, 10], // bounding sphere
     //   "lump": {
-    //     "name": "ju-fire-balloon-02"
+    //     "name": "ju-citab-balloon-02"
     //   }
     // },
     // {
@@ -135,7 +135,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1823.14, 2321.57, 1923.91, 10], // bounding sphere
     //   "lump": {
-    //     "name": "ju-fire-balloon-03"
+    //     "name": "ju-citab-balloon-03"
     //   }
     // },
     // {
@@ -145,114 +145,114 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1871.19, 2255.46, 1893.33, 10], // bounding sphere
     //   "lump": {
-    //     "name": "ju-fire-balloon-04"
+    //     "name": "ju-citab-balloon-04"
     //   }
     // },
     // {
     //   "trans": [1949.79, 3381.5, 1913.05], // translation
     //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 124, // associated game task (for powercells, etc)
+    //   "game_task": 134, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1949.79, 3381.5, 1913.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-fuel-cell",
-    //     "eco-info":["int32", 6, 124]
+    //     "name":"ju-citab-fuel-cell",
+    //     "eco-info":["int32", 6, 134]
     //   }
     // },
 
     // // FLIES
 
     // {
-    //   "trans": [1840.83, 2059.47, 1853.37], // behind first bridge
+    //   "trans": [2293.06, 14317.93, 3135.00  ], // platform where youd normally start climbing circling toilet platforms
     //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [1840.83, 2059.47, 1853.37, 10], // bounding sphere
+    //   "game_task": 91, // associated game task (for powercells, etc)
+    //   "quat" : [-0.1198, -0.1708, 0.4516, 0.8674], // quaternion
+    //   "bsphere": [2293.06, 14317.93, 3135.00  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-buzzer-01",
+    //     "name":"ju-citab-buzzer-01",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 68], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1840.83, 2059.47, 1853.37]
+    //     "eco-info": ["int32", 8, 91], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2293.06, 14318.93, 3135.00  ]
     //   }
     // },
     // {
-    //   "trans": [1820.33, 2328.14, 1943.37], // in gap on right side
+    //   "trans": [2676.14, 14793.81, 2784.14  ], // in dugout in second section of wall
     //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, -0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [1820.33, 2328.14, 1943.37, 10], // bounding sphere
+    //   "game_task": 91, // associated game task (for powercells, etc)
+    //   "quat" : [-0.0599, -0.2364, -0.1441, -0.9590], // quaternion
+    //   "bsphere": [2676.14, 14793.81, 2784.14  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-buzzer-02",
+    //     "name":"ju-citab-buzzer-02",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 65604], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1820.33, 2328.14, 1943.37]
+    //     "eco-info": ["int32", 8, 65627], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2676.14, 14794.81, 2784.14  ]
     //   }
     // },
     // {
-    //   "trans": [1761.84, 2497.02, 1980.56], // tree next to gap
+    //   "trans": [2625.77, 15304.84, 2418.62  ], // 
     //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [1761.84, 2497.02, 1980.56, 10], // bounding sphere
+    //   "game_task": 91, // associated game task (for powercells, etc)
+    //   "quat" : [0.1699, -0.9750, -0.0325, 0.1390], // quaternion
+    //   "bsphere": [2625.77, 15304.84, 2418.62  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-buzzer-03",
+    //     "name":"ju-citab-buzzer-03",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 131140], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1761.84, 2497.02, 1980.56]
+    //     "eco-info": ["int32", 8, 131163], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "movie-pos": ["meters", 2625.77, 15305.84, 2418.62  ]
     //   }
     // },
-    // {
-    //   "trans": [2195.21, 2735.6, 1980.40], // behind rock in pit towards end
-    //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [2195.21, 2735.6, 1980.40, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-fire-buzzer-04",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 196676], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2195.21, 2735.6, 1980.40]
-    //   }
-    // },
-    // {
-    //   "trans": [2055.13, 3343.89, 2020.62], // in precursor thing hole
-    //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [-0.0, 0.0, -0.0, 0.0], // quaternion
-    //   "bsphere": [2055.13, 3343.89, 2020.62, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-fire-buzzer-05",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262212], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2055.13, 3343.89, 2020.62]
-    //   }
-    // },
-    // {
-    //   "trans": [2114.96, 3307.09, 2008.18], // on stone pillar in final section
-    //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [2114.96, 3307.09, 2008.18, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-fire-buzzer-06",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327748], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2114.96, 3307.09, 2008.18]
-    //   }
-    // },
-    // {
-    //   "trans": [1928.09, 3364.43, 2006.71], // small stone island towards very end
-    //   "etype": "crate",  // actor type
-    //   "game_task": 68, // associated game task (for powercells, etc)
-    //   "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
-    //   "bsphere": [1928.09, 3364.43, 2006.71, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-fire-buzzer-07",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393284], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 1928.09, 3364.43, 2006.71]
-    //   }
-    // }//,
+    {
+      "trans": [2187.48, 16187.36, 1571.24  ], // on small slanted ledge on back of silo before finalboss
+      "etype": "crate",  // actor type
+      "game_task": 91, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+      "bsphere": [2187.48, 16187.36, 1571.24  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-citab-buzzer-04",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 196699], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2187.48, 16188.36, 1571.24  ]
+      }
+    },
+    {
+      "trans": [2107.96, 15842.06, 1996.15  ], // in cubby under exit from bunny lurker room
+      "etype": "crate",  // actor type
+      "game_task": 91, // associated game task (for powercells, etc)
+      "quat" : [-0.0, 0.0, -0.0, 0.0], // quaternion
+      "bsphere": [2107.96, 15842.06, 1996.15  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-citab-buzzer-05",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 262235], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2107.96, 15843.06, 1996.15  ]
+      }
+    },
+    {
+      "trans": [2525.20, 15476.95, 2205.37  ], // in cubby where platforms come out in balls room
+      "etype": "crate",  // actor type
+      "game_task": 91, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+      "bsphere": [2525.20, 15476.95, 2205.37  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-citab-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327771], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2525.20, 15477.95, 2205.37  ]
+      }
+    },
+    {
+      "trans": [2625.77, 15304.84, 2418.62], // in 2nd bunny lurker spawner
+      "etype": "crate",  // actor type
+      "game_task": 91, // associated game task (for powercells, etc)
+      "quat" : [0.0, 0.0, 0.0, 0.0], // quaternion
+      "bsphere": [2625.77, 15304.84, 2418.62, 10], // bounding sphere
+      "lump": {
+        "name":"ju-citab-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393307], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2625.77, 15305.84, 2418.62]
+      }
+    }//,
 
     // ORBS
 
@@ -263,7 +263,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1916.08,  27.50, 1937.77, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-01"
+    //     "name":"ju-citab-money-01"
     //   }
     // },
     // {
@@ -273,7 +273,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1917.15,  27.00, 1933.05, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-02"
+    //     "name":"ju-citab-money-02"
     //   }
     // },
     // {
@@ -283,7 +283,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1918.61, 27.01, 1927.68, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-03"
+    //     "name":"ju-citab-money-03"
     //   }
     // },     
 
@@ -294,7 +294,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.80,  25.13, 1908.50, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-04"
+    //     "name":"ju-citab-money-04"
     //   }
     // },
     // {
@@ -304,7 +304,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1905.33,  31.71, 1905.45, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-05"
+    //     "name":"ju-citab-money-05"
     //   }
     // },
     // {
@@ -314,7 +314,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1909.41,  38.80, 1902.86, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-06"
+    //     "name":"ju-citab-money-06"
     //   }
     // },
     // {
@@ -324,7 +324,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1907.10,  47.66, 1898.40, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-07"
+    //     "name":"ju-citab-money-07"
     //   }
     // },
     // {
@@ -334,7 +334,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1908.04,  56.63, 1893.46, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-08"
+    //     "name":"ju-citab-money-08"
     //   }
     // },
     // {
@@ -344,7 +344,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [1911.93,  61.8, 1891.84, 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-09"
+    //     "name":"ju-citab-money-09"
     //   }
     // }
     // ,
@@ -355,7 +355,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1932.75,  73.2, 1907.89 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-10"
+    //     "name":"ju-citab-money-10"
     //   }
     // },
     // {
@@ -365,7 +365,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1934.35,  82.5, 1919.34 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-11"
+    //     "name":"ju-citab-money-11"
     //   }
     // },
     // {
@@ -375,7 +375,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1961.10,  91.2, 1924.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-12"
+    //     "name":"ju-citab-money-12"
     //   }
     // },
     // {
@@ -385,7 +385,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1990.43, 102.8, 1929.85 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-13"
+    //     "name":"ju-citab-money-13"
     //   }
     // },
     // {
@@ -395,7 +395,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1996.35, 110.9, 1949.22 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-14"
+    //     "name":"ju-citab-money-14"
     //   }
     // },
     // {
@@ -405,7 +405,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.36, 112.0, 1937.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-15"
+    //     "name":"ju-citab-money-15"
     //   }
     // },
     // {
@@ -415,7 +415,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1997.77, 120.0, 1934.13 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-16"
+    //     "name":"ju-citab-money-16"
     //   }
     // },
     // {
@@ -425,7 +425,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2021.17, 125.7, 1944.38 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-17"
+    //     "name":"ju-citab-money-17"
     //   }
     // },
     // {
@@ -435,7 +435,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.72, 128.7, 1953.01 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-18"
+    //     "name":"ju-citab-money-18"
     //   }
     // },
     // {
@@ -445,7 +445,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2028.49, 133.9, 1958.19 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-19"
+    //     "name":"ju-citab-money-19"
     //   }
     // },
     // {
@@ -455,7 +455,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2064.01, 146.2, 1935.98 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-20"
+    //     "name":"ju-citab-money-20"
     //   }
     // },
     // {
@@ -465,7 +465,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2080.08, 171.9, 1913.53 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-21"
+    //     "name":"ju-citab-money-21"
     //   }
     // },
     // {
@@ -475,7 +475,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2056.40, 182.5, 1873.46 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-22"
+    //     "name":"ju-citab-money-22"
     //   }
     // },
     // {
@@ -485,7 +485,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2023.06, 190.5, 1864.60 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-23"
+    //     "name":"ju-citab-money-23"
     //   }
     // },
     // {
@@ -495,7 +495,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2024.65, 190.8, 1863.42 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-24"
+    //     "name":"ju-citab-money-24"
     //   }
     // },
     // {
@@ -505,7 +505,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2026.40, 191.3, 1861.88 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-25"
+    //     "name":"ju-citab-money-25"
     //   }
     // },
     // {
@@ -515,7 +515,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2022.26, 195.0, 1842.67 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-26"
+    //     "name":"ju-citab-money-26"
     //   }
     // },
     // {
@@ -525,7 +525,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2017.01, 205.9, 1845.62 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-27"
+    //     "name":"ju-citab-money-27"
     //   }
     // },
     // {
@@ -535,7 +535,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  2011.03, 218.5, 1860.14 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-28"
+    //     "name":"ju-citab-money-28"
     //   }
     // },
     // {
@@ -545,7 +545,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1991.92, 227.2, 1858.66 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-29"
+    //     "name":"ju-citab-money-29"
     //   }
     // },
     // {
@@ -555,7 +555,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.40, 234.5, 1860.77 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-30"
+    //     "name":"ju-citab-money-30"
     //   }
     // },
     // {
@@ -565,7 +565,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1953.31, 242.0, 1858.33 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-31"
+    //     "name":"ju-citab-money-31"
     //   }
     // },
     // {
@@ -575,7 +575,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1952.29, 249.3, 1858.84 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-32"
+    //     "name":"ju-citab-money-32"
     //   }
     // },
     // {
@@ -585,7 +585,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1948.76, 260.4, 1861.82 , 10 ], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-33"
+    //     "name":"ju-citab-money-33"
     //   }
     // },
     // {
@@ -595,7 +595,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.23, 254.1, 1893.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-34"
+    //     "name":"ju-citab-money-34"
     //   }
     // },
     // {
@@ -605,7 +605,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1890.68, 256.6, 1906.01  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-35"
+    //     "name":"ju-citab-money-35"
     //   }
     // },
     // {
@@ -615,7 +615,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1870.17, 254.0, 1931.34  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-36"
+    //     "name":"ju-citab-money-36"
     //   }
     // },
     // {
@@ -625,7 +625,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1865.78, 265.5, 1951.03  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-37"
+    //     "name":"ju-citab-money-37"
     //   }
     // },
     // {
@@ -635,7 +635,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1879.60, 274.7, 1973.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-38"
+    //     "name":"ju-citab-money-38"
     //   }
     // },
     // {
@@ -645,7 +645,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1875.96, 287.6, 1979.28  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-39"
+    //     "name":"ju-citab-money-39"
     //   }
     // },
     // {
@@ -655,7 +655,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1915.32, 308.0, 2003.52  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-40"
+    //     "name":"ju-citab-money-40"
     //   }
     // },
     // {
@@ -665,7 +665,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1921.40, 314.8, 2004.11  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-41"
+    //     "name":"ju-citab-money-41"
     //   }
     // },
     // {
@@ -675,7 +675,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1928.29, 322.0, 2000.41  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-42"
+    //     "name":"ju-citab-money-42"
     //   }
     // },
     // {
@@ -685,7 +685,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1944.86, 329.4, 1998.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-43"
+    //     "name":"ju-citab-money-43"
     //   }
     // },
     // {
@@ -695,7 +695,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1980.84, 340.1, 1979.74  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-4"
+    //     "name":"ju-citab-money-4"
     //   }
     // },
     // {
@@ -705,7 +705,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1983.92, 349.0, 1984.67  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-45"
+    //     "name":"ju-citab-money-45"
     //   }
     // },
     // {
@@ -715,7 +715,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1974.26, 352.2, 1981.85  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-46"
+    //     "name":"ju-citab-money-46"
     //   }
     // },
     // {
@@ -725,7 +725,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1992.89, 366.5, 1945.88  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-47"
+    //     "name":"ju-citab-money-47"
     //   }
     // },
     // {
@@ -735,7 +735,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1986.64, 379.9, 1923.50  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-48"
+    //     "name":"ju-citab-money-48"
     //   }
     // },
     // {
@@ -745,7 +745,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1970.54, 383.6, 1906.81  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-49"
+    //     "name":"ju-citab-money-49"
     //   }
     // },
     // {
@@ -755,7 +755,7 @@
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [  1958.38, 377.1, 1931.69   , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-fire-money-50"
+    //     "name":"ju-citab-money-50"
     //   }
     // }
   ]

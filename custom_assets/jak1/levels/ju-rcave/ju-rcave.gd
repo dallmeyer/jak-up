@@ -5,7 +5,7 @@
 ("UPI.DGO"
  ("static-screen.o"
   "cavecrystal-light.o"
-  "maincave-obs.o"
+  "cavespatula-two.o"
   "spiderwebs.o"
   "spiderwebs-ag.go"
   "eichar-pole+0-ag.go"

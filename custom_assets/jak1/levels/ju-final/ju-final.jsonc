@@ -68,12 +68,12 @@
     {
       "trans": [2362.18, 17900.0, 1345.22], // translation
       "etype": "fuel-cell",  // actor type
-      "game_task": 124, // associated game task (for powercells, etc) // TODO FIX 
+      "game_task": 134, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2362.18, 17900.0, 1345.22, 10], // bounding sphere
       "lump": {
         "name":"ju-final-fuel-cell",
-        "eco-info":["int32", 6, 124] // TODO FIX
+        "eco-info":["int32", 6, 134]
       }
     }//,
 

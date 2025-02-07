@@ -143,6 +143,10 @@
   (ju-ogre 129)
   ;; (ju-ogreb 129)  ;; ju-ogre cell is really in ogreb
   (ju-vil3 130)
+  (ju-cave 131)
+  (ju-snow 132)
+  (ju-lava 133)
+  (ju-cita 134) ;; reach the end!
 
-  (max 131)
+  (max 135)
   )

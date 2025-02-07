@@ -46,105 +46,105 @@
     // {
     //   "trans": [2199.50, 10369.6, 2132.06  ], // translation
     //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
+    //   "game_task": 132, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2199.50, 10369.6, 2132.06  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil3-fuel-cell",
-    //     "eco-info":["int32", 6, 130]
+    //     "name":"ju-snow-fuel-cell",
+    //     "eco-info":["int32", 6, 132]
     //   }
     // },
 
     // // // FLIES
 
-    // {
-    //   "trans": [2169.19, 10173.47, 2147.44], // inside busted furnace thing in sagehut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2169.19, 10173.47, 2147.44, 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil3-buzzer-01",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 77], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2169.19, 10173.47, 2147.44]
-    //   }
-    // },
-    // {
-    //   "trans": [ 2087.56, 10188.01, 2428.58  ], // sideways scaffolding near "start of lava tube"
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [ 2087.56, 10188.01, 2428.58  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil3-buzzer-02",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 65613], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2087.56, 10188.01, 2428.58  ]
-    //   }
-    // },
-    // {
-    //   "trans": [ 2308.90, 10173.02, 2211.70  ], // oracle
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [ 2308.90, 10173.02, 2211.70  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil3-buzzer-03",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 131149], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters",  2308.90, 10173.02, 2211.70  ]
-    //   }
-    // },
+    {
+      "trans": [1561.68, 11792.75, 2393.90  ], // inside busted furnace thing in sagehut
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1561.68, 11792.75, 2393.90  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-buzzer-01",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1561.68, 11792.75, 2393.90  ]
+      }
+    },
+    {
+      "trans": [ 1606.26, 11986.76, 2409.94   ], // top of "other" mountain top
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1606.26, 11986.76, 2409.94  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-buzzer-02",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 65601], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 1606.26, 11987.76, 2409.94   ]
+      }
+    },
+    {
+      "trans": [ 1203.91, 11827.81, 2390.66  ], // where flut normally is
+      "etype": "crate",  // actor type
+      "game_task": 65, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [ 1203.91, 11827.81, 2390.66  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-snow-buzzer-03",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 131137], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters",  1203.91, 11828.81, 2390.66  ]
+      }
+    }//,
     // {
     //   "trans": [2177.63, 10163.83, 2256.71  ], // rock bit below platform where you do new rocket
     //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "game_task": 65, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2177.63, 10163.83, 2256.71  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil3-buzzer-04",
+    //     "name":"ju-snow-buzzer-04",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 196685], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "eco-info": ["int32", 8, 196673], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2177.63, 10163.83, 2256.71  ]
     //   }
     // },
     // {
     //   "trans": [2097.53, 10181.93, 2092.16  ], // where secret cell would be
     //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "game_task": 65, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2097.53, 10181.93, 2092.16  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil3-buzzer-05",
+    //     "name":"ju-snow-buzzer-05",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 262221], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "eco-info": ["int32", 8, 262209], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2097.53, 10181.93, 2092.16  ]
     //   }
     // },
     // {
     //   "trans": [2159.79, 10212.91, 2149.89  ], // top of sagehut
     //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "game_task": 65, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2159.79, 10212.91, 2149.89  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil3-buzzer-06",
+    //     "name":"ju-snow-buzzer-06",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327757], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "eco-info": ["int32", 8, 327745], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2159.79, 10212.91, 2149.89  ]
     //   }
     // },
     // { 
     //   "trans": [2276.12, 10306.98, 2186.00  ], // on some crystals by miners/gem
     //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
+    //   "game_task": 65, // associated game task (for powercells, etc)
     //   "quat" : [0, 0, 0, 1], // quaternion
     //   "bsphere": [2276.12, 10306.98, 2186.00  , 10], // bounding sphere
     //   "lump": {
-    //     "name":"ju-vil3-buzzer-07",
+    //     "name":"ju-snow-buzzer-07",
     //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393293], // to get SF task = game-task + (2^16 * buzzer-idx)
+    //     "eco-info": ["int32", 8, 393281], // to get SF task = game-task + (2^16 * buzzer-idx)
     //     "movie-pos": ["meters", 2276.12, 10306.98, 2186.00  ]
     //   }
     // }//,

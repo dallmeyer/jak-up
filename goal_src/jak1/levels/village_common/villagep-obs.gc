@@ -263,9 +263,10 @@
             (else -1))))
   (set! (-> self max-slot)
         (cond
-          ;; ((task-closed? (game-task ju-lava) (task-status need-resolution)) 3)
-          ((task-closed? (game-task ju-ogre) (task-status need-resolution)) 3) ;;2)
-          (else 1)))
+          ((task-closed? (game-task ju-lava) (task-status need-resolution)) 3)
+          ((task-closed? (game-task ju-ogre) (task-status need-resolution)) 2)
+          ((task-closed? (game-task ju-fire) (task-status need-resolution)) 1)
+          (else 0)))
   (go-virtual idle)
   (none))
 

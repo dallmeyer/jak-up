@@ -395,17 +395,17 @@
       }
     },
 
-    // {
-    //   "trans": [2199.50, 10369.6, 2132.06  ], // translation
-    //   "etype": "fuel-cell",  // actor type
-    //   "game_task": 125, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2199.50, 10369.6, 2132.06  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil3-fuel-cell",
-    //     "eco-info":["int32", 6, 130]
-    //   }
-    // },
+    {
+      "trans": [1634.19, 11820.99, 2313.68  ], // translation
+      "etype": "fuel-cell",  // actor type
+      "game_task": 131, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1634.19, 11820.99, 2313.68  , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-fuel-cell",
+        "eco-info":["int32", 6, 131]
+      }
+    },
 
     // // // FLIES
 
@@ -474,32 +474,32 @@
     //     "movie-pos": ["meters", 2097.53, 10181.93, 2092.16  ]
     //   }
     // },
-    // {
-    //   "trans": [2159.79, 10212.91, 2149.89  ], // top of sagehut
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2159.79, 10212.91, 2149.89  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil3-buzzer-06",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 327757], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2159.79, 10212.91, 2149.89  ]
-    //   }
-    // },
-    // { 
-    //   "trans": [2276.12, 10306.98, 2186.00  ], // on some crystals by miners/gem
-    //   "etype": "crate",  // actor type
-    //   "game_task": 76, // associated game task (for powercells, etc)
-    //   "quat" : [0, 0, 0, 1], // quaternion
-    //   "bsphere": [2276.12, 10306.98, 2186.00  , 10], // bounding sphere
-    //   "lump": {
-    //     "name":"ju-vil3-buzzer-07",
-    //     "crate-type":"'iron",
-    //     "eco-info": ["int32", 8, 393293], // to get SF task = game-task + (2^16 * buzzer-idx)
-    //     "movie-pos": ["meters", 2276.12, 10306.98, 2186.00  ]
-    //   }
-    // }//,
+    {
+      "trans": [ 2056.63, 11369.94, 2077.98   ], // cubby in rockwall backside
+      "etype": "crate",  // actor type
+      "game_task": 85, // associated game task (for powercells, etc)
+      "quat" : [ -0.0464, -0.6193, 0.1228, -0.7740], // quaternion
+      "bsphere": [ 2056.63, 11369.94, 2077.98   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-buzzer-06",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 327765], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters", 2056.63, 11370.94, 2077.98  ]
+      }
+    },
+    { 
+      "trans": [1880.04, 11161.81, 2192.27  ], // rooftop crater
+      "etype": "crate",  // actor type
+      "game_task": 85, // associated game task (for powercells, etc)
+      "quat" : [0, 0, 0, 1], // quaternion
+      "bsphere": [1880.04, 11161.81, 2192.27   , 10], // bounding sphere
+      "lump": {
+        "name":"ju-rcave-buzzer-07",
+        "crate-type":"'iron",
+        "eco-info": ["int32", 8, 393301], // to get SF task = game-task + (2^16 * buzzer-idx)
+        "movie-pos": ["meters",1880.04, 11162.81, 2192.27  ]
+      }
+    },
 
     {
       "trans": [ 1919.5, 11153.5, 2247.8], // translation

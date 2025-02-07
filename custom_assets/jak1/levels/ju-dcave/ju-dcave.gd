@@ -5,7 +5,7 @@
 ("UPH.DGO"
  ("static-screen.o"
   "cavecrystal-light.o"
-  "maincave-obs.o"
+  "cavespatula.o"
   "cavespatula-darkcave-ag.go"
   "ju-dcave.go"
  ))

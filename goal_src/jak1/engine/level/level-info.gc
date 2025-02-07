@@ -2548,7 +2548,7 @@
              :level 'ju-train
              :flags (continue-flags warp)
              :trans
-             (new 'static 'vector :x (meters 1915.32) :y (meters 11.21) :z (meters 1986.38) :w 1.0)
+             (new 'static 'vector :x (meters 1917.82) :y (meters 11.31) :z (meters 1983.22) :w 1.0)
              :quat
              (new 'static 'quaternion :y 0.084 :w 0.9964)
              :camera-trans

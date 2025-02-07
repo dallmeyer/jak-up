@@ -274,11 +274,11 @@
   (swamp 10)
   (ogre 11)
   (village3 12)
-  ;; (snow 13)
-  ;; (cave 14)
-  ;; (lavatube 15)
-  ;; (citadel 16)
-  (max 13))
+  (cave 13)
+  (snow 14)
+  (lavatube 15)
+  (citadel 16)
+  (max 17))
 
 ;; maps level-info indices to the appropriate offset in *level-task-data*
 (define *level-task-data-remap*
@@ -328,6 +328,16 @@
        (level-task-data-index ogre)
        (level-task-data-index ogre) ;; ogreb
        (level-task-data-index village3)
+       (level-task-data-index cave) ;; mcave
+       (level-task-data-index cave) ;; dcave
+       (level-task-data-index cave) ;; rcave
+       (level-task-data-index snow) 
+       (level-task-data-index snow) ;; snowb
+       (level-task-data-index lavatube)
+       (level-task-data-index lavatube) ;; lavab
+       (level-task-data-index citadel) ;; cita (contains end of lavatube too)
+       (level-task-data-index citadel) ;; citab
+       (level-task-data-index citadel) ;; final
        ))
 
 ;; maps goal language ID to its name string ID
@@ -637,6 +647,90 @@
                  (new 'static
                       'task-info-data
                       :task-id (game-task village3-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id cave-level-name)
+            :text-group-index 14
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task ju-cave)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id ju-cave) (text-id ju-cave) (text-id ju-cave) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task cave-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id snow-level-name)
+            :text-group-index 15
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task ju-snow)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id ju-snow) (text-id ju-snow) (text-id ju-snow) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task snow-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id lavatube-level-name)
+            :text-group-index 16
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task ju-lava)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id ju-lava) (text-id ju-lava) (text-id ju-lava) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task lavatube-buzzer)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
+       (new 'static
+            'level-tasks-info
+            :level-name-id (text-id citadel-level-name)
+            :text-group-index 17
+            :nb-of-tasks 2
+            :buzzer-task-index 1
+            :task-info
+            (new 'static
+                 'array
+                 task-info-data
+                 8
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task ju-cita)
+                      :task-name
+                      (new 'static 'array text-id 4 (text-id ju-cita) (text-id ju-cita) (text-id ju-cita) (text-id zero)))
+                 (new 'static
+                      'task-info-data
+                      :task-id (game-task citadel-buzzer)
                       :task-name
                       (new 'static 'array text-id 4 (text-id beach-buzzer) (text-id beach-buzzer) (text-id beach-buzzer) (text-id zero)))))
        ))

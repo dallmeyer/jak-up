@@ -82,7 +82,7 @@
     {
       "trans": [2199.50, 10369.6, 2132.06  ], // translation
       "etype": "fuel-cell",  // actor type
-      "game_task": 125, // associated game task (for powercells, etc)
+      "game_task": 130, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2199.50, 10369.6, 2132.06  , 10], // bounding sphere
       "lump": {
@@ -96,7 +96,7 @@
     {
       "trans": [2169.19, 10173.47, 2147.44], // inside busted furnace thing in sagehut
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2169.19, 10173.47, 2147.44, 10], // bounding sphere
       "lump": {
@@ -109,7 +109,7 @@
     {
       "trans": [ 2087.56, 10188.01, 2428.58  ], // sideways scaffolding near "start of lava tube"
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [ 2087.56, 10188.01, 2428.58  , 10], // bounding sphere
       "lump": {
@@ -122,7 +122,7 @@
     {
       "trans": [ 2308.90, 10173.02, 2211.70  ], // oracle
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [ 2308.90, 10173.02, 2211.70  , 10], // bounding sphere
       "lump": {
@@ -135,7 +135,7 @@
     {
       "trans": [2177.63, 10163.83, 2256.71  ], // rock bit below platform where you do new rocket
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2177.63, 10163.83, 2256.71  , 10], // bounding sphere
       "lump": {
@@ -148,7 +148,7 @@
     {
       "trans": [2097.53, 10181.93, 2092.16  ], // where secret cell would be
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2097.53, 10181.93, 2092.16  , 10], // bounding sphere
       "lump": {
@@ -161,7 +161,7 @@
     {
       "trans": [2159.79, 10212.91, 2149.89  ], // top of sagehut
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2159.79, 10212.91, 2149.89  , 10], // bounding sphere
       "lump": {
@@ -174,7 +174,7 @@
     { 
       "trans": [2276.12, 10306.98, 2186.00  ], // on some crystals by miners/gem
       "etype": "crate",  // actor type
-      "game_task": 76, // associated game task (for powercells, etc)
+      "game_task": 77, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2276.12, 10306.98, 2186.00  , 10], // bounding sphere
       "lump": {

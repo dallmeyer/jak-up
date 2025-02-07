@@ -484,14 +484,16 @@
 
 (defun speedrun-target-state-toggle-continue? ()
   (case (-> *target* state)
-    ((target-stance target-wade-stance
-                    target-swim-stance
-                    target-flut-stance
-                    target-racing
-                    target-hit-ground
-                    target-edge-grab
-                    target-duck-stance
-                    target-stance-ambient)
+    ((target-stance
+      target-ice-stance
+      target-wade-stance
+      target-swim-stance
+      target-flut-stance
+      target-racing
+      target-hit-ground
+      target-edge-grab
+      target-duck-stance
+      target-stance-ambient)
      #t)
     (else #f)))
 

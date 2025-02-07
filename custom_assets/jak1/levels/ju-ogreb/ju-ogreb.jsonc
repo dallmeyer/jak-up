@@ -238,7 +238,7 @@
     {
       "trans": [2193.32, 9613.17, 1417.84], // broken hut in cliff up
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 88, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2193.32, 9613.17, 1417.84, 10], // bounding sphere
       "lump": {
@@ -251,7 +251,7 @@
     {
       "trans": [2371.47, 9740.93, 1551.35], // walk the plank
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 88, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2371.47, 9740.93, 1551.35, 10], // bounding sphere
       "lump": {
@@ -264,7 +264,7 @@
     { 
       "trans": [2373.96, 9992.06, 1885.76], // bubble of LPC entrance
       "etype": "crate",  // actor type
-      "game_task": 75, // associated game task (for powercells, etc)
+      "game_task": 88, // associated game task (for powercells, etc)
       "quat" : [0, 0, 0, 1], // quaternion
       "bsphere": [2373.96, 9992.06, 1885.76, 10], // bounding sphere
       "lump": {

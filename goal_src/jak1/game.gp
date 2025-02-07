@@ -1340,6 +1340,8 @@
  "maincave/cavecrystal-light.gc"
  "darkcave/darkcave-obs.gc"
  "maincave/maincave-obs.gc"
+ "maincave/cavespatula.gc"
+ "maincave/cavespatula-two.gc"
  "maincave/maincave-part.gc"
  "maincave/spiderwebs.gc"
  "maincave/dark-crystal.gc"
