@@ -2540,7 +2540,7 @@
              :vis-nick 'up0
              :lev0 'ju-train
              :disp0 'display
-             :lev1 #f
+             :lev1 'ju-vil1
              :disp1 #f)
         (new 'static
              'continue-point
@@ -2560,7 +2560,7 @@
              :vis-nick 'up0
              :lev0 'ju-train
              :disp0 'display
-             :lev1 #f
+             :lev1 'ju-vil1
              :disp1 #f))
        :tasks
        '()
