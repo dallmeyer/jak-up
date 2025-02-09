@@ -38,6 +38,14 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": ["shortcut-boulder-ag", "crate-darkeco-cluster-ag"],
 
+  "textures": [
+    ["ogre-vis-alpha"]
+  ],
+
+  "tex_remap": "ogre",
+
+  "sky": "ogre",
+  
   "ambients": [],
 
   "actors" : [

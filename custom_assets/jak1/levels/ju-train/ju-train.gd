@@ -12,5 +12,11 @@
   "plat-eco-ag.go"
   "scarecrow-a-ag.go"
   "scarecrow-b-ag.go"
+;;   "tpage-398.go"
+;;   "tpage-400.go"
+;;   "tpage-399.go"
+;;   "tpage-401.go"
+;;   "tpage-1470.go"
+;;   "water-anim-village2-ag.go"
   "ju-train.go"
  ))

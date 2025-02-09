@@ -38,6 +38,14 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "tntbarrel-ag"],
 
+  "textures": [
+    ["village2-vis-alpha"]
+  ],
+
+  "tex_remap": "village2",
+
+  "sky": "village2",
+  
   "ambients": [],
 
   "actors" : [

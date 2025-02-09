@@ -39,6 +39,14 @@
   // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
   "art_groups": ["spiderwebs-ag", "eichar-pole+0-ag", "cavespatulatwo-ag"],
 
+  // "textures": [
+  //   ["village3-vis-alpha"]
+  // ],
+
+  // "tex_remap": "village3",
+
+  // "sky": "village3",
+  
   "ambients": [],
 
   "actors" : [

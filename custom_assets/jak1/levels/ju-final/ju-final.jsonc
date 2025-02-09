@@ -38,6 +38,14 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": [],
 
+  "textures": [
+    ["finalboss-vis-alpha"]
+  ],
+
+  "tex_remap": "finalboss",
+
+  "sky": "finalboss",
+  
   "ambients": [],
 
   "actors" : [
