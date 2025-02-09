@@ -38,6 +38,14 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": ["citb-generator-ag", "citb-launcher-ag"],
 
+  // "textures": [
+  //   ["village3-vis-alpha"]
+  // ],
+
+  // "tex_remap": "village3",
+
+  // "sky": "village3",
+  
   "ambients": [],
 
   "actors" : [

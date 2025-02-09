@@ -39,6 +39,14 @@
   // "art_groups": ["fireboulder-ag", "allpontoons-ag", "pontoonfive-ag", "pontoonten-ag", "warpgate-ag", "warp-gate-switch-ag"],
   "art_groups": ["eichar-ice+0-ag", "eichar-pole+0-ag", "snow-bumper-ag", "snow-spatula-ag", "eichar-flut+0-ag", "ef-plane-ag", "flut-saddle-ag", "gondola-ag"],
 
+  "textures": [
+    ["snow-vis-alpha"]
+  ],
+
+  "tex_remap": "snow",
+
+  "sky": "snow",
+  
   "ambients": [],
 
   "actors" : [

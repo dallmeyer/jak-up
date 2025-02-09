@@ -38,6 +38,14 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": ["yakow-ag"],
 
+  "textures": [
+    ["village1-vis-alpha"]
+  ],
+
+  "tex_remap": "village1",
+
+  "sky": "village1",
+
   "ambients": [],
 
   "actors" : [

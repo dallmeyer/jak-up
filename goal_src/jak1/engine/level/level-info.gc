@@ -2519,7 +2519,7 @@
        '()
        :mood '*training-mood*
        :mood-func 'update-mood-training
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2594,7 +2594,7 @@
        '()
        :mood '*village1-mood*
        :mood-func 'update-mood-village1
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2648,7 +2648,7 @@
        '()
        :mood '*jungle-mood*
        :mood-func 'update-mood-jungle
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2702,7 +2702,7 @@
        '()
        :mood '*jungleb-mood*
        :mood-func 'update-mood-jungleb
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2756,7 +2756,7 @@
        '()
        :mood '*misty-mood*
        :mood-func 'update-mood-misty
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2810,7 +2810,7 @@
        '()
        :mood '*beach-mood*
        :mood-func 'update-mood-village1
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2864,7 +2864,7 @@
        '()
        :mood '*firecanyon-mood*
        :mood-func 'update-mood-firecanyon
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2918,7 +2918,7 @@
        '()
        :mood '*village2-mood*
        :mood-func 'update-mood-village2
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -2992,7 +2992,7 @@
        '()
        :mood '*sunken-mood*
        :mood-func 'update-mood-sunken
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3046,7 +3046,7 @@
        '()
        :mood '*sunkenb-mood*
        :mood-func 'update-mood-sunken
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3100,7 +3100,7 @@
        '()
        :mood '*rolling-mood*
        :mood-func 'update-mood-sunken
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3155,7 +3155,7 @@
        '()
        :mood '*swamp-mood*
        :mood-func 'update-mood-sunken
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3210,7 +3210,7 @@
        '()
        :mood '*swamp-mood*
        :mood-func 'update-mood-sunken
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3265,7 +3265,7 @@
        '()
        :mood '*ogre-mood*
        :mood-func 'update-mood-ogre
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3320,7 +3320,7 @@
        '()
        :mood '*ogre-mood*
        :mood-func 'update-mood-ogre
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3396,7 +3396,7 @@
        '()
        :mood '*village3-mood*
        :mood-func 'update-mood-village3
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3478,8 +3478,8 @@
        '()
        :mood '*maincave-mood*
        :mood-func 'update-mood-maincave
-       :ocean #f
-       :sky #t
+       :ocean '*ocean-map-village1*
+       :sky #f
        :continues
        '((new 'static
              'continue-point
@@ -3536,8 +3536,8 @@
        '()
        :mood '*jupdcave-mood*
        :mood-func 'update-mood-darkcave
-       :ocean #f
-       :sky #t
+       :ocean '*ocean-map-village1*
+       :sky #f
        :continues
        '((new 'static
              'continue-point
@@ -3595,8 +3595,8 @@
        '()
        :mood '*robocave-mood*
        :mood-func 'update-mood-robocave
-       :ocean #f
-       :sky #t
+       :ocean '*ocean-map-village1*
+       :sky #f
        :continues
        '((new 'static
              'continue-point
@@ -3653,7 +3653,7 @@
        '()
        :mood '*snow-mood*
        :mood-func 'update-mood-snow
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3711,7 +3711,7 @@
        '()
        :mood '*snow-mood*
        :mood-func 'update-mood-snow
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #t
        :continues
        '((new 'static
@@ -3770,8 +3770,8 @@
        '()
        :mood '*lavatube-mood*
        :mood-func 'update-mood-lavatube
-       :ocean #f
-       :sky #f
+       :ocean '*ocean-map-village1*
+       :sky #t
        :continues
        '((new 'static
              'continue-point
@@ -3828,7 +3828,7 @@
        '()
        :mood '*lavatube-mood*
        :mood-func 'update-mood-lavatube
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #f
        :continues
        '((new 'static
@@ -3886,7 +3886,7 @@
        '()
        :mood '*citadel-mood*
        :mood-func 'update-mood-citadel
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #f
        :continues
        '((new 'static
@@ -3969,7 +3969,7 @@
        '()
        :mood '*citadel-mood*
        :mood-func 'update-mood-citadel
-       :ocean #f
+       :ocean '*ocean-map-village1*
        :sky #f
        :continues
        '((new 'static
@@ -4027,8 +4027,8 @@
        '()
        :mood '*finalboss-mood*
        :mood-func 'update-mood-finalboss
-       :ocean #f
-       :sky #f
+       :ocean '*ocean-map-village1*
+       :sky #t
        :continues
        '((new 'static
              'continue-point

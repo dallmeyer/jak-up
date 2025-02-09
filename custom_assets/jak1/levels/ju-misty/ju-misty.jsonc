@@ -39,6 +39,14 @@
   // bounceytarp for jungleb but we cheat
   "art_groups": ["plat-eco-ag", "quicksandlurker-ag", "mis-bone-bridge-ag"],
 
+  "textures": [
+    ["misty-vis-alpha"]
+  ],
+
+  "tex_remap": "misty",
+
+  "sky": "misty",
+
   "ambients": [],
 
   "actors" : [

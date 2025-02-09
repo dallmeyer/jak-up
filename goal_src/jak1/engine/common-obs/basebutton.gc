@@ -343,7 +343,7 @@
       ;; we add "training" to the list here so that the training warp gate waits until it's safe to
       ;; dispose the old code from memory.
       (case (-> self level)
-        (('citadel 'lavatube 'training 'ju-train 'ju-vil2 'ju-vil3)
+        (('citadel 'lavatube 'training 'ju-train 'ju-vil2 'ju-vil3 'ju-lavab 'ju-cita)
          (while (and *target* (not (logtest? (-> *target* draw status) (draw-status hidden))))
            (suspend)))
         (else

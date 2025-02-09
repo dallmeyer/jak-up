@@ -38,6 +38,14 @@
   // Note: You will still have to add them to your level's .gd file.
   "art_groups": ["keg-ag", "keg-conveyor-ag", "keg-conveyor-paddle-ag", "bounceytarp-ag", "darkvine-ag", "balloonlurker-ag"],
 
+  // "textures": [
+  //   ["jungle-vis-alpha"]
+  // ],
+
+  // "tex_remap": "jungle",
+
+  // "sky": "jungle",
+
   "ambients": [],
 
   "actors" : [

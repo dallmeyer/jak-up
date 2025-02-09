@@ -11209,7 +11209,7 @@
   (new 'static
        'ocean-map
        :start-corner
-       (new 'static 'vector :x -9437184.0 :z -9437184.0 :w 1.0)
+       (new 'static 'vector :x -29491200.0 :z 56524800.0  :w 1.0)
        :far-color
        (new 'static 'vector :x 1.505882 :y 45.678432 :z 56.72157)))
 

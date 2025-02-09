@@ -36,11 +36,41 @@
 
   // All art groups you want to use in your custom level. Will add their models and corresponding textures to the FR3 file.
   // Note: You will still have to add them to your level's .gd file.
-  "art_groups": ["plat-eco-ag", "scarecrow-a-ag", "scarecrow-b-ag", "warpgate-ag", "warp-gate-switch-ag"],
+  "art_groups": ["plat-eco-ag", "scarecrow-a-ag", "scarecrow-b-ag", "warpgate-ag", "warp-gate-switch-ag"], // , "water-anim-village2-ag"],
+
+  "textures": [
+    ["training-vis-alpha"]
+  ],
+
+  "tex_remap": "training",
+
+  "sky": "training",
 
   "ambients": [],
 
   "actors" : [
+    // {
+    //   "trans": [1935.24,  11.14, 1944.31  ],
+    //   "etype": "water-anim",
+    //   "game_task": 0,
+    //   "quat": [0, 0, 0, 1],
+    //   "bsphere": [1935.24,  11.14, 1944.31  , 200],
+    //   "lump": {
+    //     "vol": ["vector",
+    //         [1.0, 0.0, 0.0, 9830400.0],
+    //         [-1.0, 0.0, 0.0, 6553600.0],
+    //         [0.0, 1.0, 0.0, 46694.4],
+    //         [0.0, -1.0, 0.0, 0.0],
+    //         [0.0, 0.0, 1.0, -6553600.0],
+    //         [0.0, 0.0, -1.0, -9011200.0]
+    //       ],
+    //     "name": "water",
+    //     "water-height": ["float", 50694.4, 48694.4, 54694.4, 1048588.0],
+    //     "look": ["int32", 47],
+    //     "vis-dist":  ["meters", 200.0]
+    //   }
+    // },
+
     {
       "trans": [1915.32,  12.9, 1986.38], // translation
       "etype": "warpgate",  // actor type

@@ -39,6 +39,14 @@
   "art_groups": [],
   // "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag", "balloon-ag"],
 
+  "textures": [
+    ["village3-vis-alpha"]
+  ],
+
+  "tex_remap": "village3",
+
+  "sky": "village3",
+  
   "ambients": [],
 
   "actors" : [
