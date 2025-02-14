@@ -115,7 +115,7 @@
                                   :drag-factor 4.0
                                   :buoyancy-factor 3.0
                                   :max-buoyancy-depth (meters 3)
-                                  :gravity-factor 1.0
+                                  :gravity-factor 0.0
                                   :gravity (meters 80)
                                   :player-weight (meters 35)
                                   :player-bonk-factor 1.0
@@ -141,7 +141,7 @@
                                  :drag-factor 4.0
                                  :buoyancy-factor 3.0
                                  :max-buoyancy-depth (meters 3)
-                                 :gravity-factor 1.0
+                                 :gravity-factor 0.0
                                  :gravity (meters 80)
                                  :player-weight (meters 35)
                                  :player-bonk-factor 1.0

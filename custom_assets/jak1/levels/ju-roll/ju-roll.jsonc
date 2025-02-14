@@ -39,12 +39,12 @@
   "art_groups": ["racer-ag", "eichar-racer+0-ag", "tpage-1119", "ef-plane-ag"],
 
   "textures": [
-    ["rolling-vis-alpha"]
+    ["swamp-vis-alpha"]
   ],
 
-  "tex_remap": "rolling",
+  "tex_remap": "swamp",
 
-  "sky": "rolling",
+  "sky": "swamp",
 
   "ambients": [],
 

@@ -63,7 +63,7 @@
   ((speed     float)
    (rot-speed degrees)))
 
-(define *CAM_FREE-bank* (new 'static 'cam-free-bank :speed 1600.0 :rot-speed (degrees 0.6)))
+(define *CAM_FREE-bank* (new 'static 'cam-free-bank :speed 4800.0 :rot-speed (degrees 0.6)))
 
 (defun cam-free-floating-input ((arg0 vector) (arg1 vector) (arg2 symbol) (arg3 int))
   (when (and (!= *master-mode* 'menu) (not *cam-layout*))
