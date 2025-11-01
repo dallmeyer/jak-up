@@ -158,7 +158,7 @@ jobs:
           7z a -tzip ${{ inputs.outputDir }}/dist/windows-${TAG_VAL}.zip ./ci-artifacts/windows/*
 
       - name: Upload Bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: windows
           if-no-files-found: error
@@ -214,7 +214,7 @@ jobs:
           popd
 
       - name: Upload Bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: linux
           if-no-files-found: error
@@ -270,7 +270,7 @@ jobs:
           popd
 
       - name: Upload Bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: macos-intel
           if-no-files-found: error
@@ -296,7 +296,7 @@ jobs:
         run: python ./.github/scripts/create-mod-release/bundle-windows.py
 
       - name: Upload Bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: windows
           if-no-files-found: error
@@ -320,7 +320,7 @@ jobs:
         run: python ./.github/scripts/create-mod-release/bundle-linux.py
 
       - name: Upload Bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: linux
           if-no-files-found: error
@@ -344,7 +344,7 @@ jobs:
         run: python ./.github/scripts/create-mod-release/bundle-macos.py
 
       - name: Upload Bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: macos-intel
           if-no-files-found: error
